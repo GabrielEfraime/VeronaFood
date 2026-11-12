@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proposta de site — VeronaFood Consultoria de Alimentos</title>
+<meta name="description" content="Proposta de design e experiência para o novo site da VeronaFood Consultoria de Alimentos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --vinho:#6E0F2A; --borgonha:#8B1E3F; --rose:#B86A7A; --champagne:#F5EDE4; --taupe:#B59B8A;
+  --tinta:#2A1B1E; --tinta-suave:#6B585C; --claro:#FBF7F2; --linha:#E3D7CA;
+  --ambar:#C2762F; --verde:#2F6B4F;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--champagne);color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+h1,h2,h3,h4,h5{font-family:var(--display);font-weight:600;line-height:1.14;text-wrap:balance;margin:0}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.15em}
+li{margin:.3em 0}
+strong{font-weight:600}
+
+.wrap{max-width:1060px;margin:0 auto;padding-left:22px;padding-right:22px}
+.band{background:var(--champagne)}
+.band--alt{background:var(--claro)}
+.band--wine{background:var(--vinho);color:var(--champagne)}
+.band>.wrap{padding-block:clamp(44px,6.5vw,84px)}
+.stack{display:flex;flex-direction:column;gap:18px}
+.grid{display:grid;gap:18px}
+
+.eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vinho);margin:0 0 14px}
+.band--wine .eyebrow{color:var(--taupe)}
+h2.sec{font-size:clamp(25px,3.7vw,36px);color:var(--vinho)}
+.band--wine h2.sec{color:var(--champagne)}
+h3.sub{font-size:clamp(19px,2.2vw,22px);margin-top:14px}
+.lead{font-size:clamp(17.5px,2vw,20px);color:var(--tinta-suave);max-width:64ch}
+.band--wine .lead,.band--wine .t{color:#E8D5C8}
+.t{color:var(--tinta-suave);max-width:68ch}
+
+/* capa */
+.cover{background:var(--vinho);color:var(--champagne)}
+.cover .wrap{padding-block:clamp(52px,9vw,110px);display:flex;flex-direction:column;gap:26px}
+.brandmark{width:min(320px,74vw)}
+.brandmark svg{width:100%;height:auto;display:block}
+.cover h1{font-size:clamp(32px,5.6vw,52px);color:var(--champagne);max-width:19ch}
+.cover .meta{font-size:14px;color:var(--taupe);letter-spacing:.03em}
+.cover .sum{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.cover .sum span{border:1px solid rgba(232,213,200,.42);border-radius:999px;padding:6px 14px;font-size:13.5px;color:#E8D5C8}
+
+/* elementos */
+.pill{display:inline-block;border:1px solid var(--linha);border-radius:999px;padding:7px 15px;font-size:14.5px;background:var(--claro)}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.card{border:1px solid var(--linha);border-radius:12px;background:var(--claro);padding:24px}
+.card h4{font-size:19px;margin-bottom:7px;color:var(--vinho)}
+.card p{font-size:15.5px;color:var(--tinta-suave);line-height:1.55}
+.note{border-left:3px solid var(--ambar);background:var(--claro);border-radius:0 10px 10px 0;padding:16px 20px;font-size:15.5px;color:var(--tinta-suave)}
+.band--wine .note{background:rgba(245,237,228,.08);border-left-color:var(--taupe);color:#E8D5C8}
+.leaf{display:block;margin:0 auto;width:120px;opacity:.5}
+.leaf path{fill:var(--rose)}
+.quote{font-family:var(--display);font-size:clamp(22px,3.4vw,31px);line-height:1.26;color:var(--vinho)}
+.band--wine .quote{color:var(--champagne)}
+
+/* paleta */
+.swatches{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.sw{border:1px solid var(--linha);border-radius:12px;overflow:hidden;background:var(--claro)}
+.sw__c{height:76px;border-bottom:1px solid var(--linha)}
+.sw__b{padding:13px 15px}
+.sw__n{font-weight:600;font-size:14.5px}
+.sw__h{font-size:12.5px;color:var(--tinta-suave);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.sw__f{font-size:13px;color:var(--tinta-suave);margin-top:6px;line-height:1.45}
+
+/* tipografia */
+.spec{border:1px solid var(--linha);border-radius:12px;padding:24px;background:var(--claro)}
+.spec__m{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);font-weight:600;margin-bottom:10px}
+.spec__h{font-family:var(--display);font-size:clamp(30px,4.6vw,42px);line-height:1.06;color:var(--vinho)}
+
+/* prévia */
+.frame{border:1px solid var(--linha);border-radius:14px;overflow:hidden;background:var(--champagne);box-shadow:0 12px 40px rgba(110,15,42,.10)}
+.frame__bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EDE2D6;border-bottom:1px solid var(--linha)}
+.frame__bar i{width:9px;height:9px;border-radius:50%;background:#C9B5A4;display:block}
+.frame__url{margin-left:8px;font-size:12px;color:var(--tinta-suave)}
+.mw{padding:0 clamp(16px,3.2vw,34px)}
+.mnav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:13px;border-bottom:1px solid var(--linha);flex-wrap:wrap}
+.mnav .lk{display:flex;gap:17px;font-size:12.5px;flex-wrap:wrap}
+.mnav .cta{background:var(--vinho);color:var(--champagne);font-size:12px;font-weight:600;border-radius:7px;padding:9px 15px}
+.mnav .mk{width:120px}
+.mnav .mk svg{width:100%;height:auto;display:block}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding-block:clamp(28px,4.6vw,52px)}
+.hero h3{font-size:clamp(26px,4.2vw,41px);color:var(--vinho);line-height:1.06;font-family:var(--display);font-weight:600}
+.hero .eb{color:var(--borgonha);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+.hero p{font-size:15px;color:var(--tinta-suave);line-height:1.6;margin-top:13px;max-width:45ch}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.b1,.b2{font-size:13.5px;font-weight:600;border-radius:8px;padding:12px 20px;display:inline-block}
+.b1{background:var(--vinho);color:var(--champagne)}
+.b2{border:1.5px solid var(--vinho);color:var(--vinho)}
+.fine{font-size:12.5px;color:var(--tinta-suave);margin-top:12px}
+.photo{position:relative;aspect-ratio:3/4;border-radius:12px;border:1px solid var(--linha);background:radial-gradient(120% 90% at 70% 15%,#EFE2D5 0%,#DCC7B6 55%,#C7AC98 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.photo span{font-size:12px;color:#5B4136;background:rgba(245,237,228,.88);border-radius:999px;padding:6px 14px;margin-bottom:16px;text-align:center}
+.photo svg{position:absolute;left:-26px;bottom:-14px;width:118px}
+.mseg{background:var(--claro);border-block:1px solid var(--linha);padding-block:20px;text-align:center}
+.mseg .t2{font-size:12.5px;color:var(--tinta-suave);margin-bottom:11px}
+.mseg .pills{justify-content:center}
+.mseg .pill{font-size:12.5px;padding:5px 12px;background:var(--champagne)}
+.msec{padding-block:clamp(26px,4.2vw,44px)}
+.msec h4{font-size:clamp(20px,2.8vw,26px);color:var(--vinho)}
+.msec .s{font-size:13.5px;color:var(--tinta-suave);margin-top:7px;max-width:52ch}
+.mcards{display:grid;grid-template-columns:repeat(6,1fr);gap:13px;margin-top:20px}
+.mcard{border:1px solid var(--linha);border-radius:10px;background:var(--claro);padding:17px;grid-column:span 2;min-width:0}
+.mcard--half{grid-column:span 3}
+.ic{width:23px;height:23px;border:1.6px solid var(--vinho);border-radius:6px;margin-bottom:11px}
+.mcard h5{font-size:16px;margin:0 0 6px}
+.mcard p{font-size:12.5px;color:var(--tinta-suave);line-height:1.5}
+.mcard .m{font-size:12px;font-weight:600;color:var(--vinho);margin-top:9px;display:block}
+.mfull{margin-top:13px;border-radius:10px;background:var(--vinho);padding:19px 21px;display:flex;gap:17px;align-items:center;flex-wrap:wrap}
+.mfull .ic{border-color:var(--champagne);margin:0;flex:0 0 auto}
+.mfull .tx{flex:1 1 240px;min-width:0}
+.mfull h5{color:var(--champagne);font-size:16.5px;margin:0 0 5px}
+.mfull p{color:#E8D5C8;font-size:12.5px;line-height:1.5}
+.mfull .m{color:var(--champagne);font-size:12px;font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:22px}
+.step .n{font-family:var(--display);font-size:33px;font-weight:600;color:var(--rose);line-height:1}
+.step h5{font-size:15px;margin:4px 0 5px;color:var(--vinho)}
+.step p{font-size:12.5px;color:var(--tinta-suave);line-height:1.5}
+.mwine{background:var(--vinho);color:var(--champagne);padding-block:clamp(26px,4.2vw,42px)}
+.mwine h4{font-size:clamp(20px,2.8vw,26px);color:var(--champagne);font-family:var(--display);font-weight:600}
+.bens{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;margin-top:20px}
+.ben .d{width:17px;height:17px;border:1.6px solid var(--ambar);border-radius:5px;margin-bottom:9px}
+.ben strong{display:block;font-size:14px;margin-bottom:3px}
+.ben span{font-size:12.5px;color:#E8D5C8;line-height:1.5}
+.mfoot{background:#5A0C22;color:#E8D5C8;font-size:11.5px;padding-block:16px;text-align:center}
+
+/* listas e mapas */
+.map{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.85;background:var(--claro);border:1px solid var(--linha);border-radius:12px;padding:20px;overflow-x:auto;white-space:pre}
+.map b{color:var(--vinho);font-weight:600}
+.rows{display:grid;gap:11px}
+.row{display:grid;grid-template-columns:200px 1fr;gap:16px;border:1px solid var(--linha);border-radius:10px;background:var(--claro);padding:15px 18px}
+.row b{font-family:var(--display);font-size:17px;font-weight:600;color:var(--vinho)}
+.row span{font-size:15px;color:var(--tinta-suave);line-height:1.55}
+.num{display:grid;gap:12px;counter-reset:n}
+.num>li{list-style:none;display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.num>li::before{counter-increment:n;content:counter(n,decimal-leading-zero);font-family:var(--display);font-weight:600;font-size:17px;color:var(--rose);line-height:1.5}
+.num b{font-weight:600}
+.num span{display:block;color:var(--tinta-suave);font-size:15.5px}
+.chk{list-style:none;padding:0;display:grid;gap:9px}
+.chk li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px}
+.chk li::before{content:"✓";color:var(--verde);font-weight:700;flex:0 0 auto;line-height:1.5}
+.band--wine .chk li::before{color:var(--taupe)}
+
+footer.end{background:var(--vinho);color:#E8D5C8;font-size:14px}
+footer.end .wrap{padding-block:34px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr}
+  .photo{aspect-ratio:4/3;order:2}
+  .mcards{grid-template-columns:1fr}
+  .mcard,.mcard--half{grid-column:span 1}
+  .steps,.bens{grid-template-columns:1fr 1fr}
+  .row{grid-template-columns:1fr;gap:5px}
+}
+@media (max-width:560px){
+  .steps,.bens{grid-template-columns:1fr}
+  .mnav .lk{display:none}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .band,.band--alt{background:#fff}
+  .frame{box-shadow:none}
+  .band>.wrap{padding-block:18pt}
+  section{break-inside:avoid-page}
+  .card,.sw,.row,.frame,.spec{break-inside:avoid}
+  h2.sec{break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<header class="cover">
+  <div class="wrap">
+    <div class="brandmark"><svg aria-label="VeronaFood Consultoria de Alimentos" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 210"><title>VeronaFood Consultoria de Alimentos</title><g transform="translate(35 30) scale(1)"><g transform="translate(0 0) scale(0.5357142857142857)"><path fill="#F5EDE4" d="M47 222C7 190 -4 135 18 83C40 28 98 -1 153 8C222 17 273 81 261 162C265 91 220 30 158 21C101 12 49 43 29 91C9 139 16 187 47 222Z"/><path fill="#F5EDE4" d="M89 60Q91 56 93 60L97 111Q97 115 100 115Q103 115 103 111L105 60Q107 56 109 60L111 111Q111 115 114 115Q117 115 117 111L119 60Q121 56 123 60L125 111Q125 115 128 115Q131 115 131 111L133 60Q135 56 137 60L140 119Q140 131 128 139Q121 144 121 152L122 207L104 217L106 152Q106 144 99 139Q88 132 88 119Z"/><path fill="#F5EDE4" d="M185 55Q190 52 190 59V169Q178 170 168 177L168 168Q155 160 155 138C154 106 165 72 185 55Z"/><path fill="#F5EDE4" d="M26 229C66 241 108 225 145 200C184 174 224 166 276 185C240 226 204 246 142 240C181 228 205 204 246 193C207 196 178 216 147 231C105 250 58 250 26 229Z"/></g><g transform="translate(180 39)"><path fill-rule="evenodd" fill="#F5EDE4" transform="translate(0 0) scale(0.68) translate(0.048828125 -18.945312)" d="M25.537 90.527 L-0.049 18.945 L15.625 18.945 L33.740 71.924 L51.270 18.945 L66.602 18.945 L40.967 90.527 Z M100.389 74.023 L114.061 76.318 C112.303 81.331 109.528 85.148 105.735 87.769 C101.943 90.389 97.199 91.699 91.502 91.699 C82.485 91.699 75.812 88.753 71.482 82.861 C68.064 78.141 66.355 72.184 66.355 64.99 C66.355 56.396 68.602 49.666 73.094 44.8 C77.586 39.933 83.266 37.5 90.135 37.5 C97.850 37.5 103.937 40.047 108.397 45.142 C112.856 50.236 114.988 58.04 114.793 68.555 L80.418 68.555 C80.516 72.624 81.622 75.789 83.738 78.052 C85.854 80.314 88.491 81.445 91.648 81.445 C93.797 81.445 95.604 80.859 97.068 79.688 C98.533 78.516 99.640 76.628 100.389 74.023 Z M101.170 60.156 C101.072 56.185 100.047 53.166 98.094 51.099 C96.141 49.032 93.764 47.998 90.965 47.998 C87.970 47.998 85.496 49.089 83.543 51.27 C81.590 53.451 80.630 56.413 80.662 60.156 Z M137.109 90.527 L123.389 90.527 L123.389 38.672 L136.133 38.672 L136.133 46.045 C138.314 42.562 140.275 40.267 142.017 39.16 C143.758 38.053 145.736 37.5 147.949 37.5 C151.074 37.5 154.085 38.363 156.982 40.088 L152.734 52.051 C150.423 50.553 148.275 49.805 146.289 49.805 C144.369 49.805 142.741 50.334 141.406 51.392 C140.072 52.45 139.022 54.362 138.257 57.129 C137.492 59.896 137.109 65.69 137.109 74.512 Z M161.717 63.867 C161.717 59.31 162.840 54.899 165.086 50.635 C167.332 46.37 170.514 43.115 174.632 40.869 C178.750 38.623 183.348 37.5 188.426 37.5 C196.271 37.5 202.700 40.047 207.713 45.142 C212.726 50.236 215.232 56.673 215.232 64.453 C215.232 72.298 212.702 78.8 207.640 83.96 C202.578 89.119 196.206 91.699 188.523 91.699 C183.771 91.699 179.238 90.625 174.925 88.477 C170.612 86.328 167.332 83.179 165.086 79.028 C162.840 74.878 161.717 69.824 161.717 63.867 Z M175.779 64.6 C175.779 69.743 177.000 73.682 179.441 76.416 C181.883 79.15 184.894 80.518 188.475 80.518 C192.055 80.518 195.058 79.15 197.483 76.416 C199.909 73.682 201.121 69.71 201.121 64.502 C201.121 59.424 199.909 55.518 197.483 52.783 C195.058 50.049 192.055 48.682 188.475 48.682 C184.894 48.682 181.883 50.049 179.441 52.783 C177.000 55.518 175.779 59.456 175.779 64.6 Z M272.143 90.527 L258.422 90.527 L258.422 64.063 C258.422 58.464 258.129 54.842 257.543 53.198 C256.957 51.554 256.005 50.277 254.687 49.365 C253.368 48.454 251.781 47.998 249.926 47.998 C247.550 47.998 245.417 48.649 243.529 49.951 C241.641 51.253 240.347 52.979 239.648 55.127 C238.948 57.275 238.598 61.247 238.598 67.041 L238.598 90.527 L224.877 90.527 L224.877 38.672 L237.621 38.672 L237.621 46.289 C242.146 40.43 247.842 37.5 254.711 37.5 C257.738 37.5 260.505 38.045 263.012 39.136 C265.518 40.226 267.414 41.618 268.700 43.311 C269.986 45.003 270.881 46.924 271.386 49.072 C271.890 51.221 272.143 54.297 272.143 58.301 Z M295.313 54.492 L282.861 52.246 C284.261 47.233 286.670 43.522 290.088 41.113 C293.506 38.704 298.584 37.5 305.322 37.5 C311.442 37.5 315.999 38.224 318.994 39.673 C321.989 41.121 324.097 42.961 325.317 45.19 C326.538 47.42 327.148 51.514 327.148 57.471 L327.002 73.486 C327.002 78.044 327.222 81.405 327.661 83.569 C328.101 85.734 328.923 88.053 330.127 90.527 L316.553 90.527 C316.195 89.616 315.755 88.265 315.234 86.475 C315.007 85.661 314.844 85.124 314.746 84.863 C312.402 87.142 309.896 88.851 307.227 89.99 C304.557 91.13 301.709 91.699 298.682 91.699 C293.343 91.699 289.136 90.251 286.060 87.354 C282.983 84.456 281.445 80.794 281.445 76.367 C281.445 73.438 282.145 70.825 283.545 68.53 C284.945 66.235 286.906 64.478 289.429 63.257 C291.952 62.036 295.589 60.97 300.342 60.059 C306.755 58.854 311.198 57.731 313.672 56.689 L313.672 55.322 C313.672 52.686 313.021 50.806 311.719 49.683 C310.417 48.56 307.959 47.998 304.346 47.998 C301.904 47.998 300.000 48.478 298.633 49.438 C297.266 50.399 296.159 52.083 295.313 54.492 Z M313.672 65.625 C311.914 66.211 309.131 66.911 305.322 67.725 C301.514 68.538 299.023 69.336 297.852 70.117 C296.061 71.387 295.166 72.998 295.166 74.951 C295.166 76.872 295.882 78.532 297.315 79.932 C298.747 81.331 300.570 82.031 302.783 82.031 C305.257 82.031 307.617 81.217 309.863 79.59 C311.523 78.353 312.614 76.839 313.135 75.049 C313.493 73.877 313.672 71.647 313.672 68.359 Z "/><path fill-rule="evenodd" fill="#F5EDE4" transform="translate(229.2795304 0) scale(0.68) translate(-7.373047 -18.945312)" d="M7.373 90.527 L7.373 18.945 L56.445 18.945 L56.445 31.055 L21.826 31.055 L21.826 47.998 L51.709 47.998 L51.709 60.107 L21.826 60.107 L21.826 90.527 Z M58.088 63.867 C58.088 59.31 59.211 54.899 61.457 50.635 C63.703 46.37 66.885 43.115 71.003 40.869 C75.121 38.623 79.719 37.5 84.797 37.5 C92.642 37.5 99.071 40.047 104.084 45.142 C109.097 50.236 111.604 56.673 111.604 64.453 C111.604 72.298 109.073 78.8 104.011 83.96 C98.949 89.119 92.577 91.699 84.895 91.699 C80.142 91.699 75.609 90.625 71.296 88.477 C66.983 86.328 63.703 83.179 61.457 79.028 C59.211 74.878 58.088 69.824 58.088 63.867 Z M72.150 64.6 C72.150 69.743 73.371 73.682 75.813 76.416 C78.254 79.15 81.265 80.518 84.846 80.518 C88.426 80.518 91.429 79.15 93.855 76.416 C96.280 73.682 97.492 69.71 97.492 64.502 C97.492 59.424 96.280 55.518 93.855 52.783 C91.429 50.049 88.426 48.682 84.846 48.682 C81.265 48.682 78.254 50.049 75.813 52.783 C73.371 55.518 72.150 59.456 72.150 64.6 Z M120.172 63.867 C120.172 59.31 121.295 54.899 123.541 50.635 C125.787 46.37 128.969 43.115 133.087 40.869 C137.205 38.623 141.803 37.5 146.881 37.5 C154.726 37.5 161.155 40.047 166.168 45.142 C171.181 50.236 173.688 56.673 173.688 64.453 C173.688 72.298 171.157 78.8 166.095 83.96 C161.033 89.119 154.661 91.699 146.979 91.699 C142.226 91.699 137.693 90.625 133.380 88.477 C129.067 86.328 125.787 83.179 123.541 79.028 C121.295 74.878 120.172 69.824 120.172 63.867 Z M134.234 64.6 C134.234 69.743 135.455 73.682 137.897 76.416 C140.338 79.15 143.349 80.518 146.930 80.518 C150.510 80.518 153.513 79.15 155.939 76.416 C158.364 73.682 159.576 69.71 159.576 64.502 C159.576 59.424 158.364 55.518 155.939 52.783 C153.513 50.049 150.510 48.682 146.930 48.682 C143.349 48.682 140.338 50.049 137.897 52.783 C135.455 55.518 134.234 59.456 134.234 64.6 Z M232.988 90.527 L220.244 90.527 L220.244 82.91 C218.128 85.872 215.630 88.078 212.749 89.526 C209.868 90.975 206.963 91.699 204.033 91.699 C198.076 91.699 192.974 89.299 188.726 84.497 C184.478 79.696 182.354 72.998 182.354 64.404 C182.354 55.615 184.421 48.934 188.555 44.36 C192.689 39.787 197.913 37.5 204.229 37.5 C210.023 37.5 215.036 39.909 219.268 44.727 L219.268 18.945 L232.988 18.945 Z M196.367 63.477 C196.367 69.01 197.132 73.014 198.662 75.488 C200.876 79.069 203.968 80.859 207.940 80.859 C211.097 80.859 213.783 79.517 215.996 76.831 C218.210 74.146 219.316 70.133 219.316 64.795 C219.316 58.838 218.242 54.549 216.094 51.929 C213.945 49.308 211.195 47.998 207.842 47.998 C204.587 47.998 201.860 49.292 199.663 51.88 C197.466 54.468 196.367 58.333 196.367 63.477 Z "/><path fill-rule="evenodd" fill="#F5EDE4" transform="translate(56.181950400000005 60) scale(0.65) translate(-0.72265625 -7.34375)" d="M11.641 21.084 C10.618 21.579 9.284 21.826 7.637 21.826 C5.488 21.826 3.799 21.195 2.568 19.932 C1.338 18.669 0.723 16.986 0.723 14.883 C0.723 12.643 1.414 10.827 2.798 9.434 C4.181 8.04 5.977 7.344 8.184 7.344 C9.551 7.344 10.703 7.516 11.641 7.861 L11.641 10.898 C10.703 10.339 9.635 10.059 8.438 10.059 C7.122 10.059 6.061 10.472 5.254 11.299 C4.447 12.126 4.043 13.245 4.043 14.658 C4.043 16.012 4.424 17.091 5.186 17.896 C5.947 18.7 6.973 19.102 8.262 19.102 C9.492 19.102 10.618 18.802 11.641 18.203 Z M25.518 21.826 C23.512 21.826 21.878 21.174 20.615 19.868 C19.352 18.563 18.721 16.862 18.721 14.766 C18.721 12.552 19.362 10.762 20.645 9.395 C21.927 8.027 23.626 7.344 25.742 7.344 C27.741 7.344 29.357 7.998 30.591 9.307 C31.825 10.615 32.441 12.341 32.441 14.482 C32.441 16.683 31.802 18.457 30.522 19.805 C29.243 21.152 27.575 21.826 25.518 21.826 Z M25.654 10.059 C24.548 10.059 23.669 10.474 23.018 11.304 C22.367 12.134 22.041 13.232 22.041 14.6 C22.041 15.986 22.367 17.083 23.018 17.891 C23.669 18.698 24.521 19.102 25.576 19.102 C26.663 19.102 27.526 18.709 28.164 17.925 C28.802 17.14 29.121 16.051 29.121 14.658 C29.121 13.206 28.812 12.077 28.193 11.27 C27.575 10.462 26.729 10.059 25.654 10.059 Z M52.881 21.582 L49.697 21.582 L43.926 12.783 C43.587 12.269 43.353 11.882 43.223 11.621 L43.184 11.621 C43.236 12.116 43.262 12.871 43.262 13.887 L43.262 21.582 L40.283 21.582 L40.283 7.578 L43.682 7.578 L49.238 16.104 C49.492 16.488 49.727 16.868 49.941 17.246 L49.98 17.246 C49.928 16.921 49.902 16.279 49.902 15.322 L49.902 7.578 L52.881 7.578 Z M60.957 21.045 L60.957 17.92 C61.523 18.395 62.139 18.752 62.803 18.989 C63.467 19.227 64.137 19.346 64.814 19.346 C65.212 19.346 65.558 19.31 65.854 19.238 C66.151 19.167 66.398 19.067 66.597 18.94 C66.795 18.813 66.943 18.664 67.041 18.491 C67.139 18.319 67.188 18.132 67.188 17.93 C67.188 17.656 67.109 17.412 66.953 17.197 C66.797 16.982 66.584 16.784 66.313 16.602 C66.043 16.419 65.723 16.243 65.352 16.074 C64.98 15.905 64.58 15.732 64.15 15.557 C63.057 15.101 62.241 14.544 61.704 13.887 C61.167 13.229 60.898 12.435 60.898 11.504 C60.898 10.775 61.045 10.148 61.338 9.624 C61.631 9.1 62.03 8.669 62.534 8.33 C63.039 7.992 63.623 7.743 64.287 7.583 C64.951 7.424 65.654 7.344 66.396 7.344 C67.126 7.344 67.772 7.388 68.335 7.476 C68.898 7.563 69.417 7.699 69.893 7.881 L69.893 10.801 C69.658 10.638 69.403 10.495 69.126 10.371 C68.849 10.247 68.564 10.145 68.271 10.063 C67.979 9.982 67.687 9.922 67.397 9.883 C67.108 9.844 66.833 9.824 66.572 9.824 C66.214 9.824 65.889 9.858 65.596 9.927 C65.303 9.995 65.055 10.091 64.854 10.215 C64.652 10.339 64.495 10.487 64.385 10.659 C64.274 10.832 64.219 11.025 64.219 11.24 C64.219 11.475 64.281 11.685 64.404 11.87 C64.528 12.056 64.704 12.231 64.932 12.397 C65.16 12.563 65.436 12.726 65.762 12.886 C66.087 13.045 66.455 13.21 66.865 13.379 C67.425 13.613 67.928 13.862 68.374 14.126 C68.82 14.39 69.202 14.688 69.521 15.02 C69.84 15.352 70.085 15.731 70.254 16.157 C70.423 16.584 70.508 17.08 70.508 17.646 C70.508 18.428 70.36 19.084 70.063 19.614 C69.767 20.145 69.365 20.575 68.857 20.903 C68.35 21.232 67.759 21.468 67.085 21.611 C66.411 21.755 65.7 21.826 64.951 21.826 C64.183 21.826 63.452 21.761 62.759 21.631 C62.065 21.501 61.465 21.305 60.957 21.045 Z M89.746 15.518 C89.746 19.723 87.786 21.826 83.867 21.826 C80.065 21.826 78.164 19.772 78.164 15.664 L78.164 7.578 L81.328 7.578 L81.328 15.703 C81.328 17.969 82.214 19.102 83.984 19.102 C85.723 19.102 86.592 18.008 86.592 15.82 L86.592 7.578 L89.746 7.578 Z M106.65 21.582 L98.311 21.582 L98.311 7.578 L101.465 7.578 L101.465 19.023 L106.65 19.023 Z M123.887 10.146 L119.893 10.146 L119.893 21.582 L116.729 21.582 L116.729 10.146 L112.754 10.146 L112.754 7.578 L123.887 7.578 Z M137.207 21.826 C135.202 21.826 133.568 21.174 132.305 19.868 C131.042 18.563 130.41 16.862 130.41 14.766 C130.41 12.552 131.051 10.762 132.334 9.395 C133.617 8.027 135.316 7.344 137.432 7.344 C139.43 7.344 141.047 7.998 142.28 9.307 C143.514 10.615 144.131 12.341 144.131 14.482 C144.131 16.683 143.491 18.457 142.212 19.805 C140.933 21.152 139.264 21.826 137.207 21.826 Z M137.344 10.059 C136.237 10.059 135.358 10.474 134.707 11.304 C134.056 12.134 133.731 13.232 133.731 14.6 C133.731 15.986 134.056 17.083 134.707 17.891 C135.358 18.698 136.211 19.102 137.266 19.102 C138.353 19.102 139.216 18.709 139.854 17.925 C140.492 17.14 140.811 16.051 140.811 14.658 C140.811 13.206 140.501 12.077 139.883 11.27 C139.264 10.462 138.418 10.059 137.344 10.059 Z M163.721 21.582 L160.098 21.582 L157.92 17.979 C157.757 17.705 157.601 17.461 157.451 17.246 C157.301 17.031 157.15 16.847 156.997 16.694 C156.844 16.541 156.685 16.424 156.519 16.343 C156.353 16.261 156.172 16.221 155.977 16.221 L155.127 16.221 L155.127 21.582 L151.973 21.582 L151.973 7.578 L156.973 7.578 C160.371 7.578 162.07 8.848 162.07 11.387 C162.07 11.875 161.995 12.326 161.846 12.739 C161.696 13.153 161.484 13.525 161.211 13.857 C160.938 14.189 160.607 14.476 160.22 14.717 C159.832 14.958 159.401 15.146 158.926 15.283 L158.926 15.322 C159.134 15.387 159.336 15.493 159.531 15.64 C159.727 15.786 159.915 15.957 160.098 16.152 C160.28 16.348 160.454 16.558 160.62 16.782 C160.786 17.007 160.938 17.227 161.074 17.441 Z M155.127 9.941 L155.127 13.838 L156.494 13.838 C157.171 13.838 157.715 13.643 158.125 13.252 C158.542 12.855 158.75 12.363 158.75 11.777 C158.75 10.553 158.018 9.941 156.553 9.941 Z M173.701 21.582 L170.547 21.582 L170.547 7.578 L173.701 7.578 Z M194.717 21.582 L191.279 21.582 L190.283 18.467 L185.303 18.467 L184.316 21.582 L180.898 21.582 L185.996 7.578 L189.736 7.578 Z M189.561 16.045 L188.057 11.338 C187.946 10.986 187.868 10.566 187.822 10.078 L187.744 10.078 C187.712 10.488 187.63 10.895 187.5 11.299 L185.977 16.045 Z M213.018 21.582 L213.018 7.578 L217.979 7.578 C222.953 7.578 225.44 9.854 225.44 14.404 C225.44 16.585 224.761 18.327 223.403 19.629 C222.046 20.931 220.238 21.582 217.979 21.582 Z M216.172 10.146 L216.172 19.023 L217.734 19.023 C219.102 19.023 220.174 18.613 220.952 17.793 C221.73 16.973 222.119 15.856 222.119 14.443 C222.119 13.109 221.733 12.059 220.962 11.294 C220.19 10.529 219.108 10.146 217.715 10.146 Z M241.68 21.582 L233.281 21.582 L233.281 7.578 L241.357 7.578 L241.357 10.146 L236.436 10.146 L236.436 13.262 L241.016 13.262 L241.016 15.82 L236.436 15.82 L236.436 19.023 L241.68 19.023 Z M272.793 21.582 L269.356 21.582 L268.359 18.467 L263.379 18.467 L262.393 21.582 L258.975 21.582 L264.072 7.578 L267.813 7.578 Z M267.637 16.045 L266.133 11.338 C266.022 10.986 265.944 10.566 265.898 10.078 L265.82 10.078 C265.788 10.488 265.706 10.895 265.576 11.299 L264.053 16.045 Z M288.398 21.582 L280.059 21.582 L280.059 7.578 L283.213 7.578 L283.213 19.023 L288.398 19.023 Z M298.955 21.582 L295.801 21.582 L295.801 7.578 L298.955 7.578 Z M323.613 21.582 L320.498 21.582 L320.498 13.203 C320.498 12.298 320.537 11.299 320.615 10.205 L320.537 10.205 C320.374 11.064 320.228 11.683 320.098 12.061 L316.816 21.582 L314.238 21.582 L310.898 12.158 C310.807 11.904 310.661 11.253 310.459 10.205 L310.371 10.205 C310.456 11.585 310.498 12.796 310.498 13.838 L310.498 21.582 L307.656 21.582 L307.656 7.578 L312.275 7.578 L315.137 15.879 C315.365 16.543 315.531 17.21 315.635 17.881 L315.693 17.881 C315.869 17.106 316.055 16.432 316.25 15.859 L319.111 7.578 L323.613 7.578 Z M340.713 21.582 L332.315 21.582 L332.315 7.578 L340.391 7.578 L340.391 10.146 L335.469 10.146 L335.469 13.262 L340.049 13.262 L340.049 15.82 L335.469 15.82 L335.469 19.023 L340.713 19.023 Z M361.074 21.582 L357.891 21.582 L352.119 12.783 C351.781 12.269 351.546 11.882 351.416 11.621 L351.377 11.621 C351.429 12.116 351.455 12.871 351.455 13.887 L351.455 21.582 L348.477 21.582 L348.477 7.578 L351.875 7.578 L357.432 16.104 C357.686 16.488 357.92 16.868 358.135 17.246 L358.174 17.246 C358.122 16.921 358.096 16.279 358.096 15.322 L358.096 7.578 L361.074 7.578 Z M379.629 10.146 L375.635 10.146 L375.635 21.582 L372.471 21.582 L372.471 10.146 L368.496 10.146 L368.496 7.578 L379.629 7.578 Z M392.949 21.826 C390.944 21.826 389.31 21.174 388.047 19.868 C386.784 18.563 386.152 16.862 386.152 14.766 C386.152 12.552 386.794 10.762 388.076 9.395 C389.359 8.027 391.058 7.344 393.174 7.344 C395.173 7.344 396.789 7.998 398.023 9.307 C399.256 10.615 399.873 12.341 399.873 14.482 C399.873 16.683 399.233 18.457 397.954 19.805 C396.675 21.152 395.007 21.826 392.949 21.826 Z M393.086 10.059 C391.979 10.059 391.1 10.474 390.449 11.304 C389.798 12.134 389.473 13.232 389.473 14.6 C389.473 15.986 389.798 17.083 390.449 17.891 C391.1 18.698 391.953 19.102 393.008 19.102 C394.095 19.102 394.958 18.709 395.596 17.925 C396.234 17.14 396.553 16.051 396.553 14.658 C396.553 13.206 396.244 12.077 395.625 11.27 C395.007 10.462 394.16 10.059 393.086 10.059 Z M407.07 21.045 L407.07 17.92 C407.637 18.395 408.252 18.752 408.916 18.989 C409.58 19.227 410.251 19.346 410.928 19.346 C411.325 19.346 411.672 19.31 411.968 19.238 C412.264 19.167 412.511 19.067 412.71 18.94 C412.909 18.813 413.057 18.664 413.154 18.491 C413.252 18.319 413.301 18.132 413.301 17.93 C413.301 17.656 413.223 17.412 413.066 17.197 C412.91 16.982 412.697 16.784 412.427 16.602 C412.157 16.419 411.836 16.243 411.465 16.074 C411.094 15.905 410.693 15.732 410.264 15.557 C409.17 15.101 408.355 14.544 407.817 13.887 C407.28 13.229 407.012 12.435 407.012 11.504 C407.012 10.775 407.158 10.148 407.451 9.624 C407.744 9.1 408.143 8.669 408.648 8.33 C409.152 7.992 409.736 7.743 410.4 7.583 C411.065 7.424 411.768 7.344 412.51 7.344 C413.239 7.344 413.885 7.388 414.448 7.476 C415.011 7.563 415.531 7.699 416.006 7.881 L416.006 10.801 C415.772 10.638 415.516 10.495 415.239 10.371 C414.963 10.247 414.678 10.145 414.385 10.063 C414.092 9.982 413.8 9.922 413.511 9.883 C413.221 9.844 412.946 9.824 412.686 9.824 C412.328 9.824 412.002 9.858 411.709 9.927 C411.416 9.995 411.169 10.091 410.967 10.215 C410.765 10.339 410.609 10.487 410.498 10.659 C410.387 10.832 410.332 11.025 410.332 11.24 C410.332 11.475 410.394 11.685 410.518 11.87 C410.641 12.056 410.817 12.231 411.045 12.397 C411.273 12.563 411.55 12.726 411.875 12.886 C412.201 13.045 412.568 13.21 412.979 13.379 C413.538 13.613 414.041 13.862 414.487 14.126 C414.933 14.39 415.316 14.688 415.635 15.02 C415.954 15.352 416.198 15.731 416.367 16.157 C416.536 16.584 416.621 17.08 416.621 17.646 C416.621 18.428 416.473 19.084 416.177 19.614 C415.881 20.145 415.479 20.575 414.971 20.903 C414.463 21.232 413.872 21.468 413.198 21.611 C412.524 21.755 411.813 21.826 411.065 21.826 C410.296 21.826 409.565 21.761 408.872 21.631 C408.179 21.501 407.578 21.305 407.07 21.045 Z "/></g></g></svg></div>
+    <p class="eyebrow" style="margin:0">Proposta de design e experiência</p>
+    <h1>Um site novo para transformar visitantes em contatos.</h1>
+    <div class="sum">
+      <span>Conceito e direção de arte</span><span>Mapa do site</span><span>Página inicial</span><span>Páginas internas</span><span>Fluxo de contato</span><span>Celular e acessibilidade</span><span>Google</span>
+    </div>
+    <p class="meta">Versão 1 &middot; 12 de novembro de 2026 &middot; documento para aprovação antes do desenvolvimento</p>
+  </div>
+</header>
+
+<!-- 1. HOJE -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">01 — Ponto de partida</p>
+    <h2 class="sec">O que encontramos no site de hoje</h2>
+    <p class="lead">Antes de propor qualquer coisa, lemos o site atual inteiro e três sites de consultoria que você indicou como referência. O que está abaixo é o que observamos — não é crítica ao trabalho de ninguém, é o mapa do que precisa mudar.</p>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(265px,1fr));margin-top:10px">
+      <div class="card"><h4>Parece atender só restaurantes</h4><p>O texto cita bares, padarias e lanchonetes, mas a leitura geral é de um site de consultoria para restaurante. Quem tem hotel, cozinha industrial, buffet ou mercado não se reconhece.</p></div>
+      <div class="card"><h4>A página de contato não abre</h4><p>Ela responde com um redirecionamento para um domínio externo de verificação e trava o acesso. Hoje, quem clica em “Contato” no menu pode não conseguir falar com você.</p></div>
+      <div class="card"><h4>Nenhuma prova de quem faz o trabalho</h4><p>Não há foto, formação, registro profissional nem tempo de atuação em lugar nenhum. Consultoria é contratada por confiança em uma pessoa, e o site não apresenta essa pessoa.</p></div>
+      <div class="card"><h4>Os serviços não têm página própria</h4><p>O menu “Serviços” leva a uma âncora na própria home, e a seção tem outro nome. Quem quer entender um serviço específico não tem para onde ir — e o Google não tem o que indexar.</p></div>
+      <div class="card"><h4>Falta informação institucional básica</h4><p>Não aparece CNPJ nem e-mail em nenhuma página. O rodapé marca 2023, os artigos do blog não têm data e a seção “Localização” está vazia.</p></div>
+      <div class="card"><h4>O conteúdo bom está mal aproveitado</h4><p>Há material útil publicado — ISO 22000, segurança em eventos, treinamento, boas práticas. Mas os artigos terminam sem nenhum convite para falar com você.</p></div>
+    </div>
+
+    <div class="note" style="margin-top:12px">Há também uma base sólida para aproveitar: os cinco serviços descritos, os artigos já publicados, a história de origem da empresa e uma identidade visual nova e bem resolvida, que ainda não chegou ao site.</div>
+  </div>
+</section>
+
+<!-- 2. CONCEITO -->
+<section class="band band--wine">
+  <div class="wrap stack">
+    <p class="eyebrow">02 — A ideia do novo site</p>
+    <h2 class="sec">Uma consultoria sênior, não um folder de serviços</h2>
+    <p class="lead">Fundo champagne, vinho usado com economia, muito respiro e uma linha editorial calma. Cada seção responde a uma pergunta que o dono do negócio faz de verdade — “isso é para mim?”, “o que exatamente eu recebo?”, “como começa?”, “quem me atende?” — e termina com um caminho de contato à mão.</p>
+
+    <h3 class="sub" style="color:var(--champagne);margin-top:22px">A mensagem que organiza o site inteiro</h3>
+    <p class="quote">Processo claro, equipe treinada, operação sob controle.</p>
+    <p class="t" style="margin-top:4px">A Verona Food organiza a operação de quem trabalha com alimento — da segurança sanitária ao custo do prato — e deixa o processo rodando com a equipe do cliente.</p>
+
+    <h3 class="sub" style="color:var(--champagne);margin-top:26px">Três coisas que o site precisa sustentar</h3>
+    <ul class="chk" style="margin-top:4px">
+      <li><span><strong>Amplitude real.</strong> Restaurantes, bares, hotéis, padarias, confeitarias, cozinhas industriais, buffets, eventos e mercados — e isso precisa ficar visível na primeira tela, não escondido num parágrafo.</span></li>
+      <li><span><strong>Escopo além do sanitário.</strong> Segurança dos alimentos é a porta de entrada, mas custo, padronização e treinamento são parte do trabalho. É o que diferencia de quase todo concorrente, que para na adequação à vigilância.</span></li>
+      <li><span><strong>Aplicável à rotina.</strong> A entrega não é um documento guardado na gaveta: é procedimento que a equipe consegue seguir no dia a dia.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. PRIMEIRA TELA -->
+<section class="band band--alt">
+  <div class="wrap stack">
+    <p class="eyebrow">03 — A primeira tela</p>
+    <h2 class="sec">Cinco segundos para dizer o que você faz</h2>
+    <p class="lead">É o espaço mais caro do site. Ele precisa dizer o que a Verona Food faz, para quem, e dar dois caminhos de contato — sem adjetivo e sem rodeio.</p>
+
+    <div class="card" style="margin-top:10px;padding:clamp(22px,3.4vw,36px)">
+      <p class="eyebrow" style="margin-bottom:12px">Consultoria para negócios de alimentação</p>
+      <p class="spec__h" style="max-width:20ch">Sua operação de alimentos organizada do começo ao fim.</p>
+      <p class="t" style="margin-top:16px;font-size:16px">Segurança dos alimentos, controle de custos, padronização de processos e treinamento de equipe — com um plano feito para a realidade do seu negócio, não para o papel.</p>
+      <div class="acts"><span class="b1">Agendar diagnóstico</span><span class="b2">Falar no WhatsApp</span></div>
+      <p class="fine">Atendimento de segunda a sexta, das 9h às 18h.</p>
+    </div>
+
+    <div class="note">Por que <strong>“Agendar diagnóstico”</strong> e não “Solicitar orçamento”: quem pede orçamento já sabe o que quer comprar — e a maioria dos visitantes não sabe. “Diagnóstico” é uma oferta concreta, de baixo compromisso, que já funciona como triagem comercial. É uma das mudanças de maior efeito desta proposta.</div>
+  </div>
+</section>
+
+<svg class="leaf" viewBox="0 0 140 40" aria-hidden="true" style="margin-block:28px"><path d="M6 30C34 10 86 2 134 6C94 18 54 26 24 36C16 35 10 33 6 30Z"/></svg>
+
+<!-- 4. DIREÇÃO DE ARTE -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">04 — Direção de arte</p>
+    <h2 class="sec">A identidade da marca aplicada à tela</h2>
+    <p class="lead">A paleta da marca tem cinco cores. Um site precisa de mais algumas — texto, bordas, erro, confirmação — e elas foram escolhidas para parecerem da mesma família, não para competir com o vinho.</p>
+
+    <h3 class="sub">Cores da identidade</h3>
+    <div class="grid swatches">
+      <div class="sw"><div class="sw__c" style="background:#6E0F2A"></div><div class="sw__b"><div class="sw__n">Vinho</div><div class="sw__h">#6E0F2A</div><p class="sw__f">Cor principal. Botões, títulos-chave, rodapé.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#8B1E3F"></div><div class="sw__b"><div class="sw__n">Borgonha</div><div class="sw__h">#8B1E3F</div><p class="sw__f">Links e estado de passagem do mouse.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#B86A7A"></div><div class="sw__b"><div class="sw__n">Rosé</div><div class="sw__h">#B86A7A</div><p class="sw__f">Detalhe: curva da folha, numeração das etapas.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#F5EDE4"></div><div class="sw__b"><div class="sw__n">Champagne</div><div class="sw__h">#F5EDE4</div><p class="sw__f">Fundo. É a cor que dá o ar premium e acolhedor.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#B59B8A"></div><div class="sw__b"><div class="sw__n">Taupe</div><div class="sw__h">#B59B8A</div><p class="sw__f">Neutro quente: bordas, legendas, molduras.</p></div></div>
+    </div>
+
+    <h3 class="sub" style="margin-top:28px">Cores a acrescentar para o site</h3>
+    <div class="grid swatches">
+      <div class="sw"><div class="sw__c" style="background:#2A1B1E"></div><div class="sw__b"><div class="sw__n">Tinta</div><div class="sw__h">#2A1B1E</div><p class="sw__f">Texto. Um quase-preto puxado para o vinho, não um preto neutro.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#6B585C"></div><div class="sw__b"><div class="sw__n">Tinta suave</div><div class="sw__h">#6B585C</div><p class="sw__f">Texto de apoio e legendas.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#FBF7F2"></div><div class="sw__b"><div class="sw__n">Champagne claro</div><div class="sw__h">#FBF7F2</div><p class="sw__f">Cards e campos de formulário.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#E3D7CA"></div><div class="sw__b"><div class="sw__n">Linha</div><div class="sw__h">#E3D7CA</div><p class="sw__f">Bordas e divisórias finas.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#C2762F"></div><div class="sw__b"><div class="sw__n">Âmbar</div><div class="sw__h">#C2762F</div><p class="sw__f">Acento quente, em doses pequenas. Evita o site ficar monocromático.</p></div></div>
+      <div class="sw"><div class="sw__c" style="background:#2F6B4F"></div><div class="sw__b"><div class="sw__n">Verde</div><div class="sw__h">#2F6B4F</div><p class="sw__f">Confirmação de formulário e listas do que está incluso.</p></div></div>
+    </div>
+
+    <div class="note" style="margin-top:20px"><strong>Regra de uso:</strong> cerca de 60% da tela em champagne, 25% em texto e neutros, 12% em vinho e apenas 3% em rosé e âmbar. Vinho em bloco inteiro intimida; vinho pontual sobre champagne é sofisticado. Todas as combinações de texto foram conferidas para garantir leitura confortável.</div>
+
+    <h3 class="sub" style="margin-top:28px">Tipografia</h3>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(290px,1fr))">
+      <div class="spec">
+        <p class="spec__m">Títulos</p>
+        <p class="spec__h">Operação sob controle</p>
+        <p class="t" style="font-size:14.5px;margin-top:10px">Uma serifada moderna, de terminais arredondados. Dá a elegância que uma fonte geométrica não dá, sem deixar o site com ar jurídico.</p>
+      </div>
+      <div class="spec">
+        <p class="spec__m">Texto, botões e rótulos</p>
+        <p style="font-size:21px;font-weight:500;line-height:1.35">Procedimentos escritos acabam com o “cada um faz de um jeito”.</p>
+        <p class="t" style="font-size:14.5px;margin-top:10px">A mesma família já indicada no guia da marca. Ótima leitura em telas pequenas, que é onde a maior parte das pessoas vai ler.</p>
+      </div>
+    </div>
+
+    <h3 class="sub" style="margin-top:28px">Fotografia</h3>
+    <p class="t">Nenhuma foto de banco de imagem com chef sorrindo de braços cruzados. As imagens precisam parecer o trabalho real: consultoria em cozinha, treinamento de equipe, documentação em uso na bancada, detalhes de operação — etiqueta de validade, termômetro na mão, checklist na parede — e um retrato da responsável técnica em contexto.</p>
+    <p class="t"><strong>Privacidade dos clientes em primeiro lugar:</strong> rostos de funcionários apenas com autorização assinada, marcas de estabelecimentos fora de enquadramento ou desfocadas. Enquadramentos de mão, bancada e detalhe resolvem a maior parte da necessidade sem nenhum risco.</p>
+  </div>
+</section>
+
+<!-- 5. PRÉVIA -->
+<section class="band band--alt">
+  <div class="wrap stack">
+    <p class="eyebrow">05 — A página inicial</p>
+    <h2 class="sec">Como a home se comporta</h2>
+    <p class="lead">As primeiras quatro seções, na proporção real. Abaixo da dobra seguem: quem te atende, o que você recebe, conteúdos, perguntas frequentes, chamada final com formulário e rodapé.</p>
+
+    <div class="frame" style="margin-top:10px">
+      <div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">veronafood.com.br</span></div>
+      <div>
+        <div class="mw">
+          <div class="mnav">
+            <span class="mk"><svg aria-label="VeronaFood Consultoria de Alimentos" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 210"><title>VeronaFood Consultoria de Alimentos</title><g transform="translate(35 30) scale(1)"><g transform="translate(0 0) scale(0.5357142857142857)"><path fill="#6E0F2A" d="M47 222C7 190 -4 135 18 83C40 28 98 -1 153 8C222 17 273 81 261 162C265 91 220 30 158 21C101 12 49 43 29 91C9 139 16 187 47 222Z"/><path fill="#6E0F2A" d="M89 60Q91 56 93 60L97 111Q97 115 100 115Q103 115 103 111L105 60Q107 56 109 60L111 111Q111 115 114 115Q117 115 117 111L119 60Q121 56 123 60L125 111Q125 115 128 115Q131 115 131 111L133 60Q135 56 137 60L140 119Q140 131 128 139Q121 144 121 152L122 207L104 217L106 152Q106 144 99 139Q88 132 88 119Z"/><path fill="#6E0F2A" d="M185 55Q190 52 190 59V169Q178 170 168 177L168 168Q155 160 155 138C154 106 165 72 185 55Z"/><path fill="#6E0F2A" d="M26 229C66 241 108 225 145 200C184 174 224 166 276 185C240 226 204 246 142 240C181 228 205 204 246 193C207 196 178 216 147 231C105 250 58 250 26 229Z"/></g><g transform="translate(180 39)"><path fill-rule="evenodd" fill="#6E0F2A" transform="translate(0 0) scale(0.68) translate(0.048828125 -18.945312)" d="M25.537 90.527 L-0.049 18.945 L15.625 18.945 L33.740 71.924 L51.270 18.945 L66.602 18.945 L40.967 90.527 Z M100.389 74.023 L114.061 76.318 C112.303 81.331 109.528 85.148 105.735 87.769 C101.943 90.389 97.199 91.699 91.502 91.699 C82.485 91.699 75.812 88.753 71.482 82.861 C68.064 78.141 66.355 72.184 66.355 64.99 C66.355 56.396 68.602 49.666 73.094 44.8 C77.586 39.933 83.266 37.5 90.135 37.5 C97.850 37.5 103.937 40.047 108.397 45.142 C112.856 50.236 114.988 58.04 114.793 68.555 L80.418 68.555 C80.516 72.624 81.622 75.789 83.738 78.052 C85.854 80.314 88.491 81.445 91.648 81.445 C93.797 81.445 95.604 80.859 97.068 79.688 C98.533 78.516 99.640 76.628 100.389 74.023 Z M101.170 60.156 C101.072 56.185 100.047 53.166 98.094 51.099 C96.141 49.032 93.764 47.998 90.965 47.998 C87.970 47.998 85.496 49.089 83.543 51.27 C81.590 53.451 80.630 56.413 80.662 60.156 Z M137.109 90.527 L123.389 90.527 L123.389 38.672 L136.133 38.672 L136.133 46.045 C138.314 42.562 140.275 40.267 142.017 39.16 C143.758 38.053 145.736 37.5 147.949 37.5 C151.074 37.5 154.085 38.363 156.982 40.088 L152.734 52.051 C150.423 50.553 148.275 49.805 146.289 49.805 C144.369 49.805 142.741 50.334 141.406 51.392 C140.072 52.45 139.022 54.362 138.257 57.129 C137.492 59.896 137.109 65.69 137.109 74.512 Z M161.717 63.867 C161.717 59.31 162.840 54.899 165.086 50.635 C167.332 46.37 170.514 43.115 174.632 40.869 C178.750 38.623 183.348 37.5 188.426 37.5 C196.271 37.5 202.700 40.047 207.713 45.142 C212.726 50.236 215.232 56.673 215.232 64.453 C215.232 72.298 212.702 78.8 207.640 83.96 C202.578 89.119 196.206 91.699 188.523 91.699 C183.771 91.699 179.238 90.625 174.925 88.477 C170.612 86.328 167.332 83.179 165.086 79.028 C162.840 74.878 161.717 69.824 161.717 63.867 Z M175.779 64.6 C175.779 69.743 177.000 73.682 179.441 76.416 C181.883 79.15 184.894 80.518 188.475 80.518 C192.055 80.518 195.058 79.15 197.483 76.416 C199.909 73.682 201.121 69.71 201.121 64.502 C201.121 59.424 199.909 55.518 197.483 52.783 C195.058 50.049 192.055 48.682 188.475 48.682 C184.894 48.682 181.883 50.049 179.441 52.783 C177.000 55.518 175.779 59.456 175.779 64.6 Z M272.143 90.527 L258.422 90.527 L258.422 64.063 C258.422 58.464 258.129 54.842 257.543 53.198 C256.957 51.554 256.005 50.277 254.687 49.365 C253.368 48.454 251.781 47.998 249.926 47.998 C247.550 47.998 245.417 48.649 243.529 49.951 C241.641 51.253 240.347 52.979 239.648 55.127 C238.948 57.275 238.598 61.247 238.598 67.041 L238.598 90.527 L224.877 90.527 L224.877 38.672 L237.621 38.672 L237.621 46.289 C242.146 40.43 247.842 37.5 254.711 37.5 C257.738 37.5 260.505 38.045 263.012 39.136 C265.518 40.226 267.414 41.618 268.700 43.311 C269.986 45.003 270.881 46.924 271.386 49.072 C271.890 51.221 272.143 54.297 272.143 58.301 Z M295.313 54.492 L282.861 52.246 C284.261 47.233 286.670 43.522 290.088 41.113 C293.506 38.704 298.584 37.5 305.322 37.5 C311.442 37.5 315.999 38.224 318.994 39.673 C321.989 41.121 324.097 42.961 325.317 45.19 C326.538 47.42 327.148 51.514 327.148 57.471 L327.002 73.486 C327.002 78.044 327.222 81.405 327.661 83.569 C328.101 85.734 328.923 88.053 330.127 90.527 L316.553 90.527 C316.195 89.616 315.755 88.265 315.234 86.475 C315.007 85.661 314.844 85.124 314.746 84.863 C312.402 87.142 309.896 88.851 307.227 89.99 C304.557 91.13 301.709 91.699 298.682 91.699 C293.343 91.699 289.136 90.251 286.060 87.354 C282.983 84.456 281.445 80.794 281.445 76.367 C281.445 73.438 282.145 70.825 283.545 68.53 C284.945 66.235 286.906 64.478 289.429 63.257 C291.952 62.036 295.589 60.97 300.342 60.059 C306.755 58.854 311.198 57.731 313.672 56.689 L313.672 55.322 C313.672 52.686 313.021 50.806 311.719 49.683 C310.417 48.56 307.959 47.998 304.346 47.998 C301.904 47.998 300.000 48.478 298.633 49.438 C297.266 50.399 296.159 52.083 295.313 54.492 Z M313.672 65.625 C311.914 66.211 309.131 66.911 305.322 67.725 C301.514 68.538 299.023 69.336 297.852 70.117 C296.061 71.387 295.166 72.998 295.166 74.951 C295.166 76.872 295.882 78.532 297.315 79.932 C298.747 81.331 300.570 82.031 302.783 82.031 C305.257 82.031 307.617 81.217 309.863 79.59 C311.523 78.353 312.614 76.839 313.135 75.049 C313.493 73.877 313.672 71.647 313.672 68.359 Z "/><path fill-rule="evenodd" fill="#6E0F2A" transform="translate(229.2795304 0) scale(0.68) translate(-7.373047 -18.945312)" d="M7.373 90.527 L7.373 18.945 L56.445 18.945 L56.445 31.055 L21.826 31.055 L21.826 47.998 L51.709 47.998 L51.709 60.107 L21.826 60.107 L21.826 90.527 Z M58.088 63.867 C58.088 59.31 59.211 54.899 61.457 50.635 C63.703 46.37 66.885 43.115 71.003 40.869 C75.121 38.623 79.719 37.5 84.797 37.5 C92.642 37.5 99.071 40.047 104.084 45.142 C109.097 50.236 111.604 56.673 111.604 64.453 C111.604 72.298 109.073 78.8 104.011 83.96 C98.949 89.119 92.577 91.699 84.895 91.699 C80.142 91.699 75.609 90.625 71.296 88.477 C66.983 86.328 63.703 83.179 61.457 79.028 C59.211 74.878 58.088 69.824 58.088 63.867 Z M72.150 64.6 C72.150 69.743 73.371 73.682 75.813 76.416 C78.254 79.15 81.265 80.518 84.846 80.518 C88.426 80.518 91.429 79.15 93.855 76.416 C96.280 73.682 97.492 69.71 97.492 64.502 C97.492 59.424 96.280 55.518 93.855 52.783 C91.429 50.049 88.426 48.682 84.846 48.682 C81.265 48.682 78.254 50.049 75.813 52.783 C73.371 55.518 72.150 59.456 72.150 64.6 Z M120.172 63.867 C120.172 59.31 121.295 54.899 123.541 50.635 C125.787 46.37 128.969 43.115 133.087 40.869 C137.205 38.623 141.803 37.5 146.881 37.5 C154.726 37.5 161.155 40.047 166.168 45.142 C171.181 50.236 173.688 56.673 173.688 64.453 C173.688 72.298 171.157 78.8 166.095 83.96 C161.033 89.119 154.661 91.699 146.979 91.699 C142.226 91.699 137.693 90.625 133.380 88.477 C129.067 86.328 125.787 83.179 123.541 79.028 C121.295 74.878 120.172 69.824 120.172 63.867 Z M134.234 64.6 C134.234 69.743 135.455 73.682 137.897 76.416 C140.338 79.15 143.349 80.518 146.930 80.518 C150.510 80.518 153.513 79.15 155.939 76.416 C158.364 73.682 159.576 69.71 159.576 64.502 C159.576 59.424 158.364 55.518 155.939 52.783 C153.513 50.049 150.510 48.682 146.930 48.682 C143.349 48.682 140.338 50.049 137.897 52.783 C135.455 55.518 134.234 59.456 134.234 64.6 Z M232.988 90.527 L220.244 90.527 L220.244 82.91 C218.128 85.872 215.630 88.078 212.749 89.526 C209.868 90.975 206.963 91.699 204.033 91.699 C198.076 91.699 192.974 89.299 188.726 84.497 C184.478 79.696 182.354 72.998 182.354 64.404 C182.354 55.615 184.421 48.934 188.555 44.36 C192.689 39.787 197.913 37.5 204.229 37.5 C210.023 37.5 215.036 39.909 219.268 44.727 L219.268 18.945 L232.988 18.945 Z M196.367 63.477 C196.367 69.01 197.132 73.014 198.662 75.488 C200.876 79.069 203.968 80.859 207.940 80.859 C211.097 80.859 213.783 79.517 215.996 76.831 C218.210 74.146 219.316 70.133 219.316 64.795 C219.316 58.838 218.242 54.549 216.094 51.929 C213.945 49.308 211.195 47.998 207.842 47.998 C204.587 47.998 201.860 49.292 199.663 51.88 C197.466 54.468 196.367 58.333 196.367 63.477 Z "/><path fill-rule="evenodd" fill="#6E0F2A" transform="translate(56.181950400000005 60) scale(0.65) translate(-0.72265625 -7.34375)" d="M11.641 21.084 C10.618 21.579 9.284 21.826 7.637 21.826 C5.488 21.826 3.799 21.195 2.568 19.932 C1.338 18.669 0.723 16.986 0.723 14.883 C0.723 12.643 1.414 10.827 2.798 9.434 C4.181 8.04 5.977 7.344 8.184 7.344 C9.551 7.344 10.703 7.516 11.641 7.861 L11.641 10.898 C10.703 10.339 9.635 10.059 8.438 10.059 C7.122 10.059 6.061 10.472 5.254 11.299 C4.447 12.126 4.043 13.245 4.043 14.658 C4.043 16.012 4.424 17.091 5.186 17.896 C5.947 18.7 6.973 19.102 8.262 19.102 C9.492 19.102 10.618 18.802 11.641 18.203 Z M25.518 21.826 C23.512 21.826 21.878 21.174 20.615 19.868 C19.352 18.563 18.721 16.862 18.721 14.766 C18.721 12.552 19.362 10.762 20.645 9.395 C21.927 8.027 23.626 7.344 25.742 7.344 C27.741 7.344 29.357 7.998 30.591 9.307 C31.825 10.615 32.441 12.341 32.441 14.482 C32.441 16.683 31.802 18.457 30.522 19.805 C29.243 21.152 27.575 21.826 25.518 21.826 Z M25.654 10.059 C24.548 10.059 23.669 10.474 23.018 11.304 C22.367 12.134 22.041 13.232 22.041 14.6 C22.041 15.986 22.367 17.083 23.018 17.891 C23.669 18.698 24.521 19.102 25.576 19.102 C26.663 19.102 27.526 18.709 28.164 17.925 C28.802 17.14 29.121 16.051 29.121 14.658 C29.121 13.206 28.812 12.077 28.193 11.27 C27.575 10.462 26.729 10.059 25.654 10.059 Z M52.881 21.582 L49.697 21.582 L43.926 12.783 C43.587 12.269 43.353 11.882 43.223 11.621 L43.184 11.621 C43.236 12.116 43.262 12.871 43.262 13.887 L43.262 21.582 L40.283 21.582 L40.283 7.578 L43.682 7.578 L49.238 16.104 C49.492 16.488 49.727 16.868 49.941 17.246 L49.98 17.246 C49.928 16.921 49.902 16.279 49.902 15.322 L49.902 7.578 L52.881 7.578 Z M60.957 21.045 L60.957 17.92 C61.523 18.395 62.139 18.752 62.803 18.989 C63.467 19.227 64.137 19.346 64.814 19.346 C65.212 19.346 65.558 19.31 65.854 19.238 C66.151 19.167 66.398 19.067 66.597 18.94 C66.795 18.813 66.943 18.664 67.041 18.491 C67.139 18.319 67.188 18.132 67.188 17.93 C67.188 17.656 67.109 17.412 66.953 17.197 C66.797 16.982 66.584 16.784 66.313 16.602 C66.043 16.419 65.723 16.243 65.352 16.074 C64.98 15.905 64.58 15.732 64.15 15.557 C63.057 15.101 62.241 14.544 61.704 13.887 C61.167 13.229 60.898 12.435 60.898 11.504 C60.898 10.775 61.045 10.148 61.338 9.624 C61.631 9.1 62.03 8.669 62.534 8.33 C63.039 7.992 63.623 7.743 64.287 7.583 C64.951 7.424 65.654 7.344 66.396 7.344 C67.126 7.344 67.772 7.388 68.335 7.476 C68.898 7.563 69.417 7.699 69.893 7.881 L69.893 10.801 C69.658 10.638 69.403 10.495 69.126 10.371 C68.849 10.247 68.564 10.145 68.271 10.063 C67.979 9.982 67.687 9.922 67.397 9.883 C67.108 9.844 66.833 9.824 66.572 9.824 C66.214 9.824 65.889 9.858 65.596 9.927 C65.303 9.995 65.055 10.091 64.854 10.215 C64.652 10.339 64.495 10.487 64.385 10.659 C64.274 10.832 64.219 11.025 64.219 11.24 C64.219 11.475 64.281 11.685 64.404 11.87 C64.528 12.056 64.704 12.231 64.932 12.397 C65.16 12.563 65.436 12.726 65.762 12.886 C66.087 13.045 66.455 13.21 66.865 13.379 C67.425 13.613 67.928 13.862 68.374 14.126 C68.82 14.39 69.202 14.688 69.521 15.02 C69.84 15.352 70.085 15.731 70.254 16.157 C70.423 16.584 70.508 17.08 70.508 17.646 C70.508 18.428 70.36 19.084 70.063 19.614 C69.767 20.145 69.365 20.575 68.857 20.903 C68.35 21.232 67.759 21.468 67.085 21.611 C66.411 21.755 65.7 21.826 64.951 21.826 C64.183 21.826 63.452 21.761 62.759 21.631 C62.065 21.501 61.465 21.305 60.957 21.045 Z M89.746 15.518 C89.746 19.723 87.786 21.826 83.867 21.826 C80.065 21.826 78.164 19.772 78.164 15.664 L78.164 7.578 L81.328 7.578 L81.328 15.703 C81.328 17.969 82.214 19.102 83.984 19.102 C85.723 19.102 86.592 18.008 86.592 15.82 L86.592 7.578 L89.746 7.578 Z M106.65 21.582 L98.311 21.582 L98.311 7.578 L101.465 7.578 L101.465 19.023 L106.65 19.023 Z M123.887 10.146 L119.893 10.146 L119.893 21.582 L116.729 21.582 L116.729 10.146 L112.754 10.146 L112.754 7.578 L123.887 7.578 Z M137.207 21.826 C135.202 21.826 133.568 21.174 132.305 19.868 C131.042 18.563 130.41 16.862 130.41 14.766 C130.41 12.552 131.051 10.762 132.334 9.395 C133.617 8.027 135.316 7.344 137.432 7.344 C139.43 7.344 141.047 7.998 142.28 9.307 C143.514 10.615 144.131 12.341 144.131 14.482 C144.131 16.683 143.491 18.457 142.212 19.805 C140.933 21.152 139.264 21.826 137.207 21.826 Z M137.344 10.059 C136.237 10.059 135.358 10.474 134.707 11.304 C134.056 12.134 133.731 13.232 133.731 14.6 C133.731 15.986 134.056 17.083 134.707 17.891 C135.358 18.698 136.211 19.102 137.266 19.102 C138.353 19.102 139.216 18.709 139.854 17.925 C140.492 17.14 140.811 16.051 140.811 14.658 C140.811 13.206 140.501 12.077 139.883 11.27 C139.264 10.462 138.418 10.059 137.344 10.059 Z M163.721 21.582 L160.098 21.582 L157.92 17.979 C157.757 17.705 157.601 17.461 157.451 17.246 C157.301 17.031 157.15 16.847 156.997 16.694 C156.844 16.541 156.685 16.424 156.519 16.343 C156.353 16.261 156.172 16.221 155.977 16.221 L155.127 16.221 L155.127 21.582 L151.973 21.582 L151.973 7.578 L156.973 7.578 C160.371 7.578 162.07 8.848 162.07 11.387 C162.07 11.875 161.995 12.326 161.846 12.739 C161.696 13.153 161.484 13.525 161.211 13.857 C160.938 14.189 160.607 14.476 160.22 14.717 C159.832 14.958 159.401 15.146 158.926 15.283 L158.926 15.322 C159.134 15.387 159.336 15.493 159.531 15.64 C159.727 15.786 159.915 15.957 160.098 16.152 C160.28 16.348 160.454 16.558 160.62 16.782 C160.786 17.007 160.938 17.227 161.074 17.441 Z M155.127 9.941 L155.127 13.838 L156.494 13.838 C157.171 13.838 157.715 13.643 158.125 13.252 C158.542 12.855 158.75 12.363 158.75 11.777 C158.75 10.553 158.018 9.941 156.553 9.941 Z M173.701 21.582 L170.547 21.582 L170.547 7.578 L173.701 7.578 Z M194.717 21.582 L191.279 21.582 L190.283 18.467 L185.303 18.467 L184.316 21.582 L180.898 21.582 L185.996 7.578 L189.736 7.578 Z M189.561 16.045 L188.057 11.338 C187.946 10.986 187.868 10.566 187.822 10.078 L187.744 10.078 C187.712 10.488 187.63 10.895 187.5 11.299 L185.977 16.045 Z M213.018 21.582 L213.018 7.578 L217.979 7.578 C222.953 7.578 225.44 9.854 225.44 14.404 C225.44 16.585 224.761 18.327 223.403 19.629 C222.046 20.931 220.238 21.582 217.979 21.582 Z M216.172 10.146 L216.172 19.023 L217.734 19.023 C219.102 19.023 220.174 18.613 220.952 17.793 C221.73 16.973 222.119 15.856 222.119 14.443 C222.119 13.109 221.733 12.059 220.962 11.294 C220.19 10.529 219.108 10.146 217.715 10.146 Z M241.68 21.582 L233.281 21.582 L233.281 7.578 L241.357 7.578 L241.357 10.146 L236.436 10.146 L236.436 13.262 L241.016 13.262 L241.016 15.82 L236.436 15.82 L236.436 19.023 L241.68 19.023 Z M272.793 21.582 L269.356 21.582 L268.359 18.467 L263.379 18.467 L262.393 21.582 L258.975 21.582 L264.072 7.578 L267.813 7.578 Z M267.637 16.045 L266.133 11.338 C266.022 10.986 265.944 10.566 265.898 10.078 L265.82 10.078 C265.788 10.488 265.706 10.895 265.576 11.299 L264.053 16.045 Z M288.398 21.582 L280.059 21.582 L280.059 7.578 L283.213 7.578 L283.213 19.023 L288.398 19.023 Z M298.955 21.582 L295.801 21.582 L295.801 7.578 L298.955 7.578 Z M323.613 21.582 L320.498 21.582 L320.498 13.203 C320.498 12.298 320.537 11.299 320.615 10.205 L320.537 10.205 C320.374 11.064 320.228 11.683 320.098 12.061 L316.816 21.582 L314.238 21.582 L310.898 12.158 C310.807 11.904 310.661 11.253 310.459 10.205 L310.371 10.205 C310.456 11.585 310.498 12.796 310.498 13.838 L310.498 21.582 L307.656 21.582 L307.656 7.578 L312.275 7.578 L315.137 15.879 C315.365 16.543 315.531 17.21 315.635 17.881 L315.693 17.881 C315.869 17.106 316.055 16.432 316.25 15.859 L319.111 7.578 L323.613 7.578 Z M340.713 21.582 L332.315 21.582 L332.315 7.578 L340.391 7.578 L340.391 10.146 L335.469 10.146 L335.469 13.262 L340.049 13.262 L340.049 15.82 L335.469 15.82 L335.469 19.023 L340.713 19.023 Z M361.074 21.582 L357.891 21.582 L352.119 12.783 C351.781 12.269 351.546 11.882 351.416 11.621 L351.377 11.621 C351.429 12.116 351.455 12.871 351.455 13.887 L351.455 21.582 L348.477 21.582 L348.477 7.578 L351.875 7.578 L357.432 16.104 C357.686 16.488 357.92 16.868 358.135 17.246 L358.174 17.246 C358.122 16.921 358.096 16.279 358.096 15.322 L358.096 7.578 L361.074 7.578 Z M379.629 10.146 L375.635 10.146 L375.635 21.582 L372.471 21.582 L372.471 10.146 L368.496 10.146 L368.496 7.578 L379.629 7.578 Z M392.949 21.826 C390.944 21.826 389.31 21.174 388.047 19.868 C386.784 18.563 386.152 16.862 386.152 14.766 C386.152 12.552 386.794 10.762 388.076 9.395 C389.359 8.027 391.058 7.344 393.174 7.344 C395.173 7.344 396.789 7.998 398.023 9.307 C399.256 10.615 399.873 12.341 399.873 14.482 C399.873 16.683 399.233 18.457 397.954 19.805 C396.675 21.152 395.007 21.826 392.949 21.826 Z M393.086 10.059 C391.979 10.059 391.1 10.474 390.449 11.304 C389.798 12.134 389.473 13.232 389.473 14.6 C389.473 15.986 389.798 17.083 390.449 17.891 C391.1 18.698 391.953 19.102 393.008 19.102 C394.095 19.102 394.958 18.709 395.596 17.925 C396.234 17.14 396.553 16.051 396.553 14.658 C396.553 13.206 396.244 12.077 395.625 11.27 C395.007 10.462 394.16 10.059 393.086 10.059 Z M407.07 21.045 L407.07 17.92 C407.637 18.395 408.252 18.752 408.916 18.989 C409.58 19.227 410.251 19.346 410.928 19.346 C411.325 19.346 411.672 19.31 411.968 19.238 C412.264 19.167 412.511 19.067 412.71 18.94 C412.909 18.813 413.057 18.664 413.154 18.491 C413.252 18.319 413.301 18.132 413.301 17.93 C413.301 17.656 413.223 17.412 413.066 17.197 C412.91 16.982 412.697 16.784 412.427 16.602 C412.157 16.419 411.836 16.243 411.465 16.074 C411.094 15.905 410.693 15.732 410.264 15.557 C409.17 15.101 408.355 14.544 407.817 13.887 C407.28 13.229 407.012 12.435 407.012 11.504 C407.012 10.775 407.158 10.148 407.451 9.624 C407.744 9.1 408.143 8.669 408.648 8.33 C409.152 7.992 409.736 7.743 410.4 7.583 C411.065 7.424 411.768 7.344 412.51 7.344 C413.239 7.344 413.885 7.388 414.448 7.476 C415.011 7.563 415.531 7.699 416.006 7.881 L416.006 10.801 C415.772 10.638 415.516 10.495 415.239 10.371 C414.963 10.247 414.678 10.145 414.385 10.063 C414.092 9.982 413.8 9.922 413.511 9.883 C413.221 9.844 412.946 9.824 412.686 9.824 C412.328 9.824 412.002 9.858 411.709 9.927 C411.416 9.995 411.169 10.091 410.967 10.215 C410.765 10.339 410.609 10.487 410.498 10.659 C410.387 10.832 410.332 11.025 410.332 11.24 C410.332 11.475 410.394 11.685 410.518 11.87 C410.641 12.056 410.817 12.231 411.045 12.397 C411.273 12.563 411.55 12.726 411.875 12.886 C412.201 13.045 412.568 13.21 412.979 13.379 C413.538 13.613 414.041 13.862 414.487 14.126 C414.933 14.39 415.316 14.688 415.635 15.02 C415.954 15.352 416.198 15.731 416.367 16.157 C416.536 16.584 416.621 17.08 416.621 17.646 C416.621 18.428 416.473 19.084 416.177 19.614 C415.881 20.145 415.479 20.575 414.971 20.903 C414.463 21.232 413.872 21.468 413.198 21.611 C412.524 21.755 411.813 21.826 411.065 21.826 C410.296 21.826 409.565 21.761 408.872 21.631 C408.179 21.501 407.578 21.305 407.07 21.045 Z "/></g></g></svg></span>
+            <span class="lk"><span>Soluções</span><span>Segmentos</span><span>Como funciona</span><span>Sobre</span><span>Conteúdos</span></span>
+            <span class="cta">Falar com a Verona Food</span>
+          </div>
+          <div class="hero">
+            <div>
+              <p class="eb">Consultoria para negócios de alimentação</p>
+              <h3>Sua operação de alimentos organizada do começo ao fim.</h3>
+              <p>Segurança dos alimentos, controle de custos, padronização de processos e treinamento de equipe — com um plano feito para a realidade do seu negócio, não para o papel.</p>
+              <div class="acts"><span class="b1">Agendar diagnóstico</span><span class="b2">Falar no WhatsApp</span></div>
+              <p class="fine">Atendimento de segunda a sexta, das 9h às 18h.</p>
+            </div>
+            <div class="photo">
+              <svg viewBox="0 0 140 70" aria-hidden="true"><path d="M4 56C26 24 74 8 136 14C96 30 60 44 30 66C20 64 10 61 4 56Z" fill="#B86A7A" opacity=".85"/><path d="M18 62C48 40 88 26 132 20C92 40 58 54 34 68C28 67 23 65 18 62Z" fill="#6E0F2A" opacity=".55"/></svg>
+              <span>foto real de consultoria em cozinha</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mseg"><div class="mw">
+          <p class="t2">Trabalhamos com diferentes tipos de negócio de alimentação:</p>
+          <div class="pills"><span class="pill">Restaurantes</span><span class="pill">Bares</span><span class="pill">Hotéis</span><span class="pill">Padarias</span><span class="pill">Confeitarias</span><span class="pill">Cozinhas industriais</span><span class="pill">Buffets e eventos</span><span class="pill">Mercados</span></div>
+        </div></div>
+
+        <div class="mw msec">
+          <h4>O que a gente resolve</h4>
+          <p class="s">Cada frente funciona sozinha ou combinada. Na dúvida, o diagnóstico aponta por onde começar.</p>
+          <div class="mcards">
+            <div class="mcard"><div class="ic"></div><h5>Segurança dos alimentos</h5><p>Boas práticas, POPs, controle de qualidade e adequação sanitária — organizados para passarem no dia a dia, não só na visita.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard"><div class="ic"></div><h5>Rotulagem</h5><p>Tabela nutricional, lista de ingredientes e alergênicos do produto que você embala, a partir da sua receita.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard"><div class="ic"></div><h5>Custos e ficha técnica</h5><p>Custo real da receita, porcionamento e perdas. Você passa a saber quanto cada item deixa.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard mcard--half"><div class="ic"></div><h5>Treinamento de equipe</h5><p>Capacitação por função, com linguagem de cozinha e material que fica com o time depois que a gente sai.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard mcard--half"><div class="ic"></div><h5>Padronização de processos</h5><p>Procedimentos escritos, checklists e rotinas que mantêm o padrão mesmo com troca de equipe.</p><span class="m">Ver detalhes →</span></div>
+          </div>
+          <div class="mfull">
+            <div class="ic"></div>
+            <div class="tx"><h5>Consultoria completa</h5><p>Quando o negócio precisa de tudo junto: diagnóstico, plano, implantação e acompanhamento contínuo, no ritmo da sua operação.</p></div>
+            <span class="m">Ver o que inclui →</span>
+          </div>
+        </div>
+
+        <div class="mw msec" style="border-top:1px solid var(--linha)">
+          <h4>Como o trabalho acontece</h4>
+          <p class="s">Quatro etapas. Você sabe onde está em cada uma.</p>
+          <div class="steps">
+            <div class="step"><div class="n">01</div><h5>Diagnóstico</h5><p>Visitamos sua operação e você recebe um relatório do que está em ordem e do que precisa de ajuste, por prioridade.</p></div>
+            <div class="step"><div class="n">02</div><h5>Plano de ação</h5><p>Prazos realistas, responsáveis e custo de cada frente. Você aprova o que faz sentido agora.</p></div>
+            <div class="step"><div class="n">03</div><h5>Implantação</h5><p>Documentos, procedimentos e treinamento colocados em prática junto com o seu time.</p></div>
+            <div class="step"><div class="n">04</div><h5>Acompanhamento</h5><p>Voltamos para conferir o padrão, ajustar o que não funcionou e preparar a equipe para seguir sozinha.</p></div>
+          </div>
+        </div>
+
+        <div class="mwine"><div class="mw">
+          <h4>O que muda na sua rotina</h4>
+          <div class="bens">
+            <div class="ben"><div class="d"></div><strong>Menos retrabalho</strong><span>Procedimentos escritos acabam com o “cada um faz de um jeito”.</span></div>
+            <div class="ben"><div class="d"></div><strong>Equipe mais segura</strong><span>Gente treinada erra menos e pergunta menos.</span></div>
+            <div class="ben"><div class="d"></div><strong>Custo visível</strong><span>Ficha técnica mostra o que cada prato realmente custa.</span></div>
+            <div class="ben"><div class="d"></div><strong>Pronta para fiscalização</strong><span>Documentação organizada e rotina de controle em dia.</span></div>
+          </div>
+        </div></div>
+        <div class="mfoot">continua: quem te atende · o que você recebe · conteúdos · perguntas frequentes · formulário · rodapé</div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:18px"><strong>No celular</strong> tudo vira uma coluna: os botões ocupam a largura toda, a linha do tempo fica vertical, os tipos de negócio quebram em duas linhas e um botão de WhatsApp acompanha a rolagem no canto inferior.</div>
+  </div>
+</section>
+
+<!-- 6. PÁGINAS -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">06 — As páginas do site</p>
+    <h2 class="sec">Navegação curta, páginas com função clara</h2>
+    <p class="lead">Sete áreas no menu. Cada página existe para responder a uma pergunta específica — nenhuma delas está ali só para o site parecer maior.</p>
+
+<div class="map">/                        <b>Início</b>
+/solucoes                <b>Soluções</b>
+  /solucoes/seguranca-dos-alimentos
+  /solucoes/rotulagem
+  /solucoes/custos-e-ficha-tecnica
+  /solucoes/treinamentos
+  /solucoes/padronizacao-de-processos
+  /solucoes/consultoria-completa
+/segmentos               <b>Segmentos atendidos</b>
+  seis páginas, por tipo de estabelecimento
+/como-funciona           <b>Como funciona</b>
+/sobre                   <b>Sobre a Verona Food</b>
+/conteudos               <b>Conteúdos</b>
+/contato                 <b>Contato</b></div>
+
+    <div class="rows" style="margin-top:20px">
+      <div class="row"><b>Soluções</b><span>Seis páginas, uma por frente de trabalho, todas no mesmo formato: para quem é, o que você recebe, como funciona, prazo, perguntas frequentes e um convite para conversar. “Soluções” e não “Serviços” porque o escopo passa de segurança a custo e gestão.</span></div>
+      <div class="row"><b>Segmentos atendidos</b><span>Uma página para cada tipo de operação — restaurantes e bares, padarias e confeitarias, hotéis e buffets, cozinhas industriais, mercados e varejo, eventos. São as páginas que resolvem a objeção “isso serve para o meu negócio?” e as que mais trazem gente do Google.</span></div>
+      <div class="row"><b>Como funciona</b><span>As quatro etapas em detalhe e o que acontece depois do primeiro contato. É a página para mandar por WhatsApp para quem está em dúvida antes de contratar.</span></div>
+      <div class="row"><b>Sobre a Verona Food</b><span>A origem da empresa e, principalmente, quem vai até a cozinha do cliente: nome, formação, registro e abordagem. É o que falta hoje e o que mais pesa na decisão de contratar.</span></div>
+      <div class="row"><b>Conteúdos</b><span>Os artigos já publicados, revisados e com data, mais os novos. “Conteúdos” em vez de “Blog”, para não criar expectativa de publicar toda semana. Todo artigo termina com um convite para conversar — hoje nenhum termina.</span></div>
+      <div class="row"><b>Contato</b><span>Uma página leve e que funciona: formulário curto, WhatsApp, telefone, e-mail, endereço e horário. Substitui a página atual, que está inacessível.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CONVERSÃO -->
+<section class="band band--wine">
+  <div class="wrap stack">
+    <p class="eyebrow">07 — Do visitante ao contato</p>
+    <h2 class="sec">Dois canais, sempre os mesmos</h2>
+    <p class="lead">WhatsApp para quem tem pressa, formulário para quem prefere ser procurado. Nenhum terceiro canal no lançamento: mais opções reduzem a conversão em vez de aumentar.</p>
+
+    <ol class="num" style="margin-top:20px;padding:0">
+      <li><div><b>Toda página termina com contato.</b><span>Sem exceção, inclusive os artigos. O botão fica no cabeçalho em todas as páginas e o WhatsApp acompanha a rolagem no celular.</span></div></li>
+      <li><div><b>O formulário pede cinco coisas.</b><span>Nome, WhatsApp, e-mail (opcional), tipo de negócio e uma caixa de texto. Nada de CNPJ, cargo ou faturamento — cada campo a mais derruba a conversão, e isso tudo se pergunta na conversa.</span></div></li>
+      <li><div><b>O visitante sabe o que vai acontecer.</b><span>Um bloco explica os três passos seguintes: a resposta, uma conversa curta para entender a operação e o agendamento da visita. É o que tira o medo do primeiro contato.</span></div></li>
+      <li><div><b>Sem pressão.</b><span>Nenhum pop-up, nenhum cronômetro. O telefone e o e-mail aparecem como texto, para quem prefere ligar por conta própria.</span></div></li>
+      <li><div><b>Privacidade respeitada.</b><span>Aviso claro de uso dos dados abaixo do botão, consentimento de marketing em caixa separada e nunca marcada, e aviso de cookies com “aceitar” e “recusar” do mesmo tamanho — como manda a LGPD.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 8. CELULAR -->
+<section class="band band--alt">
+  <div class="wrap stack">
+    <p class="eyebrow">08 — Celular e acessibilidade</p>
+    <h2 class="sec">A maior parte das pessoas vai ler no telefone</h2>
+    <p class="lead">O site é desenhado primeiro para a tela pequena e depois ampliado — não o contrário. E é construído para funcionar também para quem enxerga pouco ou navega só pelo teclado.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin-top:8px">
+      <div class="card"><h4>No celular</h4><p>Uma coluna, menu em painel de tela cheia, botões em largura total, áreas de toque confortáveis e um botão de WhatsApp sempre à mão.</p></div>
+      <div class="card"><h4>Leitura</h4><p>Texto nunca menor que 17 pixels, entrelinha generosa e linhas curtas. O site continua legível com a letra ampliada em 200%.</p></div>
+      <div class="card"><h4>Contraste</h4><p>Todas as combinações de cor foram medidas. As cores decorativas — rosé, taupe e âmbar — nunca recebem texto corrido.</p></div>
+      <div class="card"><h4>Formulário</h4><p>Etiqueta sempre visível acima do campo, erro explicado em texto e não só em cor, e preenchimento automático funcionando.</p></div>
+      <div class="card"><h4>Teclado e leitores de tela</h4><p>Tudo alcançável pelo teclado, com indicação visível de onde está o foco, e descrição em texto para todas as imagens.</p></div>
+      <div class="card"><h4>Movimento</h4><p>As animações são discretas e desligam automaticamente para quem configurou o aparelho para reduzir movimento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. GOOGLE -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">09 — Ser encontrado no Google</p>
+    <h2 class="sec">Ninguém pesquisa “consultoria de alimentos”</h2>
+    <p class="lead">As pessoas pesquisam o problema delas: “consultoria boas práticas padaria”, “adequação vigilância sanitária restaurante”, “tabela nutricional para meu produto”. O site é organizado para aparecer nessas buscas.</p>
+    <ul class="chk" style="margin-top:10px">
+      <li><span><strong>Uma página por assunto.</strong> Cada solução e cada segmento tem a sua, com título e descrição próprios. Hoje tudo está numa página só, e o Google não tem o que separar.</span></li>
+      <li><span><strong>Perguntas frequentes marcadas tecnicamente,</strong> o que permite que apareçam já respondidas no resultado da busca.</span></li>
+      <li><span><strong>Linguagem de cliente, não de setor.</strong> Termo técnico sempre explicado na primeira vez em que aparece.</span></li>
+      <li><span><strong>O posicionamento atual preservado.</strong> Todos os endereços antigos passam a apontar para os novos, para não perder o que o site já conquistou.</span></li>
+      <li><span><strong>Publicar sem depender de ninguém.</strong> O site nasce preparado para você publicar um artigo novo ou acrescentar um segmento preenchendo um formulário, sem mexer em layout e sem chamar o desenvolvedor.</span></li>
+    </ul>
+  </div>
+</section>
+
+<svg class="leaf" viewBox="0 0 140 40" aria-hidden="true" style="margin-block:28px"><path d="M6 30C34 10 86 2 134 6C94 18 54 26 24 36C16 35 10 33 6 30Z"/></svg>
+
+<!-- 10. COMPROMISSO -->
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">10 — Um compromisso desta proposta</p>
+    <h2 class="sec">Nada no site será inventado</h2>
+    <p class="lead">Nenhum número de clientes, resultado, certificação, depoimento ou garantia entra no ar sem origem verificável. Esta é uma decisão de projeto, e não apenas de redação.</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(265px,1fr));margin-top:8px">
+      <div class="card"><h4>Sem promessa de resultado de terceiro</h4><p>O site descreve o que a Verona Food entrega — documentação organizada, procedimento executável, equipe treinada. Não promete aprovação em fiscalização, conformidade total nem ausência de multa, porque isso depende do órgão e do dia.</p></div>
+      <div class="card"><h4>Sem depoimento sem autorização</h4><p>Se não houver depoimento real e autorizado por escrito, a seção simplesmente não existe. No lugar dela entra “O que você recebe”, com a lista concreta de entregáveis — que é prova de substância e não depende de ninguém.</p></div>
+      <div class="card"><h4>Sem número de validade ou temperatura</h4><p>Parâmetros sanitários são regulados, mudam e variam por produto. As páginas falam do ponto de controle e deixam o número para o trabalho técnico — publicar um número errado seria o maior risco do site.</p></div>
+      <div class="card"><h4>Com data de revisão visível</h4><p>As páginas que tocam em legislação mostram quando foram revisadas pela última vez, e entram num calendário de revisão. Estar desatualizado contradiz o próprio serviço.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. O QUE PRECISAMOS -->
+<section class="band band--wine">
+  <div class="wrap stack">
+    <p class="eyebrow">11 — O que precisamos de você</p>
+    <h2 class="sec">O caminho mais curto até o site no ar</h2>
+    <p class="lead">Os textos de todas as páginas já estão escritos. O que falta é a informação que só você tem — e a maior parte dela sai de uma conversa de uma hora.</p>
+
+    <ol class="num" style="margin-top:20px;padding:0">
+      <li><div><b>Uma conversa de 45 a 60 minutos</b><span>Preparamos um roteiro de 22 perguntas sobre você, seu método, prazos, escopo e alcance. Respondidas, elas fecham a maioria das pendências do projeto de uma vez só.</span></div></li>
+      <li><div><b>Suas credenciais</b><span>Nome completo, formação, registro profissional, tempo de atuação e especializações que possam ser citadas. É o que vai na seção mais importante da página inicial.</span></div></li>
+      <li><div><b>Três definições comerciais</b><span>Se o diagnóstico é gratuito, cobrado ou abatido da proposta; qual o prazo real de resposta a um contato; e qual a região de atendimento. A primeira define o botão principal de todo o site.</span></div></li>
+      <li><div><b>Uma sessão de fotos</b><span>Consultoria em campo, treinamento, documentação em uso, detalhes de operação, um retrato seu e uma foto por segmento. É o maior investimento de conteúdo do projeto e o que mais afasta o site do visual genérico.</span></div></li>
+      <li><div><b>CNPJ e e-mail institucional</b><span>Nenhum dos dois aparece no site atual, e os dois são esperados de quem presta serviço para empresas.</span></div></li>
+      <li><div><b>Sua revisão técnica</b><span>Toda afirmação que toca em legislação ou exigência sanitária foi marcada para você conferir antes de publicar. São poucas, mas são as que não podem sair erradas.</span></div></li>
+      <li><div><b>Depoimentos, se existirem</b><span>Com nome, cargo, estabelecimento e autorização por escrito. Se não houver, o site vai ao ar sem essa seção — e tudo bem, porque a alternativa já está pronta.</span></div></li>
+    </ol>
+
+    <div class="note" style="margin-top:20px">Só depois disso começa o desenvolvimento. A ordem é proposital: site construído antes de o conteúdo existir vira um site com texto de mentira esperando ser trocado — e quase nunca é.</div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="band band--alt">
+  <div class="wrap stack">
+    <p class="eyebrow">Em resumo</p>
+    <h2 class="sec">A direção para aprovar</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(255px,1fr));margin-top:6px">
+      <div class="card"><h4>Visual</h4><p>Fundo champagne com vinho em pontos, títulos em serifa, cards de borda fina sem sombra, muito respiro entre seções e a curva da folha do símbolo como assinatura recorrente. Fotografia real de operação, nunca banco de imagens.</p></div>
+      <div class="card"><h4>Estrutura</h4><p>Sete áreas no menu, seis páginas de solução e seis de segmento. A página inicial em onze seções, cada uma respondendo a uma pergunta real e levando ao mesmo par de ações.</p></div>
+      <div class="card"><h4>Conversão</h4><p>Agendar diagnóstico e falar no WhatsApp, em todas as páginas. Formulário de cinco campos, aviso de privacidade e um bloco explicando o que acontece depois.</p></div>
+      <div class="card"><h4>Honestidade</h4><p>Nada inventado. Onde falta material real, há um substituto honesto e concreto no lugar.</p></div>
+    </div>
+    <p class="quote" style="margin-top:26px">Processo claro, equipe treinada, operação sob controle.</p>
+    <p class="t">A mesma frase que organiza o trabalho da Verona Food organiza o site que o apresenta.</p>
+  </div>
+</section>
+
+<footer class="end">
+  <div class="wrap">
+    <span>VeronaFood Consultoria de Alimentos &middot; proposta de site, versão 1</span>
+    <span>Documento para aprovação antes do desenvolvimento</span>
+  </div>
+</footer>
+
+</body>
+</html>

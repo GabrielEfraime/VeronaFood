@@ -1,0 +1,9 @@
+VERIFICAÇÃO DO PACOTE
+40 SVG: XML válido.
+38 PNG: cabeçalhos e dimensões válidos.
+Logos transparentes: PNG RGBA confirmado.
+Cartões: 1134 × 662 px, 300 ppi, SVG 96 × 56 mm.
+Favicon: ICO multirresolução 16, 32 e 48 px.
+Inspeção visual: prancha, guia e frente do cartão conferidos.
+Referência: Identidade de Luxo VeronaFood.png; contornos vetorizados e suavizados.
+Animação inspecionada no código, sem reprodução em navegador.

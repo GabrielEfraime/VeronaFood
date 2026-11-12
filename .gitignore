@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+
+# Cópia duplicada do pacote de identidade (o original está um nível acima)
+VeronaFood_Alimentos/VeronaFood/

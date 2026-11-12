@@ -1,0 +1,14 @@
+VERONAFOOD CONSULTORIA DE ALIMENTOS — PACOTE DE IDENTIDADE
+
+Revisão baseada na imagem Identidade de Luxo VeronaFood.png enviada pelo cliente. Símbolo redesenhado com curvas Bézier limpas. Lettering composto em Arial Bold, alternativa provisória à Montserrat da referência, que não estava disponível localmente. Nenhum contorno de letra foi traçado do bitmap. Os efeitos fotográficos e texturas do mockup não fazem parte dos logos planos.
+
+01_Logos: SVG vetoriais com lettering em curvas e PNG transparentes. dual = Verona champagne, Food vinho, folha rosé; wine/cream/black = monocromáticos. Os arquivos presentation_taupe têm fundo intencional.
+02_Icons: ícones quadrados de 16 a 1024 px. app_180 para Apple touch; 192/512 para PWA; favicon.ico multirresolução.
+03_Business_Card: frente e verso institucionais sem dados pessoais fictícios. 90 × 50 mm de corte; arquivo 96 × 56 mm com sangria de 3 mm; área segura a 3 mm do corte. PNG 300 ppi em RGB. Antes da produção, solicitar à gráfica conversão para o perfil CMYK do processo/papel e prova física. TEMPLATE contém guias, não imprimir.
+04_Wallpapers: 9:16, 9:19.5, 9:20 e 9:21; 1440 px de largura. Duas cores de fundo.
+05_Motion: SVG transparente, animação de traçado, execução única e respeito a redução de movimento.
+06_Presentation: prancha vertical SVG e PNG.
+07_Guide: guia de cores, tipografia e aplicação. Montserrat e Inter são as famílias indicadas na referência e não são redistribuídas; verificar licença para novos materiais editáveis. Logos funcionam sem fontes instaladas.
+
+CORES: vinho #6E0F2A; borgonha #8B1E3F; rosé #B86A7A; champagne #F5EDE4; taupe #B59B8A.
+PNG de impressão em RGB não substitui prova contratual ou PDF/X quando exigido pela gráfica.

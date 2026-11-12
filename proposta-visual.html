@@ -1,0 +1,466 @@
+<title>Direção VeronaFood</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: coluna editorial de 1100px, faixas alternadas champagne/champagne-claro, com faixas vinho pontuais para quebrar o ritmo. */
+:root{
+  --vinho:#6E0F2A; --borgonha:#8B1E3F; --rose:#B86A7A; --champagne:#F5EDE4; --taupe:#B59B8A;
+  --tinta:#2A1B1E; --tinta-suave:#6B585C; --champagne-claro:#FBF7F2; --linha:#E3D7CA;
+  --ambar:#C2762F; --verde:#2F6B4F;
+  --bg:var(--champagne); --surface:var(--champagne-claro); --fg:var(--tinta); --fg2:var(--tinta-suave);
+  --border:var(--linha); --accent:var(--vinho); --accent-fg:var(--champagne);
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --gut:max(20px,env(safe-area-inset-left,0px));
+  --gutr:max(20px,env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A1012; --surface:#241518; --fg:#F0E6DC; --fg2:#BCA79F; --border:#3D262B;
+  --accent:#C4536E; --accent-fg:#1A1012; --champagne:#1A1012; --champagne-claro:#241518;
+  --linha:#3D262B; --tinta:#F0E6DC; --tinta-suave:#BCA79F; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#1A1012; --surface:#241518; --fg:#F0E6DC; --fg2:#BCA79F; --border:#3D262B;
+  --accent:#C4536E; --accent-fg:#1A1012; --champagne:#1A1012; --champagne-claro:#241518;
+  --linha:#3D262B; --tinta:#F0E6DC; --tinta-suave:#BCA79F; color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.12;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+.wrap{max-width:1100px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+.band{background:var(--bg)}
+.band--alt{background:var(--surface)}
+.band--wine{background:var(--vinho);color:var(--champagne)}
+:root[data-theme="dark"] .band--wine,:root:not([data-theme="light"]) .band--wine{}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .band--wine{background:#4A0C1D}}
+:root[data-theme="dark"] .band--wine{background:#4A0C1D}
+.band>.wrap{padding-block:clamp(48px,7vw,88px)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.band--wine .eyebrow{color:var(--taupe)}
+.lead{font-size:clamp(18px,2.1vw,21px);color:var(--fg2);max-width:62ch}
+.band--wine .lead{color:#E8D5C8}
+.sub{color:var(--fg2);max-width:66ch}
+.band--wine .sub{color:#E8D5C8}
+.stack{display:flex;flex-direction:column;gap:18px}
+.grid{display:grid;gap:18px}
+hr.rule{border:0;height:1px;background:var(--border);margin:0}
+
+/* cabeçalho da proposta */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px;flex-wrap:wrap}
+.chip-logo{background:#F5EDE4;border-radius:8px;padding:8px 12px;display:flex;align-items:center}
+.chip-logo img{display:block;height:30px;width:auto}
+.doc-meta{font-size:13px;color:var(--fg2)}
+
+/* folha separadora */
+.leaf{display:block;margin:0 auto;width:120px;opacity:.5}
+.leaf path{fill:var(--rose)}
+
+/* paleta */
+.swatches{grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+.sw{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+.sw__c{height:84px}
+.sw__b{padding:14px 16px}
+.sw__n{font-weight:600;font-size:15px}
+.sw__h{font-family:var(--body);font-variant-numeric:tabular-nums;font-size:13px;color:var(--fg2);letter-spacing:.03em}
+.sw__f{font-size:13px;color:var(--fg2);margin-top:6px;line-height:1.45}
+.tagline{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:2px 9px;margin-top:9px;border:1px solid var(--border);color:var(--fg2)}
+.tagline.ok{color:var(--verde);border-color:color-mix(in srgb,var(--verde) 40%,transparent)}
+.tagline.warn{color:var(--ambar);border-color:color-mix(in srgb,var(--ambar) 45%,transparent)}
+
+/* tipografia */
+.spec{border:1px solid var(--border);border-radius:12px;padding:clamp(20px,3vw,32px);background:var(--surface)}
+.spec__h{font-family:var(--display);font-size:clamp(34px,6vw,58px);line-height:1.06;margin:0 0 6px}
+.spec__meta{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);font-weight:600}
+.scale{width:100%;border-collapse:collapse;font-size:15px;margin-top:8px}
+.scale th,.scale td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+.scale th{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--fg2);font-weight:600}
+
+/* componentes ao vivo */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:16px;border-radius:8px;padding:14px 26px;border:1.5px solid transparent;cursor:default;text-decoration:none}
+.btn--p{background:var(--vinho);color:#F5EDE4}
+.btn--s{border-color:var(--vinho);color:var(--vinho);background:transparent}
+.band--wine .btn--p{background:#F5EDE4;color:var(--vinho)}
+.band--wine .btn--s{border-color:#E8D5C8;color:#F5EDE4}
+:root[data-theme="dark"] .btn--p{background:var(--accent);color:#1A1012}
+:root[data-theme="dark"] .btn--s{border-color:var(--accent);color:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn--p{background:var(--accent);color:#1A1012}
+:root:not([data-theme="light"]) .btn--s{border-color:var(--accent);color:var(--accent)}}
+.pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:7px 15px;font-size:14.5px;color:var(--fg)}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.card{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:26px}
+.card h4{font-size:20px;margin-bottom:8px}
+.card p{font-size:15.5px;color:var(--fg2);line-height:1.55}
+.card .more{display:inline-block;margin-top:14px;font-size:14.5px;font-weight:600;color:var(--accent);font-family:var(--body)}
+.card--wine{background:var(--vinho);border-color:var(--vinho);color:#F5EDE4}
+.card--wine p{color:#E8D5C8}
+.card--wine .more{color:#F5EDE4}
+.note{border-left:3px solid var(--ambar);background:var(--surface);border-radius:0 10px 10px 0;padding:16px 20px;font-size:15.5px;color:var(--fg2)}
+
+/* prévia da home */
+.frame{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#F5EDE4;color:#2A1B1E;box-shadow:0 10px 36px rgba(110,15,42,.10)}
+.frame__bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EDE2D6;border-bottom:1px solid #E3D7CA}
+.frame__bar i{width:9px;height:9px;border-radius:50%;background:#C9B5A4;display:block}
+.frame__url{margin-left:8px;font-size:12px;color:#6B585C;font-family:var(--body)}
+.mock{padding:0}
+.mock .mwrap{padding:0 clamp(16px,3.2vw,36px)}
+.mock__nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px;border-bottom:1px solid #E3D7CA;flex-wrap:wrap}
+.mock__nav .links{display:flex;gap:18px;font-size:13px;color:#2A1B1E;flex-wrap:wrap}
+.mock__nav .cta{background:#6E0F2A;color:#F5EDE4;font-size:12.5px;font-weight:600;border-radius:7px;padding:9px 16px}
+.mock__logo{height:24px;width:auto;display:block}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;padding-block:clamp(30px,5vw,56px)}
+.hero h2{font-size:clamp(28px,4.4vw,44px);color:#6E0F2A;line-height:1.06}
+.hero .eb{color:#8B1E3F;font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+.hero p{font-size:15.5px;color:#6B585C;line-height:1.6;margin-top:14px;max-width:46ch}
+.hero .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.hero .acts .btn{font-size:14px;padding:12px 20px}
+.hero .fine{font-size:12.5px;color:#6B585C;margin-top:12px}
+.photo{position:relative;aspect-ratio:3/4;border-radius:12px;border:1px solid #E3D7CA;background:
+  radial-gradient(120% 90% at 70% 15%,#EFE2D5 0%,#DCC7B6 55%,#C7AC98 100%);
+  display:flex;align-items:flex-end;justify-content:center;overflow:hidden;max-width:100%}
+.photo span{font-size:12px;color:#5B4136;background:rgba(245,237,228,.86);border-radius:999px;padding:6px 14px;margin-bottom:16px;text-align:center}
+.photo svg{position:absolute;left:-26px;bottom:-14px;width:120px;opacity:.9}
+.mock__pills{background:#FBF7F2;border-block:1px solid #E3D7CA;padding-block:22px;text-align:center}
+.mock__pills .t{font-size:13px;color:#6B585C;margin-bottom:12px}
+.mock__pills .pill{border-color:#E3D7CA;color:#2A1B1E;font-size:13px;padding:6px 13px}
+.mock__pills .pills{justify-content:center}
+.mock__sec{padding-block:clamp(28px,4.4vw,48px)}
+.mock__sec h3{font-size:clamp(21px,3vw,28px);color:#6E0F2A}
+.mock__sec>.s{font-size:14px;color:#6B585C;margin-top:8px;max-width:52ch}
+.mcards{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:22px}
+.mcard{border:1px solid #E3D7CA;border-radius:10px;background:#FBF7F2;padding:18px;grid-column:span 2;min-width:0}
+.mcard--half{grid-column:span 3}
+.mcard .ic{width:24px;height:24px;border:1.6px solid #6E0F2A;border-radius:6px;margin-bottom:12px}
+.mcard h5{font-family:var(--display);font-size:16.5px;font-weight:600;margin:0 0 6px;color:#2A1B1E}
+.mcard p{font-size:13px;color:#6B585C;line-height:1.5;margin:0}
+.mcard .m{font-size:12.5px;font-weight:600;color:#6E0F2A;margin-top:10px;display:block}
+.mfull{margin-top:14px;border-radius:10px;background:#6E0F2A;border:1px solid #6E0F2A;padding:20px 22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.mfull .ic{border-color:#F5EDE4;margin:0;flex:0 0 auto}
+.mfull .tx{flex:1 1 240px;min-width:0}
+.mfull h5{color:#F5EDE4;font-family:var(--display);font-size:17px;font-weight:600;margin:0 0 5px}
+.mfull p{color:#E8D5C8;font-size:13px;line-height:1.5;margin:0}
+.mfull .m{color:#F5EDE4;font-size:12.5px;font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.step .n{font-family:var(--display);font-size:34px;font-weight:600;color:#B86A7A;line-height:1}
+.step h5{font-family:var(--display);font-size:15.5px;margin:4px 0 5px;color:#6E0F2A}
+.step p{font-size:12.5px;color:#6B585C;line-height:1.5;margin:0}
+.mock__wine{background:#6E0F2A;color:#F5EDE4;padding-block:clamp(28px,4.4vw,44px)}
+.mock__wine h3{font-size:clamp(21px,3vw,28px);color:#F5EDE4;font-family:var(--display);font-weight:600;margin:0}
+.bens{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+.ben .d{width:18px;height:18px;border:1.6px solid #C2762F;border-radius:5px;margin-bottom:9px}
+.ben strong{display:block;font-size:14.5px;margin-bottom:3px}
+.ben span{font-size:12.5px;color:#E8D5C8;line-height:1.5}
+.mock__foot{background:#5A0C22;color:#E8D5C8;font-size:12px;padding-block:18px;text-align:center}
+
+/* mapa do site */
+.map{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.85;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;overflow-x:auto;white-space:pre;color:var(--fg)}
+.map b{color:var(--accent);font-weight:600}
+
+/* fluxo */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.flow .f{border:1px solid var(--border);border-radius:12px;padding:20px;background:var(--surface)}
+.flow .f b{display:block;font-family:var(--display);font-size:17px;margin-bottom:6px;color:var(--accent)}
+.flow .f p{font-size:14.5px;color:var(--fg2);line-height:1.55}
+
+/* checklist */
+.todo{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.todo li{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--border);border-radius:10px;padding:14px 16px;background:var(--surface);font-size:15.5px}
+.todo .k{flex:0 0 auto;font-size:11px;font-weight:700;letter-spacing:.05em;border-radius:999px;padding:3px 9px;margin-top:2px;background:color-mix(in srgb,var(--ambar) 16%,transparent);color:var(--ambar)}
+
+footer.docfoot{border-top:1px solid var(--border);font-size:14px;color:var(--fg2)}
+footer.docfoot .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .photo{aspect-ratio:4/3;order:2}
+  .mcards{grid-template-columns:1fr}
+  .mcard,.mcard--half{grid-column:span 1}
+  .steps{grid-template-columns:1fr 1fr}
+  .bens{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .steps,.bens{grid-template-columns:1fr}
+  .mock__nav .links{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <span class="chip-logo"><img src="logo-wine.svg" alt="VeronaFood Consultoria de Alimentos"></span>
+    <span class="doc-meta">Proposta de site &middot; versão 1 &middot; 12/11/2026</span>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">Direção visual e estrutural para aprovação</p>
+    <h1 style="font-size:clamp(34px,6.2vw,58px)">Um site que parece uma consultoria sênior, não um folder de serviços.</h1>
+    <p class="lead">Fundo champagne, vinho usado com economia, muito respiro e uma linha editorial calma. Cada seção responde a uma pergunta que o dono do negócio faz de verdade — e termina com um caminho de contato à mão.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+      <span class="pill">Segurança dos alimentos</span><span class="pill">Rotulagem</span><span class="pill">Custos e ficha técnica</span><span class="pill">Treinamentos</span><span class="pill">Padronização</span><span class="pill">Consultoria completa</span>
+    </div>
+    <div class="note" style="margin-top:14px">Esta página mostra a direção aplicada. Os textos finais de cada página estão em cinco documentos: <strong>PROPOSTA-SITE-VERONAFOOD.md</strong> (direção completa, home, SEO e acessibilidade), <strong>TEXTOS-PAGINAS-SOLUCOES.md</strong>, <strong>TEXTOS-PAGINA-ROTULAGEM.md</strong>, <strong>TEXTOS-PAGINAS-SEGMENTOS.md</strong> e <strong>TEXTOS-SOBRE-E-COMO-FUNCIONA.md</strong>, que traz também o roteiro de entrevista.</div>
+  </div>
+</section>
+
+<section class="band band--wine">
+  <div class="wrap stack">
+    <p class="eyebrow">Mensagem principal</p>
+    <h2 style="font-size:clamp(26px,4.6vw,42px);color:#F5EDE4">Processo claro, equipe treinada, operação sob controle.</h2>
+    <p class="lead" style="margin-top:4px">A Verona Food organiza a operação de quem trabalha com alimento — da segurança sanitária ao custo do prato — e deixa o processo rodando com a equipe do cliente. Restaurantes, bares, hotéis, padarias, confeitarias, cozinhas industriais, buffets, eventos e mercados.</p>
+  </div>
+</section>
+
+<section class="band band--alt">
+  <div class="wrap stack">
+    <p class="eyebrow">01 — Prévia da página inicial</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px)">Como a home se comporta</h2>
+    <p class="sub">As primeiras quatro seções, na proporção real. Abaixo da dobra seguem: quem te atende, o que você recebe, conteúdos, perguntas frequentes, chamada final com formulário e rodapé.</p>
+
+    <div class="frame" style="margin-top:12px">
+      <div class="frame__bar"><i></i><i></i><i></i><span class="frame__url">veronafood.com.br</span></div>
+      <div class="mock">
+        <div class="mwrap">
+          <div class="mock__nav">
+            <img class="mock__logo" src="logo-wine.svg" alt="VeronaFood">
+            <span class="links"><span>Soluções</span><span>Segmentos</span><span>Como funciona</span><span>Sobre</span><span>Conteúdos</span></span>
+            <span class="cta">Falar com a Verona Food</span>
+          </div>
+
+          <div class="hero">
+            <div>
+              <p class="eb">Consultoria para negócios de alimentação</p>
+              <h2>Sua operação de alimentos organizada do começo ao fim.</h2>
+              <p>Segurança dos alimentos, controle de custos, padronização de processos e treinamento de equipe — com um plano feito para a realidade do seu negócio, não para o papel.</p>
+              <div class="acts">
+                <span class="btn btn--p">Agendar diagnóstico</span>
+                <span class="btn btn--s">Falar no WhatsApp</span>
+              </div>
+              <p class="fine">Atendimento de segunda a sexta, das 9h às 18h.</p>
+            </div>
+            <div class="photo">
+              <svg viewBox="0 0 140 70" aria-hidden="true"><path d="M4 56C26 24 74 8 136 14C96 30 60 44 30 66C20 64 10 61 4 56Z" fill="#B86A7A" opacity=".85"/><path d="M18 62C48 40 88 26 132 20C92 40 58 54 34 68C28 67 23 65 18 62Z" fill="#6E0F2A" opacity=".55"/></svg>
+              <span>foto real de consultoria em cozinha</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock__pills">
+          <div class="mwrap">
+            <p class="t">Trabalhamos com diferentes tipos de negócio de alimentação:</p>
+            <div class="pills">
+              <span class="pill">Restaurantes</span><span class="pill">Bares</span><span class="pill">Hotéis</span><span class="pill">Padarias</span><span class="pill">Confeitarias</span><span class="pill">Cozinhas industriais</span><span class="pill">Buffets e eventos</span><span class="pill">Mercados</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mwrap mock__sec">
+          <h3>O que a gente resolve</h3>
+          <p class="s">Cada frente funciona sozinha ou combinada. Na dúvida, o diagnóstico aponta por onde começar.</p>
+          <div class="mcards">
+            <div class="mcard"><div class="ic"></div><h5>Segurança dos alimentos</h5><p>Boas práticas, POPs, controle de qualidade e adequação sanitária — organizados para passarem no dia a dia, não só na visita.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard"><div class="ic"></div><h5>Rotulagem</h5><p>Tabela nutricional, lista de ingredientes e alergênicos do produto que você embala — calculados a partir da sua receita.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard"><div class="ic"></div><h5>Custos e ficha técnica</h5><p>Custo real da receita, porcionamento e perdas. Você passa a saber quanto cada item deixa.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard mcard--half"><div class="ic"></div><h5>Treinamento de equipe</h5><p>Capacitação por função, com linguagem de cozinha e material que fica com o time depois que a gente sai.</p><span class="m">Ver detalhes →</span></div>
+            <div class="mcard mcard--half"><div class="ic"></div><h5>Padronização de processos</h5><p>Procedimentos escritos, checklists e rotinas que mantêm o padrão mesmo com troca de equipe.</p><span class="m">Ver detalhes →</span></div>
+          </div>
+          <div class="mfull">
+            <div class="ic"></div>
+            <div class="tx"><h5>Consultoria completa</h5><p>Quando o negócio precisa de tudo junto: diagnóstico, plano, implantação e acompanhamento contínuo, no ritmo da sua operação.</p></div>
+            <span class="m">Ver o que inclui →</span>
+          </div>
+        </div>
+
+        <div class="mwrap mock__sec" style="border-top:1px solid #E3D7CA">
+          <h3>Como o trabalho acontece</h3>
+          <p class="s">Quatro etapas. Você sabe onde está em cada uma.</p>
+          <div class="steps">
+            <div class="step"><div class="n">01</div><h5>Diagnóstico</h5><p>Visitamos sua operação e você recebe um relatório do que está em ordem e do que precisa de ajuste, por prioridade.</p></div>
+            <div class="step"><div class="n">02</div><h5>Plano de ação</h5><p>Prazos realistas, responsáveis e custo de cada frente. Você aprova o que faz sentido agora.</p></div>
+            <div class="step"><div class="n">03</div><h5>Implantação</h5><p>Documentos, procedimentos e treinamento colocados em prática junto com o seu time.</p></div>
+            <div class="step"><div class="n">04</div><h5>Acompanhamento</h5><p>Voltamos para conferir o padrão, ajustar o que não funcionou e preparar a equipe para seguir sozinha.</p></div>
+          </div>
+        </div>
+
+        <div class="mock__wine">
+          <div class="mwrap">
+            <h3>O que muda na sua rotina</h3>
+            <div class="bens">
+              <div class="ben"><div class="d"></div><strong>Menos retrabalho</strong><span>Procedimentos escritos acabam com o “cada um faz de um jeito”.</span></div>
+              <div class="ben"><div class="d"></div><strong>Equipe mais segura</strong><span>Gente treinada erra menos e pergunta menos.</span></div>
+              <div class="ben"><div class="d"></div><strong>Custo visível</strong><span>Ficha técnica mostra o que cada prato realmente custa.</span></div>
+              <div class="ben"><div class="d"></div><strong>Pronta para fiscalização</strong><span>Documentação organizada e rotina de controle em dia.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mock__foot">continua: quem te atende · o que você recebe · conteúdos · perguntas frequentes · formulário · rodapé</div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:20px">No celular tudo vira uma coluna: botões em largura total, a linha do tempo fica vertical com filete rosé na lateral, as pills quebram em duas linhas e um botão de WhatsApp flutua no canto inferior direito a partir da segunda dobra.</div>
+  </div>
+</section>
+
+<svg class="leaf" viewBox="0 0 140 40" aria-hidden="true"><path d="M6 30C34 10 86 2 134 6C94 18 54 26 24 36C16 35 10 33 6 30Z"/></svg>
+
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">02 — Paleta</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px)">Cinco cores da marca, mais os neutros que um site precisa ter</h2>
+    <p class="sub">Distribuição alvo: 60% champagne, 25% tinta e taupe, 12% vinho, 3% rosé e âmbar. Vinho em bloco inteiro intimida; vinho pontual sobre champagne é sofisticado.</p>
+
+    <h3 style="font-size:19px;margin-top:22px">Da identidade</h3>
+    <div class="grid swatches">
+      <div class="sw"><div class="sw__c" style="background:#6E0F2A"></div><div class="sw__b"><div class="sw__n">Vinho</div><div class="sw__h">#6E0F2A</div><p class="sw__f">Cor principal. Botões primários, títulos-chave, rodapé, símbolo.</p><span class="tagline ok">10,9:1 sobre champagne</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#8B1E3F"></div><div class="sw__b"><div class="sw__n">Borgonha</div><div class="sw__h">#8B1E3F</div><p class="sw__f">Hover do vinho, links em texto corrido, segundo tom em gráficos.</p><span class="tagline ok">7,9:1 sobre champagne</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#B86A7A"></div><div class="sw__b"><div class="sw__n">Rosé</div><div class="sw__h">#B86A7A</div><p class="sw__f">Decorativo: curva da folha, separadores, numeração de etapas.</p><span class="tagline warn">3,0:1 — nunca texto corrido</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#F5EDE4;border-bottom:1px solid #E3D7CA"></div><div class="sw__b"><div class="sw__n">Champagne</div><div class="sw__h">#F5EDE4</div><p class="sw__f">Fundo padrão. É a cor que dá o ar premium e acolhedor.</p><span class="tagline">fundo</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#B59B8A"></div><div class="sw__b"><div class="sw__n">Taupe</div><div class="sw__h">#B59B8A</div><p class="sw__f">Neutro quente. Bordas, legendas, texto de apoio sobre vinho.</p><span class="tagline warn">1,9:1 — decorativo</span></div></div>
+    </div>
+
+    <h3 style="font-size:19px;margin-top:30px">A acrescentar — precisa de aprovação</h3>
+    <div class="grid swatches">
+      <div class="sw"><div class="sw__c" style="background:#2A1B1E"></div><div class="sw__b"><div class="sw__n">Tinta</div><div class="sw__h">#2A1B1E</div><p class="sw__f">Texto corrido. Quase-preto puxado para o vinho, não um preto neutro.</p><span class="tagline ok">14,9:1 — AAA</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#6B585C"></div><div class="sw__b"><div class="sw__n">Tinta suave</div><div class="sw__h">#6B585C</div><p class="sw__f">Texto secundário, legendas, metadados de artigo.</p><span class="tagline ok">5,4:1 — AA</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#FBF7F2;border-bottom:1px solid #E3D7CA"></div><div class="sw__b"><div class="sw__n">Champagne claro</div><div class="sw__h">#FBF7F2</div><p class="sw__f">Cards, campos de formulário, zebra de tabela. Camada sem sombra.</p><span class="tagline">superfície</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#E3D7CA"></div><div class="sw__b"><div class="sw__n">Linha</div><div class="sw__h">#E3D7CA</div><p class="sw__f">Bordas de card, divisórias, contorno de campo em repouso.</p><span class="tagline">estrutura</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#C2762F"></div><div class="sw__b"><div class="sw__n">Âmbar</div><div class="sw__h">#C2762F</div><p class="sw__f">Acento quente. Ícones de destaque, anel de foco, marcadores, tags.</p><span class="tagline warn">3,6:1 — só gráfico</span></div></div>
+      <div class="sw"><div class="sw__c" style="background:#2F6B4F"></div><div class="sw__b"><div class="sw__n">Verde confirmação</div><div class="sw__h">#2F6B4F</div><p class="sw__f">Sucesso de formulário, checkmarks em listas de entregáveis.</p><span class="tagline ok">5,8:1 — AA</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--alt">
+  <div class="wrap stack">
+    <p class="eyebrow">03 — Tipografia</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px)">Serifa nos títulos, sans no que se lê</h2>
+    <p class="sub">A elegância fica na camada de cima; o texto que a pessoa realmente lê é direto e moderno. É o que mantém o site premium sem ficar distante.</p>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:16px">
+      <div class="spec">
+        <p class="spec__meta">Títulos · Fraunces 600</p>
+        <p class="spec__h">Operação sob controle</p>
+        <p class="sub" style="font-size:15px">Serifada moderna com variação óptica e terminais arredondados. Dá a elegância que uma sans geométrica não dá, e evita o ar jurídico. <strong>Recomendada.</strong></p>
+      </div>
+      <div class="spec">
+        <p class="spec__meta">Corpo, botões e rótulos · Inter</p>
+        <p style="font-family:var(--body);font-size:22px;font-weight:500;line-height:1.35;margin-bottom:10px">Procedimentos escritos acabam com o “cada um faz de um jeito”.</p>
+        <p class="sub" style="font-size:15px">Já indicada no guia da marca. Excelente leitura em telas pequenas. Rótulos e botões em peso 600 com <span style="letter-spacing:.06em">espacejamento de 0,06em</span>.</p>
+      </div>
+    </div>
+
+    <div class="spec" style="margin-top:4px">
+      <p class="spec__meta" style="margin-bottom:10px">Escala — base 16px</p>
+      <div style="overflow-x:auto">
+      <table class="scale">
+        <thead><tr><th>Elemento</th><th>Celular</th><th>Desktop</th><th>Entrelinha</th></tr></thead>
+        <tbody>
+          <tr><td>H1</td><td>34px</td><td>58px</td><td>1,08</td></tr>
+          <tr><td>H2</td><td>26px</td><td>40px</td><td>1,15</td></tr>
+          <tr><td>H3</td><td>21px</td><td>26px</td><td>1,25</td></tr>
+          <tr><td>Corpo</td><td>17px</td><td>18px</td><td>1,65</td></tr>
+          <tr><td>Legenda</td><td>15px</td><td>15px</td><td>1,55</td></tr>
+          <tr><td>Rótulo / chapéu</td><td>12px</td><td>13px</td><td>1,2 · 0,08em</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="note">Alternativa conservadora: títulos em <strong>Montserrat</strong>, exatamente o par indicado no guia de identidade. Mais seguro e mais parecido com o logotipo, porém mais comum — o site perde um pouco de personalidade. Decisão da Verona Food.</div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">04 — Componentes</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px)">O sistema, aplicado</h2>
+    <p class="sub">Cantos de 12px em cards e imagens, 8px em botões e campos, 999px em pills. Borda fina, sem sombra em repouso. Profundidade vem de cor de fundo, não de sombra.</p>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px">
+      <span class="btn btn--p">Agendar diagnóstico</span>
+      <span class="btn btn--s">Falar no WhatsApp</span>
+      <span style="font-weight:600;color:var(--accent);text-decoration:underline;text-underline-offset:3px">Ver o processo em detalhe →</span>
+    </div>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:10px">
+      <div class="card"><h4>Card de solução</h4><p>Ícone em linha de 1,5px, título em serifa, duas linhas de texto e um link com seta. O card inteiro é clicável.</p><span class="more">Ver detalhes →</span></div>
+      <div class="card card--wine"><h4>Variante destaque</h4><p>Fundo vinho para a oferta principal. Um por grade, nunca dois lado a lado.</p><span class="more">Falar sobre consultoria completa →</span></div>
+      <div class="card" style="padding:0;overflow:hidden">
+        <div style="padding:20px 24px"><h4 style="font-size:18px">Perguntas frequentes</h4></div>
+        <div style="border-top:1px solid var(--border);padding:14px 24px;font-size:15.5px;font-weight:600">Quanto tempo leva para adequar minha operação? <span style="float:right;color:var(--fg2)">−</span></div>
+        <div style="padding:0 24px 14px;font-size:14.5px;color:var(--fg2)">Depende do porte e do estado atual. No diagnóstico a gente dá a faixa de prazo antes de qualquer proposta.</div>
+        <div style="border-top:1px solid var(--border);padding:14px 24px;font-size:15.5px;font-weight:600">Vocês atendem fora de São Paulo? <span style="float:right;color:var(--fg2)">+</span></div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:6px"><strong>Caixa de nota técnica.</strong> Filete âmbar à esquerda, fundo de superfície. É o componente que mantém o site honesto — avisos do tipo “o resultado de uma fiscalização depende do órgão e da operação” — sem quebrar o ritmo visual.</div>
+  </div>
+</section>
+
+<section class="band band--alt">
+  <div class="wrap stack">
+    <p class="eyebrow">05 — Mapa do site</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px)">Sete páginas principais</h2>
+    <p class="sub">“Soluções” em vez de “Serviços”, porque o escopo passa de segurança a custo e gestão. “Conteúdos” em vez de “Blog”, para não criar expectativa de cadência. “Como funciona” fica separada: é o link que a consultora manda por WhatsApp para quem está em dúvida.</p>
+<div class="map">/                        <b>Início</b>
+/solucoes                <b>Soluções</b>
+  /solucoes/seguranca-dos-alimentos
+  /solucoes/rotulagem
+  /solucoes/custos-e-ficha-tecnica
+  /solucoes/treinamentos
+  /solucoes/padronizacao-de-processos
+  /solucoes/consultoria-completa
+/segmentos               <b>Segmentos atendidos</b>   ← páginas filhas na fase 2
+/como-funciona           <b>Como funciona</b>
+/sobre                   <b>Sobre a Verona Food</b>
+/conteudos               <b>Conteúdos</b>
+  /conteudos/[slug]
+/contato                 <b>Contato</b>
+/politica-de-privacidade
+/termos-de-uso</div>
+    <div class="note">Do site atual saem: o popup “Solicitar orçamento”, o menu “Serviços” como âncora, a seção “Localização” vazia e os posts sem data com slug numérico. Entra um mapa de redirecionamento 301 de todas as URLs antigas — sem isso, perde-se o posicionamento já conquistado.</div>
+  </div>
+</section>
+
+<section class="band band--wine">
+  <div class="wrap stack">
+    <p class="eyebrow">06 — Fluxo de conversão</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px);color:#F5EDE4">Dois canais, sempre os mesmos</h2>
+    <p class="lead">Toda página termina com contato, inclusive os artigos. Não entra um terceiro canal no lançamento: mais opções reduzem conversão.</p>
+    <div class="flow">
+      <div class="f" style="background:rgba(245,237,228,.07);border-color:rgba(232,213,200,.3)"><b style="color:#F5EDE4">Tem pressa</b><p style="color:#E8D5C8">WhatsApp no cabeçalho, flutuante no celular e no rodapé — com mensagem pré-preenchida diferente por origem, para a consultora já receber o contexto.</p></div>
+      <div class="f" style="background:rgba(245,237,228,.07);border-color:rgba(232,213,200,.3)"><b style="color:#F5EDE4">Quer entender antes</b><p style="color:#E8D5C8">Soluções → Como funciona → formulário. O bloco “o que acontece depois” tira o medo do primeiro contato.</p></div>
+      <div class="f" style="background:rgba(245,237,228,.07);border-color:rgba(232,213,200,.3)"><b style="color:#F5EDE4">Prefere ser procurado</b><p style="color:#E8D5C8">Formulário de cinco campos: nome, WhatsApp, e-mail opcional, tipo de negócio e uma caixa de texto. Nada de CNPJ, cargo ou faturamento.</p></div>
+    </div>
+    <p class="sub" style="margin-top:18px">Aviso de LGPD abaixo do botão, consentimento de marketing em checkbox separado e não pré-marcado, e banner de cookies com “Aceitar” e “Recusar” do mesmo peso visual.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <p class="eyebrow">07 — Antes de publicar</p>
+    <h2 style="font-size:clamp(24px,3.6vw,34px)">O que precisa ser confirmado</h2>
+    <p class="sub">Nenhum número, depoimento, certificação ou garantia foi inventado nesta proposta. Onde falta material real, há um substituto honesto — “o que você recebe”, com entregáveis concretos, no lugar de depoimentos.</p>
+    <ul class="todo" style="margin-top:8px">
+      <li><span class="k">1</span><span>Nome completo, formação, registro profissional e anos de atuação da responsável técnica — a seção “Quem vai te atender” é o principal elemento de credibilidade da home.</span></li>
+      <li><span class="k">2</span><span><strong>CNPJ e e-mail institucional</strong>: nenhum dos dois aparece no site atual, e os dois são esperados de prestador B2B.</span></li>
+      <li><span class="k">3</span><span>Região de atendimento e se existe atendimento remoto — define as páginas de segmento, o FAQ e o SEO local.</span></li>
+      <li><span class="k">4</span><span>Prazo real de resposta a um contato. Só publicar “1 dia útil” se for sempre cumprido.</span></li>
+      <li><span class="k">5</span><span>Depoimentos com autorização escrita, números com origem documentada e logotipos de clientes com autorização de marca. Sem isso, as seções não vão ao ar.</span></li>
+      <li><span class="k">6</span><span>Produção de fotografia própria: consultoria em campo, treinamento, documentação em uso, detalhes de operação e o retrato da responsável. É o maior investimento de conteúdo e o que mais afasta o site do visual de banco de imagens.</span></li>
+      <li><span class="k">7</span><span>Aprovação da paleta ampliada (tinta, âmbar e neutros funcionais) e da escolha tipográfica entre Fraunces e Montserrat.</span></li>
+      <li><span class="k">8</span><span>Revisão jurídica da Política de Privacidade e revisão técnica de todo texto que cite legislação ou exigência sanitária.</span></li>
+    </ul>
+    <div class="note" style="margin-top:6px">Com os textos de todas as páginas escritos, a lista chegou a <strong>44 itens</strong>, distribuídos pelos cinco documentos. O caminho mais curto para fechá-los é o <strong>roteiro de 22 perguntas</strong> em <strong>TEXTOS-SOBRE-E-COMO-FUNCIONA.md</strong>: 45 a 60 minutos de conversa com a responsável técnica resolvem a maioria.</div>
+  </div>
+</section>
+
+<footer class="docfoot">
+  <div class="wrap">
+    <span>VeronaFood Consultoria de Alimentos &middot; proposta de site, versão 1</span>
+    <span>Direção para aprovação antes do desenvolvimento</span>
+  </div>
+</footer>

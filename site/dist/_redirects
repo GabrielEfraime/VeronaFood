@@ -1,0 +1,10 @@
+# URLs do site antigo → novas. Sem isso, perde-se o posicionamento já conquistado.
+/empresa  /sobre/  301
+/empresa/*  /sobre/  301
+/noticias  /conteudos/  301
+/noticias/*  /conteudos/  301
+/contatos  /contato/  301
+/contatos/*  /contato/  301
+/categorias/destaque/*  /conteudos/  301
+/destaque/*  /conteudos/  301
+/politicas-de-privacidade  /politica-de-privacidade/  301
