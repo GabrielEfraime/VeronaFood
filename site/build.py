@@ -79,6 +79,18 @@ def copia_assets():
     return faltando
 
 
+def prefixa(html):
+    """Reescreve caminhos absolutos para rodar dentro de um subdiretório.
+
+    Só toca em href/src que começam com uma barra. Não mexe em "//cdn...",
+    nem em URLs completas, nem no que está dentro dos dados estruturados,
+    que já usam o endereço completo do site."""
+    base = config.SITE.get("base_path", "").rstrip("/")
+    if not base:
+        return html
+    return re.sub(r'(href|src)="/(?!/)', r'\1="{}/'.format(base), html)
+
+
 def grava(pagina):
     destino = pagina.get("arquivo")
     if not destino:
@@ -86,13 +98,30 @@ def grava(pagina):
     caminho = os.path.join(DIST, destino.replace("/", os.sep))
     os.makedirs(os.path.dirname(caminho), exist_ok=True)
     with open(caminho, "w", encoding="utf-8") as f:
-        f.write(monta(pagina))
+        f.write(prefixa(monta(pagina)))
     return destino
 
 
 def extras(paginas):
     hoje = datetime.date.today().isoformat()
     base = config.SITE["url"]
+    prefixo = config.SITE.get("base_path", "").rstrip("/")
+
+    if config.SITE.get("preview"):
+        # Prévia: nada de indexação, e os arquivos de busca não fazem sentido.
+        with open(os.path.join(DIST, "robots.txt"), "w", encoding="utf-8") as f:
+            f.write("# Previa do site. Nao indexar.\nUser-agent: *\nDisallow: /\n")
+        with open(os.path.join(DIST, "site.webmanifest"), "w", encoding="utf-8") as f:
+            f.write('{"name": "%s", "short_name": "%s", "start_url": "%s/",'
+                    ' "display": "standalone", "background_color": "#F5EDE4",'
+                    ' "theme_color": "#6E0F2A", "icons": ['
+                    '{"src": "%s/img/app-192.png", "sizes": "192x192", "type": "image/png"},'
+                    '{"src": "%s/img/app-512.png", "sizes": "512x512", "type": "image/png"}]}\n'
+                    % (config.SITE["nome_completo"], config.SITE["nome"],
+                       prefixo, prefixo, prefixo))
+        # O GitHub Pages ignora pastas iniciadas por underscore sem este arquivo.
+        open(os.path.join(DIST, ".nojekyll"), "w").close()
+        return
 
     prioridade = {"/": "1.0", "/contato/": "0.9", "/solucoes/": "0.9", "/segmentos/": "0.8"}
     urls = "".join(
@@ -149,7 +178,16 @@ def confere(paginas, html_por_url):
 
 
 def main():
+    # --base /Algum/Caminho  →  gera a prévia para servir num subdiretório
+    if "--base" in sys.argv:
+        caminho = sys.argv[sys.argv.index("--base") + 1]
+        config.SITE["base_path"] = "/" + caminho.strip("/")
+        config.SITE["preview"] = True
+
     print("\n  VeronaFood — gerando o site\n  " + "-" * 44)
+    if config.SITE.get("preview"):
+        print("  modo prévia: caminhos sob {} · noindex ligado"
+              .format(config.SITE["base_path"]))
     limpa()
     logos_faltando = copia_assets()
 

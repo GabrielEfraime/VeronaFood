@@ -16,6 +16,13 @@ SITE = {
     "url": "https://veronafood.com.br",
     "lang": "pt-BR",
     "posicionamento": "Processo claro, equipe treinada, operação sob controle.",
+
+    # Prefixo de caminho. Vazio quando o site está na raiz de um domínio.
+    # Preenchido por `build.py --base /VeronaFood` para a prévia no GitHub Pages,
+    # que serve o site dentro de um subdiretório.
+    "base_path": "",
+    # Prévia não deve competir com o site real na busca: entra noindex.
+    "preview": False,
     "descricao_curta": (
         "Consultoria em segurança dos alimentos, custos, padronização e treinamento "
         "para restaurantes, bares, hotéis, padarias, cozinhas industriais, buffets, "

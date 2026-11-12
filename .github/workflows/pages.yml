@@ -1,0 +1,60 @@
+name: Prévia do site
+
+# Gera o site e publica no GitHub Pages a cada envio para a main.
+# A prévia serve para revisar e aprovar; o site de produção vai para o
+# domínio próprio, e por isso a prévia é gerada com noindex.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configurar o Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Gerar o site
+        # O Pages serve o projeto em /<nome-do-repositorio>/, então o build
+        # recebe esse prefixo para os links e os arquivos não quebrarem.
+        run: python site/build.py --base "${{ github.event.repository.name }}"
+
+      - name: Conferir se as páginas saíram
+        run: |
+          total=$(find site/dist -name 'index.html' | wc -l)
+          echo "páginas geradas: $total"
+          test "$total" -ge 21
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

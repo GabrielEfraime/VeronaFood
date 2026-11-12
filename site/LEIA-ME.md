@@ -10,6 +10,16 @@ python build.py --servir    # gera e abre em http://localhost:8000
 
 O build imprime, no fim, **o que ainda falta preencher** e um aviso se algum link interno estiver quebrado.
 
+### Prévia em subdiretório
+
+```bash
+python build.py --base VeronaFood
+```
+
+Gera o site para ser servido dentro de `/VeronaFood/` em vez da raiz do domínio. É o que o GitHub Pages precisa, porque ele serve o projeto num subdiretório. Nesse modo o build também liga `noindex` e bloqueia o `robots.txt`, para a prévia não competir com o site real na busca.
+
+A publicação da prévia é automática: o workflow em `.github/workflows/pages.yml` roda a cada envio para a `main`.
+
 ---
 
 ## O que mexer

@@ -758,7 +758,7 @@ def documento(pagina, corpo, extras_head=""):
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{base}/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#6E0F2A">
+<meta name="theme-color" content="#6E0F2A">{noindex}
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/img/app-180.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -782,6 +782,9 @@ def documento(pagina, corpo, extras_head=""):
 </html>
 """.format(lang=SITE["lang"], title=E(pagina["title"]), desc=E(pagina["description"]),
            url=url, base=SITE["url"], nome=E(SITE["nome"]),
+           noindex=('\n<meta name="robots" content="noindex, nofollow">'
+                    '\n<!-- previa: nao indexar, para nao competir com o site real -->'
+                    if SITE.get("preview") else ""),
            schema=schema_negocio(), extras=extras_head,
            cabecalho=cabecalho(pagina["url"]),
            migalhas=migalhas(pagina.get("trilha")),
