@@ -180,9 +180,9 @@ def secao(sid, h2, sub, grupos, fundo="", classe="", raw_head=None):
 
 def partir_item(txt):
     """'<b>Título</b> — texto' ou '<b>Título:</b> <span>texto</span>' em (título, texto)."""
-    m = re.match(r"\s*<b>(.*?)</b>\s*(?:<span>)?\s*[—:\-]*\s*(.*?)(?:</span>)?\s*$", txt, re.S)
+    m = re.match(r"\s*<b>(.*?)</b>\s*(?:<span>)?\s*[—:,\-]*\s*(.*?)(?:</span>)?\s*$", txt, re.S)
     if m:
-        return m.group(1).strip(" :."), m.group(2).strip().lstrip("—:- ").strip()
+        return m.group(1).strip(" :."), m.group(2).strip().lstrip("—:,- ").strip()
     return None, txt
 
 
@@ -250,6 +250,30 @@ def nota_html(t):
 # =========================================================================
 # Componentes
 # =========================================================================
+FOTOS_HEROI = {
+    "cozinha": {"arquivo": "photo-f95845027-960.jpg", "w": 960, "h": 720,
+                "alt": "Dois cozinheiros diante da bancada de saída de uma cozinha de restaurante"},
+    "corte": {"arquivo": "photo-f186238282-960.jpg", "w": 960, "h": 640,
+              "alt": "Mãos cortando pimentão vermelho sobre uma tábua de madeira"},
+    "tabuas": {"arquivo": "photo-f45988851-960.jpg", "w": 960, "h": 540,
+               "alt": "Tábuas de corte com legumes picados e pimentão em cubos"},
+    "buffet": {"arquivo": "photo-f88264665-960.jpg", "w": 960, "h": 720,
+               "alt": "Mesa de buffet de café da manhã com frutas e pães em um hotel"},
+}
+
+IMAGENS_HEROI = {
+    "/solucoes/": "cozinha", "/solucoes/seguranca-dos-alimentos/": "cozinha",
+    "/solucoes/rotulagem/": "corte", "/solucoes/custos-e-ficha-tecnica/": "tabuas",
+    "/solucoes/treinamentos/": "cozinha", "/solucoes/padronizacao-de-processos/": "corte",
+    "/solucoes/consultoria-completa/": "cozinha",
+    "/segmentos/": "buffet", "/segmentos/restaurantes-e-bares/": "cozinha",
+    "/segmentos/padarias-e-confeitarias/": "tabuas", "/segmentos/hoteis-e-buffets/": "buffet",
+    "/segmentos/cozinhas-industriais/": "cozinha", "/segmentos/mercados-e-varejo/": "tabuas",
+    "/segmentos/eventos/": "buffet", "/como-funciona/": "corte", "/sobre/": "cozinha",
+    "/conteudos/": "tabuas", "/contato/": "buffet",
+}
+
+
 def _inv(s):
     return "inverso" if s.get("_inverso") else ""
 
@@ -745,6 +769,9 @@ def monta(pagina):
     PAGINA_ATUAL["n"] = 0
     PAGINA_ATUAL["form"] = any(s["tipo"] in ("cta_form", "cta", "contato") for s in pagina["secoes"])
     secoes = [dict(s) for s in pagina["secoes"]]
+    chave = IMAGENS_HEROI.get(pagina["url"])
+    if chave and secoes and secoes[0]["tipo"] in ("hero", "hero_simples") and not secoes[0].get("imagem"):
+        secoes[0]["imagem"] = FOTOS_HEROI[chave]
     # uma única faixa escura por página (ritmo "dark-band"), na segunda metade
     for tipo in ("beneficios", "etapas", "numerada", "checklist"):
         alvo = [s for s in secoes if s["tipo"] == tipo]

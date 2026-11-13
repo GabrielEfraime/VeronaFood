@@ -13,66 +13,66 @@ E = _html.escape
 def como_funciona():
     prazo = CONTATO.get("prazo_resposta")
     resposta_1 = ("{}{}.".format(prazo[0].upper(), prazo[1:]) if prazo
-                  else "A gente responde pessoalmente — não há atendimento automático nem central de chamadas.")
+                  else "Eu respondo pessoalmente, não há atendimento automático nem central de chamadas.")
 
     faq = [
         {"pergunta": "Meu negócio é pequeno. Vale a pena?",
          "resposta": ["Vale, e costuma custar menos do que as pessoas imaginam. Operação pequena tem menos documentação para escrever e menos gente para treinar, então o trabalho é menor.",
                       "O que não muda com o tamanho é a exigência."]},
         {"pergunta": "Quanto tempo leva para adequar minha operação?",
-         "resposta": ["Depende do porte e de quanta documentação já existe. No diagnóstico a gente dá a faixa de prazo antes de qualquer proposta, para você já saber com o que está lidando."]},
+         "resposta": ["Depende do porte e de quanta documentação já existe. No diagnóstico eu dou a faixa de prazo antes de qualquer proposta, para você já saber com o que está lidando."]},
         {"pergunta": "O trabalho é presencial ou a distância?",
          "resposta": ["O diagnóstico é presencial: não dá para avaliar uma cozinha por foto. A implantação e o treinamento também acontecem dentro da operação, porque é lá que o processo precisa funcionar."]},
         {"pergunta": "Quanto custa?",
-         "resposta": ["Não trabalhamos com tabela de preço. O valor depende do porte da operação, de quanto já existe pronto e por quanto tempo você quer acompanhamento.",
+         "resposta": ["Não trabalho com tabela de preço. O valor depende do porte da operação, de quanto já existe pronto e por quanto tempo você quer acompanhamento.",
                       "Por isso a proposta vem depois do diagnóstico: assim você recebe um número baseado no seu negócio, e não uma faixa genérica."]},
         {"pergunta": "Vocês garantem aprovação na fiscalização?",
          "resposta": ["Não, e desconfie de quem garantir. O resultado de uma fiscalização depende do órgão, do fiscal e de como a operação está no dia.",
-                      "O que a gente entrega é a documentação organizada, os procedimentos escritos e a equipe treinada — que é o que está sob o seu controle."]},
+                      "O que eu entrego é a documentação organizada, os procedimentos escritos e a equipe treinada, que é o que está sob o seu controle."]},
         {"pergunta": "Já contratei consultoria antes e não funcionou.",
          "resposta": ["Isso é mais comum do que parece, e quase sempre pelo mesmo motivo: o documento foi escrito longe da cozinha e a equipe nunca conseguiu seguir.",
-                      "É por isso que aqui o procedimento é escrito com quem executa, e a gente volta para conferir se pegou."]},
+                      "É por isso que aqui o procedimento é escrito com quem executa, e eu volto para conferir se pegou."]},
         {"pergunta": "O que eu preciso ter em mãos para começar?",
-         "resposta": ["Para a conversa inicial, nada. Para o diagnóstico: a documentação que já existir, mesmo incompleta, e acesso à operação funcionando. O resto a gente levanta na visita."]},
+         "resposta": ["Para a conversa inicial, nada. Para o diagnóstico: a documentação que já existir, mesmo incompleta, e acesso à operação funcionando. O resto eu levanto na visita."]},
     ]
 
     etapas = [
         {"titulo": "Diagnóstico", "figura": "foto de visita de diagnóstico em cozinha",
-         "texto": ("A gente vai até a sua operação em horário de funcionamento. Não é visita protocolar: é "
+         "texto": ("Eu vou até a sua operação em horário de funcionamento. Não é visita protocolar: é "
                    "passar algumas horas olhando como as coisas realmente acontecem quando a casa está rodando."),
          "campos": [
-             ("O que a gente faz", "Olhamos estrutura, fluxo de trabalho, armazenamento, higienização, controle de temperatura, documentação e como a equipe executa cada tarefa. Conversamos com quem está na operação, não só com quem gerencia — é de quem põe a mão que vêm as respostas mais úteis."),
-             ("O que você recebe", "Um relatório por escrito com o retrato da sua operação: o que já está em ordem, o que precisa de ajuste e o que é risco. Tudo classificado por prioridade — urgente, importante, pode esperar."),
-             ("O que precisamos de você", "Acesso à operação funcionando, a documentação que já existir e uma pessoa da sua equipe acompanhando. Não precisa organizar nada antes: a gente precisa ver como é, não como ficaria se você arrumasse."),
+             ("O que eu faço", "Olho estrutura, fluxo de trabalho, armazenamento, higienização, controle de temperatura, documentação e como a equipe executa cada tarefa. Converso com quem está na operação, não só com quem gerencia, é de quem põe a mão que vêm as respostas mais úteis."),
+             ("O que você recebe", "Um relatório por escrito com o retrato da sua operação: o que já está em ordem, o que precisa de ajuste e o que é risco. Tudo classificado por prioridade, urgente, importante, pode esperar."),
+             ("O que preciso de você", "Acesso à operação funcionando, a documentação que já existir e uma pessoa da sua equipe acompanhando. Não precisa organizar nada antes: eu preciso ver como é, não como ficaria se você arrumasse."),
          ]},
         {"titulo": "Plano de ação", "figura": "foto de reunião de plano de ação",
-         "texto": ("Com o diagnóstico na mão, a gente monta o plano com você — não para você. Você conhece seu "
-                   "caixa, sua equipe e seu calendário; a gente conhece o que precisa ser feito."),
+         "texto": ("Com o diagnóstico na mão, eu monto o plano com você, não para você. Você conhece seu "
+                   "caixa, sua equipe e seu calendário; eu conheço o que precisa ser feito."),
          "campos": [
-             ("O que a gente faz", "Transformamos cada ponto do diagnóstico em ação, com prazo, responsável e custo. Separamos o que depende de obra ou investimento do que depende só de mudança de rotina — e esse segundo grupo costuma ser maior do que as pessoas imaginam."),
+             ("O que eu faço", "Transformo cada ponto do diagnóstico em ação, com prazo, responsável e custo. Separo o que depende de obra ou investimento do que depende só de mudança de rotina, e esse segundo grupo costuma ser maior do que as pessoas imaginam."),
              ("O que você recebe", "O plano de ação por escrito, em ordem de prioridade, e a proposta de trabalho com escopo e valor. Você aprova o que faz sentido agora e deixa o resto para depois."),
-             ("O que precisamos de você", "Uma conversa com quem decide. Plano aprovado por alguém que não pode decidir não sai do papel."),
+             ("O que preciso de você", "Uma conversa com quem decide. Plano aprovado por alguém que não pode decidir não sai do papel."),
          ]},
         {"titulo": "Implantação", "figura": "foto de treinamento no posto de trabalho",
          "texto": ("É aqui que o trabalho vira rotina. Documento escrito, procedimento combinado, equipe "
-                   "treinada e checklist pendurado na parede — dentro da sua operação, no horário que menos atrapalha."),
+                   "treinada e checklist pendurado na parede, dentro da sua operação, no horário que menos atrapalha."),
          "campos": [
-             ("O que a gente faz", "Escrevemos os documentos a partir do que vimos, combinamos cada procedimento com quem executa, treinamos a equipe no próprio posto de trabalho e colocamos a rotina de registro para rodar. Você revisa tudo antes de valer."),
+             ("O que eu faço", "Escrevo os documentos a partir do que vi, combino cada procedimento com quem executa, treino a equipe no próprio posto de trabalho e coloco a rotina de registro para rodar. Você revisa tudo antes de valer."),
              ("O que você recebe", "Toda a documentação em arquivo editável, o material de treinamento, os checklists prontos para imprimir e a sua equipe sabendo usar tudo isso."),
-             ("O que precisamos de você", "Tempo da equipe, combinado com antecedência e fora do pico, e a liderança presente. Quando a chefia não participa, a equipe entende que não é prioridade."),
+             ("O que preciso de você", "Tempo da equipe, combinado com antecedência e fora do pico, e a liderança presente. Quando a chefia não participa, a equipe entende que não é prioridade."),
          ]},
         {"titulo": "Acompanhamento", "figura": "foto de conferência de rotina com a equipe",
-         "texto": "Consultoria que entrega e some deixa uma pasta bonita e uma operação igual. A gente volta para ver se pegou.",
+         "texto": "Consultoria que entrega e some deixa uma pasta bonita e uma operação igual. Eu volto para ver se pegou.",
          "campos": [
-             ("O que a gente faz", "Conferimos se o padrão se manteve depois que a novidade passou, identificamos o que a equipe não conseguiu seguir e ajustamos. Procedimento que não cabe na rotina está errado — quem manda é a rotina, e a gente reescreve."),
-             ("O que você recebe", "Relatório do que avançou e do que travou, documentos ajustados e sua equipe preparada para seguir sem a gente."),
-             ("O que precisamos de você", "Que a rotina de registro continue entre as visitas. É o registro que mostra o que aconteceu quando ninguém estava olhando."),
+             ("O que eu faço", "Confiro se o padrão se manteve depois que a novidade passou, identifico o que a equipe não conseguiu seguir e ajusto. Procedimento que não cabe na rotina está errado, quem manda é a rotina, e eu reescrevo."),
+             ("O que você recebe", "Relatório do que avançou e do que travou, documentos ajustados e sua equipe preparada para seguir sem mim."),
+             ("O que preciso de você", "Que a rotina de registro continue entre as visitas. É o registro que mostra o que aconteceu quando ninguém estava olhando."),
          ]},
     ]
 
     return {
         "url": "/como-funciona/",
-        "title": "Como funciona a consultoria — VeronaFood",
+        "title": "Como funciona a consultoria, VeronaFood",
         "description": ("Diagnóstico, plano de ação, implantação e acompanhamento. Veja o que acontece em cada "
                         "etapa e o que esperar do primeiro contato."),
         "trilha": [("Início", "/"), ("Como funciona", None)],
@@ -80,7 +80,7 @@ def como_funciona():
             {"tipo": "hero_simples", "chapeu": "Como funciona",
              "h1": "Antes de contratar, saiba exatamente o que vai acontecer.",
              "apoio": ("Quatro etapas, nessa ordem, com você sabendo onde está em cada uma. Nenhuma proposta "
-                       "sai antes de a gente conhecer sua operação — porque proposta feita sem ver a cozinha é chute.")},
+                       "sai antes de eu conhecer sua operação, porque proposta feita sem ver a cozinha é chute.")},
 
             {"tipo": "etapas_detalhe", "h2": "As quatro etapas", "itens": etapas, "fundo": " secao--claro"},
 
@@ -91,23 +91,23 @@ def como_funciona():
                  {"titulo": "Conversa rápida",
                   "texto": "De 15 a 20 minutos, para entender que tipo de operação você tem, o que está pegando e se faz sentido marcar uma visita."},
                  {"titulo": "Visita de diagnóstico",
-                  "texto": "Agendada no horário em que a sua operação roda de verdade — inclusive de madrugada ou em fim de semana, se for o caso."},
+                  "texto": "Agendada no horário em que a sua operação roda de verdade, inclusive de madrugada ou em fim de semana, se for o caso."},
              ],
              "nota": "Só depois disso vem proposta. Antes disso, não há nada para você decidir."},
 
             {"tipo": "prosa", "fundo": " secao--claro", "html": """
       <h2>Como funciona o investimento</h2>
-      <p class="texto" style="margin-top:16px">Não trabalhamos com tabela de preço, e o motivo é simples: duas
+      <p class="texto" style="margin-top:16px">Não trabalho com tabela de preço, e o motivo é simples: duas
         cozinhas do mesmo tamanho podem precisar de trabalhos completamente diferentes. Uma já tem metade da
         documentação pronta e precisa de ajuste; a outra começa do zero.</p>
       <p class="texto" style="margin-top:16px">O valor depende de três coisas: <b>o porte da operação</b>,
         <b>quanto já existe pronto</b> e <b>por quanto tempo você quer acompanhamento</b>. Por isso a proposta
-        vem depois do diagnóstico — assim você recebe um número baseado no seu negócio, e não uma faixa
+        vem depois do diagnóstico, assim você recebe um número baseado no seu negócio, e não uma faixa
         genérica que não quer dizer nada.</p>
       <p class="texto" style="margin-top:16px">O que dá para adiantar: você aprova o que faz sentido agora e
         deixa o resto para depois. Ninguém é obrigado a comprar tudo de uma vez.</p>"""},
 
-            {"tipo": "faq", "h2": "Perguntas que a gente ouve sempre", "itens": faq},
+            {"tipo": "faq", "h2": "Perguntas frequentes", "itens": faq},
 
             {"tipo": "cta_form",
              "h2": "O primeiro passo é uma conversa de 20 minutos.",
@@ -138,7 +138,7 @@ def sobre():
         {"titulo": "Volto para ver se funcionou",
          "texto": "Entregar a pasta é a parte fácil. O trabalho só está feito quando a rotina continua rodando depois que eu saio."},
         {"titulo": "Não prometo o que não depende de mim",
-         "texto": "O resultado de uma fiscalização depende do órgão e do dia. O que depende de mim é a documentação em ordem, o procedimento executável e a equipe treinada — e disso eu respondo."},
+         "texto": "O resultado de uma fiscalização depende do órgão e do dia. O que depende de mim é a documentação em ordem, o procedimento executável e a equipe treinada, e disso eu respondo."},
     ]
 
     secoes = [
@@ -152,12 +152,12 @@ def sobre():
         {"tipo": "numerada", "h2": "Como eu trabalho", "itens": principios},
     ]
 
-    # "Onde atendo" só existe se houver conteúdo real — o site atual tem essa
+    # "Onde atendo" só existe se houver conteúdo real, o site atual tem essa
     # seção vazia, e repetir isso seria pior do que não ter.
     regiao = COMERCIAL.get("regiao_atendimento")
     if regiao:
         remoto = COMERCIAL.get("atendimento_remoto")
-        extra = (" Além disso, parte do trabalho — revisão de documento e reuniões de plano — pode ser feita a distância."
+        extra = (" Além disso, parte do trabalho, revisão de documento e reuniões de plano, pode ser feita a distância."
                  if remoto else "")
         secoes.append({"tipo": "prosa", "fundo": " secao--claro", "html": """
       <h2>Onde eu atendo</h2>
@@ -167,14 +167,14 @@ def sobre():
 
     secoes.append({
         "tipo": "cta_form",
-        "h2": "Vamos conversar sobre a sua operação.",
+        "h2": "Vou conversar sobre a sua operação.",
         "texto": "Vinte minutos para entender o que está pegando. Sem proposta e sem compromisso.",
         "sufixo": "-sobre"})
 
     return {
         "url": "/sobre/",
         "title": "Sobre a VeronaFood Consultoria de Alimentos",
-        "description": ("Quem somos, como trabalhamos e quem vai te atender. Consultoria para negócios de "
+        "description": ("Quem somos, como trabalho e quem vai te atender. Consultoria para negócios de "
                         "alimentação."),
         "trilha": [("Início", "/"), ("Sobre", None)],
         "secoes": secoes,
@@ -214,7 +214,7 @@ def conteudos():
     temas = ["<span>{}</span>".format(E(t)) for t in TEMAS]
     return {
         "url": "/conteudos/",
-        "title": "Conteúdos sobre segurança e gestão de alimentos — VeronaFood",
+        "title": "Conteúdos sobre segurança e gestão de alimentos, VeronaFood",
         "description": ("Artigos práticos sobre boas práticas, legislação, custos e treinamento para quem "
                         "trabalha com alimento."),
         "trilha": [("Início", "/"), ("Conteúdos", None)],
@@ -231,7 +231,7 @@ def conteudos():
              "sub": "O que vem pela frente, escolhido pelo que mais aparece nas visitas."},
             {"tipo": "cta_form",
              "h2": "Tem uma dúvida que não está aqui?",
-             "texto": "Mande a pergunta. Se for útil para mais gente, ela vira conteúdo — e você recebe a resposta antes.",
+             "texto": "Mande a pergunta. Se for útil para mais gente, ela vira conteúdo, e você recebe a resposta antes.",
              "sufixo": "-cont"},
         ],
     }
@@ -242,16 +242,16 @@ def contato():
     c = CONTATO
     email = ('<p><a href="mailto:{0}">{0}</a></p>'.format(c["email"])) if c["email"] else ""
     prazo = c.get("prazo_resposta")
-    linha_prazo = ("<p class=\"miudo\">Respondemos {}.</p>".format(E(prazo))) if prazo else ""
+    linha_prazo = ("<p class=\"miudo\">Respondo {}.</p>".format(E(prazo))) if prazo else ""
 
     canais = """
 <section class="secao">
   <div class="container">
     <div class="cta-final">
       <div>
-        <h1 style="color:var(--vinho);font-size:clamp(30px,4.4vw,44px)">Vamos conversar</h1>
+        <h1 style="color:var(--vinho);font-size:clamp(30px,4.4vw,44px)">Vou conversar</h1>
         <p class="apoio" style="margin-top:16px">Conte em duas linhas como está sua operação hoje.
-          A gente responde com o próximo passo — sem compromisso e sem proposta genérica.</p>
+          Eu respondo com o próximo passo, sem compromisso e sem proposta genérica.</p>
         {prazo}
 
         <div class="grade grade--2" style="margin-top:32px">
@@ -285,7 +285,7 @@ def contato():
 
     return {
         "url": "/contato/",
-        "title": "Fale com a VeronaFood — Consultoria de Alimentos",
+        "title": "Fale com a VeronaFood, Consultoria de Alimentos",
         "description": ("Agende um diagnóstico ou chame no WhatsApp. Atendimento de segunda a sexta, "
                         "das 9h às 18h."),
         "trilha": [("Início", "/"), ("Contato", None)],
@@ -317,27 +317,27 @@ def privacidade():
       <p class="texto" style="margin-top:18px">Esta política explica quais dados a {nome} coleta, para que
         usa e quais são os seus direitos, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018).</p>
 
-      <h2>Quais dados coletamos</h2>
-      <p>Coletamos apenas o que você informa no formulário de contato: nome, telefone ou WhatsApp, e-mail
-        (opcional), tipo de negócio e a mensagem que você escrever. Não coletamos dados sensíveis e não pedimos
+      <h2>Quais dados coleto</h2>
+      <p>Coleto apenas o que você informa no formulário de contato: nome, telefone ou WhatsApp, e-mail
+        (opcional), tipo de negócio e a mensagem que você escrever. Não coleto dados sensíveis e não peço
         CPF, CNPJ ou dados financeiros para iniciar uma conversa.</p>
 
-      <h2>Para que usamos</h2>
+      <h2>Para que uso</h2>
       <p>Para responder ao seu contato e, se houver interesse, conduzir a conversa comercial. Se você marcar a
-        caixa de consentimento, também para enviar conteúdos por e-mail — e só nesse caso.</p>
+        caixa de consentimento, também para enviar conteúdos por e-mail, e só nesse caso.</p>
 
       <h2>Base legal</h2>
       <p>O tratamento para responder ao seu contato se apoia no artigo 7º, inciso V da LGPD: execução de
         procedimentos preliminares a pedido do titular. O envio de conteúdos se apoia no seu consentimento,
         que você pode retirar a qualquer momento.</p>
 
-      <h2>Com quem compartilhamos</h2>
-      <p>Não vendemos nem cedemos seus dados. Eles podem transitar por prestadores de serviço necessários ao
+      <h2>Com quem compartilho</h2>
+      <p>Não vendo nem cedo seus dados. Eles podem transitar por prestadores de serviço necessários ao
         funcionamento do site, como a hospedagem e a ferramenta que recebe o formulário, sempre limitados a
         essa finalidade.</p>
 
-      <h2>Por quanto tempo guardamos</h2>
-      <p>Mantemos os dados enquanto durar a conversa comercial e pelo prazo necessário ao cumprimento de
+      <h2>Por quanto tempo guardo</h2>
+      <p>Mantenho os dados enquanto durar a conversa comercial e pelo prazo necessário ao cumprimento de
         obrigações legais. Depois disso, são eliminados.</p>
 
       <h2>Cookies</h2>
@@ -351,13 +351,13 @@ def privacidade():
         gente por {email}.</p>
 
       <h2>Alterações</h2>
-      <p>Podemos atualizar esta política. A data da última atualização fica sempre indicada abaixo.</p>
+      <p>Posso atualizar esta política. A data da última atualização fica sempre indicada abaixo.</p>
       <p class="miudo" style="margin-top:28px">Última atualização: novembro de 2026.</p>""".format(
         nome=E(SITE["nome_completo"]), email=E(email))
 
     return {
         "url": "/politica-de-privacidade/",
-        "title": "Política de Privacidade — VeronaFood",
+        "title": "Política de Privacidade, VeronaFood",
         "description": "Como a VeronaFood coleta, usa e protege os seus dados, conforme a LGPD.",
         "trilha": [("Início", "/"), ("Política de Privacidade", None)],
         "secoes": [{"tipo": "prosa", "html": corpo}],
@@ -386,7 +386,7 @@ def termos():
         autorização.</p>
 
       <h2>Links para outros sites</h2>
-      <p>Links para sites de terceiros são oferecidos por conveniência. Não respondemos pelo conteúdo nem pelas
+      <p>Links para sites de terceiros são oferecidos por conveniência. Não respondo pelo conteúdo nem pelas
         práticas de privacidade deles.</p>
 
       <h2>Contato</h2>
@@ -397,7 +397,7 @@ def termos():
 
     return {
         "url": "/termos-de-uso/",
-        "title": "Termos de Uso — VeronaFood",
+        "title": "Termos de Uso, VeronaFood",
         "description": "Condições de uso do site da VeronaFood Consultoria de Alimentos.",
         "trilha": [("Início", "/"), ("Termos de Uso", None)],
         "secoes": [{"tipo": "prosa", "html": corpo}],
@@ -428,7 +428,7 @@ def creditos():
              '(Wikimedia Commons), usadas até a Verona Food ter as suas.</p>' + itens)
     return {
         "url": "/creditos/",
-        "title": "Créditos das fotografias — VeronaFood",
+        "title": "Créditos das fotografias, VeronaFood",
         "description": "Autores e licenças das fotografias usadas no site da VeronaFood.",
         "trilha": [("Início", "/"), ("Créditos das fotografias", None)],
         "secoes": [{"tipo": "prosa", "html": corpo}],
