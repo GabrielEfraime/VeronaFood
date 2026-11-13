@@ -1,0 +1,11 @@
+{
+ "page": "dist/index.html",
+ "url": null,
+ "root": "dist",
+ "kind": "service",
+ "category": "consultoria de alimentos",
+ "primary": "Agendar diagnóstico",
+ "rounds": 3,
+ "start": "2026-11-13T02:01:24.670Z",
+ "by": "gate.mjs --start"
+}

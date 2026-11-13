@@ -1,0 +1,54 @@
+
+perf dist/index.html @ 1440px
+  PASS  host CPU load (before/after)               37/38 %        
+  PASS  total transfer                             437.8 KiB      html 33.2K  css 8.3K  js 243.1K  font 114.1K  img 15.5K  other 23.5K
+  PASS  requests                                   30             19 by load
+  PASS  images bytes                               15.5 KiB       3 files
+  PASS  largest image                              7.4 KiB        img/logo-cream.svg
+  PASS  JS parsed                                  248.4 KiB      2 files, 243.1K gz
+  PASS  CSS                                        8.3 KiB        2 files
+  PASS  font families                              2              Fraunces, Inter
+  PASS  font files                                 2              114.1K
+  PASS  font bytes                                 114.1 KiB      
+  PASS  images without width+height                0              
+  WARN  below-fold images not lazy                 3              logo.svg, logo.svg, logo-cream.svg
+  WARN  oversized images (natural > 2.2x shown)    2              logo.svg 700px for 160; logo-cream.svg 700px for 311
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 1              runs 3, 1..1, max 66ms
+  PASS  blocking time                              14 ms          runs 3, 6..16 ms; at load 14ms
+  PASS  FCP (CPU, relative)                        356 ms         runs 3, 268..436
+  PASS  LCP (CPU, relative)                        356 ms         runs 3, 268..436, h1
+  PASS  layout shift                               0.007          runs 3, 0.007..0.007; at load 0.007
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                8.3 screens    DOM 487 nodes
+
+perf dist/index.html @ 390px
+  PASS  host CPU load (before/after)               37/38 %        
+  PASS  total transfer                             438.1 KiB      html 33.2K  css 8.3K  js 243.1K  font 114.1K  img 15.5K  other 23.8K
+  PASS  requests                                   33             18 by load
+  PASS  images bytes                               15.5 KiB       3 files
+  PASS  largest image                              7.4 KiB        img/logo-cream.svg
+  PASS  JS parsed                                  248.4 KiB      2 files, 243.1K gz
+  PASS  CSS                                        8.3 KiB        2 files
+  PASS  font families                              2              Fraunces, Inter
+  PASS  font files                                 2              114.1K
+  PASS  font bytes                                 114.1 KiB      
+  PASS  images without width+height                0              
+  WARN  below-fold images not lazy                 3              logo.svg, logo.svg, logo-cream.svg
+  WARN  oversized images (natural > 2.2x shown)    1              logo.svg 700px for 160
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 1              runs 3, 0..1, max 54ms
+  PASS  blocking time                              0 ms           runs 3, 0..4 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        232 ms         runs 3, 224..248
+  PASS  LCP (CPU, relative)                        232 ms         runs 3, 224..248, h1
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                13.9 screens   DOM 487 nodes
+
+SUMMARY dist/index.html: 0 FAIL, 4 WARN  -> WARN

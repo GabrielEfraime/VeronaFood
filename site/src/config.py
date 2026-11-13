@@ -62,7 +62,7 @@ REDES = {
 # ✅ nome e cargo constam no site atual. O resto vem da entrevista.
 EQUIPE = [
     {
-        "nome": "Bárbara Helena de Camargo Pontes",
+        "nome": "Bárbara Pontes",
         "cargo": "Consultora em Alimentos",
         "foto": None,            # ⚠️ ex.: "img/barbara.jpg"
         "credenciais": ["Nutricionista", "Gastrônoma", "10 anos de atuação"],  # ⚠️ falta o número do CRN

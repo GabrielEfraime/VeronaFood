@@ -1,0 +1,456 @@
+{
+ "url": "http://127.0.0.1:5300/index.html",
+ "views": {
+  "desktop": {
+   "width": 1440,
+   "height": 900,
+   "navH": 77,
+   "scrollHeight": 7440,
+   "screens": 8.27,
+   "sections": [
+    {
+     "n": 1,
+     "tag": "section",
+     "id": "",
+     "cls": "hero",
+     "top": 77,
+     "h": 828,
+     "hScreens": 0.92,
+     "offGrid": 828,
+     "tiles": [
+      {
+       "file": "desktop-sec-01-a.jpg",
+       "scrollY": 77
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 905,
+     "h": 322,
+     "hScreens": 0.36,
+     "offGrid": 322,
+     "tiles": [
+      {
+       "file": "desktop-sec-02-a.jpg",
+       "scrollY": 905
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "tag": "section",
+     "id": "",
+     "cls": "secao",
+     "top": 1227,
+     "h": 1023,
+     "hScreens": 1.14,
+     "offGrid": 123,
+     "tiles": [
+      {
+       "file": "desktop-sec-03-a.jpg",
+       "scrollY": 1227
+      },
+      {
+       "file": "desktop-sec-03-b.jpg",
+       "scrollY": 1350
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 2250,
+     "h": 601,
+     "hScreens": 0.67,
+     "offGrid": 601,
+     "tiles": [
+      {
+       "file": "desktop-sec-04-a.jpg",
+       "scrollY": 2250
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--vinho",
+     "top": 2851,
+     "h": 536,
+     "hScreens": 0.6,
+     "offGrid": 536,
+     "tiles": [
+      {
+       "file": "desktop-sec-05-a.jpg",
+       "scrollY": 2851
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 3387,
+     "h": 409,
+     "hScreens": 0.45,
+     "offGrid": 409,
+     "tiles": [
+      {
+       "file": "desktop-sec-06-a.jpg",
+       "scrollY": 3387
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "tag": "section",
+     "id": "",
+     "cls": "secao",
+     "top": 3796,
+     "h": 521,
+     "hScreens": 0.58,
+     "offGrid": 521,
+     "tiles": [
+      {
+       "file": "desktop-sec-07-a.jpg",
+       "scrollY": 3796
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "tag": "div",
+     "id": "",
+     "cls": "container",
+     "top": 4317,
+     "h": 54,
+     "hScreens": 0.06,
+     "offGrid": 54,
+     "tiles": [
+      {
+       "file": "desktop-sec-08-a.jpg",
+       "scrollY": 4317
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 4371,
+     "h": 812,
+     "hScreens": 0.9,
+     "offGrid": 812,
+     "tiles": [
+      {
+       "file": "desktop-sec-09-a.jpg",
+       "scrollY": 4371
+      }
+     ]
+    },
+    {
+     "n": 10,
+     "tag": "section",
+     "id": "",
+     "cls": "secao",
+     "top": 5183,
+     "h": 860,
+     "hScreens": 0.96,
+     "offGrid": 860,
+     "tiles": [
+      {
+       "file": "desktop-sec-10-a.jpg",
+       "scrollY": 5183
+      }
+     ]
+    },
+    {
+     "n": 11,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--vinho secao--form",
+     "top": 6042,
+     "h": 1006,
+     "hScreens": 1.12,
+     "offGrid": 106,
+     "tiles": [
+      {
+       "file": "desktop-sec-11-a.jpg",
+       "scrollY": 6042
+      },
+      {
+       "file": "desktop-sec-11-b.jpg",
+       "scrollY": 6148
+      }
+     ]
+    },
+    {
+     "n": 12,
+     "tag": "footer",
+     "id": "",
+     "cls": "rodape",
+     "top": 7048,
+     "h": 391,
+     "hScreens": 0.43,
+     "offGrid": 391,
+     "tiles": [
+      {
+       "file": "desktop-sec-12-a.jpg",
+       "scrollY": 6540,
+       "cutTop": 508,
+       "height": 391
+      }
+     ]
+    }
+   ],
+   "consoleErrors": []
+  },
+  "mobile": {
+   "width": 390,
+   "height": 844,
+   "navH": 69,
+   "scrollHeight": 11693,
+   "screens": 13.85,
+   "sections": [
+    {
+     "n": 1,
+     "tag": "section",
+     "id": "",
+     "cls": "hero",
+     "top": 69,
+     "h": 874,
+     "hScreens": 1.04,
+     "offGrid": 30,
+     "tiles": [
+      {
+       "file": "mobile-sec-01-a.jpg",
+       "scrollY": 69
+      },
+      {
+       "file": "mobile-sec-01-b.jpg",
+       "scrollY": 99
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 943,
+     "h": 423,
+     "hScreens": 0.5,
+     "offGrid": 423,
+     "tiles": [
+      {
+       "file": "mobile-sec-02-a.jpg",
+       "scrollY": 943
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "tag": "section",
+     "id": "",
+     "cls": "secao",
+     "top": 1366,
+     "h": 2095,
+     "hScreens": 2.48,
+     "offGrid": 407,
+     "tiles": [
+      {
+       "file": "mobile-sec-03-a.jpg",
+       "scrollY": 1366
+      },
+      {
+       "file": "mobile-sec-03-b.jpg",
+       "scrollY": 2210
+      },
+      {
+       "file": "mobile-sec-03-c.jpg",
+       "scrollY": 2617
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 3462,
+     "h": 1103,
+     "hScreens": 1.31,
+     "offGrid": 259,
+     "tiles": [
+      {
+       "file": "mobile-sec-04-a.jpg",
+       "scrollY": 3462
+      },
+      {
+       "file": "mobile-sec-04-b.jpg",
+       "scrollY": 3721
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--vinho",
+     "top": 4565,
+     "h": 873,
+     "hScreens": 1.03,
+     "offGrid": 29,
+     "tiles": [
+      {
+       "file": "mobile-sec-05-a.jpg",
+       "scrollY": 4565
+      },
+      {
+       "file": "mobile-sec-05-b.jpg",
+       "scrollY": 4594
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 5437,
+     "h": 360,
+     "hScreens": 0.43,
+     "offGrid": 360,
+     "tiles": [
+      {
+       "file": "mobile-sec-06-a.jpg",
+       "scrollY": 5437
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "tag": "section",
+     "id": "",
+     "cls": "secao",
+     "top": 5797,
+     "h": 637,
+     "hScreens": 0.75,
+     "offGrid": 637,
+     "tiles": [
+      {
+       "file": "mobile-sec-07-a.jpg",
+       "scrollY": 5797
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "tag": "div",
+     "id": "",
+     "cls": "container",
+     "top": 6435,
+     "h": 54,
+     "hScreens": 0.06,
+     "offGrid": 54,
+     "tiles": [
+      {
+       "file": "mobile-sec-08-a.jpg",
+       "scrollY": 6435
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--claro",
+     "top": 6489,
+     "h": 1675,
+     "hScreens": 1.98,
+     "offGrid": 831,
+     "tiles": [
+      {
+       "file": "mobile-sec-09-a.jpg",
+       "scrollY": 6489
+      },
+      {
+       "file": "mobile-sec-09-b.jpg",
+       "scrollY": 7320
+      }
+     ]
+    },
+    {
+     "n": 10,
+     "tag": "section",
+     "id": "",
+     "cls": "secao",
+     "top": 8164,
+     "h": 1023,
+     "hScreens": 1.21,
+     "offGrid": 179,
+     "tiles": [
+      {
+       "file": "mobile-sec-10-a.jpg",
+       "scrollY": 8164
+      },
+      {
+       "file": "mobile-sec-10-b.jpg",
+       "scrollY": 8343
+      }
+     ]
+    },
+    {
+     "n": 11,
+     "tag": "section",
+     "id": "",
+     "cls": "secao secao--vinho secao--form",
+     "top": 9187,
+     "h": 1391,
+     "hScreens": 1.65,
+     "offGrid": 547,
+     "tiles": [
+      {
+       "file": "mobile-sec-11-a.jpg",
+       "scrollY": 9187
+      },
+      {
+       "file": "mobile-sec-11-b.jpg",
+       "scrollY": 9734
+      }
+     ]
+    },
+    {
+     "n": 12,
+     "tag": "footer",
+     "id": "",
+     "cls": "rodape",
+     "top": 10578,
+     "h": 1114,
+     "hScreens": 1.32,
+     "offGrid": 270,
+     "tiles": [
+      {
+       "file": "mobile-sec-12-a.jpg",
+       "scrollY": 10578
+      },
+      {
+       "file": "mobile-sec-12-b.jpg",
+       "scrollY": 10848
+      }
+     ]
+    }
+   ],
+   "consoleErrors": []
+  }
+ },
+ "at": "2026-11-13T01:57:34.007Z"
+}

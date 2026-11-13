@@ -1,0 +1,152 @@
+{
+ "url": "http://127.0.0.1:5300/solucoes/rotulagem/index.html",
+ "views": {
+  "desktop": {
+   "width": 1440,
+   "height": 900,
+   "navH": 72,
+   "scrollHeight": 9000,
+   "screens": 10,
+   "sections": [
+    {
+     "n": 1,
+     "tag": "section",
+     "id": "",
+     "cls": "hero hero--statement is-still is-entered",
+     "top": 0,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-01-a.jpg",
+       "scrollY": 0
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "tag": "section",
+     "id": "isso-provavelmente-e-para-voce-s-1",
+     "cls": "section",
+     "top": 900,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-02-a.jpg",
+       "scrollY": 900
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "tag": "section",
+     "id": "o-que-voce-recebe-2",
+     "cls": "section g2",
+     "top": 1800,
+     "h": 1800,
+     "hScreens": 2,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-03-a.jpg",
+       "scrollY": 1800
+      },
+      {
+       "file": "desktop-sec-03-b.jpg",
+       "scrollY": 2700
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "tag": "section",
+     "id": "como-funciona-3",
+     "cls": "section ground-inverse",
+     "top": 3600,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-04-a.jpg",
+       "scrollY": 3600
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "tag": "section",
+     "id": "prazo-e-o-que-precisamos-de-voce-4",
+     "cls": "section",
+     "top": 4500,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-05-a.jpg",
+       "scrollY": 4500
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "tag": "section",
+     "id": "perguntas-que-a-gente-ouve-sempr-5",
+     "cls": "section g2",
+     "top": 5400,
+     "h": 1800,
+     "hScreens": 2,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-06-a.jpg",
+       "scrollY": 5400
+      },
+      {
+       "file": "desktop-sec-06-b.jpg",
+       "scrollY": 6300
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "tag": "section",
+     "id": "contato",
+     "cls": "section",
+     "top": 7200,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-07-a.jpg",
+       "scrollY": 7200
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "tag": "footer",
+     "id": "contact",
+     "cls": "footer closing",
+     "top": 8100,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-08-a.jpg",
+       "scrollY": 8100
+      }
+     ]
+    }
+   ],
+   "consoleErrors": []
+  }
+ },
+ "at": "2026-11-13T03:51:10.750Z"
+}

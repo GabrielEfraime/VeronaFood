@@ -1,0 +1,2089 @@
+{
+ "start": "2026-11-13T02:01:24.670Z",
+ "round": 0,
+ "idle": 0,
+ "errors": 0,
+ "status": "fail",
+ "history": [
+  {
+   "at": "2026-11-13T02:15:55.737Z",
+   "mode": "hook",
+   "host": "claude",
+   "status": "fail",
+   "fails": 56,
+   "round": 0,
+   "reused": false,
+   "stopHookActive": false,
+   "decision": "block",
+   "reason": "56 FAILs remain (not a round: the gate has not been run by hand in this build yet):"
+  },
+  {
+   "at": "2026-11-13T02:16:01.855Z",
+   "mode": "hook",
+   "host": "claude",
+   "status": "fail",
+   "fails": 56,
+   "round": 0,
+   "reused": true,
+   "stopHookActive": true,
+   "decision": "allow",
+   "reason": "nothing changed since the last block; this stop is allowed once without a round (a question to the user)"
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "dist/index.html",
+  "url": null,
+  "root": "dist",
+  "kind": "service",
+  "category": "consultoria de alimentos",
+  "primary": "Agendar diagnóstico",
+  "rounds": 3,
+  "start": "2026-11-13T02:01:24.670Z",
+  "by": "gate.mjs --start"
+ },
+ "roundKey": "96f25e721d8f300a:da39a3ee",
+ "roundFree": true,
+ "idleFree": true,
+ "blockKey": "96f25e721d8f300a:da39a3ee",
+ "fp": "96f25e721d8f300a",
+ "page": "dist/index.html",
+ "found": {
+  "fails": [
+   {
+    "check": "flush",
+    "where": "div.wrap > div.pills-bloco > p:nth-of-type(2) > a.link \"Ver os segmentos\"",
+    "msg": "section#frentes-de-trabalho-1 and section#como-eu-trabalho-2 run together: -75px between their content, on one ground",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "flush"
+    ],
+    "wheres": [
+     "div.wrap > div.pills-bloco > p:nth-of-type(2) > a.link \"Ver os segmentos\""
+    ]
+   },
+   {
+    "check": "flush",
+    "where": "div.grid > div.span-6.start-7 > div.faq__item:nth-of-type(6) > p \"Para a primeira conversa, nada. Para o d\"",
+    "msg": "section#perguntas-frequentes-7 and section#contato run together: -33px between their content, on one ground",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "flush"
+    ],
+    "wheres": [
+     "div.grid > div.span-6.start-7 > div.faq__item:nth-of-type(6) > p \"Para a primeira conversa, nada. Para o d\""
+    ]
+   },
+   {
+    "check": "overlap-text",
+    "where": "div.span-6.start-7 > form.form > div.field:nth-of-type(1) > label \"Nome\"",
+    "msg": "lies over the text \"Para a primeira conversa, nada. Para o d\" (div.faq__item:nth-of-type(6) > p)",
+    "fix": "move the box off the text (or the text off the box)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "overlap-text"
+    ],
+    "wheres": [
+     "div.span-6.start-7 > form.form > div.field:nth-of-type(1) > label \"Nome\""
+    ]
+   },
+   {
+    "check": "scroll-reveal",
+    "where": "div.span-6.start-7 > form.form > div.btn-row > button.btn.btn--primary \"Agendar diagnóstico\"",
+    "msg": "starts \"color\" (0.1 s) the moment it is scrolled into view (an IntersectionObserver)",
+    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "scroll-reveal"
+    ],
+    "wheres": [
+     "div.span-6.start-7 > form.form > div.btn-row > button.btn.btn--primary \"Agendar diagnóstico\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#frentes-de-trabalho-1 \"Frentes de trabalho\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#frentes-de-trabalho-1 \"Frentes de trabalho\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#quatro-etapas-de-trabalho-3 \"Quatro etapas de trabalho\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#quatro-etapas-de-trabalho-3 \"Quatro etapas de trabalho\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#o-que-muda-na-rotina-4 \"O que muda na rotina\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#o-que-muda-na-rotina-4 \"O que muda na rotina\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#o-que-voce-recebe-5 \"O que você recebe\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#o-que-voce-recebe-5 \"O que você recebe\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#conteudos-para-ler-antes-de-cont-6 \"Conteúdos para ler antes de contratar\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#conteudos-para-ler-antes-de-cont-6 \"Conteúdos para ler antes de contratar\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#perguntas-frequentes-7 \"Perguntas frequentes\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#perguntas-frequentes-7 \"Perguntas frequentes\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#contato \"Conte como está a sua operação\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#contato \"Conte como está a sua operação\""
+    ]
+   },
+   {
+    "check": "copy-headline",
+    "where": "h1#hero-h \"Sua cozinha funcionando como está no pap\"",
+    "msg": "\"Sua cozinha funcionando como está no papel.\" does not name what is sold (consultoria de alimentos, consultoria, alimentos, from flags); only the line under it does",
+    "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "copy-headline"
+    ],
+    "wheres": [
+     "h1#hero-h \"Sua cozinha funcionando como está no pap\""
+    ]
+   },
+   {
+    "check": "copy-headings",
+    "where": "h2#frentes-de-trabalho-1-h \"Frentes de trabalho\"",
+    "msg": "\"Frentes de trabalho\" names no product, part, place or section (12 headings like it; at most one brand line per page) (and 11 more like it: \"Quatro etapas de trabalh\", \"O que muda na rotina\", \"O que você recebe\", \"Conteúdos para ler antes\", ...)",
+    "fix": "name the thing in every heading: the product, a part, the place or a section noun",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "copy-headings"
+    ],
+    "wheres": [
+     "h2#frentes-de-trabalho-1-h \"Frentes de trabalho\""
+    ]
+   },
+   {
+    "check": "street-number",
+    "where": "script[type=\"application/ld+json\"] \"R. Antônio de Couros, 270\"",
+    "msg": "a streetAddress with a house number in the JSON-LD: \"R. Antônio de Couros, 270\"; a real door, which the brief does not give",
+    "fix": "print the street and the district only (\"Weserstraße, Berlin-Neukölln\"): no house number, unless the brief gives the address",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "street-number"
+    ],
+    "wheres": [
+     "script[type=\"application/ld+json\"] \"R. Antônio de Couros, 270\""
+    ]
+   },
+   {
+    "check": "postcode",
+    "where": "script[type=\"application/ld+json\"] \"02726-000\"",
+    "msg": "a postalCode in the JSON-LD: \"02726-000\"; with the street it points at one building, which the brief does not give",
+    "fix": "drop the postcode: the street and the district say where it is (copy.md, Address)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "postcode"
+    ],
+    "wheres": [
+     "script[type=\"application/ld+json\"] \"02726-000\""
+    ]
+   },
+   {
+    "check": "phone-number",
+    "where": "div.hero-text.hero__in > div > div.btn-row > a.btn.btn--secondary \"https://wa.me/5511994955987?text=Ol%C3%A\"",
+    "msg": "a WhatsApp link calls a number in a real dialable format: \"https://wa.me/5511994955987?text=Ol%C3%A\"; a visitor can dial it and reach a stranger (and 2 more like it: ul.rows > li:nth-of-type(1) > p > a.link, div.span-3.footer__col > ul > li:nth-of-type(1) > a)",
+    "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "phone-number"
+    ],
+    "wheres": [
+     "div.hero-text.hero__in > div > div.btn-row > a.btn.btn--secondary \"https://wa.me/5511994955987?text=Ol%C3%A\""
+    ]
+   },
+   {
+    "check": "phone-number",
+    "where": "ul.rows > li:nth-of-type(2) > p > a.link \"tel:+551123626207\"",
+    "msg": "a tel: link calls a number in a real dialable format: \"tel:+551123626207\"; a visitor can dial it and reach a stranger (and 1 more like it: div.span-3.footer__col > ul > li:nth-of-type(2) > a)",
+    "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "phone-number"
+    ],
+    "wheres": [
+     "ul.rows > li:nth-of-type(2) > p > a.link \"tel:+551123626207\""
+    ]
+   },
+   {
+    "check": "phone-number",
+    "where": "script[type=\"application/ld+json\"] \"(11) 2362-6207\"",
+    "msg": "a telephone in a real dialable format in the JSON-LD: \"(11) 2362-6207\"; a visitor can dial it and reach a stranger",
+    "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "phone-number"
+    ],
+    "wheres": [
+     "script[type=\"application/ld+json\"] \"(11) 2362-6207\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \"",
+    "msg": "the section's content does not fit it: its content is 201px taller than the section (scrollHeight 1101, clientHeight 900); its lowest content ends 1101px below its top, past 828px (the section less 72px of bottom padding); 16 parts lie outside the section's box (SR-2)",
+    "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \"",
+     "section#frentes-de-trabalho-1 > div.wrap > ul.rows \"Segurança dos alimentosBoas práticas, PO\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\"",
+    "msg": "the section's content does not fit it: its content is 176px taller than the section (scrollHeight 1076, clientHeight 900); its lowest content ends 1049px below its top, past 828px (the section less 72px of bottom padding); 9 parts lie outside the section's box (SR-2)",
+    "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\""
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "section#perguntas-frequentes-7 / section#contato",
+    "msg": "the content of these two sections overlaps by 33px: 128-480px of air between them (SR-3)",
+    "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "section#perguntas-frequentes-7 / section#contato"
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\"",
+    "msg": "the screen at scroll 7200px (stride 8) shows 104px of section 8 and the content of 2 sections, over 24px each beside section 9: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section",
+     "neighbour"
+    ],
+    "wheres": [
+     "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\"",
+     "#perguntas-frequentes-7 section.section \"Perguntas frequentesTirar outra \""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \"",
+    "msg": "the screen at scroll 1800px (stride 2) shows 77px of section 2 and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \""
+    ]
+   },
+   {
+    "check": "hero-fill",
+    "where": "section#frentes-de-trabalho-1 \"Frentes de trabalho\"",
+    "msg": "the next section shows on the first screen: it starts at 938px on a 1022px screen (the hero ends at 844px)",
+    "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-fill"
+    ],
+    "wheres": [
+     "section#frentes-de-trabalho-1 \"Frentes de trabalho\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "(the page)",
+    "msg": "the page is 473px wide on a 390px screen and scrolls sideways",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "cut-text",
+    "where": "div.span-3.footer__col > ul > li:nth-of-type(3) > a \"consultoriadealimentos.vfood@gmail.com\"",
+    "msg": "cut 82px by the right edge of the screen (and 1 more like it: \"Segunda a sexta, das 9h \")",
+    "fix": "give the text room: no overflow clipping a line, no line past its box",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cut-text"
+    ],
+    "wheres": [
+     "div.span-3.footer__col > ul > li:nth-of-type(3) > a \"consultoriadealimentos.vfood@gmail.com\""
+    ]
+   },
+   {
+    "check": "scroll-reveal",
+    "where": "div.wrap > div.closing__cta.close--word > div.section-head--split > a.btn.btn--primary \"Agendar diagnóstico\"",
+    "msg": "starts \"color\" (0.1 s) the moment it is scrolled into view (an IntersectionObserver)",
+    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "scroll-reveal"
+    ],
+    "wheres": [
+     "div.wrap > div.closing__cta.close--word > div.section-head--split > a.btn.btn--primary \"Agendar diagnóstico\""
+    ]
+   },
+   {
+    "check": "section-gaps",
+    "where": "main#top > section.hero.hero--statement / section#frentes-de-trabalho-1",
+    "msg": "461px between these sections, +104% against the median 226px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-gaps"
+    ],
+    "wheres": [
+     "main#top > section.hero.hero--statement / section#frentes-de-trabalho-1"
+    ]
+   },
+   {
+    "check": "section-tile",
+    "where": "section#o-que-muda-na-rotina-4 \"O que muda na rotina\"",
+    "msg": "the section is 844px tall (0.83 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 788px of it and 179px of the next section, its heading \"O que você recebe\" on screen",
+    "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-tile"
+    ],
+    "wheres": [
+     "section#o-que-muda-na-rotina-4 \"O que muda na rotina\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "header.nav.nav--centre > div.wrap.nav__bar \"Pular para o conteúdo\"",
+    "msg": "at 320px wide it runs 93px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "header.nav.nav--centre > div.wrap.nav__bar \"Pular para o conteúdo\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "li > p > a.link \"consultoriadealimentos.vfood@gmail.com\"",
+    "msg": "at 320px wide it runs 41px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "li > p > a.link \"consultoriadealimentos.vfood@gmail.com\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "div.span-3.footer__col > ul > li \"WhatsApp\"",
+    "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "div.span-3.footer__col > ul > li \"WhatsApp\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "div.span-3.footer__col > ul > li \"(11) 2362-6207\"",
+    "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "div.span-3.footer__col > ul > li \"(11) 2362-6207\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "div.span-3.footer__col > ul > li \"consultoriadealimentos.vfood@gmail.com\"",
+    "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "div.span-3.footer__col > ul > li \"consultoriadealimentos.vfood@gmail.com\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "div.span-3.footer__col > ul > li \"Instagram\"",
+    "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "div.span-3.footer__col > ul > li \"Instagram\""
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "div.span-3.footer__col > ul > li \"Segunda a sexta, das 9h às 18h\"",
+    "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "div.span-3.footer__col > ul > li \"Segunda a sexta, das 9h às 18h\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\"",
+    "msg": "framed, 32px of #frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#contato section.section \"Conte como está a sua operaçãoDu\"",
+    "msg": "framed, 50px of #perguntas-frequentes-7 section.section \"Perguntas frequentesTirar outra \" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#contato section.section \"Conte como está a sua operaçãoDu\""
+    ]
+   },
+   {
+    "check": "hero-lines",
+    "where": "section.hero h1",
+    "msg": "the check fills the h1 to 54 characters (this hero's maxChars in heroes.json), not the page's own: it takes 3 lines at 1440, 2 at most",
+    "fix": "the check fills the h1 to this hero's maxChars, not your own: take the next type pairing the deal printed (start.mjs); when the h1 is final and fits, waive it (target: section.hero h1)",
+    "widths": [
+     1440
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-lines"
+    ],
+    "wheres": [
+     "section.hero h1"
+    ]
+   },
+   {
+    "check": "edge-right",
+    "where": "nav actions",
+    "msg": "end at x 449, the page's right line is 366",
+    "fix": "end it on the .wrap right line",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "edge-right"
+    ],
+    "wheres": [
+     "nav actions"
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+    "msg": "844px tall; one screen under the nav is 1022px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short"
+    ],
+    "wheres": [
+     "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+    "msg": "framed, 33px of #frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\"",
+    "msg": "844px tall; one screen under the nav is 1022px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\"",
+    "msg": "952px tall; one screen under the nav is 1022px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\""
+    ]
+   },
+   {
+    "check": "neighbour-ground",
+    "where": "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\"",
+    "msg": "framed, 70px of #o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\"'s ground shows",
+    "fix": "end the ground with the section",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour-ground"
+    ],
+    "wheres": [
+     "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\"",
+    "msg": "844px tall; one screen under the nav is 1022px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\"",
+    "msg": "framed, 33px of #o-que-voce-recebe-5 section.section \"O que você recebeTudo em arquivo\" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "#o-que-voce-recebe-5 section.section \"O que você recebeTudo em arquivo\"",
+    "msg": "946px tall; one screen under the nav is 1022px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "#o-que-voce-recebe-5 section.section \"O que você recebeTudo em arquivo\""
+    ]
+   },
+   {
+    "check": "screen-short",
+    "where": "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\"",
+    "msg": "844px tall; one screen under the nav is 1022px",
+    "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "screen-short",
+     "screen-height"
+    ],
+    "wheres": [
+     "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\""
+    ]
+   },
+   {
+    "check": "neighbour",
+    "where": "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\"",
+    "msg": "framed, 33px of #perguntas-frequentes-7 section.section \"Perguntas frequentesTirar outra \" shows",
+    "fix": "keep the next section's heading and picture out of this screen",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "neighbour"
+    ],
+    "wheres": [
+     "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\""
+    ]
+   },
+   {
+    "check": "hero-fold",
+    "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+    "msg": "ends at y 844, above the fold (1022)",
+    "fix": "the hero fills the first screen alone, its button inside it",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-fold"
+    ],
+    "wheres": [
+     "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+    ]
+   },
+   {
+    "check": "hero-fold",
+    "where": "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\"",
+    "msg": "shows on the first screen from y 940",
+    "fix": "the hero fills the first screen alone, its button inside it",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-fold"
+    ],
+    "wheres": [
+     "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\""
+    ]
+   },
+   {
+    "check": "overflow-x",
+    "where": "page",
+    "msg": "the page scrolls sideways",
+    "fix": "remove what scrolls sideways",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "overflow-x"
+    ],
+    "wheres": [
+     "page"
+    ]
+   },
+   {
+    "check": "hero-maxchars",
+    "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+    "msg": "with a 54-character h1 (heroes.json maxChars): ends at y 844, above the fold (1022)",
+    "fix": "shorten the h1 or give the hero room for the longest headline",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-maxchars"
+    ],
+    "wheres": [
+     "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+    ]
+   },
+   {
+    "check": "hero-maxchars",
+    "where": "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\"",
+    "msg": "with a 54-character h1 (heroes.json maxChars): shows on the first screen from y 940",
+    "fix": "shorten the h1 or give the hero room for the longest headline",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-maxchars"
+    ],
+    "wheres": [
+     "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\""
+    ]
+   },
+   {
+    "check": "hero-maxchars",
+    "where": "page",
+    "msg": "with a 54-character h1 the page scrolls sideways",
+    "fix": "shorten the h1 or give the hero room for the longest headline",
+    "widths": [
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "hero-maxchars"
+    ],
+    "wheres": [
+     "page"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "overlap-text",
+    "where": "div.wrap > p.mo-wh__text > span.mo-w:nth-of-type(1) > span.mo-i \"Procedimento\"",
+    "msg": "lies over the text \"Restaurantes\" (div.pills > a.pill:nth-of-type(1)) (inside a held section or scroll scene, whose motion --quick does not check) (and 4 more like it: \"escrito\", \"longe\", \"da\", \"cozinha\")",
+    "fix": "move the box off the text (or the text off the box)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cut-text",
+    "where": "section#como-eu-trabalho-2 > div.wrap > p.t-label \"Como eu trabalho\"",
+    "msg": "sits across the edge of a panel behind it (inside a held section or scroll scene, whose motion --quick does not check) (and 6 more like it: \"Procedimento\", \"escrito\", \"longe\", \"da\", ...)",
+    "fix": "give the text room: no overflow clipping a line, no line past its box",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "scroll-reveal",
+    "where": "section#como-eu-trabalho-2 > div.wrap > p.mo-wh__text \"Procedimento escrito longe da cozinha nã\"",
+    "msg": "starts \"color\" (0.2 s) the moment it is scrolled into view (an IntersectionObserver) on span.mo-w:nth-of-type(2) (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)",
+    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-buttons",
+    "where": "header.nav.nav--centre > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary \"Agendar diagnóstico\"",
+    "msg": "\"Agendar diagnóstico\" does not start with a verb (book, buy, try, start, get, see...) (and 8 more like it: \"Restaurantes\", \"Bares\", \"Hotéis\", \"Padarias\", ...)",
+    "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-actions",
+    "where": "div.wrap > div.pills-bloco > div.pills > a.pill:nth-of-type(1) \"Restaurantes\"",
+    "msg": "2 labels for one target /segmentos/restaurantes-e-bares/: \"Restaurantes\", \"Bares\"",
+    "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-actions",
+    "where": "div.wrap > div.pills-bloco > div.pills > a.pill:nth-of-type(4) \"Padarias\"",
+    "msg": "2 labels for one target /segmentos/padarias-e-confeitarias/: \"Padarias\", \"Confeitarias\"",
+    "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "main#top > section.hero.hero--statement / section#frentes-de-trabalho-1",
+    "msg": "183px between these sections, -38% against the median 298px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#o-que-muda-na-rotina-4 / section#o-que-voce-recebe-5",
+    "msg": "393px between these sections, +27% against the median 309px of gaps at a change of ground",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#conteudos-para-ler-antes-de-cont-6 / section#perguntas-frequentes-7",
+    "msg": "399px between these sections, +34% against the median 298px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#perguntas-frequentes-7 / section#contato",
+    "msg": "the sections overlap by 33px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "label-centre",
+    "where": "header.nav.nav--centre > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary \"Agendar diagnóstico\"",
+    "msg": "its label sits 18px off-centre (25px of room at the left, 43px at the right) (and 1 more like it: \"Agendar diagnóstico\")",
+    "fix": "centre the label in its button, or fill the empty side with an icon",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "orphan",
+    "where": "div.grid.grid--top > div.span-5.stack-6 > ul.rows > li:nth-of-type(4) \"Onde fica R. Antônio de Couros, 270, Vil\"",
+    "msg": "its last line holds only \"02726-000\" (and 1 more like it: \"R. Antônio de Couros, 27\")",
+    "fix": "rebalance the text (text-wrap: pretty, or a shorter line) so the last line holds more than one short word",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "skip-link",
+    "where": "header.nav.nav--centre > div.wrap.nav__bar > a.skip-link:nth-of-type(1) \"Pular para o conteúdo\"",
+    "msg": "the first Tab stop is \"Pular para o conteúdo\", not a skip link: a keyboard user tabs through the whole nav on every visit",
+    "fix": "add the starter's skip link as the header's first child: <a class=\"skip-link\" href=\"#top\">Skip to content</a>",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "action-repeat",
+    "where": "header.nav.nav--centre > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary \"agendar diagnóstico\"",
+    "msg": "\"agendar diagnóstico\" shows 2 times on the first screen at 1440px (nav, hero): the nav's button and the hero's; nothing else on the screen may repeat it",
+    "fix": "show the action once a screen besides the nav's button: the hero's, the close's or the phone bar's, never all at once",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "div.wrap > ul.rows > li:nth-of-type(1) > a.rows__name \"Segurança dos alimentos\"",
+    "msg": "a 318x25px tap target (and 5 more like it on this screen): under the 44px a phone needs",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "form.form > p.consent > label > input",
+    "msg": "a 342x43px tap target: under the 44px a phone needs",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "label-centre",
+    "where": "div.span-6.start-7 > form.form > div.btn-row > button.btn.btn--primary \"Agendar diagnóstico\"",
+    "msg": "its label sits 18px off-centre (84px of room at the left, 102px at the right)",
+    "fix": "centre the label in its button, or fill the empty side with an icon",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-tile",
+    "where": "section#quatro-etapas-de-trabalho-3 \"Quatro etapas de trabalho\"",
+    "msg": "the section is 952px tall (0.93 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 897px of it and only 70px of the next section's ground (\"O que muda na rotina\"), none of its content",
+    "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-tile",
+    "where": "section#o-que-voce-recebe-5 \"O que você recebe\"",
+    "msg": "the section is 946px tall (0.93 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 889px of it and only 77px of the next section's ground (\"Conteúdos para ler antes de co\"), none of its content",
+    "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 125,
+   "layout": 4
+  }
+ },
+ "open": [
+  {
+   "check": "flush",
+   "where": "div.wrap > div.pills-bloco > p:nth-of-type(2) > a.link \"Ver os segmentos\"",
+   "msg": "section#frentes-de-trabalho-1 and section#como-eu-trabalho-2 run together: -75px between their content, on one ground",
+   "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "flush"
+   ],
+   "wheres": [
+    "div.wrap > div.pills-bloco > p:nth-of-type(2) > a.link \"Ver os segmentos\""
+   ]
+  },
+  {
+   "check": "flush",
+   "where": "div.grid > div.span-6.start-7 > div.faq__item:nth-of-type(6) > p \"Para a primeira conversa, nada. Para o d\"",
+   "msg": "section#perguntas-frequentes-7 and section#contato run together: -33px between their content, on one ground",
+   "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "flush"
+   ],
+   "wheres": [
+    "div.grid > div.span-6.start-7 > div.faq__item:nth-of-type(6) > p \"Para a primeira conversa, nada. Para o d\""
+   ]
+  },
+  {
+   "check": "overlap-text",
+   "where": "div.span-6.start-7 > form.form > div.field:nth-of-type(1) > label \"Nome\"",
+   "msg": "lies over the text \"Para a primeira conversa, nada. Para o d\" (div.faq__item:nth-of-type(6) > p)",
+   "fix": "move the box off the text (or the text off the box)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "overlap-text"
+   ],
+   "wheres": [
+    "div.span-6.start-7 > form.form > div.field:nth-of-type(1) > label \"Nome\""
+   ]
+  },
+  {
+   "check": "scroll-reveal",
+   "where": "div.span-6.start-7 > form.form > div.btn-row > button.btn.btn--primary \"Agendar diagnóstico\"",
+   "msg": "starts \"color\" (0.1 s) the moment it is scrolled into view (an IntersectionObserver)",
+   "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "scroll-reveal"
+   ],
+   "wheres": [
+    "div.span-6.start-7 > form.form > div.btn-row > button.btn.btn--primary \"Agendar diagnóstico\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#frentes-de-trabalho-1 \"Frentes de trabalho\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#frentes-de-trabalho-1 \"Frentes de trabalho\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#quatro-etapas-de-trabalho-3 \"Quatro etapas de trabalho\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#quatro-etapas-de-trabalho-3 \"Quatro etapas de trabalho\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#o-que-muda-na-rotina-4 \"O que muda na rotina\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#o-que-muda-na-rotina-4 \"O que muda na rotina\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#o-que-voce-recebe-5 \"O que você recebe\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#o-que-voce-recebe-5 \"O que você recebe\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#conteudos-para-ler-antes-de-cont-6 \"Conteúdos para ler antes de contratar\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#conteudos-para-ler-antes-de-cont-6 \"Conteúdos para ler antes de contratar\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#perguntas-frequentes-7 \"Perguntas frequentes\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#perguntas-frequentes-7 \"Perguntas frequentes\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#contato \"Conte como está a sua operação\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#contato \"Conte como está a sua operação\""
+   ]
+  },
+  {
+   "check": "copy-headline",
+   "where": "h1#hero-h \"Sua cozinha funcionando como está no pap\"",
+   "msg": "\"Sua cozinha funcionando como está no papel.\" does not name what is sold (consultoria de alimentos, consultoria, alimentos, from flags); only the line under it does",
+   "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "copy-headline"
+   ],
+   "wheres": [
+    "h1#hero-h \"Sua cozinha funcionando como está no pap\""
+   ]
+  },
+  {
+   "check": "copy-headings",
+   "where": "h2#frentes-de-trabalho-1-h \"Frentes de trabalho\"",
+   "msg": "\"Frentes de trabalho\" names no product, part, place or section (12 headings like it; at most one brand line per page) (and 11 more like it: \"Quatro etapas de trabalh\", \"O que muda na rotina\", \"O que você recebe\", \"Conteúdos para ler antes\", ...)",
+   "fix": "name the thing in every heading: the product, a part, the place or a section noun",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "copy-headings"
+   ],
+   "wheres": [
+    "h2#frentes-de-trabalho-1-h \"Frentes de trabalho\""
+   ]
+  },
+  {
+   "check": "street-number",
+   "where": "script[type=\"application/ld+json\"] \"R. Antônio de Couros, 270\"",
+   "msg": "a streetAddress with a house number in the JSON-LD: \"R. Antônio de Couros, 270\"; a real door, which the brief does not give",
+   "fix": "print the street and the district only (\"Weserstraße, Berlin-Neukölln\"): no house number, unless the brief gives the address",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "street-number"
+   ],
+   "wheres": [
+    "script[type=\"application/ld+json\"] \"R. Antônio de Couros, 270\""
+   ]
+  },
+  {
+   "check": "postcode",
+   "where": "script[type=\"application/ld+json\"] \"02726-000\"",
+   "msg": "a postalCode in the JSON-LD: \"02726-000\"; with the street it points at one building, which the brief does not give",
+   "fix": "drop the postcode: the street and the district say where it is (copy.md, Address)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "postcode"
+   ],
+   "wheres": [
+    "script[type=\"application/ld+json\"] \"02726-000\""
+   ]
+  },
+  {
+   "check": "phone-number",
+   "where": "div.hero-text.hero__in > div > div.btn-row > a.btn.btn--secondary \"https://wa.me/5511994955987?text=Ol%C3%A\"",
+   "msg": "a WhatsApp link calls a number in a real dialable format: \"https://wa.me/5511994955987?text=Ol%C3%A\"; a visitor can dial it and reach a stranger (and 2 more like it: ul.rows > li:nth-of-type(1) > p > a.link, div.span-3.footer__col > ul > li:nth-of-type(1) > a)",
+   "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "phone-number"
+   ],
+   "wheres": [
+    "div.hero-text.hero__in > div > div.btn-row > a.btn.btn--secondary \"https://wa.me/5511994955987?text=Ol%C3%A\""
+   ]
+  },
+  {
+   "check": "phone-number",
+   "where": "ul.rows > li:nth-of-type(2) > p > a.link \"tel:+551123626207\"",
+   "msg": "a tel: link calls a number in a real dialable format: \"tel:+551123626207\"; a visitor can dial it and reach a stranger (and 1 more like it: div.span-3.footer__col > ul > li:nth-of-type(2) > a)",
+   "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "phone-number"
+   ],
+   "wheres": [
+    "ul.rows > li:nth-of-type(2) > p > a.link \"tel:+551123626207\""
+   ]
+  },
+  {
+   "check": "phone-number",
+   "where": "script[type=\"application/ld+json\"] \"(11) 2362-6207\"",
+   "msg": "a telephone in a real dialable format in the JSON-LD: \"(11) 2362-6207\"; a visitor can dial it and reach a stranger",
+   "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "phone-number"
+   ],
+   "wheres": [
+    "script[type=\"application/ld+json\"] \"(11) 2362-6207\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \"",
+   "msg": "the section's content does not fit it: its content is 201px taller than the section (scrollHeight 1101, clientHeight 900); its lowest content ends 1101px below its top, past 828px (the section less 72px of bottom padding); 16 parts lie outside the section's box (SR-2)",
+   "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \"",
+    "section#frentes-de-trabalho-1 > div.wrap > ul.rows \"Segurança dos alimentosBoas práticas, PO\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\"",
+   "msg": "the section's content does not fit it: its content is 176px taller than the section (scrollHeight 1076, clientHeight 900); its lowest content ends 1049px below its top, past 828px (the section less 72px of bottom padding); 9 parts lie outside the section's box (SR-2)",
+   "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\""
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "section#perguntas-frequentes-7 / section#contato",
+   "msg": "the content of these two sections overlaps by 33px: 128-480px of air between them (SR-3)",
+   "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "section#perguntas-frequentes-7 / section#contato"
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\"",
+   "msg": "the screen at scroll 7200px (stride 8) shows 104px of section 8 and the content of 2 sections, over 24px each beside section 9: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section",
+    "neighbour"
+   ],
+   "wheres": [
+    "section#perguntas-frequentes-7 \"Perguntas frequentesTirar outra dúvidaMe\"",
+    "#perguntas-frequentes-7 section.section \"Perguntas frequentesTirar outra \""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \"",
+   "msg": "the screen at scroll 1800px (stride 2) shows 77px of section 2 and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#frentes-de-trabalho-1 \"Frentes de trabalhoCada frente funciona \""
+   ]
+  },
+  {
+   "check": "hero-fill",
+   "where": "section#frentes-de-trabalho-1 \"Frentes de trabalho\"",
+   "msg": "the next section shows on the first screen: it starts at 938px on a 1022px screen (the hero ends at 844px)",
+   "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-fill"
+   ],
+   "wheres": [
+    "section#frentes-de-trabalho-1 \"Frentes de trabalho\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "(the page)",
+   "msg": "the page is 473px wide on a 390px screen and scrolls sideways",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "cut-text",
+   "where": "div.span-3.footer__col > ul > li:nth-of-type(3) > a \"consultoriadealimentos.vfood@gmail.com\"",
+   "msg": "cut 82px by the right edge of the screen (and 1 more like it: \"Segunda a sexta, das 9h \")",
+   "fix": "give the text room: no overflow clipping a line, no line past its box",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cut-text"
+   ],
+   "wheres": [
+    "div.span-3.footer__col > ul > li:nth-of-type(3) > a \"consultoriadealimentos.vfood@gmail.com\""
+   ]
+  },
+  {
+   "check": "scroll-reveal",
+   "where": "div.wrap > div.closing__cta.close--word > div.section-head--split > a.btn.btn--primary \"Agendar diagnóstico\"",
+   "msg": "starts \"color\" (0.1 s) the moment it is scrolled into view (an IntersectionObserver)",
+   "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "scroll-reveal"
+   ],
+   "wheres": [
+    "div.wrap > div.closing__cta.close--word > div.section-head--split > a.btn.btn--primary \"Agendar diagnóstico\""
+   ]
+  },
+  {
+   "check": "section-gaps",
+   "where": "main#top > section.hero.hero--statement / section#frentes-de-trabalho-1",
+   "msg": "461px between these sections, +104% against the median 226px",
+   "fix": "use one gap between sections (all within 25% of each other)",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-gaps"
+   ],
+   "wheres": [
+    "main#top > section.hero.hero--statement / section#frentes-de-trabalho-1"
+   ]
+  },
+  {
+   "check": "section-tile",
+   "where": "section#o-que-muda-na-rotina-4 \"O que muda na rotina\"",
+   "msg": "the section is 844px tall (0.83 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 788px of it and 179px of the next section, its heading \"O que você recebe\" on screen",
+   "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-tile"
+   ],
+   "wheres": [
+    "section#o-que-muda-na-rotina-4 \"O que muda na rotina\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "header.nav.nav--centre > div.wrap.nav__bar \"Pular para o conteúdo\"",
+   "msg": "at 320px wide it runs 93px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "header.nav.nav--centre > div.wrap.nav__bar \"Pular para o conteúdo\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "li > p > a.link \"consultoriadealimentos.vfood@gmail.com\"",
+   "msg": "at 320px wide it runs 41px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "li > p > a.link \"consultoriadealimentos.vfood@gmail.com\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "div.span-3.footer__col > ul > li \"WhatsApp\"",
+   "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "div.span-3.footer__col > ul > li \"WhatsApp\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "div.span-3.footer__col > ul > li \"(11) 2362-6207\"",
+   "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "div.span-3.footer__col > ul > li \"(11) 2362-6207\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "div.span-3.footer__col > ul > li \"consultoriadealimentos.vfood@gmail.com\"",
+   "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "div.span-3.footer__col > ul > li \"consultoriadealimentos.vfood@gmail.com\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "div.span-3.footer__col > ul > li \"Instagram\"",
+   "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "div.span-3.footer__col > ul > li \"Instagram\""
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "div.span-3.footer__col > ul > li \"Segunda a sexta, das 9h às 18h\"",
+   "msg": "at 320px wide it runs 117px past the screen's right edge (the page is 437px wide and scrolls sideways)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "div.span-3.footer__col > ul > li \"Segunda a sexta, das 9h às 18h\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\"",
+   "msg": "framed, 32px of #frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#contato section.section \"Conte como está a sua operaçãoDu\"",
+   "msg": "framed, 50px of #perguntas-frequentes-7 section.section \"Perguntas frequentesTirar outra \" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#contato section.section \"Conte como está a sua operaçãoDu\""
+   ]
+  },
+  {
+   "check": "hero-lines",
+   "where": "section.hero h1",
+   "msg": "the check fills the h1 to 54 characters (this hero's maxChars in heroes.json), not the page's own: it takes 3 lines at 1440, 2 at most",
+   "fix": "the check fills the h1 to this hero's maxChars, not your own: take the next type pairing the deal printed (start.mjs); when the h1 is final and fits, waive it (target: section.hero h1)",
+   "widths": [
+    1440
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-lines"
+   ],
+   "wheres": [
+    "section.hero h1"
+   ]
+  },
+  {
+   "check": "edge-right",
+   "where": "nav actions",
+   "msg": "end at x 449, the page's right line is 366",
+   "fix": "end it on the .wrap right line",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "edge-right"
+   ],
+   "wheres": [
+    "nav actions"
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+   "msg": "844px tall; one screen under the nav is 1022px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short"
+   ],
+   "wheres": [
+    "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+   "msg": "framed, 33px of #frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\"",
+   "msg": "844px tall; one screen under the nav is 1022px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "#como-eu-trabalho-2 section.section.statement \"Como eu trabalhoProcedimento esc\""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\"",
+   "msg": "952px tall; one screen under the nav is 1022px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\""
+   ]
+  },
+  {
+   "check": "neighbour-ground",
+   "where": "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\"",
+   "msg": "framed, 70px of #o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\"'s ground shows",
+   "fix": "end the ground with the section",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour-ground"
+   ],
+   "wheres": [
+    "#quatro-etapas-de-trabalho-3 section.section \"Quatro etapas de trabalho1. Diag\""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\"",
+   "msg": "844px tall; one screen under the nav is 1022px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\"",
+   "msg": "framed, 33px of #o-que-voce-recebe-5 section.section \"O que você recebeTudo em arquivo\" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#o-que-muda-na-rotina-4 section.section.ground-inverse \"O que muda na rotinaMenos retrab\""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "#o-que-voce-recebe-5 section.section \"O que você recebeTudo em arquivo\"",
+   "msg": "946px tall; one screen under the nav is 1022px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "#o-que-voce-recebe-5 section.section \"O que você recebeTudo em arquivo\""
+   ]
+  },
+  {
+   "check": "screen-short",
+   "where": "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\"",
+   "msg": "844px tall; one screen under the nav is 1022px",
+   "fix": "make the section one full screen (--h: 1, layout-v4.md section 2)",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "screen-short",
+    "screen-height"
+   ],
+   "wheres": [
+    "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\""
+   ]
+  },
+  {
+   "check": "neighbour",
+   "where": "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\"",
+   "msg": "framed, 33px of #perguntas-frequentes-7 section.section \"Perguntas frequentesTirar outra \" shows",
+   "fix": "keep the next section's heading and picture out of this screen",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "neighbour"
+   ],
+   "wheres": [
+    "#conteudos-para-ler-antes-de-cont-6 section.section \"Conteúdos para ler antes de cont\""
+   ]
+  },
+  {
+   "check": "hero-fold",
+   "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+   "msg": "ends at y 844, above the fold (1022)",
+   "fix": "the hero fills the first screen alone, its button inside it",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-fold"
+   ],
+   "wheres": [
+    "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+   ]
+  },
+  {
+   "check": "hero-fold",
+   "where": "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\"",
+   "msg": "shows on the first screen from y 940",
+   "fix": "the hero fills the first screen alone, its button inside it",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-fold"
+   ],
+   "wheres": [
+    "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\""
+   ]
+  },
+  {
+   "check": "overflow-x",
+   "where": "page",
+   "msg": "the page scrolls sideways",
+   "fix": "remove what scrolls sideways",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "overflow-x"
+   ],
+   "wheres": [
+    "page"
+   ]
+  },
+  {
+   "check": "hero-maxchars",
+   "where": "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\"",
+   "msg": "with a 54-character h1 (heroes.json maxChars): ends at y 844, above the fold (1022)",
+   "fix": "shorten the h1 or give the hero room for the longest headline",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-maxchars"
+   ],
+   "wheres": [
+    "section.hero.hero--statement section.hero.hero--statement \"Sua cozinha funcionando como est\""
+   ]
+  },
+  {
+   "check": "hero-maxchars",
+   "where": "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\"",
+   "msg": "with a 54-character h1 (heroes.json maxChars): shows on the first screen from y 940",
+   "fix": "shorten the h1 or give the hero room for the longest headline",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-maxchars"
+   ],
+   "wheres": [
+    "#frentes-de-trabalho-1 section.section \"Frentes de trabalhoCada frente f\""
+   ]
+  },
+  {
+   "check": "hero-maxchars",
+   "where": "page",
+   "msg": "with a 54-character h1 the page scrolls sideways",
+   "fix": "shorten the h1 or give the hero room for the longest headline",
+   "widths": [
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "hero-maxchars"
+   ],
+   "wheres": [
+    "page"
+   ]
+  }
+ ],
+ "waived": [],
+ "warnCount": 19,
+ "at": "2026-11-13T02:16:01.856Z",
+ "session": "9ab5c9be-6c27-4e30-88c2-bfbf5bcc7105"
+}

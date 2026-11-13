@@ -1,56 +1,55 @@
 # -*- coding: utf-8 -*-
-"""Layout e componentes: transforma os dados de conteúdo em HTML."""
+"""Layout e componentes: transforma os dados de conteúdo em HTML.
 
+Usa o sistema de design do kit (assets/kit): uma seção por tela, bordas iguais,
+tipografia e botões do sistema. As páginas continuam descritas em pg_*.py.
+"""
+
+import datetime
 import html
 import json
+import os
+import re
 
 from config import (SITE, CONTATO, REDES, EQUIPE, COMERCIAL, FORMULARIO,
                     DEPOIMENTOS, endereco_linha, whatsapp_link, ZAP_PADRAO)
 
 E = html.escape
+_AQUI = os.path.dirname(os.path.abspath(__file__))
 
+# Alturas medidas por página/seção (1 ou 2 telas). Gerado por medir_alturas.py.
+try:
+    with open(os.path.join(_AQUI, "alturas.json"), encoding="utf-8") as _f:
+        ALTURAS = json.load(_f)
+except (OSError, ValueError):
+    ALTURAS = {}
 
-# =========================================================================
-# Ícones — traço de 1,5px, derivado do vocabulário de linha do símbolo
-# =========================================================================
-ICONES = {
-    "seguranca": '<path d="M12 3l7 3v6c0 4.4-3 8.3-7 9-4-0.7-7-4.6-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/>',
-    "rotulo":    '<path d="M3 7h11l6 5-6 5H3z"/><circle cx="7.5" cy="12" r="1.2"/>',
-    "custos":    '<path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/>',
-    "treino":    '<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M17 7l2 2 4-4"/>',
-    "processo":  '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
-    "completa":  '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
-    "relogio":   '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
-    "equipe":    '<circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 2.8-5 7-5s7 1.7 7 5"/><path d="M17 5a3 3 0 010 6M19 20c0-2.2-.7-3.8-2-5"/>',
-    "moeda":     '<circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.8 1.8 0 010 3.5h-3a1.8 1.8 0 000 3.5h4"/>',
-    "escudo":    '<path d="M12 3l7 3v6c0 4.4-3 8.3-7 9-4-0.7-7-4.6-7-9V6l7-3z"/>',
-    "lupa":      '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
-    "mapa":      '<path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/>',
-    "chat":      '<path d="M21 12a8 8 0 01-11.6 7.1L3 21l1.9-6.4A8 8 0 1121 12z"/>',
-    "doc":       '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
-    "check":     '<path d="M20 6L9 17l-5-5"/>',
-    "restaurante": '<path d="M7 3v8a2 2 0 002 2h0v8M7 3v5M10 3v5"/><path d="M17 3c-1.5 1.5-2 3.5-2 5.5S16 12 17 12v9"/>',
-    "pao":       '<path d="M4 10c0-3 2.7-5 8-5s8 2 8 5c0 1.5-1 2-2 2v7H6v-7c-1 0-2-.5-2-2z"/><path d="M9 12v5M15 12v5"/>',
-    "hotel":     '<path d="M3 20V7l9-4 9 4v13"/><path d="M3 20h18M9 20v-6h6v6"/>',
-    "industria": '<path d="M3 21V10l6 4V10l6 4V7l6 4v10z"/><path d="M3 21h18"/>',
-    "mercado":   '<path d="M3 6h18l-1.6 9.5a2 2 0 01-2 1.5H6.6a2 2 0 01-2-1.5z"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/>',
-    "evento":    '<path d="M4 20l5-14 8 8-13 6z"/><path d="M14 4l1.5 1.5M19 7l1.5 1.5M17 2l.8 2.2"/>',
-}
+ARROW = ('<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/>'
+         '<path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg>')
+
+PAGINA_ATUAL = {"url": "/", "n": 0}
 
 SVG_INSTAGRAM = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1.1-1.7.2-2.1.3-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.3 1-.3 2.1-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.7.3 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.1 1 .3 2.1.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.7-.2 2.1-.3.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.1-.4.3-1 .3-2.1.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.7-.3-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.1-1-.3-2.1-.3-1.3-.1-1.7-.1-4.8-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.2-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>')
 SVG_WHATSAPP = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1120.2 12 8.2 8.2 0 0112 20.2z"/></svg>')
 
 
-def icone(nome, classe="card__icone"):
-    d = ICONES.get(nome, ICONES["doc"])
-    return ('<svg class="{}" viewBox="0 0 24 24" aria-hidden="true">{}</svg>'
-            .format(classe, d))
+def slug(txt):
+    t = html.unescape(re.sub(r"<[^>]+>", "", txt or "")).lower()
+    for a, b in (("áàâãä", "a"), ("éèêë", "e"), ("íìîï", "i"), ("óòôõö", "o"), ("úùûü", "u"), ("ç", "c")):
+        for ch in a:
+            t = t.replace(ch, b)
+    t = re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+    return t[:32] or "secao"
 
 
-def folha(classe="folha-sep"):
-    return ('<svg class="{}" viewBox="0 0 140 40" aria-hidden="true">'
-            '<path d="M6 30C34 10 86 2 134 6C94 18 54 26 24 36C16 35 10 33 6 30Z"/>'
-            '</svg>'.format(classe))
+def sid_novo(h2):
+    PAGINA_ATUAL["n"] += 1
+    return "{}-{}".format(slug(h2), PAGINA_ATUAL["n"])
+
+
+def altura(sid):
+    """1 ou 2 telas, medidas pelo medir_alturas.py. Padrão: 1."""
+    return ALTURAS.get(PAGINA_ATUAL["url"] + "#" + sid, 1)
 
 
 # =========================================================================
@@ -75,12 +74,15 @@ SEGMENTOS_NAV = [
 ]
 
 MENU = [
-    {"rotulo": "Soluções", "href": "/solucoes/", "filhos": SOLUCOES_NAV, "id": "painel-solucoes"},
-    {"rotulo": "Segmentos", "href": "/segmentos/", "filhos": SEGMENTOS_NAV, "id": "painel-segmentos"},
+    {"rotulo": "Soluções", "href": "/solucoes/", "filhos": SOLUCOES_NAV},
+    {"rotulo": "Segmentos", "href": "/segmentos/", "filhos": SEGMENTOS_NAV},
     {"rotulo": "Como funciona", "href": "/como-funciona/"},
     {"rotulo": "Sobre", "href": "/sobre/"},
     {"rotulo": "Conteúdos", "href": "/conteudos/"},
 ]
+
+CHEV = ('<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" '
+        'stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 
 def _ativo(href, atual):
@@ -89,455 +91,439 @@ def _ativo(href, atual):
     return atual.startswith(href)
 
 
-# =========================================================================
-# Botões
-# =========================================================================
 def rotulo_diagnostico():
-    """O texto do botão muda conforme a política comercial definida."""
-    tipo = COMERCIAL.get("diagnostico")
-    if tipo == "gratuito":
+    """O texto do botão principal muda conforme a política comercial definida."""
+    if COMERCIAL.get("diagnostico") == "gratuito":
         return "Agendar diagnóstico gratuito"
     return "Agendar diagnóstico"
 
 
-def btn_primario(texto=None, href="/contato/", classe=""):
-    return ('<a class="btn btn--primario {}" href="{}">{}</a>'
-            .format(classe, href, E(texto or rotulo_diagnostico())))
+def href_acao():
+    return "#contato" if PAGINA_ATUAL.get("form") else "/contato/#contato"
 
 
-def btn_zap(texto="Falar no WhatsApp", mensagem=None, classe="btn--secundario"):
+def btn_primario(texto=None, href=None, seta=True):
+    return '<a class="btn btn--primary" href="{}">{}{}</a>'.format(
+        href or href_acao(), E(texto or rotulo_diagnostico()), ARROW if seta else "")
+
+
+def btn_zap(texto="Falar no WhatsApp", mensagem=None, classe="btn--secondary"):
     link = whatsapp_link(mensagem or ZAP_PADRAO)
     return ('<a class="btn {}" href="{}" target="_blank" rel="noopener">{}'
-            '<span class="sr"> (abre o WhatsApp)</span>{}</a>'
-            .format(classe, link, SVG_WHATSAPP, E(texto)))
+            '<span class="sr-only"> (abre o WhatsApp)</span></a>'.format(classe, link, E(texto)))
 
 
-def acoes(mensagem_zap=None, href_primario="/contato/", texto_primario=None):
-    return ('<div class="acoes">{}{}</div>'
-            .format(btn_primario(texto_primario, href_primario),
-                    btn_zap(mensagem=mensagem_zap)))
+def acoes(mensagem_zap=None, href_primario=None, texto_primario=None):
+    return '<div class="btn-row">{}{}</div>'.format(
+        btn_primario(texto_primario, href_primario), btn_zap(mensagem=mensagem_zap))
 
 
-# =========================================================================
-# Componentes de seção
-# =========================================================================
-def c_hero(s):
-    fig = s.get("figura", "foto real de consultoria em cozinha")
-    img = ('<img src="/{}" alt="{}" width="900" height="1200">'.format(s["imagem"], E(s.get("alt", "")))
-           if s.get("imagem") else
-           '<div class="figura-vazia" aria-hidden="true" data-foto="{}"></div>'.format(E(fig)))
-    fine = ('<p class="hero__fine">{}</p>'.format(s["fine"])) if s.get("fine") else ""
+def cabecalho(atual):
+    itens = []
+    for m in MENU:
+        ativo = ' aria-current="page"' if _ativo(m["href"], atual) else ""
+        if m.get("filhos"):
+            metade = (len(m["filhos"]) + 1) // 2
+            cols = "".join(
+                '<div class="menu-col span-6"><p class="t-label">{}</p>{}</div>'.format(
+                    E(m["rotulo"]) if i == 0 else "&nbsp;",
+                    "".join('<a href="{}">{}<span>{}</span></a>'.format(h, E(t), E(d)) for t, h, d in grupo))
+                for i, grupo in enumerate((m["filhos"][:metade], m["filhos"][metade:])))
+            itens.append(
+                '<div class="nav__item"><a class="nav__link" href="{}"{}>{} {}</a>'
+                '<div class="nav__menu"><div class="wrap grid">{}</div></div></div>'
+                .format(m["href"], ativo, E(m["rotulo"]), CHEV, cols))
+        else:
+            itens.append('<div class="nav__item"><a class="nav__link" href="{}"{}>{}</a></div>'
+                         .format(m["href"], ativo, E(m["rotulo"])))
     return """
-<section class="hero">
-  <div class="container">
-    <div class="hero__grid">
-      <div>
-        <p class="chapeu">{chapeu}</p>
-        <h1>{h1}</h1>
-        <p class="apoio">{apoio}</p>
-        {acoes}
-        {fine}
-      </div>
-      <div class="hero__fig">
-        {folha}
-        {img}
-      </div>
-    </div>
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Pular para o conteúdo</a>
+    <a class="nav__logo" href="/" aria-label="{nome}, página inicial"><img src="/img/logo.svg" alt="{nome}" width="700" height="210"></a>
+    <nav class="nav__links" aria-label="Principal">{itens}</nav>
+    <div class="nav__actions">{btn}</div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
   </div>
-</section>""".format(
-        chapeu=E(s["chapeu"]), h1=E(s["h1"]), apoio=s["apoio"],
-        acoes=acoes(s.get("zap"), s.get("href_primario", "/contato/"), s.get("btn")),
-        fine=fine,
-        folha=folha("folha"), img=img)
+</header>""".format(nome=E(SITE["nome_completo"]), itens="".join(itens), btn=btn_primario(seta=False))
+
+
+# =========================================================================
+# Blocos de seção
+# =========================================================================
+def titulo_h2(sid, h2, sub=None):
+    p = '<p class="t-lead">{}</p>'.format(sub) if sub else ""
+    return '<div class="section-head"><h2 id="{}-h">{}</h2>{}</div>'.format(sid, E(h2), p)
+
+
+def secao(sid, h2, sub, grupos, fundo="", classe="", raw_head=None):
+    """grupos: lista de HTML. Com altura 2 e dois grupos ou mais, o primeiro bloco vai junto do
+    título e o resto numa segunda linha (.g2). Com altura 1, tudo na mesma linha."""
+    head = raw_head if raw_head is not None else titulo_h2(sid, h2, sub)
+    h = altura(sid)
+    ground = " ground-inverse" if fundo == "inverso" else ""
+    estilo = ""
+    if h >= 2 and len(grupos) >= 2:
+        k = (len(grupos) + 1) // 2
+        corpo = '<div class="group">{}{}</div>{}'.format(head, "".join(grupos[:k]), "".join(grupos[k:]))
+        cl = "section g2"
+    else:
+        corpo = head + "".join(grupos)
+        cl = "section"
+        if h >= 2:
+            estilo = ' style="--h: 2"'
+    return ('<section class="{}{}{}" id="{}" aria-labelledby="{}-h"{}><div class="wrap">{}</div></section>'
+            .format(cl, ground, (" " + classe) if classe else "", sid, sid, estilo, corpo))
+
+
+def partir_item(txt):
+    """'<b>Título</b> — texto' ou '<b>Título:</b> <span>texto</span>' em (título, texto)."""
+    m = re.match(r"\s*<b>(.*?)</b>\s*(?:<span>)?\s*[—:\-]*\s*(.*?)(?:</span>)?\s*$", txt, re.S)
+    if m:
+        return m.group(1).strip(" :."), m.group(2).strip().lstrip("—:- ").strip()
+    return None, txt
+
+
+def lista_rows(itens):
+    lis = []
+    for i in itens:
+        if isinstance(i, dict):
+            nome, linha, href = i.get("titulo"), i.get("texto"), i.get("href")
+            nome = E(nome)
+        else:
+            nome, linha = partir_item(i)
+            href = None
+        if nome is None:
+            lis.append('<li><span class="rows__name">{}</span></li>'.format(linha))
+        elif href:
+            lis.append('<li><a class="rows__name" href="{}">{}</a><p>{}</p></li>'.format(href, nome, linha))
+        else:
+            lis.append('<li><span class="rows__name">{}</span><p>{}</p></li>'.format(nome, linha))
+    return '<ul class="rows">{}</ul>'.format("".join(lis))
+
+
+def secao_rows(sid, h2, sub, itens, fundo="", extra=""):
+    """Lista em linhas; com duas telas, a lista se parte ao meio (.g2)."""
+    if altura(sid) >= 2 and len(itens) >= 4:
+        k = (len(itens) + 1) // 2
+        grupos = [lista_rows(itens[:k]), lista_rows(itens[k:]) + extra]
+    else:
+        grupos = [lista_rows(itens) + extra]
+    return secao(sid, h2, sub, grupos, fundo=fundo)
+
+
+def colunas(itens, n, numerar=False):
+    """n colunas de span 12/n; item: dict(titulo, texto) ou texto com <b>título</b>."""
+    span = 12 // n
+    out = []
+    for i, it in enumerate(itens):
+        if isinstance(it, dict):
+            nome, texto = it.get("titulo"), it.get("texto")
+            nome = E(nome) if nome else None
+        else:
+            nome, texto = partir_item(it)
+        num = '<span class="step-num">{:02d}</span>'.format(i + 1) if numerar else ""
+        cab = '<h3 class="t-card">{}</h3>'.format(nome) if nome else ""
+        out.append('<article class="span-{} stack-2">{}{}<p>{}</p></article>'.format(span, num, cab, texto))
+    return '<div class="grid">{}</div>'.format("".join(out))
+
+
+def nota_html(t):
+    return '<p class="nota t-small">{}</p>'.format(t) if t else ""
+
+
+# =========================================================================
+# Componentes
+# =========================================================================
+def _inv(s):
+    return "inverso" if s.get("_inverso") else ""
+
+
+def c_hero(s):
+    fatos = ""
+    if s.get("fatos"):
+        fatos = '<dl class="hero__facts">{}</dl>'.format("".join(
+            '<div><dt>{}</dt><dd>{}</dd></div>'.format(E(k), E(v)) for k, v in s["fatos"]))
+    botoes = ('<div class="btn-row">{}</div>'.format(btn_primario(s.get("btn"), s.get("href_primario")))
+              if s.get("sem_zap") else acoes(s.get("zap"), s.get("href_primario"), s.get("btn")))
+    if s.get("sem_botoes"):
+        botoes = ""
+    return """
+<section class="hero hero--statement" data-enter aria-labelledby="hero-h">
+  <div class="wrap"><div class="hero-text hero__in">
+    <div>
+      <h1 id="hero-h">{h1}</h1>
+      <p class="hero__lead">{apoio}</p>
+      {botoes}
+    </div>
+    {fatos}
+  </div></div>
+</section>""".format(h1=E(s["h1"]), apoio=s["apoio"], botoes=botoes, fatos=fatos)
 
 
 def c_hero_simples(s):
-    return """
-<section class="secao">
-  <div class="container">
-    <p class="chapeu">{chapeu}</p>
-    <h1>{h1}</h1>
-    <p class="apoio" style="margin-top:18px">{apoio}</p>
-    <div style="margin-top:26px">{acoes}</div>
-  </div>
-</section>""".format(chapeu=E(s["chapeu"]), h1=E(s["h1"]), apoio=s["apoio"],
-                     acoes=acoes(s.get("zap"), s.get("href_primario", "/contato/"), s.get("btn")))
+    return c_hero(s)
 
 
 def c_pills(s):
-    itens = "".join(
-        '<a class="pill" href="{}">{}</a>'.format(h, E(t)) if h else '<span class="pill">{}</span>'.format(E(t))
-        for t, h in s["itens"])
-    link = ('<p style="margin-top:20px"><a class="link-seta" href="{}">{}</a></p>'
-            .format(s["link"][1], E(s["link"][0]))) if s.get("link") else ""
-    return """
-<section class="secao secao--claro">
-  <div class="container centro">
-    <p class="miudo" style="margin-bottom:16px">{intro}</p>
-    <div class="pills pills--centro">{itens}</div>
-    {link}
-  </div>
-</section>""".format(intro=E(s["intro"]), itens=itens, link=link)
-
-
-def _card(c, com_icone=True):
-    ic = icone(c["icone"]) if com_icone and c.get("icone") else ""
-    link = ('<span class="link-seta stretch">{}</span>'.format(E(c.get("link", "Ver detalhes")))
-            if c.get("href") else "")
-    aberto = '<a class="card card--link" href="{}">'.format(c["href"]) if c.get("href") else '<div class="card">'
-    fechado = "</a>" if c.get("href") else "</div>"
-    extra = ' card--meio' if c.get("meio") else ""
-    aberto = aberto.replace('class="card card--link"', 'class="card card--link{}"'.format(extra))
-    aberto = aberto.replace('class="card"', 'class="card{}"'.format(extra))
-    return "{}{}<h3>{}</h3><p>{}</p>{}{}".format(aberto, ic, E(c["titulo"]), c["texto"], link, fechado)
+    itens = "".join('<a class="pill" href="{}">{}</a>'.format(h, E(t)) if h
+                    else '<span class="pill">{}</span>'.format(E(t)) for t, h in s["itens"])
+    link = ('<p><a class="link" href="{}">{}</a></p>'.format(s["link"][1], E(s["link"][0]))
+            if s.get("link") else "")
+    return ('<div class="pills-bloco"><p class="t-small muted">{}</p><div class="pills">{}</div>{}</div>'
+            .format(E(s["intro"]), itens, link))
 
 
 def c_cards(s):
-    classe = s.get("grade", "grade--3")
-    cards = "".join(_card(c) for c in s["itens"])
-    destaque = ""
-    if s.get("destaque"):
-        d = s["destaque"]
-        destaque = """
-    <a class="faixa-destaque" href="{href}">
-      {ic}
-      <div class="tx"><h3>{titulo}</h3><p>{texto}</p></div>
-      <span class="link-seta">{link}</span>
-    </a>""".format(href=d["href"], ic=icone(d.get("icone", "completa")),
-                   titulo=E(d["titulo"]), texto=d["texto"], link=E(d.get("link", "Ver o que inclui")))
-    sub = '<p class="apoio" style="margin-top:14px">{}</p>'.format(s["sub"]) if s.get("sub") else ""
-    return """
-<section class="secao{fundo}" {anc}>
-  <div class="container">
-    <h2>{h2}</h2>
-    {sub}
-    <div class="grade {classe}" style="margin-top:34px">{cards}</div>
-    {destaque}
-  </div>
-</section>""".format(fundo=s.get("fundo", ""), anc=s.get("anc", ""), h2=E(s["h2"]),
-                     sub=sub, classe=classe, cards=cards, destaque=destaque)
+    itens = list(s["itens"])
+    d = s.get("destaque")
+    if d:
+        itens.append({"titulo": d["titulo"], "texto": d["texto"], "href": d["href"]})
+    sid = sid_novo(s["h2"])
+    return secao_rows(sid, s["h2"], s.get("sub"), itens, fundo=_inv(s))
 
 
 def c_etapas(s):
-    itens = "".join(
-        '<div class="etapa"><div class="etapa__n">{n:02d}</div><h3>{t}</h3><p>{x}</p></div>'
-        .format(n=i + 1, t=E(e["titulo"]), x=e["texto"])
-        for i, e in enumerate(s["itens"]))
-    link = ('<p style="margin-top:34px"><a class="link-seta" href="{}">{}</a></p>'
-            .format(s["link"][1], E(s["link"][0]))) if s.get("link") else ""
-    sub = '<p class="apoio" style="margin-top:14px">{}</p>'.format(s["sub"]) if s.get("sub") else ""
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    {sub}
-    <div class="etapas etapas--home">{itens}</div>
-    {link}
-  </div>
-</section>""".format(fundo=s.get("fundo", " secao--claro"), h2=E(s["h2"]), sub=sub, itens=itens, link=link)
+    sid = sid_novo(s["h2"])
+    link = ('<p class="mais"><a class="link" href="{}">{}</a></p>'.format(s["link"][1], E(s["link"][0]))
+            if s.get("link") else "")
+    itens = [{"titulo": "{}. {}".format(i + 1, e["titulo"]), "texto": e["texto"]}
+             for i, e in enumerate(s["itens"])]
+    return secao_rows(sid, s["h2"], s.get("sub"), itens, fundo=_inv(s), extra=link)
 
 
 def c_etapas_detalhe(s):
-    blocos = []
+    saidas = []
     for i, e in enumerate(s["itens"]):
-        dl = "".join('<div><dt>{}</dt><dd>{}</dd></div>'.format(E(k), v) for k, v in e["campos"])
-        fig = e.get("figura", "foto da etapa")
-        blocos.append("""
-    <div class="etapa-longa">
-      <div class="etapa-longa__fig">
-        <div class="figura-vazia figura-vazia--larga" aria-hidden="true" data-foto="{fig}"></div>
-      </div>
-      <div>
-        <div class="etapa__n">{n:02d}</div>
-        <h3>{t}</h3>
-        <p class="texto" style="margin-top:12px">{x}</p>
-        <dl>{dl}</dl>
-      </div>
-    </div>""".format(fig=E(fig), n=i + 1, t=E(e["titulo"]), x=e["texto"], dl=dl))
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    <div class="etapas--detalhe" style="margin-top:20px">{blocos}</div>
-  </div>
-</section>""".format(fundo=s.get("fundo", ""), h2=E(s["h2"]), blocos="".join(blocos))
+        sid = sid_novo(e["titulo"])
+        campos = "".join('<article class="span-4 stack-2"><h3 class="t-card">{}</h3><p>{}</p></article>'
+                         .format(E(k), v) for k, v in e["campos"])
+        head = ('<div class="section-head"><span class="step-num">{:02d}</span><h2 id="{}-h">{}</h2>'
+                '<p class="t-lead">{}</p></div>'.format(i + 1, sid, E(e["titulo"]), e["texto"]))
+        saidas.append(secao(sid, e["titulo"], None, ['<div class="grid">{}</div>'.format(campos)], raw_head=head))
+    return "\n".join(saidas)
 
 
 def c_beneficios(s):
-    itens = "".join(
-        '<div class="beneficio">{ic}<strong>{t}</strong><p>{x}</p></div>'
-        .format(ic=icone(b.get("icone", "check"), "beneficio__icone"), t=E(b["titulo"]), x=b["texto"])
-        for b in s["itens"])
-    nota = '<div class="nota" style="margin-top:36px">{}</div>'.format(s["nota"]) if s.get("nota") else ""
-    return """
-<section class="secao secao--vinho">
-  <div class="container">
-    <h2>{h2}</h2>
-    <div class="grade grade--4" style="margin-top:34px">{itens}</div>
-    {nota}
-  </div>
-</section>""".format(h2=E(s["h2"]), itens=itens, nota=nota)
+    sid = sid_novo(s["h2"])
+    return secao_rows(sid, s["h2"], None, s["itens"], fundo="inverso", extra=nota_html(s.get("nota")))
 
 
 def c_checklist(s):
-    itens = "".join('<li><span>{}</span></li>'.format(i) for i in s["itens"])
-    sub = '<p class="apoio" style="margin-top:14px">{}</p>'.format(s["sub"]) if s.get("sub") else ""
-    nota = '<div class="nota" style="margin-top:30px">{}</div>'.format(s["nota"]) if s.get("nota") else ""
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    {sub}
-    <ul class="checklist checklist--2" style="margin-top:30px">{itens}</ul>
-    {nota}
-  </div>
-</section>""".format(fundo=s.get("fundo", ""), h2=E(s["h2"]), sub=sub, itens=itens, nota=nota)
+    sid = sid_novo(s["h2"])
+    return secao_rows(sid, s["h2"], s.get("sub"), s["itens"], fundo=_inv(s), extra=nota_html(s.get("nota")))
 
 
 def c_sintomas(s):
-    itens = "".join('<li>{}</li>'.format(i) for i in s["itens"])
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    <ul class="sintomas sintomas--2" style="margin-top:28px">{itens}</ul>
-  </div>
-</section>""".format(fundo=s.get("fundo", " secao--claro"), h2=E(s["h2"]), itens=itens)
+    sid = sid_novo(s["h2"])
+    def li(it):
+        nome, texto = partir_item(it)
+        if nome:
+            return '<li><span class="rows__name">{}</span><p>{}</p></li>'.format(nome, texto)
+        return '<li><p>{}</p></li>'.format(texto)
+    itens = s["itens"]
+    if altura(sid) >= 2 and len(itens) >= 4:
+        k = (len(itens) + 1) // 2
+        grupos = ['<ul class="rows">{}</ul>'.format("".join(li(i) for i in itens[:k])),
+                  '<ul class="rows">{}</ul>'.format("".join(li(i) for i in itens[k:]))]
+    else:
+        grupos = ['<ul class="rows">{}</ul>'.format("".join(li(i) for i in itens))]
+    return secao(sid, s["h2"], None, grupos, fundo=_inv(s))
 
 
 def c_numerada(s):
-    itens = "".join('<li><div><b>{}</b><p>{}</p></div></li>'.format(E(i["titulo"]), i["texto"])
-                    for i in s["itens"])
-    sub = '<p class="apoio" style="margin-top:14px">{}</p>'.format(s["sub"]) if s.get("sub") else ""
-    nota = '<div class="nota" style="margin-top:32px">{}</div>'.format(s["nota"]) if s.get("nota") else ""
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    {sub}
-    <ol class="numerada" style="margin-top:32px">{itens}</ol>
-    {nota}
-  </div>
-</section>""".format(fundo=s.get("fundo", ""), h2=E(s["h2"]), sub=sub, itens=itens, nota=nota)
+    sid = sid_novo(s["h2"])
+    return secao_rows(sid, s["h2"], s.get("sub"), s["itens"], fundo=_inv(s), extra=nota_html(s.get("nota")))
 
 
 def c_rows(s):
-    itens = "".join(
-        '<div class="card"><h3>{}</h3><p>{}</p></div>'.format(E(r["titulo"]), r["texto"])
-        for r in s["itens"])
-    sub = '<p class="apoio" style="margin-top:14px">{}</p>'.format(s["sub"]) if s.get("sub") else ""
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    {sub}
-    <div class="grade {g}" style="margin-top:32px">{itens}</div>
-  </div>
-</section>""".format(fundo=s.get("fundo", ""), h2=E(s["h2"]), sub=sub,
-                     g=s.get("grade", "grade--3"), itens=itens)
+    sid = sid_novo(s["h2"])
+    return secao_rows(sid, s["h2"], s.get("sub"), s["itens"], fundo=_inv(s))
 
 
 def c_pessoa(s):
     p = EQUIPE[0]
-    foto = ('<img src="/{}" alt="{}" width="700" height="875">'.format(p["foto"], E(p["nome"]))
-            if p.get("foto") else
-            '')
-    pills = ("".join('<span class="pill pill--credencial">{}</span>'.format(E(c)) for c in p["credenciais"]))
+    pills = "".join('<span class="pill">{}</span>'.format(E(c)) for c in p["credenciais"])
     pills = '<div class="pills">{}</div>'.format(pills) if pills else ""
-    bio = '<p class="texto">{}</p>'.format(p["bio"]) if p.get("bio") else ""
-    return """
-<section class="secao secao--claro">
-  <div class="container">
-    <div class="pessoa{semfoto}">
-      {foto}
-      <div>
-        <p class="chapeu">{chapeu}</p>
-        <h2>{nome}</h2>
-        <p class="pessoa__cargo">{cargo}</p>
-        {pills}
-        {bio}
-        <p style="margin-top:22px"><a class="link-seta" href="/sobre/">Conhecer a Verona Food</a></p>
-      </div>
-    </div>
-  </div>
-</section>""".format(foto=('<div>{}</div>'.format(foto) if foto else ''), semfoto=('' if foto else ' pessoa--sem-foto'),
-                     chapeu=E(s.get("chapeu", "Quem vai te atender")),
-                     nome=E(p["nome"]), cargo=E(p["cargo"]), pills=pills, bio=bio)
+    bio = '<p class="t-lead">{}</p>'.format(p["bio"]) if p.get("bio") else ""
+    foto = ('<div class="frame frame--photo span-6 start-7"><img class="frame__img" src="/{}" alt="{}" '
+            'loading="lazy"></div>'.format(p["foto"], E(p["nome"])) if p.get("foto") else "")
+    sid = sid_novo(s.get("chapeu", "Quem atende"))
+    texto = ('<div class="span-6 stack-4"><h2 id="{sid}-h">{nome}</h2><p class="t-lead">{cargo}</p>{pills}{bio}'
+             '<p><a class="link" href="/sobre/">Conhecer a Verona Food</a></p></div>'
+             .format(sid=sid, nome=E(p["nome"]), cargo=E(p["cargo"]), pills=pills, bio=bio))
+    return ('<section class="section" id="{sid}" aria-labelledby="{sid}-h"><div class="wrap">'
+            '<p class="t-label muted">{chapeu}</p><div class="grid grid--top">{texto}{foto}</div>'
+            '</div></section>'.format(sid=sid, chapeu=E(s.get("chapeu", "Quem atende")),
+                                      texto=texto, foto=foto))
 
 
 def c_provas(s):
-    """Depoimentos quando existirem; caso contrário, os entregáveis."""
+    sid = sid_novo(s["h2_entregaveis"])
     if DEPOIMENTOS:
-        itens = "".join("""
-      <figure class="depoimento">
-        <blockquote>“{texto}”</blockquote>
-        <figcaption><b>{nome}</b>{cargo} · {estab} · {cidade}</figcaption>
-      </figure>""".format(texto=E(d["texto"]), nome=E(d["nome"]), cargo=E(d["cargo"]),
-                          estab=E(d["estabelecimento"]), cidade=E(d["cidade"]))
-                        for d in DEPOIMENTOS)
-        return """
-<section class="secao">
-  <div class="container">
-    <h2>{h2}</h2>
-    <div class="grade grade--3" style="margin-top:32px">{itens}</div>
-  </div>
-</section>""".format(h2=E(s.get("h2_depoimentos", "O que dizem os clientes")), itens=itens)
-    return c_checklist({
-        "h2": s["h2_entregaveis"], "sub": s.get("sub"), "itens": s["entregaveis"],
-        "fundo": s.get("fundo", ""),
-    })
+        sid = sid_novo(s["h2_depoimentos"])
+        qs = "".join(
+            '<figure class="quote span-6"><blockquote>{}</blockquote><figcaption class="person">'
+            '<span><span class="person__name">{}</span><span class="person__role">{}</span></span>'
+            '</figcaption></figure>'.format(E(d["texto"]), E(d["nome"]),
+                                            E(", ".join(x for x in (d.get("cargo"), d.get("estabelecimento")) if x)))
+            for d in DEPOIMENTOS)
+        return secao(sid, s["h2_depoimentos"], None, ['<div class="grid">{}</div>'.format(qs)])
+    return secao_rows(sid, s["h2_entregaveis"], s.get("sub"), s["entregaveis"], fundo=_inv(s))
 
 
 def c_artigos(s):
-    itens = "".join("""
-      <a class="card card--link artigo-card" href="{href}">
-        <div class="figura-vazia figura-vazia--larga card__img" aria-hidden="true" data-foto="{fig}" style="margin:0"></div>
-        <div class="artigo-card__corpo">
-          <p class="cat">{cat}</p>
-          <h3>{t}</h3>
-          <p class="meta">{meta}</p>
-        </div>
-      </a>""".format(href=a.get("href", "/conteudos/"), fig=E(a.get("figura", "imagem do artigo")),
-                     cat=E(a["categoria"]), t=E(a["titulo"]), meta=E(a.get("meta", "")))
-                    for a in s["itens"])
-    sub = '<p class="apoio" style="margin-top:14px">{}</p>'.format(s["sub"]) if s.get("sub") else ""
-    link = ('<p style="margin-top:30px"><a class="link-seta" href="{}">{}</a></p>'
-            .format(s["link"][1], E(s["link"][0]))) if s.get("link") else ""
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    {sub}
-    <div class="grade grade--3" style="margin-top:32px">{itens}</div>
-    {link}
-  </div>
-</section>""".format(fundo=s.get("fundo", " secao--claro"), h2=E(s["h2"]), sub=sub, itens=itens, link=link)
+    sid = sid_novo(s["h2"])
+    itens = [{"titulo": a["titulo"], "texto": "{} · {}".format(a["categoria"], a.get("meta", "")).strip(" ·"),
+              "href": a.get("href")} for a in s["itens"]]
+    link = ('<p class="mais"><a class="link" href="{}">{}</a></p>'.format(s["link"][1], E(s["link"][0]))
+            if s.get("link") else "")
+    return secao_rows(sid, s["h2"], s.get("sub"), itens, extra=link)
 
 
 def c_faq(s):
-    itens = []
-    for i, f in enumerate(s["itens"]):
-        corpo = "".join("<p>{}</p>".format(p) for p in f["resposta"])
-        itens.append('<details{aberto}><summary>{q}</summary><div>{a}</div></details>'
-                     .format(aberto=" open" if i == 0 else "", q=E(f["pergunta"]), a=corpo))
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <h2>{h2}</h2>
-    <div class="faq" style="margin-top:28px">{itens}</div>
-  </div>
-</section>""".format(fundo=s.get("fundo", ""), h2=E(s["h2"]), itens="".join(itens))
+    sid = sid_novo(s["h2"])
+    def item(f):
+        return '<div class="faq__item"><h3>{}</h3>{}</div>'.format(
+            E(f["pergunta"]), "".join("<p>{}</p>".format(p) for p in f["resposta"]))
+    head = ('<div class="span-5"><div class="section-head"><h2 id="{sid}-h">{h2}</h2>'
+            '<p><a class="link" href="{href}">Tirar outra dúvida</a></p></div></div>'
+            .format(sid=sid, h2=E(s["h2"]), href=href_acao()))
+    itens = s["itens"]
+    if altura(sid) >= 2 and len(itens) >= 4:
+        k = (len(itens) + 1) // 2
+        g1 = '<div class="grid">{}<div class="span-6 start-7 faq">{}</div></div>'.format(
+            head, "".join(item(f) for f in itens[:k]))
+        g2 = '<div class="grid"><div class="span-6 start-7 faq">{}</div></div>'.format(
+            "".join(item(f) for f in itens[k:]))
+        return secao(sid, s["h2"], None, [g1, g2], raw_head="", fundo=_inv(s))
+    g = '<div class="grid">{}<div class="span-6 start-7 faq">{}</div></div>'.format(
+        head, "".join(item(f) for f in itens))
+    return secao(sid, s["h2"], None, [g], raw_head="", fundo=_inv(s))
 
 
 def c_nota(s):
-    return """
-<section class="secao{fundo}" style="padding-block:clamp(28px,4vw,48px)">
-  <div class="container"><div class="nota">{t}</div></div>
-</section>""".format(fundo=s.get("fundo", ""), t=s["texto"])
+    return nota_html(s["texto"])
 
 
 def c_folha(s):
-    return '<div class="container" style="padding-block:10px">{}</div>'.format(folha())
+    return ""
+
+
+def c_declaracao(s):
+    sid = sid_novo(s["rotulo"])
+    return ('<section class="section statement" id="{sid}" data-moment="word-highlight" aria-label="{rot}">'
+            '<div class="wrap"><p class="t-label">{rot}</p><p class="mo-wh__text">{texto}</p></div></section>'
+            .format(sid=sid, rot=E(s["rotulo"]), texto=s["texto"]))
 
 
 def c_prosa(s):
-    return """
-<section class="secao{fundo}">
-  <div class="container">
-    <div class="prosa">{html}</div>
-  </div>
-</section>""".format(fundo=s.get("fundo", ""), html=s["html"])
+    h = s["html"]
+    m1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+    if m1:                                    # página legal: h1 vira o herói, o resto em seções
+        resto = h[m1.end():]
+        m_p = re.match(r"\s*<p[^>]*>(.*?)</p>", resto, re.S)
+        lead = m_p.group(1) if m_p else ""
+        resto = resto[m_p.end():] if m_p else resto
+        saida = [c_hero({"h1": re.sub(r"<[^>]+>", "", m1.group(1)), "apoio": lead, "sem_botoes": True})]
+        blocos = re.split(r"(?=<h2)", resto)
+        blocos = [b for b in blocos if b.strip()]
+        for i in range(0, len(blocos), 3):
+            grupo = blocos[i:i + 3]
+            titulo = re.match(r"<h2[^>]*>(.*?)</h2>", grupo[0], re.S)
+            if not titulo:
+                continue
+            sid = sid_novo(re.sub(r"<[^>]+>", "", titulo.group(1)))
+            corpo = grupo[0][titulo.end():]
+            for g in grupo[1:]:
+                corpo += re.sub(r"<h2([^>]*)>(.*?)</h2>", r"<h3 class='t-card'\1>\2</h3>", g, flags=re.S)
+            saida.append(secao(sid, re.sub(r"<[^>]+>", "", titulo.group(1)), None,
+                               ['<div class="measure stack-4">{}</div>'.format(corpo)]))
+        return "\n".join(saida)
+    t = re.match(r"\s*<h2[^>]*>(.*?)</h2>", h, re.S)
+    titulo = re.sub(r"<[^>]+>", "", t.group(1)) if t else ""
+    corpo = h[t.end():] if t else h
+    corpo = re.sub(r'\sstyle="[^"]*"', "", corpo)
+    corpo = corpo.replace('class="texto"', "")
+    sid = sid_novo(titulo)
+    return secao(sid, titulo, None, ['<div class="measure stack-4">{}</div>'.format(corpo)], fundo=_inv(s))
 
 
+# ------------------------------------------------------------------ contato
 def formulario(id_sufixo="", compacto=False):
     opcoes = "".join('<option value="{0}">{0}</option>'.format(E(t)) for t in FORMULARIO["tipos_negocio"])
     endpoint = FORMULARIO.get("endpoint")
-    attr_endpoint = ' data-endpoint="{}"'.format(endpoint) if endpoint else ""
+    attr_endpoint = ' data-endpoint="{}"'.format(endpoint) if endpoint else ' data-endpoint=""'
     prazo = CONTATO.get("prazo_resposta")
-    frase_ok = "Recebemos sua mensagem. Respondemos {}.".format(prazo) if prazo else "Recebemos sua mensagem e vamos responder em breve."
-    sid = id_sufixo
+    enviado = "Recebi sua mensagem. Respondo {}.".format(prazo) if prazo else "Recebi sua mensagem e respondo em breve."
+    email = CONTATO.get("email") or ""
+    s = id_sufixo
+    resposta = ('<p class="t-small muted">Respondo {}.</p>'.format(E(prazo)) if prazo else "")
     return """
-<div>
-  <form class="form-card" data-form-contato{endpoint} novalidate>
-    <div class="campo">
-      <label for="nome{s}">Nome</label>
-      <input type="text" id="nome{s}" name="nome" autocomplete="name" required>
-      <span class="erro" id="e-nome{s}"></span>
-    </div>
-    <div class="campo">
-      <label for="tel{s}">WhatsApp ou telefone</label>
-      <input type="tel" id="tel{s}" name="telefone" inputmode="tel" autocomplete="tel"
-             placeholder="(11) 99999-9999" required>
-      <span class="erro" id="e-tel{s}"></span>
-    </div>
-    <div class="campo">
-      <label for="email{s}">E-mail <span class="opc">(opcional)</span></label>
-      <input type="email" id="email{s}" name="email" autocomplete="email">
-      <span class="erro" id="e-email{s}"></span>
-    </div>
-    <div class="campo">
-      <label for="neg{s}">Tipo de negócio</label>
-      <select id="neg{s}" name="negocio" required>
-        <option value="">Selecione</option>
-        {opcoes}
-      </select>
-      <span class="erro" id="e-neg{s}"></span>
-    </div>
-    <div class="campo">
-      <label for="msg{s}">Como podemos ajudar <span class="opc">(opcional)</span></label>
-      <textarea id="msg{s}" name="mensagem" rows="3"
-                placeholder="Conte em duas linhas como está sua operação hoje."></textarea>
-    </div>
-    <div class="consent">
-      <input type="checkbox" id="opt{s}" name="newsletter" value="sim">
-      <label for="opt{s}" style="font-weight:400">Quero receber conteúdos sobre segurança dos alimentos e gestão por e-mail.</label>
-    </div>
-    <button type="submit" class="btn btn--primario">Enviar mensagem</button>
-    <p class="privacidade">Usamos seus dados apenas para responder a este contato. Não enviamos newsletter sem
-      autorização e não compartilhamos suas informações com terceiros.
-      Veja nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
-    <p class="privacidade" data-erro-envio hidden style="color:var(--erro)">Não conseguimos enviar agora.
-      Tente de novo ou fale pelo WhatsApp.</p>
-  </form>
-  <div class="form-ok" role="status">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-    <div><b>Mensagem enviada</b><p>{frase_ok} Se preferir falar agora, chame no WhatsApp.</p></div>
-  </div>
-</div>""".format(endpoint=attr_endpoint, s=sid, opcoes=opcoes, frase_ok=E(frase_ok))
+<form class="form" action="mailto:{email}" method="post" enctype="text/plain"{endpoint} data-sent="{enviado}" novalidate>
+  <div class="field"><label for="nome{s}">Nome</label>
+    <input id="nome{s}" name="nome" type="text" autocomplete="name" required aria-describedby="e-nome{s}">
+    <p class="field__error" id="e-nome{s}" hidden>Escreva o seu nome.</p></div>
+  <div class="field"><label for="tel{s}">WhatsApp ou telefone</label>
+    <input id="tel{s}" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-tel{s}">
+    <p class="field__error" id="e-tel{s}" hidden>Escreva um telefone com DDD, por exemplo (11) 99999-9999.</p></div>
+  <div class="field"><label for="email{s}">E-mail (opcional)</label>
+    <input id="email{s}" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="e-email{s}">
+    <p class="field__error" id="e-email{s}" hidden>Escreva um e-mail com @, como nome@exemplo.com.br.</p></div>
+  <div class="field"><label for="neg{s}">Tipo de negócio</label>
+    <select id="neg{s}" name="negocio" required aria-describedby="e-neg{s}">
+      <option value="">Selecione</option>
+      {opcoes}
+    </select>
+    <p class="field__error" id="e-neg{s}" hidden>Escolha o tipo de negócio.</p></div>
+  <div class="field field--full"><label for="msg{s}">Como posso ajudar (opcional)</label>
+    <textarea id="msg{s}" name="mensagem" rows="3"></textarea></div>
+  <p class="consent"><label><input type="checkbox" name="newsletter" value="sim"> Quero receber conteúdos sobre segurança dos alimentos e gestão por e-mail.</label></p>
+  <div class="btn-row"><button class="btn btn--primary" type="submit">{acao}</button></div>
+  <p class="form__status" role="status" data-form-status></p>
+  {resposta}
+  <p class="t-small">Uso seus dados só para responder a este contato. Veja a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
+</form>""".format(email=E(email), endpoint=attr_endpoint, enviado=E(enviado), s=s, opcoes=opcoes,
+                  acao=E(rotulo_diagnostico()), resposta=resposta)
+
+
+def c_contato(s):
+    c = CONTATO
+    sid = "contato"
+    PAGINA_ATUAL["n"] += 1
+    linhas = ['<li><span class="rows__name">WhatsApp</span><p><a class="link" href="{}" target="_blank" '
+              'rel="noopener">{}</a></p></li>'.format(whatsapp_link(ZAP_PADRAO), E(c["whatsapp"])),
+              '<li><span class="rows__name">Telefone</span><p><a class="link" href="tel:{}">{}</a><br>'
+              '<span class="muted">{}</span></p></li>'.format(c["telefone_link"], E(c["telefone"]), E(c["horario"]))]
+    if c.get("email"):
+        linhas.append('<li><span class="rows__name">E-mail</span><p><a class="link" href="mailto:{0}">{0}</a></p></li>'
+                      .format(E(c["email"])))
+    linhas.append('<li><span class="rows__name">Onde fica</span><p>{}</p></li>'.format(E(endereco_linha())))
+    prazo = c.get("prazo_resposta")
+    sub = s.get("texto") or ""
+    quem = ""
+    if s.get("pessoa"):
+        p = EQUIPE[0]
+        pills = "".join('<span class="pill">{}</span>'.format(E(x)) for x in p["credenciais"])
+        quem = ('<div class="stack-2"><p class="t-label muted">Quem atende</p><p class="t-lead">{}</p>'
+                '<p>{}</p><div class="pills">{}</div></div>'.format(E(p["nome"]), E(p["cargo"]), pills))
+    esq = ('<div class="span-5 stack-6"><div class="section-head"><h2 id="{sid}-h">{h2}</h2>'
+           '<p class="t-lead">{sub}</p></div><ul class="rows">{linhas}</ul></div>'
+           .format(sid=sid, h2=E(s["h2"]), sub=sub, linhas="".join(linhas)))
+    dire = '<div class="span-6 start-7">{}</div>'.format(formulario(s.get("sufixo", "")))
+    return ('<section class="section" id="{sid}" aria-labelledby="{sid}-h"><div class="wrap">'
+            '<div class="grid grid--top">{esq}{dire}</div></div></section>'
+            .format(sid=sid, esq=esq, dire=dire))
 
 
 def c_cta_form(s):
-    tel = CONTATO["telefone"]
-    return """
-<section class="secao secao--vinho secao--form" data-esconde-zap>
-  <div class="container">
-    <div class="cta-final">
-      <div>
-        <h2>{h2}</h2>
-        <p class="apoio" style="margin-top:16px">{texto}</p>
-        <div class="cta-final__contato">
-          <p><a class="link-seta" href="{zap}" target="_blank" rel="noopener">Prefere conversar agora? Chamar no WhatsApp</a></p>
-          <p class="miudo">Telefone <a href="tel:{tel_link}">{tel}</a> · {horario}</p>
-        </div>
-      </div>
-      {form}
-    </div>
-  </div>
-</section>""".format(h2=E(s["h2"]), texto=s["texto"], zap=whatsapp_link(s.get("zap") or ZAP_PADRAO),
-                     tel_link=CONTATO["telefone_link"], tel=E(tel), horario=E(CONTATO["horario"]),
-                     form=formulario(s.get("sufixo", "-cta")))
+    return c_contato(s)
 
 
 def c_cta(s):
-    return """
-<section class="secao secao--vinho">
-  <div class="container">
-    <h2>{h2}</h2>
-    <p class="apoio" style="margin-top:16px;margin-bottom:28px">{texto}</p>
-    {acoes}
-  </div>
-</section>""".format(h2=E(s["h2"]), texto=s["texto"],
-                     acoes=acoes(s.get("zap"), s.get("href_primario", "/contato/"), s.get("btn")))
+    return c_contato({"h2": s["h2"], "texto": s["texto"], "sufixo": "-cta"})
 
 
 def c_html(s):
@@ -549,156 +535,59 @@ COMPONENTES = {
     "etapas": c_etapas, "etapas_detalhe": c_etapas_detalhe, "beneficios": c_beneficios,
     "checklist": c_checklist, "sintomas": c_sintomas, "numerada": c_numerada, "rows": c_rows,
     "pessoa": c_pessoa, "provas": c_provas, "artigos": c_artigos, "faq": c_faq,
-    "nota": c_nota, "folha": c_folha, "prosa": c_prosa, "cta_form": c_cta_form,
-    "cta": c_cta, "html": c_html,
+    "nota": c_nota, "folha": c_folha, "prosa": c_prosa, "declaracao": c_declaracao,
+    "cta_form": c_cta_form, "cta": c_cta, "contato": c_contato, "html": c_html,
 }
 
 
 # =========================================================================
-# Cabeçalho, rodapé e documento
+# Rodapé e documento
 # =========================================================================
-def cabecalho(atual):
-    itens = []
-    for m in MENU:
-        ativo = ' aria-current="page"' if _ativo(m["href"], atual) else ""
-        if m.get("filhos"):
-            links = "".join('<a href="{}"><b>{}</b><span>{}</span></a>'.format(h, E(t), E(d))
-                            for t, h, d in m["filhos"])
-            itens.append("""
-        <li class="nav__item">
-          <button class="nav__link" data-painel="{pid}" aria-expanded="false" aria-controls="{pid}"{ativo}>
-            {rot}<svg class="nav__seta" viewBox="0 0 12 12" aria-hidden="true"><polyline points="2,4 6,8 10,4"/></svg>
-          </button>
-          <div class="painel" id="{pid}" hidden>
-            <a href="{href}"><b>Ver todas</b><span>Visão geral de {rotlow}.</span></a>
-            {links}
-          </div>
-        </li>""".format(pid=m["id"], rot=E(m["rotulo"]), rotlow=E(m["rotulo"].lower()),
-                        href=m["href"], links=links, ativo=ativo))
-        else:
-            itens.append('<li class="nav__item"><a class="nav__link" href="{}"{}>{}</a></li>'
-                         .format(m["href"], ativo, E(m["rotulo"])))
-
-    # menu mobile
-    mob = []
-    for m in MENU:
-        if m.get("filhos"):
-            links = "".join('<a href="{}">{}</a>'.format(h, E(t)) for t, h, d in m["filhos"])
-            mob.append('<details><summary>{rot}</summary><div><a href="{href}">Ver todas</a>{links}</div></details>'
-                       .format(rot=E(m["rotulo"]), href=m["href"], links=links))
-        else:
-            mob.append('<a href="{}">{}</a>'.format(m["href"], E(m["rotulo"])))
-
-    return """
-<header class="topo">
-  <div class="container topo__in">
-    <a class="marca" href="/" aria-label="{nome} — página inicial">
-      <img src="/img/logo.svg" alt="{nome}" width="700" height="210">
-    </a>
-    <nav class="nav" aria-label="Principal"><ul style="display:flex;gap:4px;list-style:none;margin:0;padding:0">{itens}</ul></nav>
-    <div class="topo__cta">{cta}</div>
-    <button class="menu-btn" data-abre-menu aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
-  </div>
-</header>
-
-<div class="mobile" id="menu-mobile" hidden>
-  <div class="mobile__topo">
-    <a class="marca" href="/"><img src="/img/logo.svg" alt="{nome}" width="700" height="210"></a>
-    <button class="menu-btn" data-fecha-menu aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-  </div>
-  <nav class="mobile__lista" aria-label="Menu">
-    <a href="/">Início</a>
-    {mob}
-    <a href="/contato/">Contato</a>
-  </nav>
-  <div class="mobile__pe">
-    {btn}
-    {zap}
-  </div>
-</div>""".format(nome=E(SITE["nome_completo"]), itens="".join(itens),
-                 cta='<a class="btn btn--primario btn--compacto" href="/contato/">Falar com a Verona Food</a>',
-                 mob="".join(mob), btn=btn_primario(), zap=btn_zap())
-
-
 def rodape():
     c = CONTATO
-    email = ('<li><a href="mailto:{0}">{0}</a></li>'.format(c["email"])) if c["email"] else ""
-    cnpj = (" · CNPJ {}".format(c["cnpj"])) if c["cnpj"] else ""
-    sociais = '<a href="{}" target="_blank" rel="noopener" aria-label="Instagram da Verona Food">{}</a>'.format(
-        REDES["instagram"], SVG_INSTAGRAM)
-    if REDES.get("linkedin"):
-        sociais += '<a href="{}" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>'.format(REDES["linkedin"])
-
+    prazo = c.get("prazo_resposta")
+    lead = "Respondo {}.".format(prazo) if prazo else "Resposta por WhatsApp ou telefone."
     sol = "".join('<li><a href="{}">{}</a></li>'.format(h, E(t)) for t, h, d in SOLUCOES_NAV)
-    inst = "".join('<li><a href="{}">{}</a></li>'.format(h, E(t)) for t, h in [
+    seg = "".join('<li><a href="{}">{}</a></li>'.format(h, E(t)) for t, h, d in SEGMENTOS_NAV)
+    emp = "".join('<li><a href="{}">{}</a></li>'.format(h, E(t)) for t, h in [
         ("Sobre a Verona Food", "/sobre/"), ("Como funciona", "/como-funciona/"),
-        ("Segmentos atendidos", "/segmentos/"), ("Conteúdos", "/conteudos/"), ("Contato", "/contato/")])
-
+        ("Conteúdos", "/conteudos/"), ("Contato", "/contato/")])
+    email = ('<li><a href="mailto:{0}">{0}</a></li>'.format(E(c["email"]))) if c.get("email") else ""
+    cnpj = (" · CNPJ {}".format(c["cnpj"])) if c.get("cnpj") else ""
+    insta = REDES.get("instagram")
+    social = ('<li><a href="{}" target="_blank" rel="noopener">Instagram</a></li>'.format(insta)) if insta else ""
     return """
-<footer class="rodape">
-  <div class="container">
-    <div class="rodape__grid">
-      <div class="rodape__marca">
-        <img src="/img/logo-cream.svg" alt="{nome}" width="700" height="210">
-        <p>{posic}</p>
-        <div class="rodape__social">{sociais}</div>
-      </div>
-      <div>
-        <h2>Soluções</h2>
-        <ul>{sol}</ul>
-      </div>
-      <div>
-        <h2>Institucional</h2>
-        <ul>{inst}</ul>
-      </div>
-      <div>
-        <h2>Contato</h2>
-        <ul>
-          <li><a href="{zap}" target="_blank" rel="noopener">WhatsApp {wpp}</a></li>
-          <li><a href="tel:{tel_link}">{tel}</a></li>
-          {email}
-          <li>{endereco}</li>
-          <li>{horario}</li>
-        </ul>
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word">
+      <div class="section-head--split">
+        <div><h2 id="close-h">Vamos conversar sobre a sua operação.</h2><p class="t-lead">{lead}</p></div>
+        {btn}
       </div>
     </div>
-    <div class="rodape__base">
-      <span>© <span data-ano>2026</span> {nome}{cnpj}</span>
-      <nav aria-label="Rodapé">
-        <a href="/politica-de-privacidade/">Política de Privacidade</a>
-        <a href="/termos-de-uso/">Termos de Uso</a>
-      </nav>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-3 stack-4">
+          <a class="nav__logo" href="/" aria-label="{nome}, página inicial"><img src="/img/logo.svg" alt="{nome}" width="700" height="210"></a>
+          <p class="footer__lede">{posic}</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Soluções</h3><ul>{sol}</ul></div>
+        <div class="span-2 footer__col"><h3>Segmentos</h3><ul>{seg}</ul></div>
+        <div class="span-2 footer__col"><h3>Empresa</h3><ul>{emp}</ul></div>
+        <div class="span-3 footer__col"><h3>Contato</h3><ul>
+          <li><a href="{zap}" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="tel:{tel_link}">{tel}</a></li>{email}{social}
+          <li>{horario}</li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; {ano} {nome}{cnpj} &nbsp; <a href="/politica-de-privacidade/">Privacidade</a> &nbsp; <a href="/termos-de-uso/">Termos de uso</a></span>
+      </div>
     </div>
   </div>
-</footer>
-
-<a class="zap" href="{zap}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">{svgzap}</a>""".format(
-        nome=E(SITE["nome_completo"]), posic=E(SITE["posicionamento"]), sociais=sociais,
-        sol=sol, inst=inst, zap=whatsapp_link(ZAP_PADRAO), wpp=E(CONTATO["whatsapp"]),
-        tel_link=CONTATO["telefone_link"], tel=E(CONTATO["telefone"]), email=email,
-        endereco=E(endereco_linha()), horario=E(CONTATO["horario"]), cnpj=E(cnpj),
-        svgzap=SVG_WHATSAPP)
-
-
-def migalhas(trilha):
-    if not trilha:
-        return ""
-    itens, ld = [], []
-    for i, (nome, href) in enumerate(trilha):
-        if href:
-            itens.append('<li><a href="{}">{}</a></li>'.format(href, E(nome)))
-        else:
-            itens.append('<li><span aria-current="page">{}</span></li>'.format(E(nome)))
-        ld.append({"@type": "ListItem", "position": i + 1, "name": nome,
-                   "item": SITE["url"] + (href or "")})
-    schema = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": ld}
-    return ('<nav class="container migalhas" aria-label="Você está aqui"><ol>{}</ol></nav>'
-            '<script type="application/ld+json">{}</script>'
-            .format("".join(itens), json.dumps(schema, ensure_ascii=False)))
+</footer>""".format(lead=E(lead), btn=btn_primario(), nome=E(SITE["nome_completo"]),
+                    posic=E(SITE["posicionamento"]), ano=datetime.date.today().year, sol=sol, seg=seg, emp=emp,
+                    zap=whatsapp_link(ZAP_PADRAO), tel_link=c["telefone_link"], tel=E(c["telefone"]),
+                    email=email, social=social, horario=E(c["horario"]), cnpj=E(cnpj))
 
 
 def schema_negocio():
@@ -711,44 +600,80 @@ def schema_negocio():
         "url": SITE["url"],
         "logo": SITE["url"] + "/img/logo.svg",
         "telephone": c["telefone"],
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": c["endereco_rua"],
-            "addressLocality": c["endereco_cidade"],
-            "addressRegion": c["endereco_uf"],
-            "postalCode": c["endereco_cep"],
-            "addressCountry": "BR",
-        },
+        "address": {"@type": "PostalAddress", "streetAddress": c["endereco_rua"],
+                    "addressLocality": c["endereco_cidade"], "addressRegion": c["endereco_uf"],
+                    "postalCode": c["endereco_cep"], "addressCountry": "BR"},
         "openingHours": c["horario_schema"],
         "sameAs": [u for u in REDES.values() if u],
         "areaServed": COMERCIAL.get("regiao_atendimento") or "Brasil",
     }
-    if c["email"]:
+    if c.get("email"):
         dados["email"] = c["email"]
     return '<script type="application/ld+json">{}</script>'.format(json.dumps(dados, ensure_ascii=False))
 
 
 def schema_faq(itens):
-    dados = {
-        "@context": "https://schema.org", "@type": "FAQPage",
-        "mainEntity": [{
-            "@type": "Question", "name": f["pergunta"],
-            "acceptedAnswer": {"@type": "Answer",
-                               "text": " ".join(html.unescape(p) for p in f["resposta"])},
-        } for f in itens],
-    }
+    dados = {"@context": "https://schema.org", "@type": "FAQPage",
+             "mainEntity": [{"@type": "Question", "name": f["pergunta"],
+                             "acceptedAnswer": {"@type": "Answer",
+                                                "text": " ".join(html.unescape(p) for p in f["resposta"])}}
+                            for f in itens]}
     return '<script type="application/ld+json">{}</script>'.format(json.dumps(dados, ensure_ascii=False))
 
 
-def documento(pagina, corpo, extras_head=""):
+def schema_migalhas(trilha):
+    if not trilha:
+        return ""
+    ld = [{"@type": "ListItem", "position": i + 1, "name": nome, "item": SITE["url"] + (href or "")}
+          for i, (nome, href) in enumerate(trilha)]
+    return '<script type="application/ld+json">{}</script>'.format(
+        json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": ld},
+                   ensure_ascii=False))
+
+
+HEAD_ESTILO = """<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/kit/system.css">
+<link rel="stylesheet" href="/kit/ui/cards.css">
+<link rel="stylesheet" href="/kit/motion/motion.css">
+<link rel="stylesheet" href="/kit/layout/layout.css">
+<link rel="stylesheet" href="/kit/icons/icon.css">
+<style>
+:root {
+  --p-bg: #f5ede4; --p-surface: #ebddd0; --p-ink: #2a171d; --p-muted: #6a565b;
+  --p-accent: #6e0f2a; --p-accent-ink: #f5ede4; --p-action: #6e0f2a; --p-action-ink: #f5ede4;
+  --p-inv-bg: #2a171d; --p-inv-surface: #362329; --p-inv-ink: #f5ede4; --p-inv-muted: #a29491;
+  --p-inv-accent: #f5ede4; --p-inv-accent-ink: #2a171d; --p-inv-action: #f5ede4; --p-inv-action-ink: #2a171d;
+  --font-display: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-text: "Schibsted Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.042em;
+  --ly-scale: 0.98;
+}
+</style>
+<link rel="stylesheet" href="/css/page.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>"""
+
+HEAD_MOMENTO = """
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="/kit/moments/moments.js">
+<link rel="modulepreload" href="/kit/moments/lib.js">
+<link rel="modulepreload" href="/kit/moments/word-highlight/moment.js">"""
+
+
+def documento(pagina, corpo, extras_head="", momento=False):
     url = SITE["url"] + pagina["url"]
     return """<!doctype html>
-<html lang="{lang}">
+<html lang="{lang}" data-type="service" data-radius="soft" data-buttons="arrow" data-motion>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -756,50 +681,79 @@ def documento(pagina, corpo, extras_head=""):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{base}/img/og.png">
+<meta property="og:image" content="{base}/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#6E0F2A">{noindex}
+<meta name="theme-color" content="#f5ede4">{noindex}
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/img/app-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/css/site.css">
+{estilo}{momento}
 {schema}
 {extras}
 </head>
 <body>
-<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 {cabecalho}
-<main id="conteudo">
-{migalhas}
+<main id="top">
 {corpo}
 </main>
 {rodape}
-<script src="/js/site.js" defer></script>
+<nav class="actionbar" aria-label="Ações rápidas">{barra}</nav>
+<script type="module" src="/kit/system.js"></script>
+<script type="module" src="/kit/motion/motion.js"></script>
+<script type="module" src="/kit/layout/layout.js"></script>
 </body>
 </html>
 """.format(lang=SITE["lang"], title=E(pagina["title"]), desc=E(pagina["description"]),
            url=url, base=SITE["url"], nome=E(SITE["nome"]),
            noindex=('\n<meta name="robots" content="noindex, nofollow">'
-                    '\n<!-- previa: nao indexar, para nao competir com o site real -->'
+                    '\n<!-- previa: nao indexar, para nao competir com o site real na busca -->'
                     if SITE.get("preview") else ""),
-           schema=schema_negocio(), extras=extras_head,
-           cabecalho=cabecalho(pagina["url"]),
-           migalhas=migalhas(pagina.get("trilha")),
-           corpo=corpo, rodape=rodape())
+           estilo=HEAD_ESTILO, momento=HEAD_MOMENTO if momento else "",
+           schema=schema_negocio() + schema_migalhas(pagina.get("trilha")), extras=extras_head,
+           cabecalho=cabecalho(pagina["url"]), corpo=corpo, rodape=rodape(),
+           barra=btn_primario(seta=False))
+
+
+def _injetar(html_secao, extra):
+    i = html_secao.rfind("</div></section>")
+    if i < 0:
+        return html_secao + extra
+    return html_secao[:i] + extra + html_secao[i:]
 
 
 def monta(pagina):
-    partes = []
-    faq_itens = None
-    for s in pagina["secoes"]:
+    PAGINA_ATUAL["url"] = pagina["url"]
+    PAGINA_ATUAL["n"] = 0
+    PAGINA_ATUAL["form"] = any(s["tipo"] in ("cta_form", "cta", "contato") for s in pagina["secoes"])
+    secoes = [dict(s) for s in pagina["secoes"]]
+    # uma única faixa escura por página (ritmo "dark-band"), na segunda metade
+    for tipo in ("beneficios", "etapas", "numerada", "checklist"):
+        alvo = [s for s in secoes if s["tipo"] == tipo]
+        if alvo:
+            if tipo != "beneficios":
+                alvo[0]["_inverso"] = True
+            break
+    partes, pendente, faq_itens, momento = [], "", None, False
+    for s in secoes:
         fn = COMPONENTES.get(s["tipo"])
         if not fn:
             raise ValueError("Componente desconhecido: " + s["tipo"])
-        partes.append(fn(s))
+        h = fn(s)
+        if s["tipo"] == "pills":
+            pendente = h
+            continue
+        if s["tipo"] == "nota":
+            if partes:
+                partes[-1] = _injetar(partes[-1], h)
+            continue
+        if pendente and h:
+            h = _injetar(h, pendente)
+            pendente = ""
+        if h:
+            partes.append(h)
         if s["tipo"] == "faq":
             faq_itens = s["itens"]
+        if s["tipo"] == "declaracao":
+            momento = True
     extras = schema_faq(faq_itens) if faq_itens else ""
-    return documento(pagina, "\n".join(partes), extras)
+    return documento(pagina, "\n".join(partes), extras, momento)

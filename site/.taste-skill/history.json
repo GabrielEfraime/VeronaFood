@@ -1,0 +1,21 @@
+{
+ "palettes": [],
+ "types": [],
+ "dealt": [
+  "schibsted",
+  "source-serif",
+  "geist"
+ ],
+ "moments": [
+  {
+   "id": "pinned-chapters",
+   "at": "2026-11-13T02:01:35.905Z",
+   "seed": "1238af18"
+  },
+  {
+   "id": "word-highlight",
+   "at": "2026-11-13T02:01:35.905Z",
+   "seed": "1238af18"
+  }
+ ]
+}

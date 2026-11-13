@@ -46,7 +46,7 @@ def limpa():
 
 def copia_assets():
     shutil.copytree(os.path.join(ASSETS, "css"), os.path.join(DIST, "css"))
-    shutil.copytree(os.path.join(ASSETS, "js"), os.path.join(DIST, "js"))
+    shutil.copytree(os.path.join(ASSETS, "kit"), os.path.join(DIST, "kit"))
     img = os.path.join(DIST, "img")
     os.makedirs(img, exist_ok=True)
 
@@ -166,7 +166,7 @@ def confere(paginas, html_por_url):
         "/politica-de-privacidade/", "/termos-de-uso/"}
     for url, html in html_por_url.items():
         for href in set(re.findall(r'href="(/[^"#?]*)"', html)):
-            if href.startswith(("/css", "/js", "/img", "/sitemap", "/robots", "/site.webmanifest")):
+            if href.startswith(("/css", "/js", "/kit", "/img", "/sitemap", "/robots", "/site.webmanifest")):
                 continue
             if href not in conhecidas:
                 problemas.append("{}: link para {} não existe".format(url, href))

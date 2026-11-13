@@ -1,0 +1,3432 @@
+{
+ "page": "H:\\VeronaFood\\site\\dist\\index.html",
+ "url": "http://127.0.0.1:5200/index.html",
+ "at": "2026-11-13T01:46:00.099Z",
+ "out": "H:\\VeronaFood\\site\\dist\\.taste-skill\\consistency",
+ "widths": [
+  {
+   "width": 1440,
+   "height": 900,
+   "screens": 10,
+   "held": 0,
+   "errors": [],
+   "findings": [
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negócio de a",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 1,
+     "crop": "1440-11-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 2,
+     "crop": "1440-19-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 3,
+     "crop": "1440-21-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "O que muda na sua rotina",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 3,
+     "crop": "1440-22-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Bárbara Pontes",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 4,
+     "crop": "1440-26-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7)",
+     "text": "O que você recebe",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 5,
+     "crop": "1440-28-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico.",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 8,
+     "crop": "1440-36-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "button-styles",
+     "sev": "FAIL",
+     "sel": "(the page)",
+     "text": "",
+     "stop": 0,
+     "msg": "4 button styles on the page: soft, fill #6e0f2a x2 (\"Falar com a Verona Food\"); soft, outline #6e0f2a x1 (\"(abre o WhatsApp) Falar no WhatsApp\"); pill, fill #f5ede4, outline #e3d7ca x8 (\"Restaurantes\"); soft, fill #f5ede4 x1 (\"Enviar mensagem\")",
+     "crop": "1440-01-button-styles.jpg",
+     "fix": "one primary and one secondary button: one shape, one height per size, one label size"
+    },
+    {
+     "check": "copy-headings",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) > div.container > h2",
+     "text": "O que a gente resolve",
+     "msg": "\"O que a gente resolve\" names no product, part, place or section (10 headings like it; at most one brand line per page) (and 9 more like it: \"Como o trabalho acontece\", \"Diagnóstico\", \"Implantação\", \"Acompanhamento\", ...)",
+     "stop": 1,
+     "crop": "1440-12-copy-headings.jpg",
+     "fix": "name the thing in every heading: the product, a part, the place or a section noun"
+    },
+    {
+     "check": "heading-scale",
+     "sev": "FAIL",
+     "sel": "div.container > a.faixa-destaque > div.tx > h3",
+     "text": "Consultoria completa",
+     "msg": "h3 headings in 2 sizes, 19px (\"Diagnóstico\") to 26px (x1.37)",
+     "stop": 2,
+     "crop": "1440-20-heading-scale.jpg",
+     "fix": "size headings by level: the h1 largest, one size per level, each level below the one above"
+    },
+    {
+     "check": "heading-scale",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > div.etapa__n",
+     "text": "01",
+     "msg": "the figure \"01\" is set at 46px, larger than the section headings (h2 40px); 3 more like it",
+     "fix": "set figures at the h2 size or under: a stat reads as data, not as the heading",
+     "stop": 3,
+     "crop": "1440-23-heading-scale.jpg"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.hero__grid > div:nth-of-type(1) > p.apoio",
+     "text": "Segurança dos alimentos, controle de custos, pad",
+     "stop": 0,
+     "msg": "body text in #6b585c on #f5ede4 reads 5.7:1 (needs 7:1); 10 like it, like \"Cada frente funciona s\", \"Documento que você con\", \"— o retrato da sua ope\"",
+     "crop": "1440-02-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > p",
+     "text": "Visitamos sua operação em horário de funcionamen",
+     "stop": 3,
+     "msg": "body text in #6b585c on #fbf7f2 reads 6.2:1 (needs 7:1); 5 like it, like \"Montamos o plano com p\", \"Colocamos em prática j\", \"Voltamos para conferir\"",
+     "crop": "1440-24-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.grade.grade--3 > a.card.card--link:nth-of-type(1) > div.artigo-card__corpo > p.cat",
+     "text": "SEGURANÇA DOS ALIMENTOS",
+     "stop": 6,
+     "msg": "a caption, label or muted line in #c2762f on #f5ede4 reads 3.06:1 (needs 4.5:1); 3 like it, like \"EVENTOS\", \"TREINAMENTO\"",
+     "crop": "1440-34-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "hover-move",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) > div.container > a.faixa-destaque",
+     "text": "Consultoria completa Quando o negócio precisa de",
+     "stop": 18,
+     "msg": "a linked card or photo shows no change on hover (1160x152): it does not lift, its photograph does not zoom, nothing darkens or draws (the page carries no data-motion: link assets/motion/motion.css after cards.css and put data-motion on <html>)",
+     "crop": "1440-53-hover-move.jpg",
+     "fix": "every linked card and linked photo answers the pointer: give the card class=\"card\" (or the tile its media class) so motion.css lifts it 2px and zooms its photo; hover a linked card up 2px (translateY(-2px)) and zoom its photo to 1.02-1.03 inside its frame; no rotate, no 3D tilt, no growing card"
+    },
+    {
+     "check": "street-number",
+     "sev": "FAIL",
+     "sel": "script[type=\"application/ld+json\"]",
+     "text": "R. Antônio de Couros, 270",
+     "msg": "a streetAddress with a house number in the JSON-LD: \"R. Antônio de Couros, 270\"; a real door, which the brief does not give",
+     "fix": "print the street and the district only (\"Weserstraße, Berlin-Neukölln\"): no house number, unless the brief gives the address"
+    },
+    {
+     "check": "postcode",
+     "sev": "FAIL",
+     "sel": "script[type=\"application/ld+json\"]",
+     "text": "02726-000",
+     "msg": "a postalCode in the JSON-LD: \"02726-000\"; with the street it points at one building, which the brief does not give",
+     "fix": "drop the postcode: the street and the district say where it is (copy.md, Address)"
+    },
+    {
+     "check": "phone-number",
+     "sev": "FAIL",
+     "sel": "div.cta-final > div:nth-of-type(1) > div.cta-final__contato > p.miudo",
+     "text": "(11) 2362-6207",
+     "stop": 8,
+     "msg": "a phone number after its label: \"(11) 2362-6207\"; a visitor can dial it and reach a stranger (and 1 more like it: script[type=\"application/ld+json\"] in the JSON-LD)",
+     "crop": "1440-37-phone-number.jpg",
+     "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number"
+    },
+    {
+     "check": "phone-number",
+     "sev": "FAIL",
+     "sel": "div.rodape__grid > div:nth-of-type(4) > ul > li:nth-of-type(1)",
+     "text": "(11) 99495-5987",
+     "stop": 9,
+     "msg": "a phone number after its label: \"(11) 99495-5987\"; a visitor can dial it and reach a stranger",
+     "crop": "1440-43-phone-number.jpg",
+     "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number"
+    },
+    {
+     "check": "phone-number",
+     "sev": "FAIL",
+     "sel": "div.hero__grid > div:nth-of-type(1) > div.acoes > a.btn.btn--secundario",
+     "text": "https://wa.me/5511994955987?text=Ol%C3%A",
+     "stop": 0,
+     "msg": "a WhatsApp link calls a number in a real dialable format: \"https://wa.me/5511994955987?text=Ol%C3%A\"; a visitor can dial it and reach a stranger (and 4 more like it: div:nth-of-type(1) > div.cta-final__contato > p:nth-of-type(1) > a.link-seta, div:nth-of-type(4) > ul > li:nth-of-type(1) > a, div#menu-mobile > div.mobile__pe > a.btn.btn--secundario, ...)",
+     "crop": "1440-03-phone-number.jpg",
+     "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number"
+    },
+    {
+     "check": "phone-number",
+     "sev": "FAIL",
+     "sel": "div:nth-of-type(1) > div.cta-final__contato > p.miudo > a",
+     "text": "tel:+551123626207",
+     "stop": 8,
+     "msg": "a tel: link calls a number in a real dialable format: \"tel:+551123626207\"; a visitor can dial it and reach a stranger (and 1 more like it: div:nth-of-type(4) > ul > li:nth-of-type(2) > a)",
+     "crop": "1440-38-phone-number.jpg",
+     "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number"
+    },
+    {
+     "check": "empty-area",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Sua operação de alimentos organizada do ",
+     "msg": "61% of the section is empty: 80px above its first content, 16px of empty rows between its content, 48% beside content that covers under half the container, in its 662px of rows (WARN over 35%, FAIL over 50%)",
+     "stop": 0,
+     "crop": "1440-04-empty-area.jpg",
+     "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)"
+    },
+    {
+     "check": "focus-visible",
+     "sev": "FAIL",
+     "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > div.pills.pills--centro > a.pill:nth-of-type(1)",
+     "text": "Restaurantes",
+     "stop": 17,
+     "msg": "Tab stop 11, a \"Restaurantes\": the focus lands on something you cannot see",
+     "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
+    },
+    {
+     "check": "overlap-text",
+     "sev": "WARN",
+     "sel": "div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(1) > span.link-seta.stretch",
+     "text": "Ver detalhes",
+     "stop": 1,
+     "msg": "inside a.card.card--link:nth-of-type(1), a box sits on the mock's own text and hides it mid-line (\"Segurança dos alimentos\") (and 5 more like it: \"Ver detalhes\", \"Ver detalhes\", \"Ver detalhes\", \"Ver detalhes\", ...)",
+     "crop": "1440-13-overlap-text.jpg",
+     "fix": "move the box off the text (or the text off the box)"
+    },
+    {
+     "check": "text-only",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre",
+     "msg": "the section is only text: no picture, icon, mock or effect in it",
+     "stop": 7,
+     "crop": "1440-35-text-only.jpg",
+     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
+    },
+    {
+     "check": "copy-headline",
+     "sev": "WARN",
+     "sel": "div.container > div.hero__grid > div:nth-of-type(1) > h1",
+     "text": "Sua operação de alimentos organizada do começo a",
+     "msg": "the h1 has 9 words (2 to 8 read at a glance)",
+     "stop": 0,
+     "crop": "1440-05-copy-headline.jpg",
+     "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words"
+    },
+    {
+     "check": "copy-headings",
+     "sev": "WARN",
+     "sel": "div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(3) > h3",
+     "text": "Custos e ficha técnica",
+     "msg": "the card title \"Custos e ficha técnica\" names no product, part, place or section (4 card titles like it) (and 3 more like it: \"Treinamento de equipe\", \"Garanta a segurança do s\", \"Capacite sua equipe, sur\")",
+     "stop": 1,
+     "crop": "1440-14-copy-headings.jpg",
+     "fix": "name the thing in every heading: the product, a part, the place or a section noun"
+    },
+    {
+     "check": "copy-buttons",
+     "sev": "WARN",
+     "sel": "a.pular",
+     "text": "Pular para o conteúdo",
+     "msg": "\"Pular para o conteúdo\" does not start with a verb (book, buy, try, start, get, see...) (and 11 more like it: \"Agendar diagnóstico\", \"(abre o WhatsApp) Falar \", \"Restaurantes\", \"Bares\", ...)",
+     "stop": 0,
+     "crop": "1440-06-copy-buttons.jpg",
+     "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")"
+    },
+    {
+     "check": "copy-buttons",
+     "sev": "WARN",
+     "sel": "div.hero__grid > div:nth-of-type(1) > div.acoes > a.btn.btn--secundario",
+     "text": "(abre o WhatsApp) Falar no WhatsApp",
+     "msg": "\"(abre o WhatsApp) Falar no WhatsApp\" is 6 words (1 to 5)",
+     "stop": 0,
+     "crop": "1440-07-copy-buttons.jpg",
+     "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")"
+    },
+    {
+     "check": "copy-actions",
+     "sev": "WARN",
+     "sel": "(the page)",
+     "text": "",
+     "msg": "13 different button labels on the page (at most 10)",
+     "stop": null,
+     "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close"
+    },
+    {
+     "check": "copy-actions",
+     "sev": "WARN",
+     "sel": "header.topo > div.container.topo__in > div.topo__cta > a.btn.btn--primario",
+     "text": "Falar com a Verona Food",
+     "msg": "2 labels for one target /contato/: \"Falar com a Verona Food\", \"Agendar diagnóstico\"",
+     "stop": 0,
+     "crop": "1440-08-copy-actions.jpg",
+     "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close"
+    },
+    {
+     "check": "copy-actions",
+     "sev": "WARN",
+     "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > div.pills.pills--centro > a.pill:nth-of-type(1)",
+     "text": "Restaurantes",
+     "msg": "2 labels for one target /segmentos/restaurantes-e-bares/: \"Restaurantes\", \"Bares\"",
+     "stop": 1,
+     "crop": "1440-15-copy-actions.jpg",
+     "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close"
+    },
+    {
+     "check": "copy-actions",
+     "sev": "WARN",
+     "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > div.pills.pills--centro > a.pill:nth-of-type(4)",
+     "text": "Padarias",
+     "msg": "2 labels for one target /segmentos/padarias-e-confeitarias/: \"Padarias\", \"Confeitarias\"",
+     "stop": 1,
+     "crop": "1440-16-copy-actions.jpg",
+     "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close"
+    },
+    {
+     "check": "copy-actions",
+     "sev": "WARN",
+     "sel": "(the page)",
+     "text": "",
+     "msg": "the main action \"Agendar diagnóstico\" does not read word for word the same in the closing section",
+     "stop": null,
+     "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(7) / main#conteudo > div.container",
+     "text": "",
+     "stop": 5,
+     "msg": "109px between these sections, -44% against the median 194px",
+     "crop": "1440-30-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 5,
+     "msg": "104px between these sections, -46% against the median 194px of gaps at a change of ground",
+     "crop": "1440-31-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10) / footer.rodape",
+     "text": "",
+     "stop": 9,
+     "msg": "143px between these sections, -26% against the median 194px",
+     "crop": "1440-44-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero / main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "",
+     "stop": 1,
+     "msg": "uneven space at the edge of a band: 64px outside its edge, 99px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "1440-17-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 5,
+     "msg": "uneven space at the edge of a band: 10px outside its edge, 94px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "1440-32-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "nav-family",
+     "sev": "WARN",
+     "sel": "header.topo.rolado",
+     "text": "",
+     "stop": 1,
+     "msg": "the nav changes form as the page scrolls: header.topo gives way to header.topo.rolado",
+     "crop": "1440-18-nav-family.jpg",
+     "fix": "keep one nav on every screen: the same bar, fill, links and type"
+    },
+    {
+     "check": "link-styles",
+     "sev": "WARN",
+     "sel": "div:nth-of-type(2) > form.form-card > p.privacidade:nth-of-type(1) > a",
+     "text": "Política de Privacidade",
+     "msg": "text links in 3 looks: no line, bold (5, like \"Ver todos os segment\"); underline, regular (1, like \"Política de Privacid\"); no line, regular (13, like \"Segurança dos alimen\")",
+     "stop": 8,
+     "crop": "1440-39-link-styles.jpg",
+     "fix": "give text links one look wherever they sit: one underline, one weight"
+    },
+    {
+     "check": "fake-button",
+     "sev": "WARN",
+     "sel": "div.pessoa.pessoa--sem-foto > div > div.pills > span.pill.pill--credencial:nth-of-type(1)",
+     "text": "Nutricionista",
+     "stop": 4,
+     "msg": "\"Nutricionista\" looks like a button (pill, fill #f5ede4, outline #e3d7ca, the same look as the page's buttons) but is not a link or a button (2 like it)",
+     "crop": "1440-27-fake-button.jpg",
+     "fix": "make it a real link or button, or drop its button look"
+    },
+    {
+     "check": "orphan",
+     "sev": "WARN",
+     "sel": "section.secao:nth-of-type(7) > div.container > ul.checklist.checklist--2 > li:nth-of-type(6)",
+     "text": "Material de treinamento — que fica com a equipe ",
+     "msg": "its last line holds only \"sai.\"",
+     "stop": 5,
+     "crop": "1440-33-orphan.jpg",
+     "fix": "rebalance the text (text-wrap: pretty, or a shorter line) so the last line holds more than one short word"
+    },
+    {
+     "check": "button-contrast",
+     "sev": "WARN",
+     "sel": "div.cta-final > div:nth-of-type(2) > form.form-card > button.btn.btn--primario",
+     "text": "Enviar mensagem",
+     "stop": 8,
+     "msg": "the button \"Enviar mensagem\" (#f5ede4) stands only 1.09:1 off the ground around it: it reads as part of the ground, or as switched off",
+     "crop": "1440-40-button-contrast.jpg",
+     "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink"
+    },
+    {
+     "check": "one-screen",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece",
+     "msg": "3 sections are shorter than the screen, so the next one's heading or picture shows with them: \"Como o trabalho acontece\" is 601px of the 823px under the nav, and \"O que muda na sua rotina\" shows below it (\"O que muda na sua ro\", \"Bárbara Pontes\")",
+     "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
+     "stop": 3,
+     "crop": "1440-25-one-screen.jpg"
+    },
+    {
+     "check": "hover",
+     "sev": "WARN",
+     "sel": "a.pular",
+     "text": "Pular para o conteúdo",
+     "msg": "the filled button (\"Pular para o conteúd\") looks the same hovered as at rest, while the nav link, outlined button, text link answer",
+     "stop": 0,
+     "fix": "give buttons and links a small answer to the pointer (the motion layer: a fill change, a drawn underline, an arrow that moves)"
+    },
+    {
+     "check": "hero-enter",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero",
+     "text": "",
+     "msg": "the hero does not enter on load: no data-enter on the hero and no head line setting html.m-enter (motion.md, The hero's entrance)",
+     "fix": "put data-enter on the hero <section> and keep the head line from starter.html that sets html.m-enter",
+     "stop": 0,
+     "crop": "1440-10-hero-enter.jpg"
+    },
+    {
+     "check": "moment-none",
+     "sev": "WARN",
+     "sel": "(the page)",
+     "text": "",
+     "msg": "a service page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+     "fix": "deal one (moments.mjs pick --page service --photo) and mount it in its own section",
+     "stop": null
+    },
+    {
+     "check": "empty-area",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico.",
+     "msg": "35% of the section is empty: 35% beside content that covers under half the container, in its 814px of rows (WARN over 35%, FAIL over 50%)",
+     "stop": 8,
+     "crop": "1440-41-empty-area.jpg",
+     "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)"
+    },
+    {
+     "check": "skip-link",
+     "sev": "WARN",
+     "sel": "a.pular:nth-of-type(1)",
+     "text": "Pular para o conteúdo",
+     "msg": "the first Tab stop is \"Pular para o conteúdo\", not a skip link: a keyboard user tabs through the whole nav on every visit",
+     "stop": null,
+     "fix": "add the starter's skip link as the header's first child: <a class=\"skip-link\" href=\"#top\">Skip to content</a>"
+    },
+    {
+     "check": "form-fields",
+     "sev": "WARN",
+     "sel": "div.container > div.cta-final > div:nth-of-type(2) > form.form-card",
+     "text": "",
+     "msg": "the form has no status line (role=\"status\"): sending, sent and errors are never read out",
+     "stop": 8,
+     "crop": "1440-42-form-fields.jpg",
+     "fix": "give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)"
+    },
+    {
+     "check": "hero-screen",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the hero ends at 905px on a 900px screen, 5px below the fold: it ends at the fold, 1px either way (SR-1)",
+     "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+     "rule": "SR-1 T1",
+     "crop": "1440-rhythm-01-hero-screen.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section is 54px tall (0.1 screens), 846px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "1440-rhythm-02-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "the section is 322px tall (0.4 screens), 578px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "1440-rhythm-03-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "the section is 391px tall (0.4 screens), 509px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 8 more like it: \"Quem vai te atender Bárb\", \"O que você recebe Docume\", \"O que muda na sua rotina\") (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "1440-rhythm-04-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece Quatro etapas. ",
+     "msg": "the section starts at 2250px, 450px above the screen grid (3 x 900px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "1440-rhythm-05-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve Cada frente funcio",
+     "msg": "the section starts at 1227px, 327px below the screen grid (1 x 900px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "1440-rhythm-06-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "the section starts at 6042px, 258px above the screen grid (7 x 900px): sections start on whole screens (and 9 more like it: \"Perguntas que a gente ou\", \"Quem vai te atender Bárb\", \"O que você recebe Docume\") (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "1440-rhythm-07-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "the section's content does not fit it: its lowest content ends 369px below its top, past 319px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+     "rule": "SR-2 T-fit",
+     "crop": "1440-rhythm-08-section-height.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section shows no content: its content fills 0% of its 54px (55% or more) (SR-3)",
+     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+     "rule": "SR-3 T-fill",
+     "crop": "1440-rhythm-09-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "the content fills 39.3% of the section's height (127 of 322px): 55% or more (40% WARN) (SR-3)",
+     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+     "rule": "SR-3 T-fill",
+     "crop": "1440-rhythm-10-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Quem vai te atender Bárbara Pontes Consu",
+     "msg": "the content fills 52.4% of the section's height (215 of 409px): 55% or more (40% WARN) (SR-3)",
+     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+     "rule": "SR-3 T-fill",
+     "crop": "1440-rhythm-31-section-air.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(2) > h2",
+     "text": "Soluções",
+     "msg": "the screen at scroll 6540px (the top of section 12) shows 391px of section 12 and the heading of section 12 whole and the content of 2 sections, over 24px each beside section 11: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "1440-rhythm-11-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve Cada frente funcio",
+     "msg": "the screen at scroll 1800px (stride 2) shows 373px of section 3 and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "1440-rhythm-12-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "div.container > div.pessoa.pessoa--sem-foto > div > h2",
+     "text": "Bárbara Pontes",
+     "msg": "the screen at scroll 2851px (the top of section 5) shows 364px of section 6 and the heading of section 6 whole and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (and 12 more like it: scroll 3796px, scroll 2250px, scroll 5400px) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "1440-rhythm-13-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+     "rule": "SR-4 T-dom",
+     "crop": "1440-rhythm-14-one-section.jpg"
+    },
+    {
+     "check": "one-heading",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(3) > h2",
+     "text": "Institucional",
+     "msg": "the section holds 3 h2 headings: one per section, first in its .wrap (SR-5)",
+     "fix": "give each section one h2, first in its .wrap, and the hero only its h1",
+     "rule": "SR-5 T1",
+     "crop": "1440-rhythm-15-one-heading.jpg"
+    },
+    {
+     "check": "one-heading",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > h2",
+     "text": "O que muda na sua rotina",
+     "msg": "headings of two sections show whole on one screen at 20 of 131 scroll positions (15.3%; at scroll 2100, 2150, 2200, 2250px), here with \"Como o trabalho acontece\": at most 3% on a desktop (SR-5)",
+     "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+     "rule": "SR-5 T2",
+     "crop": "1440-rhythm-16-one-heading.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "header.topo",
+     "text": "Soluções Ver todasVisão geral de soluçõe",
+     "msg": "the nav's content runs 140px from the left and 140px from the right (read from its outermost blocks: no .wrap): the page's container starts at 120px; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+     "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+     "rule": "SR-6 T1-margins",
+     "crop": "1440-rhythm-17-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "a.pular",
+     "text": "Pular para o conteúdo",
+     "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "1440-rhythm-18-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "header.topo",
+     "text": "Soluções Ver todasVisão geral de soluçõe",
+     "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 13 more like it: \"Processo claro, equipe t\", \"Consultoria para negócio\", \"Trabalhamos com diferent\") (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "1440-rhythm-19-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(4) > h2",
+     "text": "Contato",
+     "msg": "the h2 starts 882px right of the container's left: every h1 and h2 starts on it, 2px either way (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "1440-rhythm-20-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(3) > h2",
+     "text": "Institucional",
+     "msg": "the h2 starts 624px right of the container's left: every h1 and h2 starts on it, 2px either way (and 15 more like it: x 623, x 514, \"Soluções\") (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "1440-rhythm-21-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) > div.container.centro > p.miudo",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "\"Trabalhamos com diferentes tipos\" is set centred across 1160px, over half the 1200px container: text that wide is set left (SR-6)",
+     "fix": "set the text left (text-align: start)",
+     "rule": "SR-6 T4-alignment",
+     "crop": "1440-rhythm-22-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) > div.container.centro > p:nth-of-type(2)",
+     "text": "Ver todos os segmentos",
+     "msg": "\"Ver todos os segmentos\" is set centred across 1160px, over half the 1200px container: text that wide is set left (SR-6)",
+     "fix": "set the text left (text-align: start)",
+     "rule": "SR-6 T4-alignment",
+     "crop": "1440-rhythm-23-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > div.nota",
+     "text": "“Pronta para fiscalização” descreve o es",
+     "msg": "a box over half the container wide runs 140-844px, not on the container's lines at 120-1320px (and 3 more like it: \"Meu negócio é pequeno. V\", \"Consultoria completaQuan\", \"© 2026 VeronaFood Consul\") (SR-6)",
+     "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+     "rule": "SR-6 T6-right-edges",
+     "crop": "1440-rhythm-24-container-edges.jpg"
+    },
+    {
+     "check": "row-lines",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10) > div.container > div.cta-final",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "a row of 2 items: its first item starts at 140px, the container's left line at 120px; its last item ends at 1300px, the container's right line at 1320px; its items are 288/814px tall, not one height (2px either way) (SR-7)",
+     "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
+     "rule": "SR-7 T-rows",
+     "crop": "1440-rhythm-25-row-lines.jpg"
+    },
+    {
+     "check": "row-lines",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) > div.container > div.grade.grade--solucoes",
+     "text": "Segurança dos alimentosBoas práticas, PO",
+     "msg": "a row of 3 items: its first item starts at 140px, the container's left line at 120px; its last item ends at 1300px, the container's right line at 1320px (2px either way) (SR-7)",
+     "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
+     "rule": "SR-7 T-rows",
+     "crop": "1440-rhythm-26-row-lines.jpg"
+    },
+    {
+     "check": "row-lines",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(8) > div.container > div.grade.grade--3",
+     "text": "Segurança dos alimentos ISO 22000: segur",
+     "msg": "a row of 3 items: its first item starts at 140px, the container's left line at 120px; its last item ends at 1300px, the container's right line at 1320px (2px either way) (and 4 more like it: \"01DiagnósticoVisitamos s\", \"Menos retrabalhoProcedim\", \"Relatório de diagnóstico\") (SR-7)",
+     "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
+     "rule": "SR-7 T-rows",
+     "crop": "1440-rhythm-27-row-lines.jpg"
+    },
+    {
+     "check": "split-pair",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero > div.container > div.hero__grid",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the two columns of the split start 101px apart at the top (centred on each other): a split's columns are top-aligned, 8px either way (SR-8)",
+     "fix": "top-align both columns of the split (align-items: start)",
+     "rule": "SR-8 T-mode",
+     "crop": "1440-rhythm-28-split-pair.jpg"
+    },
+    {
+     "check": "split-pair",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero > div.container > div.hero__grid",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 803, on none of the split lines 630 (k=5), 732 (k=6), 834 (k=7) (SR-8)",
+     "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+     "rule": "SR-8 T-pair",
+     "crop": "1440-rhythm-29-split-pair.jpg"
+    },
+    {
+     "check": "split-pair",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero > div.container > div.hero__grid",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the split does not run edge to edge on the container: its left column starts at 140px, the container's left at 120px; its right column ends at 1300px, the container's right at 1320px (SR-8)",
+     "fix": "run the split from the container's left line to its right line",
+     "rule": "SR-8 T-edges",
+     "crop": "1440-rhythm-30-split-pair.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 369px below its top, past 319px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "1440-rhythm-32-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece Quatro etapas. ",
+     "msg": "with every answer and tab open, the section starts at 2250px, 450px above the screen grid (3 x 900px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "1440-rhythm-33-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve Cada frente funcio",
+     "msg": "with every answer and tab open, the section starts at 1227px, 327px below the screen grid (1 x 900px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "1440-rhythm-34-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "with every answer and tab open, the section starts at 6003px, 297px above the screen grid (7 x 900px): sections start on whole screens (and 9 more like it: \"Perguntas que a gente ou\", \"Quem vai te atender Bárb\", \"O que você recebe Docume\") (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "1440-rhythm-35-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre Meu ne",
+     "msg": "with every answer and tab open the section is 820px tall, not 860px: nothing in a section may change its height after load (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "1440-rhythm-36-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "with every answer and tab open the section is 1006px tall, not 1006px, and starts at 6003px, not 6042px: nothing in a section may change its height after load (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "1440-rhythm-37-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open the section is 391px tall, not 391px, and starts at 7009px, not 7048px: nothing in a section may change its height after load (and 6 more like it: \"Quanto tempo leva para a\", \"Vocês garantem aprovação\", \"O trabalho é presencial \") (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "1440-rhythm-38-section-height.jpg"
+    }
+   ],
+   "glAsked": 0
+  },
+  {
+   "width": 1024,
+   "height": 768,
+   "screens": 11,
+   "held": 0,
+   "errors": [],
+   "findings": [
+    {
+     "check": "hero-fill",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negócio de a",
+     "msg": "the next section shows on the first screen: it starts at 766px on a 768px screen (the hero ends at 766px)",
+     "stop": 1,
+     "crop": "1024-04-hero-fill.jpg",
+     "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negócio de a",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 1,
+     "crop": "1024-05-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 2,
+     "crop": "1024-08-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 3,
+     "crop": "1024-11-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "O que muda na sua rotina",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 4,
+     "crop": "1024-15-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Bárbara Pontes",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 5,
+     "crop": "1024-16-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7)",
+     "text": "O que você recebe",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 5,
+     "crop": "1024-17-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico.",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 9,
+     "crop": "1024-25-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "button-styles",
+     "sev": "FAIL",
+     "sel": "(the page)",
+     "text": "",
+     "stop": 0,
+     "msg": "4 button styles on the page: soft, fill #6e0f2a x2 (\"Falar com a Verona Food\"); soft, outline #6e0f2a x1 (\"(abre o WhatsApp) Falar no WhatsApp\"); pill, fill #f5ede4, outline #e3d7ca x8 (\"Restaurantes\"); soft, fill #f5ede4 x1 (\"Enviar mensagem\")",
+     "crop": "1024-01-button-styles.jpg",
+     "fix": "one primary and one secondary button: one shape, one height per size, one label size"
+    },
+    {
+     "check": "heading-scale",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > div.etapa__n",
+     "text": "01",
+     "msg": "the figure \"01\" is set at 46px, larger than the section headings (h2 40px); 3 more like it",
+     "fix": "set figures at the h2 size or under: a stat reads as data, not as the heading",
+     "stop": 3,
+     "crop": "1024-12-heading-scale.jpg"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.hero__grid > div:nth-of-type(1) > p.apoio",
+     "text": "Segurança dos alimentos, controle de custos, pad",
+     "stop": 0,
+     "msg": "body text in #6b585c on #f5ede4 reads 5.7:1 (needs 7:1); 10 like it, like \"Cada frente funciona s\", \"Documento que você con\", \"— o retrato da sua ope\"",
+     "crop": "1024-02-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > p",
+     "text": "Visitamos sua operação em horário de funcionamen",
+     "stop": 3,
+     "msg": "body text in #6b585c on #fbf7f2 reads 6.2:1 (needs 7:1); 5 like it, like \"Montamos o plano com p\", \"Colocamos em prática j\", \"Voltamos para conferir\"",
+     "crop": "1024-13-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.grade.grade--3 > a.card.card--link:nth-of-type(1) > div.artigo-card__corpo > p.cat",
+     "text": "SEGURANÇA DOS ALIMENTOS",
+     "stop": 6,
+     "msg": "a caption, label or muted line in #c2762f on #f5ede4 reads 3.06:1 (needs 4.5:1); 3 like it, like \"EVENTOS\", \"TREINAMENTO\"",
+     "crop": "1024-20-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "empty-area",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Bárbara Pontes",
+     "msg": "64% of the section is empty: 66% beside content that covers under half the container, in its 217px of rows (WARN over 35%, FAIL over 50%)",
+     "stop": 5,
+     "crop": "1024-18-empty-area.jpg",
+     "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)"
+    },
+    {
+     "check": "overlap-text",
+     "sev": "WARN",
+     "sel": "div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(1) > span.link-seta.stretch",
+     "text": "Ver detalhes",
+     "stop": 2,
+     "msg": "inside a.card.card--link:nth-of-type(1), a box sits on the mock's own text and hides it mid-line (\"Segurança dos alimentos\") (and 2 more like it: \"Ver detalhes\", \"Ver detalhes\")",
+     "crop": "1024-09-overlap-text.jpg",
+     "fix": "move the box off the text (or the text off the box)"
+    },
+    {
+     "check": "text-only",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre",
+     "msg": "the section is only text: no picture, icon, mock or effect in it",
+     "stop": 7,
+     "crop": "1024-24-text-only.jpg",
+     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
+    },
+    {
+     "check": "heading-scale",
+     "sev": "WARN",
+     "sel": "div.container > a.faixa-destaque > div.tx > h3",
+     "text": "Consultoria completa",
+     "msg": "h3 headings in 2 sizes, 19px (\"Diagnóstico\") to 24.6px (x1.29)",
+     "stop": 2,
+     "crop": "1024-10-heading-scale.jpg",
+     "fix": "size headings by level: the h1 largest, one size per level, each level below the one above"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(7) / main#conteudo > div.container",
+     "text": "",
+     "stop": 6,
+     "msg": "84px between these sections, -42% against the median 145px",
+     "crop": "1024-21-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 6,
+     "msg": "80px between these sections, -45% against the median 145px of gaps at a change of ground",
+     "crop": "1024-22-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero / main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "",
+     "stop": 1,
+     "msg": "uneven space at the edge of a band: 39px outside its edge, 75px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "1024-06-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 6,
+     "msg": "uneven space at the edge of a band: 10px outside its edge, 70px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "1024-23-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "nav-family",
+     "sev": "WARN",
+     "sel": "header.topo.rolado",
+     "text": "",
+     "stop": 1,
+     "msg": "the nav changes form as the page scrolls: header.topo gives way to header.topo.rolado",
+     "crop": "1024-07-nav-family.jpg",
+     "fix": "keep one nav on every screen: the same bar, fill, links and type"
+    },
+    {
+     "check": "link-styles",
+     "sev": "WARN",
+     "sel": "div:nth-of-type(2) > form.form-card > p.privacidade:nth-of-type(1) > a",
+     "text": "Política de Privacidade",
+     "msg": "text links in 3 looks: no line, bold (5, like \"Ver todos os segment\"); underline, regular (1, like \"Política de Privacid\"); no line, regular (13, like \"Segurança dos alimen\")",
+     "stop": 9,
+     "crop": "1024-26-link-styles.jpg",
+     "fix": "give text links one look wherever they sit: one underline, one weight"
+    },
+    {
+     "check": "fake-button",
+     "sev": "WARN",
+     "sel": "div.pessoa.pessoa--sem-foto > div > div.pills > span.pill.pill--credencial:nth-of-type(1)",
+     "text": "Nutricionista",
+     "stop": 5,
+     "msg": "\"Nutricionista\" looks like a button (pill, fill #f5ede4, outline #e3d7ca, the same look as the page's buttons) but is not a link or a button (2 like it)",
+     "crop": "1024-19-fake-button.jpg",
+     "fix": "make it a real link or button, or drop its button look"
+    },
+    {
+     "check": "orphan",
+     "sev": "WARN",
+     "sel": "div.rodape__grid > div:nth-of-type(4) > ul > li:nth-of-type(4)",
+     "text": "R. Antônio de Couros, 270, Vila Palmeiras — São ",
+     "msg": "its last line holds only \"02726-000\"",
+     "stop": 10,
+     "crop": "1024-28-orphan.jpg",
+     "fix": "rebalance the text (text-wrap: pretty, or a shorter line) so the last line holds more than one short word"
+    },
+    {
+     "check": "copy-length",
+     "sev": "WARN",
+     "sel": "div.container > div.hero__grid > div:nth-of-type(1) > h1",
+     "text": "Sua operação de alimentos organizada do começo a",
+     "msg": "a headline of 9 words on 4 lines at 58px: a paragraph set in display type",
+     "stop": 0,
+     "crop": "1024-03-copy-length.jpg",
+     "fix": "cut the heading to one short line (2 to 12 words) and move the rest into the text under it"
+    },
+    {
+     "check": "button-contrast",
+     "sev": "WARN",
+     "sel": "div.cta-final > div:nth-of-type(2) > form.form-card > button.btn.btn--primario",
+     "text": "Enviar mensagem",
+     "stop": 9,
+     "msg": "the button \"Enviar mensagem\" (#f5ede4) stands only 1.09:1 off the ground around it: it reads as part of the ground, or as switched off",
+     "crop": "1024-27-button-contrast.jpg",
+     "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink"
+    },
+    {
+     "check": "one-screen",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece",
+     "msg": "3 sections are shorter than the screen, so the next one's heading or picture shows with them: \"Como o trabalho acontece\" is 599px of the 691px under the nav, and \"O que muda na sua rotina\" shows below it (\"O que muda na sua ro\", \"Bárbara Pontes\")",
+     "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
+     "stop": 3,
+     "crop": "1024-14-one-screen.jpg"
+    }
+   ],
+   "glAsked": 0
+  },
+  {
+   "width": 820,
+   "height": 1180,
+   "screens": 9,
+   "held": 0,
+   "errors": [],
+   "findings": [
+    {
+     "check": "hero-fill",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negócio de a",
+     "msg": "the next section shows on the first screen: it starts at 1147px on a 1180px screen (the hero ends at 1147px)",
+     "stop": 0,
+     "crop": "820-01-hero-fill.jpg",
+     "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load"
+    },
+    {
+     "check": "nav",
+     "sev": "FAIL",
+     "sel": "header.topo > div.container.topo__in > button.menu-btn",
+     "text": "Falar com a Verona Food",
+     "msg": "at 820px the bar shows only the wordmark and a menu button: its main action \"Falar com a Verona Food\" is shut in the menu, with 614px of the bar free",
+     "fix": "keep the main action in the bar beside the menu button down to the phone width",
+     "stop": 0,
+     "crop": "820-02-nav.jpg"
+    },
+    {
+     "check": "nav-covers",
+     "sev": "FAIL",
+     "sel": "a.zap",
+     "text": "",
+     "msg": "sits on top of the text \"Voltamos para conferir se o padrão se ma\" while the page scrolls: part of the line shows beside it",
+     "stop": 2,
+     "crop": "820-10-nav-covers.jpg",
+     "fix": "make the fixed nav one opaque band across the whole screen, or let it scroll away with the page"
+    },
+    {
+     "check": "row-gap",
+     "sev": "FAIL",
+     "sel": "section.secao:nth-of-type(3) > div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(5)",
+     "text": "Padronização de processos Procedimentos escritos",
+     "msg": "fills 49% of its grid row and leaves 51% of it empty on the right",
+     "stop": 2,
+     "crop": "820-11-row-gap.jpg",
+     "fix": "fill the row at this width: span the columns, or stack the split"
+    },
+    {
+     "check": "row-gap",
+     "sev": "FAIL",
+     "sel": "section.secao.secao--claro:nth-of-type(8) > div.container > div.grade.grade--3 > a.card.card--link:nth-of-type(3)",
+     "text": "TREINAMENTO Capacite sua equipe, surpreenda seus",
+     "msg": "fills 49% of its grid row and leaves 51% of it empty on the right",
+     "stop": 5,
+     "crop": "820-21-row-gap.jpg",
+     "fix": "fill the row at this width: span the columns, or stack the split"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 1,
+     "crop": "820-06-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 2,
+     "crop": "820-12-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "O que muda na sua rotina",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 3,
+     "crop": "820-15-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7)",
+     "text": "O que você recebe",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 4,
+     "crop": "820-17-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico.",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 7,
+     "crop": "820-24-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "button-styles",
+     "sev": "FAIL",
+     "sel": "(the page)",
+     "text": "",
+     "stop": 0,
+     "msg": "4 button styles on the page: soft, fill #6e0f2a x1 (\"Agendar diagnóstico\"); soft, outline #6e0f2a x1 (\"(abre o WhatsApp) Falar no WhatsApp\"); pill, fill #f5ede4, outline #e3d7ca x8 (\"Restaurantes\"); soft, fill #f5ede4 x1 (\"Enviar mensagem\")",
+     "crop": "820-03-button-styles.jpg",
+     "fix": "one primary and one secondary button: one shape, one height per size, one label size"
+    },
+    {
+     "check": "heading-scale",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > div.etapa__n",
+     "text": "01",
+     "msg": "the figure \"01\" is set at 46px, larger than the section headings (h2 32.8px); 3 more like it",
+     "fix": "set figures at the h2 size or under: a stat reads as data, not as the heading",
+     "stop": 2,
+     "crop": "820-13-heading-scale.jpg"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.hero__grid > div:nth-of-type(1) > p.apoio",
+     "text": "Segurança dos alimentos, controle de custos, pad",
+     "stop": 0,
+     "msg": "body text in #6b585c on #f5ede4 reads 5.7:1 (needs 7:1); 10 like it, like \"Cada frente funciona s\", \"Documento que você con\", \"— o retrato da sua ope\"",
+     "crop": "820-04-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > p",
+     "text": "Visitamos sua operação em horário de funcionamen",
+     "stop": 2,
+     "msg": "body text in #6b585c on #fbf7f2 reads 6.2:1 (needs 7:1); 5 like it, like \"Montamos o plano com p\", \"Colocamos em prática j\", \"Voltamos para conferir\"",
+     "crop": "820-14-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.grade.grade--3 > a.card.card--link:nth-of-type(1) > div.artigo-card__corpo > p.cat",
+     "text": "SEGURANÇA DOS ALIMENTOS",
+     "stop": 5,
+     "msg": "a caption, label or muted line in #c2762f on #f5ede4 reads 3.06:1 (needs 4.5:1); 3 like it, like \"EVENTOS\", \"TREINAMENTO\"",
+     "crop": "820-22-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "empty-area",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Sua operação de alimentos organizada do ",
+     "msg": "62% of the section is empty: 560px of empty rows between its content, 6% beside content that covers under half the container, in its 979px of rows (WARN over 35%, FAIL over 50%)",
+     "stop": 0,
+     "crop": "820-05-empty-area.jpg",
+     "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)"
+    },
+    {
+     "check": "overlap-text",
+     "sev": "WARN",
+     "sel": "div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(1) > span.link-seta.stretch",
+     "text": "Ver detalhes",
+     "stop": 1,
+     "msg": "inside a.card.card--link:nth-of-type(1), a box sits on the mock's own text and hides it mid-line (\"Segurança dos alimentos\") (and 3 more like it: \"Ver detalhes\", \"Ver detalhes\", \"Ver detalhes\")",
+     "crop": "820-07-overlap-text.jpg",
+     "fix": "move the box off the text (or the text off the box)"
+    },
+    {
+     "check": "text-only",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre",
+     "msg": "the section is only text: no picture, icon, mock or effect in it",
+     "stop": 6,
+     "crop": "820-23-text-only.jpg",
+     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(7) / main#conteudo > div.container",
+     "text": "",
+     "stop": 4,
+     "msg": "70px between these sections, -40% against the median 117px",
+     "crop": "820-18-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 4,
+     "msg": "65px between these sections, -44% against the median 117px of gaps at a change of ground",
+     "crop": "820-19-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero / main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "",
+     "stop": 1,
+     "msg": "uneven space at the edge of a band: 27px outside its edge, 60px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "820-08-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 4,
+     "msg": "uneven space at the edge of a band: 10px outside its edge, 55px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "820-20-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "nav-family",
+     "sev": "WARN",
+     "sel": "header.topo.rolado",
+     "text": "",
+     "stop": 1,
+     "msg": "the nav changes form as the page scrolls: header.topo gives way to header.topo.rolado",
+     "crop": "820-09-nav-family.jpg",
+     "fix": "keep one nav on every screen: the same bar, fill, links and type"
+    },
+    {
+     "check": "link-styles",
+     "sev": "WARN",
+     "sel": "div:nth-of-type(2) > form.form-card > p.privacidade:nth-of-type(1) > a",
+     "text": "Política de Privacidade",
+     "msg": "text links in 3 looks: no line, bold (5, like \"Ver todos os segment\"); underline, regular (1, like \"Política de Privacid\"); no line, regular (13, like \"Segurança dos alimen\")",
+     "stop": 7,
+     "crop": "820-25-link-styles.jpg",
+     "fix": "give text links one look wherever they sit: one underline, one weight"
+    },
+    {
+     "check": "fake-button",
+     "sev": "WARN",
+     "sel": "div.pessoa.pessoa--sem-foto > div > div.pills > span.pill.pill--credencial:nth-of-type(1)",
+     "text": "Nutricionista",
+     "stop": 3,
+     "msg": "\"Nutricionista\" looks like a button (pill, fill #f5ede4, outline #e3d7ca, the same look as the page's buttons) but is not a link or a button (2 like it)",
+     "crop": "820-16-fake-button.jpg",
+     "fix": "make it a real link or button, or drop its button look"
+    },
+    {
+     "check": "button-contrast",
+     "sev": "WARN",
+     "sel": "div.cta-final > div:nth-of-type(2) > form.form-card > button.btn.btn--primario",
+     "text": "Enviar mensagem",
+     "stop": 7,
+     "msg": "the button \"Enviar mensagem\" (#f5ede4) stands only 1.09:1 off the ground around it: it reads as part of the ground, or as switched off",
+     "crop": "820-26-button-contrast.jpg",
+     "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink"
+    },
+    {
+     "check": "hero-screen",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the hero ends at 1147px on a 1180px screen, 33px above the fold: it ends at the fold, 1px either way (SR-1)",
+     "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+     "rule": "SR-1 T1",
+     "crop": "820-rhythm-01-hero-screen.jpg"
+    },
+    {
+     "check": "hero-screen",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "33px of the next section shows on the first screen (from 1147px on a 1180px screen): nothing below the hero shows at load (SR-1)",
+     "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
+     "rule": "SR-1 T2",
+     "crop": "820-rhythm-02-hero-screen.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section is 54px tall (0 screens), 1126px short of one screen (1180px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "820-rhythm-03-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "the section is 297px tall (0.3 screens), 883px short of one screen (1180px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "820-rhythm-04-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Quem vai te atender Bárbara Pontes Consu",
+     "msg": "the section is 323px tall (0.3 screens), 857px short of one screen (1180px): every section after the hero is one screen or two, 2px either way (and 8 more like it: \"O que você recebe Docume\", \"O que muda na sua rotina\", \"Processo claro, equipe t\") (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "820-rhythm-05-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7)",
+     "text": "O que você recebe Documento que você con",
+     "msg": "the section starts at 4203px, 517px above the screen grid (4 x 1180px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "820-rhythm-06-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "the section starts at 7831px, 429px above the screen grid (7 x 1180px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "820-rhythm-07-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "the section starts at 6731px, 349px above the screen grid (6 x 1180px): sections start on whole screens (and 9 more like it: \"Quem vai te atender Bárb\", \"Como o trabalho acontece\", \"O que a gente resolve Ca\") (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "820-rhythm-08-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "the section's content does not fit it: its lowest content ends 622px below its top, past 572px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+     "rule": "SR-2 T-fit",
+     "crop": "820-rhythm-09-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve Cada frente funcio",
+     "msg": "the section's content does not fit it: its lowest content ends 1129px below its top, past 1115px (the section less 72px of bottom padding) (and 5 more like it: \"Trabalhamos com diferent\", \"Como o trabalho acontece\", \"Quem vai te atender Bárb\") (SR-2)",
+     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+     "rule": "SR-2 T-fit",
+     "crop": "820-rhythm-10-section-height.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section shows no content: its content fills 0% of its 54px (55% or more) (SR-3)",
+     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+     "rule": "SR-3 T-fill",
+     "crop": "820-rhythm-11-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9) > div.container > div.faq",
+     "text": "Meu negócio é pequeno. Vale a pena contr",
+     "msg": "a top border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+     "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+     "rule": "SR-3 T-dividers",
+     "crop": "820-rhythm-12-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) / main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "",
+     "msg": "113px of air between the content of these two sections: 128-480px (64-600px WARN) (every gap out of the band at 820px, top to bottom: 113px after \"Trabalhamos com dife\", 113px after \"O que a gente resolv\", 113px after \"Como o trabalho acon\", 113px after \"Quem vai te atender \", 113px after \"Para ler antes de co\") (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "820-rhythm-28-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) / main#conteudo > section.secao:nth-of-type(3)",
+     "text": "",
+     "msg": "113px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "820-rhythm-29-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4) / main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "",
+     "msg": "113px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "820-rhythm-30-section-air.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > h2",
+     "text": "O que muda na sua rotina",
+     "msg": "the screen at scroll 2631px (the top of section 4) shows 517px of section 5 and the heading of section 5 whole and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "820-rhythm-13-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "the screen at scroll 7294px (the top of section 12) shows 468px of section 11 and the content of 2 sections, over 24px each beside section 12: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "820-rhythm-14-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(2) > h2",
+     "text": "Soluções",
+     "msg": "the screen at scroll 7080px (stride 6) shows 429px of section 12 and the heading of section 12 whole and the content of 2 sections, over 24px each beside section 11: a screen shows one section (another may peek 8px, 24px WARN) (and 11 more like it: scroll 5957px, scroll 4203px, scroll 5900px) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "820-rhythm-15-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+     "rule": "SR-4 T-dom",
+     "crop": "820-rhythm-16-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > div.nota",
+     "text": "“Pronta para fiscalização” descreve o es",
+     "msg": "a band: a box 86% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
+     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+     "rule": "SR-4 T-dom",
+     "crop": "820-rhythm-17-one-section.jpg"
+    },
+    {
+     "check": "one-heading",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(3) > h2",
+     "text": "Institucional",
+     "msg": "the section holds 3 h2 headings: one per section, first in its .wrap (SR-5)",
+     "fix": "give each section one h2, first in its .wrap, and the hero only its h1",
+     "rule": "SR-5 T1",
+     "crop": "820-rhythm-18-one-heading.jpg"
+    },
+    {
+     "check": "one-heading",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > h2",
+     "text": "O que muda na sua rotina",
+     "msg": "headings of two sections show whole on one screen at 41 of 146 scroll positions (28.1%; at scroll 2250, 2300, 2350, 2400px), here with \"Como o trabalho acontece\": at most 3% on a desktop (SR-5)",
+     "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+     "rule": "SR-5 T2",
+     "crop": "820-rhythm-19-one-heading.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "header.topo",
+     "text": "Soluções Ver todasVisão geral de soluçõe",
+     "msg": "the nav's content runs 20px from the left and 20px from the right (read from its outermost blocks: no .wrap): the margin is 64-120px at 820px (one container, equal margins, 2px either way) (SR-6)",
+     "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+     "rule": "SR-6 T1-margins",
+     "crop": "820-rhythm-20-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the content of section 1 runs 20px from the left and 20px from the right (read from its outermost blocks: no .wrap): the margin is 64-120px at 820px (one container, equal margins, 2px either way) (and 10 more like it: \"O que a gente resolve Ca\", \"Como o trabalho acontece\", \"O que muda na sua rotina\") (SR-6)",
+     "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+     "rule": "SR-6 T1-margins",
+     "crop": "820-rhythm-21-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "a.pular",
+     "text": "Pular para o conteúdo",
+     "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "820-rhythm-22-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "header.topo",
+     "text": "Soluções Ver todasVisão geral de soluçõe",
+     "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 14 more like it: \"Processo claro, equipe t\", \"Falar no WhatsApp\", \"Consultoria para negócio\") (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "820-rhythm-23-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(2) > h2",
+     "text": "Soluções",
+     "msg": "the h2 starts 407px right of the container's left: every h1 and h2 starts on it, 2px either way (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "820-rhythm-24-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(4) > h2",
+     "text": "Contato",
+     "msg": "the h2 starts 407px right of the container's left: every h1 and h2 starts on it, 2px either way (and 4 more like it: x 284, x 175, x 45) (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "820-rhythm-25-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) > div.container.centro > p.miudo",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "\"Trabalhamos com diferentes tipos\" is set centred across 780px, over half the 722px container: text that wide is set left (and 1 more like it: \"Ver todos os segmentos\") (SR-6)",
+     "fix": "set the text left (text-align: start)",
+     "rule": "SR-6 T4-alignment",
+     "crop": "820-rhythm-26-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > div.nota",
+     "text": "“Pronta para fiscalização” descreve o es",
+     "msg": "a box over half the container wide runs 20-724px, not on the container's lines at 20-800px (SR-6)",
+     "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+     "rule": "SR-6 T6-right-edges",
+     "crop": "820-rhythm-27-container-edges.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 622px below its top, past 572px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "820-rhythm-31-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve Cada frente funcio",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 1129px below its top, past 1115px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "820-rhythm-32-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 240px below its top, past 225px (the section less 72px of bottom padding) (and 4 more like it: \"Como o trabalho acontece\", \"Quem vai te atender Bárb\", \"Para ler antes de contra\") (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "820-rhythm-33-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7)",
+     "text": "O que você recebe Documento que você con",
+     "msg": "with every answer and tab open, the section starts at 4203px, 517px above the screen grid (4 x 1180px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "820-rhythm-34-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open, the section starts at 7791px, 469px above the screen grid (7 x 1180px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "820-rhythm-35-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "with every answer and tab open, the section starts at 6692px, 388px above the screen grid (6 x 1180px): sections start on whole screens (and 9 more like it: \"Quem vai te atender Bárb\", \"Como o trabalho acontece\", \"O que a gente resolve Ca\") (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "820-rhythm-36-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre Meu ne",
+     "msg": "with every answer and tab open the section is 735px tall, not 774px: nothing in a section may change its height after load (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "820-rhythm-37-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "with every answer and tab open the section is 1100px tall, not 1100px, and starts at 6692px, not 6731px: nothing in a section may change its height after load (and 7 more like it: \"Processo claro, equipe t\", \"Quanto tempo leva para a\", \"Vocês garantem aprovação\") (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "820-rhythm-38-section-height.jpg"
+    }
+   ],
+   "glAsked": 0
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "screens": 10,
+   "held": 0,
+   "errors": [],
+   "findings": [
+    {
+     "check": "nav",
+     "sev": "FAIL",
+     "sel": "header.topo > div.container.topo__in > button.menu-btn",
+     "text": "Falar com a Verona Food",
+     "msg": "at 768px the bar shows only the wordmark and a menu button: its main action \"Falar com a Verona Food\" is shut in the menu, with 562px of the bar free",
+     "fix": "keep the main action in the bar beside the menu button down to the phone width",
+     "stop": 0,
+     "crop": "768-01-nav.jpg"
+    },
+    {
+     "check": "row-gap",
+     "sev": "FAIL",
+     "sel": "section.secao:nth-of-type(3) > div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(5)",
+     "text": "Padronização de processos Procedimentos escritos",
+     "msg": "fills 49% of its grid row and leaves 51% of it empty on the right",
+     "stop": 2,
+     "crop": "768-09-row-gap.jpg",
+     "fix": "fill the row at this width: span the columns, or stack the split"
+    },
+    {
+     "check": "row-gap",
+     "sev": "FAIL",
+     "sel": "section.secao.secao--claro:nth-of-type(8) > div.container > div.grade.grade--3 > a.card.card--link:nth-of-type(3)",
+     "text": "TREINAMENTO Capacite sua equipe, surpreenda seus",
+     "msg": "fills 49% of its grid row and leaves 51% of it empty on the right",
+     "stop": 5,
+     "crop": "768-17-row-gap.jpg",
+     "fix": "fill the row at this width: span the columns, or stack the split"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 2,
+     "crop": "768-10-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 3,
+     "crop": "768-11-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "O que muda na sua rotina",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 3,
+     "crop": "768-12-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7)",
+     "text": "O que você recebe",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 4,
+     "crop": "768-15-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico.",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 8,
+     "crop": "768-23-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "button-styles",
+     "sev": "FAIL",
+     "sel": "(the page)",
+     "text": "",
+     "stop": 0,
+     "msg": "4 button styles on the page: soft, fill #6e0f2a x1 (\"Agendar diagnóstico\"); soft, outline #6e0f2a x1 (\"(abre o WhatsApp) Falar no WhatsApp\"); pill, fill #f5ede4, outline #e3d7ca x8 (\"Restaurantes\"); soft, fill #f5ede4 x1 (\"Enviar mensagem\")",
+     "crop": "768-02-button-styles.jpg",
+     "fix": "one primary and one secondary button: one shape, one height per size, one label size"
+    },
+    {
+     "check": "heading-scale",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > div.etapa__n",
+     "text": "01",
+     "msg": "the figure \"01\" is set at 46px, larger than the section headings (h2 30.7px); 3 more like it",
+     "fix": "set figures at the h2 size or under: a stat reads as data, not as the heading",
+     "stop": 3,
+     "crop": "768-13-heading-scale.jpg"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.hero__grid > div:nth-of-type(1) > p.apoio",
+     "text": "Segurança dos alimentos, controle de custos, pad",
+     "stop": 0,
+     "msg": "body text in #6b585c on #f5ede4 reads 5.7:1 (needs 7:1); 10 like it, like \"Cada frente funciona s\", \"Documento que você con\", \"— o retrato da sua ope\"",
+     "crop": "768-03-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > p",
+     "text": "Visitamos sua operação em horário de funcionamen",
+     "stop": 3,
+     "msg": "body text in #6b585c on #fbf7f2 reads 6.2:1 (needs 7:1); 5 like it, like \"Montamos o plano com p\", \"Colocamos em prática j\", \"Voltamos para conferir\"",
+     "crop": "768-14-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.grade.grade--3 > a.card.card--link:nth-of-type(1) > div.artigo-card__corpo > p.cat",
+     "text": "SEGURANÇA DOS ALIMENTOS",
+     "stop": 5,
+     "msg": "a caption, label or muted line in #c2762f on #f5ede4 reads 3.06:1 (needs 4.5:1); 3 like it, like \"EVENTOS\", \"TREINAMENTO\"",
+     "crop": "768-18-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "empty-area",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Sua operação de alimentos organizada do ",
+     "msg": "60% of the section is empty: 512px of empty rows between its content, 6% beside content that covers under half the container, in its 933px of rows (WARN over 35%, FAIL over 50%)",
+     "stop": 0,
+     "crop": "768-04-empty-area.jpg",
+     "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)"
+    },
+    {
+     "check": "overlap-text",
+     "sev": "WARN",
+     "sel": "div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(1) > span.link-seta.stretch",
+     "text": "Ver detalhes",
+     "stop": 1,
+     "msg": "inside a.card.card--link:nth-of-type(1), a box sits on the mock's own text and hides it mid-line (\"Segurança dos alimentos\") (and 4 more like it: \"Ver detalhes\", \"Ver detalhes\", \"Ver detalhes\", \"Ver detalhes\")",
+     "crop": "768-05-overlap-text.jpg",
+     "fix": "move the box off the text (or the text off the box)"
+    },
+    {
+     "check": "text-only",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre",
+     "msg": "the section is only text: no picture, icon, mock or effect in it",
+     "stop": 7,
+     "crop": "768-22-text-only.jpg",
+     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero / main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "",
+     "stop": 1,
+     "msg": "85px between these sections, -25% against the median 114px of gaps at a change of ground",
+     "crop": "768-06-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(7) / main#conteudo > div.container",
+     "text": "",
+     "stop": 5,
+     "msg": "69px between these sections, -39% against the median 114px",
+     "crop": "768-19-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 5,
+     "msg": "64px between these sections, -44% against the median 114px of gaps at a change of ground",
+     "crop": "768-20-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero / main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "",
+     "stop": 1,
+     "msg": "uneven space at the edge of a band: 26px outside its edge, 59px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "768-07-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 5,
+     "msg": "uneven space at the edge of a band: 10px outside its edge, 54px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "768-21-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "nav-family",
+     "sev": "WARN",
+     "sel": "header.topo.rolado",
+     "text": "",
+     "stop": 1,
+     "msg": "the nav changes form as the page scrolls: header.topo gives way to header.topo.rolado",
+     "crop": "768-08-nav-family.jpg",
+     "fix": "keep one nav on every screen: the same bar, fill, links and type"
+    },
+    {
+     "check": "link-styles",
+     "sev": "WARN",
+     "sel": "div:nth-of-type(2) > form.form-card > p.privacidade:nth-of-type(1) > a",
+     "text": "Política de Privacidade",
+     "msg": "text links in 3 looks: no line, bold (5, like \"Ver todos os segment\"); underline, regular (1, like \"Política de Privacid\"); no line, regular (13, like \"Segurança dos alimen\")",
+     "stop": 8,
+     "crop": "768-24-link-styles.jpg",
+     "fix": "give text links one look wherever they sit: one underline, one weight"
+    },
+    {
+     "check": "fake-button",
+     "sev": "WARN",
+     "sel": "div.pessoa.pessoa--sem-foto > div > div.pills > span.pill.pill--credencial:nth-of-type(1)",
+     "text": "Nutricionista",
+     "stop": 4,
+     "msg": "\"Nutricionista\" looks like a button (pill, fill #f5ede4, outline #e3d7ca, the same look as the page's buttons) but is not a link or a button (2 like it)",
+     "crop": "768-16-fake-button.jpg",
+     "fix": "make it a real link or button, or drop its button look"
+    },
+    {
+     "check": "button-contrast",
+     "sev": "WARN",
+     "sel": "div.cta-final > div:nth-of-type(2) > form.form-card > button.btn.btn--primario",
+     "text": "Enviar mensagem",
+     "stop": 8,
+     "msg": "the button \"Enviar mensagem\" (#f5ede4) stands only 1.09:1 off the ground around it: it reads as part of the ground, or as switched off",
+     "crop": "768-25-button-contrast.jpg",
+     "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink"
+    },
+    {
+     "check": "hero-screen",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the hero ends at 1096px on a 1024px screen, 72px below the fold: it ends at the fold, 1px either way (SR-1)",
+     "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+     "rule": "SR-1 T1",
+     "crop": "768-rhythm-01-hero-screen.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section is 54px tall (0.1 screens), 970px short of one screen (1024px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "768-rhythm-02-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "the section is 295px tall (0.3 screens), 729px short of one screen (1024px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "768-rhythm-03-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Quem vai te atender Bárbara Pontes Consu",
+     "msg": "the section is 318px tall (0.3 screens), 706px short of one screen (1024px): every section after the hero is one screen or two, 2px either way (and 8 more like it: \"O que você recebe Docume\", \"O que muda na sua rotina\", \"Como o trabalho acontece\") (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "768-rhythm-04-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "the section starts at 6650px, 506px below the screen grid (6 x 1024px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "768-rhythm-05-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section starts at 4642px, 478px above the screen grid (5 x 1024px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "768-rhythm-06-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece Quatro etapas. ",
+     "msg": "the section starts at 2619px, 453px above the screen grid (3 x 1024px): sections start on whole screens (and 9 more like it: \"Processo claro, equipe t\", \"Para ler antes de contra\", \"O que a gente resolve Ca\") (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "768-rhythm-07-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "the section's content does not fit it: its lowest content ends 660px below its top, past 610px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+     "rule": "SR-2 T-fit",
+     "crop": "768-rhythm-08-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve Cada frente funcio",
+     "msg": "the section's content does not fit it: its lowest content ends 1172px below its top, past 1156px (the section less 72px of bottom padding) (and 5 more like it: \"Trabalhamos com diferent\", \"Como o trabalho acontece\", \"Quem vai te atender Bárb\") (SR-2)",
+     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+     "rule": "SR-2 T-fit",
+     "crop": "768-rhythm-09-section-height.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section shows no content: its content fills 0% of its 54px (55% or more) (SR-3)",
+     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+     "rule": "SR-3 T-fill",
+     "crop": "768-rhythm-10-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9) > div.container > div.faq",
+     "text": "Meu negócio é pequeno. Vale a pena contr",
+     "msg": "a top border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+     "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+     "rule": "SR-3 T-dividers",
+     "crop": "768-rhythm-11-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) / main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "",
+     "msg": "110px of air between the content of these two sections: 128-480px (64-600px WARN) (every gap out of the band at 768px, top to bottom: 110px after \"Trabalhamos com dife\", 110px after \"O que a gente resolv\", 110px after \"Como o trabalho acon\", 110px after \"Quem vai te atender \", 110px after \"Para ler antes de co\") (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "768-rhythm-27-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) / main#conteudo > section.secao:nth-of-type(3)",
+     "text": "",
+     "msg": "110px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "768-rhythm-28-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4) / main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "",
+     "msg": "110px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "768-rhythm-29-section-air.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4) > div.container > h2",
+     "text": "Como o trabalho acontece",
+     "msg": "the screen at scroll 2048px (stride 2) shows 453px of section 4 and the heading of section 4 whole and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "768-rhythm-12-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(2) > h2",
+     "text": "Soluções",
+     "msg": "the screen at scroll 7168px (stride 7) shows 451px of section 12 and the heading of section 12 whole and the content of 2 sections, over 24px each beside section 11: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "768-rhythm-13-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre Meu ne",
+     "msg": "the screen at scroll 6144px (stride 6) shows 437px of section 10 and the content of 2 sections, over 24px each beside section 11: a screen shows one section (another may peek 8px, 24px WARN) (and 10 more like it: scroll 4096px, scroll 4177px, scroll 2619px) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "768-rhythm-14-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+     "rule": "SR-4 T-dom",
+     "crop": "768-rhythm-15-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > div.nota",
+     "text": "“Pronta para fiscalização” descreve o es",
+     "msg": "a band: a box 92% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
+     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+     "rule": "SR-4 T-dom",
+     "crop": "768-rhythm-16-one-section.jpg"
+    },
+    {
+     "check": "one-heading",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(3) > h2",
+     "text": "Institucional",
+     "msg": "the section holds 3 h2 headings: one per section, first in its .wrap (SR-5)",
+     "fix": "give each section one h2, first in its .wrap, and the hero only its h1",
+     "rule": "SR-5 T1",
+     "crop": "768-rhythm-17-one-heading.jpg"
+    },
+    {
+     "check": "one-heading",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > h2",
+     "text": "O que muda na sua rotina",
+     "msg": "headings of two sections show whole on one screen at 33 of 148 scroll positions (22.3%; at scroll 2350, 2400, 2450, 2500px), here with \"Como o trabalho acontece\": at most 3% on a desktop (SR-5)",
+     "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+     "rule": "SR-5 T2",
+     "crop": "768-rhythm-18-one-heading.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "header.topo",
+     "text": "Soluções Ver todasVisão geral de soluçõe",
+     "msg": "the nav's content runs 20px from the left and 20px from the right (read from its outermost blocks: no .wrap): the margin is 64-120px at 768px (one container, equal margins, 2px either way) (SR-6)",
+     "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+     "rule": "SR-6 T1-margins",
+     "crop": "768-rhythm-19-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the content of section 1 runs 20px from the left and 20px from the right (read from its outermost blocks: no .wrap): the margin is 64-120px at 768px (one container, equal margins, 2px either way) (and 10 more like it: \"O que a gente resolve Ca\", \"Como o trabalho acontece\", \"O que muda na sua rotina\") (SR-6)",
+     "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+     "rule": "SR-6 T1-margins",
+     "crop": "768-rhythm-20-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "a.pular",
+     "text": "Pular para o conteúdo",
+     "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "768-rhythm-21-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "header.topo",
+     "text": "Soluções Ver todasVisão geral de soluçõe",
+     "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 14 more like it: \"Processo claro, equipe t\", \"Falar no WhatsApp\", \"Consultoria para negócio\") (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "768-rhythm-22-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(2) > h2",
+     "text": "Soluções",
+     "msg": "the h2 starts 381px right of the container's left: every h1 and h2 starts on it, 2px either way (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "768-rhythm-23-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(4) > h2",
+     "text": "Contato",
+     "msg": "the h2 starts 381px right of the container's left: every h1 and h2 starts on it, 2px either way (and 4 more like it: x 284, x 175, x 45) (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "768-rhythm-24-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) > div.container.centro > p.miudo",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "\"Trabalhamos com diferentes tipos\" is set centred across 728px, over half the 722px container: text that wide is set left (and 1 more like it: \"Ver todos os segmentos\") (SR-6)",
+     "fix": "set the text left (text-align: start)",
+     "rule": "SR-6 T4-alignment",
+     "crop": "768-rhythm-25-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > div.nota",
+     "text": "“Pronta para fiscalização” descreve o es",
+     "msg": "a box over half the container wide runs 20-724px, not on the container's lines at 20-748px (SR-6)",
+     "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+     "rule": "SR-6 T6-right-edges",
+     "crop": "768-rhythm-26-container-edges.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 660px below its top, past 610px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "768-rhythm-30-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve Cada frente funcio",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 1172px below its top, past 1156px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "768-rhythm-31-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 238px below its top, past 223px (the section less 72px of bottom padding) (and 4 more like it: \"Como o trabalho acontece\", \"Quem vai te atender Bárb\", \"Para ler antes de contra\") (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "768-rhythm-32-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open, the section starts at 7702px, 490px above the screen grid (8 x 1024px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "768-rhythm-33-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "with every answer and tab open, the section starts at 4642px, 478px above the screen grid (5 x 1024px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "768-rhythm-34-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "with every answer and tab open, the section starts at 6611px, 467px below the screen grid (6 x 1024px): sections start on whole screens (and 9 more like it: \"Como o trabalho acontece\", \"Para ler antes de contra\", \"O que a gente resolve Ca\") (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "768-rhythm-35-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre Meu ne",
+     "msg": "with every answer and tab open the section is 730px tall, not 769px: nothing in a section may change its height after load (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "768-rhythm-36-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "with every answer and tab open the section is 1091px tall, not 1091px, and starts at 6611px, not 6650px: nothing in a section may change its height after load (and 7 more like it: \"Processo claro, equipe t\", \"Quanto tempo leva para a\", \"Vocês garantem aprovação\") (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "768-rhythm-37-section-height.jpg"
+    }
+   ],
+   "glAsked": 0
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "screens": 17,
+   "held": 0,
+   "errors": [],
+   "findings": [
+    {
+     "check": "nav-covers",
+     "sev": "FAIL",
+     "sel": "a.zap",
+     "text": "",
+     "msg": "sits on top of the text \"Voltamos para conferir se o padrão se ma\" while the page scrolls: part of the line shows beside it",
+     "stop": 5,
+     "crop": "390-14-nav-covers.jpg",
+     "fix": "make the fixed nav one opaque band across the whole screen, or let it scroll away with the page"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negócio de a",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 1,
+     "crop": "390-04-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3)",
+     "text": "O que a gente resolve",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 2,
+     "crop": "390-10-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "Como o trabalho acontece",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 5,
+     "crop": "390-15-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "O que muda na sua rotina",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 6,
+     "crop": "390-17-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Bárbara Pontes",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 7,
+     "crop": "390-19-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7)",
+     "text": "O que você recebe",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 8,
+     "crop": "390-22-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "no-visual",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico.",
+     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "stop": 13,
+     "crop": "390-29-no-visual.jpg",
+     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+    },
+    {
+     "check": "button-styles",
+     "sev": "FAIL",
+     "sel": "(the page)",
+     "text": "",
+     "stop": 0,
+     "msg": "4 button styles on the page: soft, fill #6e0f2a x1 (\"Agendar diagnóstico\"); soft, outline #6e0f2a x1 (\"(abre o WhatsApp) Falar no WhatsApp\"); pill, fill #f5ede4, outline #e3d7ca x8 (\"Restaurantes\"); soft, fill #f5ede4 x1 (\"Enviar mensagem\")",
+     "crop": "390-01-button-styles.jpg",
+     "fix": "one primary and one secondary button: one shape, one height per size, one label size"
+    },
+    {
+     "check": "heading-scale",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > div.etapa__n",
+     "text": "01",
+     "msg": "the figure \"01\" is set at 38px, larger than the h1 (34px) (and 1 more like it: \"02\")",
+     "fix": "set figures below the h1: a stat reads as data, not as the headline",
+     "stop": 4,
+     "crop": "390-12-heading-scale.jpg"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.hero__grid > div:nth-of-type(1) > p.apoio",
+     "text": "Segurança dos alimentos, controle de custos, pad",
+     "stop": 0,
+     "msg": "body text in #6b585c on #f5ede4 reads 5.7:1 (needs 7:1); 10 like it, like \"Cada frente funciona s\", \"Documento que você con\", \"— o retrato da sua ope\"",
+     "crop": "390-02-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.container > div.etapas.etapas--home > div.etapa:nth-of-type(1) > p",
+     "text": "Visitamos sua operação em horário de funcionamen",
+     "stop": 5,
+     "msg": "body text in #6b585c on #fbf7f2 reads 6.2:1 (needs 7:1); 5 like it, like \"Montamos o plano com p\", \"Colocamos em prática j\", \"Voltamos para conferir\"",
+     "crop": "390-16-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "text-contrast",
+     "sev": "FAIL",
+     "sel": "div.grade.grade--3 > a.card.card--link:nth-of-type(1) > div.artigo-card__corpo > p.cat",
+     "text": "SEGURANÇA DOS ALIMENTOS",
+     "stop": 9,
+     "msg": "a caption, label or muted line in #c2762f on #f5ede4 reads 3.06:1 (needs 4.5:1); 3 like it, like \"EVENTOS\", \"TREINAMENTO\"",
+     "crop": "390-27-text-contrast.jpg",
+     "fix": "body text in the ink at 7:1 or more; grey (4.5:1 or more) only for captions and labels"
+    },
+    {
+     "check": "hole",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) > div.container > a.faixa-destaque",
+     "text": "Consultoria completa Quando o negócio precisa de",
+     "msg": "an empty band 184px tall across the card (42% of its height), with content above and below it",
+     "stop": 4,
+     "crop": "390-13-hole.jpg",
+     "fix": "close the empty space: move the content together, or give the space the visual it lacks"
+    },
+    {
+     "check": "overlap-text",
+     "sev": "WARN",
+     "sel": "div.container > div.grade.grade--solucoes > a.card.card--link:nth-of-type(1) > span.link-seta.stretch",
+     "text": "Ver detalhes",
+     "stop": 2,
+     "msg": "inside a.card.card--link:nth-of-type(1), a box sits on the mock's own text and hides it mid-line (\"Segurança dos alimentos\") (and 5 more like it: \"Ver detalhes\", \"Ver detalhes\", \"Ver detalhes\", \"Ver detalhes\", ...)",
+     "crop": "390-11-overlap-text.jpg",
+     "fix": "move the box off the text (or the text off the box)"
+    },
+    {
+     "check": "tap-size",
+     "sev": "WARN",
+     "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > div.pills.pills--centro > a.pill:nth-of-type(1)",
+     "text": "Restaurantes",
+     "msg": "a 127x43px tap target (and 7 more like it on this screen): under the 44px a phone needs",
+     "stop": 1,
+     "crop": "390-05-tap-size.jpg",
+     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+    },
+    {
+     "check": "tap-size",
+     "sev": "WARN",
+     "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > p:nth-of-type(2) > a.link-seta",
+     "text": "Ver todos os segmentos",
+     "msg": "a 194x25px tap target: under the 44px a phone needs",
+     "stop": 1,
+     "crop": "390-06-tap-size.jpg",
+     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+    },
+    {
+     "check": "tap-size",
+     "sev": "WARN",
+     "sel": "section.secao.secao--claro:nth-of-type(4) > div.container > p:nth-of-type(2) > a.link-seta",
+     "text": "Ver o processo em detalhe",
+     "msg": "a 212x25px tap target: under the 44px a phone needs",
+     "stop": 6,
+     "crop": "390-18-tap-size.jpg",
+     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+    },
+    {
+     "check": "tap-size",
+     "sev": "WARN",
+     "sel": "div.pessoa.pessoa--sem-foto > div > p:nth-of-type(3) > a.link-seta",
+     "text": "Conhecer a Verona Food",
+     "msg": "a 197x25px tap target: under the 44px a phone needs",
+     "stop": 7,
+     "crop": "390-20-tap-size.jpg",
+     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+    },
+    {
+     "check": "tap-size",
+     "sev": "WARN",
+     "sel": "div.rodape__grid > div.rodape__marca > div.rodape__social > a",
+     "text": "",
+     "msg": "a 40x40px tap target: under the 44px a phone needs",
+     "stop": 14,
+     "crop": "390-30-tap-size.jpg",
+     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+    },
+    {
+     "check": "tap-size",
+     "sev": "WARN",
+     "sel": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a",
+     "text": "Segurança dos alimentos",
+     "msg": "a 179x19px tap target: under the 44px a phone needs",
+     "stop": 14,
+     "crop": "390-31-tap-size.jpg",
+     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+    },
+    {
+     "check": "tap-size",
+     "sev": "WARN",
+     "sel": "div.container > div.rodape__base > nav > a:nth-of-type(1)",
+     "text": "Política de Privacidade",
+     "msg": "a 145x22px tap target (and 1 more like it on this screen): under the 44px a phone needs",
+     "stop": 16,
+     "crop": "390-35-tap-size.jpg",
+     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+    },
+    {
+     "check": "text-only",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre",
+     "msg": "the section is only text: no picture, icon, mock or effect in it",
+     "stop": 11,
+     "crop": "390-28-text-only.jpg",
+     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
+    },
+    {
+     "check": "button-styles",
+     "sev": "WARN",
+     "sel": "a.pular",
+     "text": "Pular para o conteúdo",
+     "msg": "on the phone 3 buttons run the full width of their column, but 2 keep their own width, like \"Pular para o conteúdo\" is 218px of 390px: one action in two sizes",
+     "fix": "give every button the same width rule on the phone: all full width, or all at their own width",
+     "stop": 0
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero / main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "",
+     "stop": 1,
+     "msg": "85px between these sections, -25% against the median 114px of gaps at a change of ground",
+     "crop": "390-07-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(7) / main#conteudo > div.container",
+     "text": "",
+     "stop": 8,
+     "msg": "69px between these sections, -39% against the median 114px",
+     "crop": "390-24-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 8,
+     "msg": "64px between these sections, -44% against the median 114px of gaps at a change of ground",
+     "crop": "390-25-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10) / footer.rodape",
+     "text": "",
+     "stop": 14,
+     "msg": "174px between these sections, +53% against the median 114px",
+     "crop": "390-32-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.hero / main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "",
+     "stop": 1,
+     "msg": "uneven space at the edge of a band: 26px outside its edge, 59px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "390-08-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#conteudo > div.container / main#conteudo > section.secao.secao--claro:nth-of-type(8)",
+     "text": "",
+     "stop": 8,
+     "msg": "uneven space at the edge of a band: 10px outside its edge, 54px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+     "crop": "390-26-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
+    },
+    {
+     "check": "nav-family",
+     "sev": "WARN",
+     "sel": "header.topo.rolado",
+     "text": "",
+     "stop": 1,
+     "msg": "the nav changes form as the page scrolls: header.topo gives way to header.topo.rolado",
+     "crop": "390-09-nav-family.jpg",
+     "fix": "keep one nav on every screen: the same bar, fill, links and type"
+    },
+    {
+     "check": "link-styles",
+     "sev": "WARN",
+     "sel": "div:nth-of-type(2) > form.form-card > p.privacidade:nth-of-type(1) > a",
+     "text": "Política de Privacidade",
+     "msg": "text links in 3 looks: no line, bold (5, like \"Ver todos os segment\"); underline, regular (1, like \"Política de Privacid\"); no line, regular (13, like \"Segurança dos alimen\")",
+     "stop": 14,
+     "crop": "390-33-link-styles.jpg",
+     "fix": "give text links one look wherever they sit: one underline, one weight"
+    },
+    {
+     "check": "fake-button",
+     "sev": "WARN",
+     "sel": "div.pessoa.pessoa--sem-foto > div > div.pills > span.pill.pill--credencial:nth-of-type(1)",
+     "text": "Nutricionista",
+     "stop": 7,
+     "msg": "\"Nutricionista\" looks like a button (pill, fill #f5ede4, outline #e3d7ca, the same look as the page's buttons) but is not a link or a button (2 like it)",
+     "crop": "390-21-fake-button.jpg",
+     "fix": "make it a real link or button, or drop its button look"
+    },
+    {
+     "check": "button-contrast",
+     "sev": "WARN",
+     "sel": "div.cta-final > div:nth-of-type(2) > form.form-card > button.btn.btn--primario",
+     "text": "Enviar mensagem",
+     "stop": 14,
+     "msg": "the button \"Enviar mensagem\" (#f5ede4) stands only 1.09:1 off the ground around it: it reads as part of the ground, or as switched off",
+     "crop": "390-34-button-contrast.jpg",
+     "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink"
+    },
+    {
+     "check": "hero-screen",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.hero",
+     "text": "Consultoria para negócios de alimentação",
+     "msg": "the hero ends at 943px on a 844px screen, 99px below the fold: it ends at the fold, 1px either way (SR-1)",
+     "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+     "rule": "SR-1 T1",
+     "crop": "390-rhythm-01-hero-screen.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section is 54px tall (0.1 screens), 790px short of one screen (844px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "390-rhythm-02-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Quem vai te atender Bárbara Pontes Consu",
+     "msg": "the section is 360px tall (0.4 screens), 484px short of one screen (844px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "390-rhythm-03-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "the section is 423px tall (0.5 screens), 421px short of one screen (844px): every section after the hero is one screen or two, 2px either way (and 8 more like it: \"O que a gente resolve Ca\", \"Vamos começar pelo diagn\", \"Processo claro, equipe t\") (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
+     "crop": "390-rhythm-04-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "the section starts at 10578px, 394px above the screen grid (13 x 844px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "390-rhythm-05-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Quem vai te atender Bárbara Pontes Consu",
+     "msg": "the section starts at 5437px, 373px below the screen grid (6 x 844px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "390-rhythm-06-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "O que muda na sua rotina Menos retrabalh",
+     "msg": "the section starts at 4565px, 345px below the screen grid (5 x 844px): sections start on whole screens (and 9 more like it: \"O que a gente resolve Ca\", main#conteudo > div.container, \"Perguntas que a gente ou\") (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "390-rhythm-07-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "the section's content does not fit it: its lowest content ends 1092px below its top, past 1066px (the section less 48px of bottom padding) (SR-2)",
+     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+     "rule": "SR-2 T-fit",
+     "crop": "390-rhythm-08-section-height.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "the section shows no content: its content fills 0% of its 54px (55% or more) (SR-3)",
+     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+     "rule": "SR-3 T-fill",
+     "crop": "390-rhythm-09-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9) > div.container > div.faq",
+     "text": "Meu negócio é pequeno. Vale a pena contr",
+     "msg": "a top border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+     "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+     "rule": "SR-3 T-dividers",
+     "crop": "390-rhythm-10-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) / main#conteudo > section.secao.secao--claro:nth-of-type(4)",
+     "text": "",
+     "msg": "110px of air between the content of these two sections: 112-420px (56-560px WARN) (every gap out of the band at 390px, top to bottom: 110px after \"Trabalhamos com dife\", 110px after \"O que a gente resolv\", 110px after \"Como o trabalho acon\", 110px after \"Quem vai te atender \", 110px after \"Para ler antes de co\") (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "390-rhythm-25-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) / main#conteudo > section.secao:nth-of-type(3)",
+     "text": "",
+     "msg": "110px of air between the content of these two sections: 112-420px (56-560px WARN) (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "390-rhythm-26-section-air.jpg"
+    },
+    {
+     "check": "section-air",
+     "sev": "WARN",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(4) / main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "",
+     "msg": "110px of air between the content of these two sections: 112-420px (56-560px WARN) (SR-3)",
+     "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+     "rule": "SR-3 T-gap",
+     "crop": "390-rhythm-27-section-air.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2)",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "the screen at scroll 943px (the top of section 2) shows 354px of section 2 and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "390-rhythm-11-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(3) > div.container > h2",
+     "text": "O que a gente resolve",
+     "msg": "the screen at scroll 844px (stride 1) shows 322px of section 3 and the heading of section 3 whole and the content of 2 sections, over 24px each beside section 2: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "390-rhythm-12-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(7) > div.container > h2",
+     "text": "O que você recebe",
+     "msg": "the screen at scroll 5064px (stride 6) shows 304px of section 5 and the heading of section 7 whole and the content of 3 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 7 more like it: scroll 5437px, scroll 7596px, scroll 4220px) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
+     "crop": "390-rhythm-13-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#conteudo > div.container",
+     "text": "",
+     "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+     "rule": "SR-4 T-dom",
+     "crop": "390-rhythm-14-one-section.jpg"
+    },
+    {
+     "check": "one-heading",
+     "sev": "FAIL",
+     "sel": "div.container > div.rodape__grid > div:nth-of-type(3) > h2",
+     "text": "Institucional",
+     "msg": "the section holds 3 h2 headings: one per section, first in its .wrap (SR-5)",
+     "fix": "give each section one h2, first in its .wrap, and the hero only its h1",
+     "rule": "SR-5 T1",
+     "crop": "390-rhythm-15-one-heading.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "a.pular",
+     "text": "Pular para o conteúdo",
+     "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "390-rhythm-16-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "header.topo",
+     "text": "Soluções Ver todasVisão geral de soluçõe",
+     "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "390-rhythm-17-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "a <footer> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 13 more like it: \"Falar no WhatsApp\", \"Consultoria para negócio\", \"Trabalhamos com diferent\") (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "390-rhythm-18-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) > div.container.centro > p:nth-of-type(2)",
+     "text": "Ver todos os segmentos",
+     "msg": "1 text block starts on a left line at x 98, 78px from the container's left: text starts on the container's left, or on one split line (x 176, 207, 238) (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "390-rhythm-19-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5) > div.container > div.nota",
+     "text": "“Pronta para fiscalização” descreve o es",
+     "msg": "4 text blocks start on a left line at x 46, 26px from the container's left: text starts on the container's left, or on one split line (x 176, 207, 238) (also \"01\", \"Diagnóstico\", \"Visitamos sua operação em horári\") (and 1 more like it: x 35) (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
+     "crop": "390-rhythm-20-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) > div.container.centro > p.miudo",
+     "text": "Trabalhamos com diferentes tipos de negó",
+     "msg": "\"Trabalhamos com diferentes tipos\" is set centred across 350px, over half the 350px container: text that wide is set left (SR-6)",
+     "fix": "set the text left (text-align: start)",
+     "rule": "SR-6 T4-alignment",
+     "crop": "390-rhythm-21-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(2) > div.container.centro > p:nth-of-type(2)",
+     "text": "Ver todos os segmentos",
+     "msg": "\"Ver todos os segmentos\" is set centred across 350px, over half the 350px container: text that wide is set left (SR-6)",
+     "fix": "set the text left (text-align: start)",
+     "rule": "SR-6 T4-alignment",
+     "crop": "390-rhythm-22-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > div.pills.pills--centro > a.pill:nth-of-type(6)",
+     "text": "Cozinhas industriais",
+     "msg": "a box over half the container wide runs 23-200px, not on the container's lines at 20-370px (SR-6)",
+     "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+     "rule": "SR-6 T6-right-edges",
+     "crop": "390-rhythm-23-container-edges.jpg"
+    },
+    {
+     "check": "row-lines",
+     "sev": "FAIL",
+     "sel": "div.container > div.pessoa.pessoa--sem-foto > div > div.pills",
+     "text": "NutricionistaGastrônoma10 anos de atuaçã",
+     "msg": "a row of 2 items: its last item ends at 254px, the container's right line at 370px (2px either way) (SR-7)",
+     "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
+     "rule": "SR-7 T-rows",
+     "crop": "390-rhythm-24-row-lines.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open, the section's content does not fit it: its lowest content ends 1092px below its top, past 1066px (the section less 48px of bottom padding) (SR-2)",
+     "fix": "show answers and panels open and size the section for its open content, or make it two screens (.g2)",
+     "rule": "SR-2 T-fit-expanded",
+     "crop": "390-rhythm-28-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open, the section starts at 10512px, 384px below the screen grid (12 x 844px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "390-rhythm-29-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--claro:nth-of-type(6)",
+     "text": "Quem vai te atender Bárbara Pontes Consu",
+     "msg": "with every answer and tab open, the section starts at 5437px, 373px below the screen grid (6 x 844px): sections start on whole screens (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "390-rhythm-30-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(5)",
+     "text": "O que muda na sua rotina Menos retrabalh",
+     "msg": "with every answer and tab open, the section starts at 4565px, 345px below the screen grid (5 x 844px): sections start on whole screens (and 9 more like it: \"O que a gente resolve Ca\", main#conteudo > div.container, \"Perguntas que a gente ou\") (SR-2)",
+     "fix": "size each section for its content with every answer and tab open, so the tops below stay on whole screens",
+     "rule": "SR-2 T-grid-expanded",
+     "crop": "390-rhythm-31-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao:nth-of-type(9)",
+     "text": "Perguntas que a gente ouve sempre Meu ne",
+     "msg": "with every answer and tab open the section is 957px tall, not 1023px: nothing in a section may change its height after load (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "390-rhythm-32-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "main#conteudo > section.secao.secao--vinho:nth-of-type(10)",
+     "text": "Vamos começar pelo diagnóstico. Conte em",
+     "msg": "with every answer and tab open the section is 1391px tall, not 1391px, and starts at 9121px, not 9187px: nothing in a section may change its height after load (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "390-rhythm-33-section-height.jpg"
+    },
+    {
+     "check": "section-height",
+     "sev": "FAIL",
+     "sel": "footer.rodape",
+     "text": "Processo claro, equipe treinada, operaçã",
+     "msg": "with every answer and tab open the section is 1114px tall, not 1114px, and starts at 10512px, not 10578px: nothing in a section may change its height after load (and 6 more like it: \"Quanto tempo leva para a\", \"Vocês garantem aprovação\", \"O trabalho é presencial \") (SR-2)",
+     "fix": "show every answer and panel open from the start (no accordion, no tabs that resize), so nothing changes a section's height after load",
+     "rule": "SR-2 T-height-change",
+     "crop": "390-rhythm-34-section-height.jpg"
+    }
+   ],
+   "glAsked": 0
+  }
+ ],
+ "shaders": 0,
+ "reduced": {
+  "screens": 9,
+  "notRead": 0
+ },
+ "hidden": {
+  "screens": 18
+ },
+ "slow": {
+  "stops": 17,
+  "late": 0
+ },
+ "sweep": {
+  "widths": [
+   1280,
+   1152,
+   896
+  ],
+  "errors": [],
+  "findings": []
+ },
+ "narrow": {
+  "width": 320,
+  "height": 640,
+  "errors": [],
+  "findings": [
+   {
+    "check": "fold-cut",
+    "sev": "WARN",
+    "sel": "div.hero__grid > div:nth-of-type(1) > div.acoes > a.btn.btn--secundario",
+    "text": "(abre o WhatsApp) Falar no WhatsApp",
+    "msg": "the hero's button \"(abre o WhatsApp) Falar no Wha\" is cut by the bottom of the first screen (12px of its 53px below the fold)",
+    "crop": "narrow-320-01-fold-cut.jpg",
+    "width": 320,
+    "fix": "size the hero so the heading ends above the fold, or starts below it"
+   },
+   {
+    "check": "tap-size",
+    "sev": "WARN",
+    "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > div.pills.pills--centro > a.pill:nth-of-type(1)",
+    "text": "Restaurantes",
+    "msg": "a 127x43px tap target (and 4 more like it on this screen): under the 44px a phone needs",
+    "crop": "narrow-320-02-tap-size.jpg",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "tap-size",
+    "sev": "WARN",
+    "sel": "section.secao.secao--claro:nth-of-type(2) > div.container.centro > p:nth-of-type(2) > a.link-seta",
+    "text": "Ver todos os segmentos",
+    "msg": "a 194x25px tap target: under the 44px a phone needs",
+    "crop": "narrow-320-03-tap-size.jpg",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "tap-size",
+    "sev": "WARN",
+    "sel": "section.secao.secao--claro:nth-of-type(4) > div.container > p:nth-of-type(2) > a.link-seta",
+    "text": "Ver o processo em detalhe",
+    "msg": "a 212x25px tap target: under the 44px a phone needs",
+    "crop": "narrow-320-04-tap-size.jpg",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "tap-size",
+    "sev": "WARN",
+    "sel": "div.pessoa.pessoa--sem-foto > div > p:nth-of-type(3) > a.link-seta",
+    "text": "Conhecer a Verona Food",
+    "msg": "a 197x25px tap target: under the 44px a phone needs",
+    "crop": "narrow-320-05-tap-size.jpg",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "tap-size",
+    "sev": "WARN",
+    "sel": "div.rodape__grid > div.rodape__marca > div.rodape__social > a",
+    "text": "",
+    "msg": "a 40x40px tap target: under the 44px a phone needs",
+    "crop": "narrow-320-06-tap-size.jpg",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "tap-size",
+    "sev": "WARN",
+    "sel": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a",
+    "text": "Segurança dos alimentos",
+    "msg": "a 179x19px tap target (and 11 more like it on this screen): under the 44px a phone needs",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "tap-size",
+    "sev": "WARN",
+    "sel": "div.container > div.rodape__base > nav > a:nth-of-type(1)",
+    "text": "Política de Privacidade",
+    "msg": "a 145x22px tap target: under the 44px a phone needs",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "tap-size",
+    "sev": "FAIL",
+    "sel": "div.container > div.rodape__base > nav > a:nth-of-type(2)",
+    "text": "Termos de Uso",
+    "msg": "a 97x22px tap target: 0px from the next one (\"\"), so a thumb lands on the wrong one",
+    "width": 320,
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+   },
+   {
+    "check": "off-viewport",
+    "sev": "FAIL",
+    "sel": "a.pular",
+    "text": "Pular para o conteúdo",
+    "msg": "at 320px wide it runs 9999px past the screen's left edge (cut there: the page clips what runs past it)",
+    "width": 320,
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack"
+   }
+  ]
+ },
+ "counts": {
+  "FAIL": 220,
+  "WARN": 101
+ },
+ "checks": {
+  "assets": "PASS",
+  "shader-lint": "PASS",
+  "gl-fallback": "PASS",
+  "empty-visual": "PASS",
+  "hero-fill": "FAIL",
+  "flush": "PASS",
+  "placeholder": "PASS",
+  "sample-label": "PASS",
+  "caption": "PASS",
+  "credit-wall": "PASS",
+  "nav": "FAIL",
+  "nav-covers": "FAIL",
+  "spill": "PASS",
+  "off-viewport": "FAIL",
+  "fold-card": "PASS",
+  "hover-spill": "PASS",
+  "overlap-text": "WARN",
+  "collide": "PASS",
+  "tap-size": "FAIL",
+  "row-gap": "FAIL",
+  "cut-text": "PASS",
+  "fold-cut": "WARN",
+  "marquee": "PASS",
+  "scroll-linked": "PASS",
+  "scroll-reveal": "PASS",
+  "pinned": "PASS",
+  "loop-pause": "PASS",
+  "reduced-motion": "PASS",
+  "hidden-content": "PASS",
+  "webgl": "PASS",
+  "no-visual": "FAIL",
+  "text-only": "WARN",
+  "card-visual": "PASS",
+  "hidden-visual": "PASS",
+  "card-family": "PASS",
+  "card-layout": "PASS",
+  "nesting": "PASS",
+  "effect-repeat": "PASS",
+  "ui-fit": "PASS",
+  "ui-centre": "PASS",
+  "dark-ground": "PASS",
+  "button-styles": "FAIL",
+  "button-shape": "PASS",
+  "same-action": "PASS",
+  "button-picture": "PASS",
+  "cta": "PASS",
+  "pricing-tiers": "PASS",
+  "copy-headline": "WARN",
+  "copy-fact": "PASS",
+  "copy-headings": "FAIL",
+  "copy-buttons": "WARN",
+  "copy-actions": "WARN",
+  "heading-scale": "FAIL",
+  "stagger": "PASS",
+  "top-stagger": "PASS",
+  "off-grid": "PASS",
+  "col-edge": "PASS",
+  "right-edge": "PASS",
+  "centre-axis": "PASS",
+  "tilt": "PASS",
+  "contrast": "PASS",
+  "text-contrast": "FAIL",
+  "body-size": "PASS",
+  "busy-ground": "PASS",
+  "section-gaps": "WARN",
+  "proximity": "PASS",
+  "hole": "FAIL",
+  "links": "PASS",
+  "forms": "PASS",
+  "photo-upscale": "PASS",
+  "photo-set": "PASS",
+  "photo-credit": "PASS",
+  "nav-family": "WARN",
+  "nav-labels": "PASS",
+  "link-styles": "WARN",
+  "heading-align": "PASS",
+  "label-centre": "PASS",
+  "fake-button": "WARN",
+  "stranded-action": "PASS",
+  "orphan": "WARN",
+  "unit-break": "PASS",
+  "tab-wrap": "PASS",
+  "effects-fit": "PASS",
+  "fade-cut": "PASS",
+  "photo-weight": "PASS",
+  "copy-length": "WARN",
+  "nav-current": "PASS",
+  "progress-bar": "PASS",
+  "photo-repeat": "PASS",
+  "button-contrast": "WARN",
+  "photo-print": "PASS",
+  "grounds": "PASS",
+  "split-align": "PASS",
+  "fact-agree": "PASS",
+  "fold-action": "PASS",
+  "action-count": "PASS",
+  "one-screen": "WARN",
+  "hover": "WARN",
+  "hover-move": "FAIL",
+  "product-shown": "PASS",
+  "same-object": "PASS",
+  "font-load": "PASS",
+  "visual-caption": "PASS",
+  "visual-empty": "PASS",
+  "effect-kind": "PASS",
+  "hero-enter": "WARN",
+  "moment-none": "WARN",
+  "street-number": "FAIL",
+  "postcode": "FAIL",
+  "coordinates": "PASS",
+  "company-number": "PASS",
+  "phone-number": "FAIL",
+  "hero-screen": "FAIL",
+  "section-height": "FAIL",
+  "section-air": "FAIL",
+  "one-section": "FAIL",
+  "one-heading": "FAIL",
+  "container-edges": "FAIL",
+  "row-lines": "FAIL",
+  "split-pair": "FAIL",
+  "motion-layer": "PASS",
+  "count-text": "PASS",
+  "loop-cycle": "PASS",
+  "section-tile": "PASS",
+  "empty-area": "FAIL",
+  "a11y-name": "PASS",
+  "img-alt": "PASS",
+  "field-label": "PASS",
+  "heading-order": "PASS",
+  "tabindex": "PASS",
+  "focus-ring": "PASS",
+  "focus-visible": "FAIL",
+  "focus-hidden": "PASS",
+  "skip-link": "WARN",
+  "menu-toggle": "PASS",
+  "lang": "PASS",
+  "page-meta": "PASS",
+  "share-meta": "PASS",
+  "action-repeat": "PASS",
+  "map-link": "PASS",
+  "open-now": "PASS",
+  "assumed": "PASS",
+  "run-on": "PASS",
+  "form-fields": "WARN",
+  "form-send": "PASS"
+ }
+}

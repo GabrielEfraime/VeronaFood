@@ -1,0 +1,187 @@
+
+1440x900  lines x 140 and 1300, nav 0px, one screen 900px
+  hero 828 tall; h1 58px/1.14, 3 lines, 607x198 at 140,289; lead -; buttons 2 x 53; visual -
+  section section.hero section.hero "Consultoria para negócios de ali" y    77  h   828  content 586
+  section section.secao.secao--claro section.secao.secao--claro "Traba y   905  h   322  content 130
+  section section.secao section.secao "O que a gente resolve Cada fren y  1227  h  1023  content 797
+  section section.secao.secao--claro section.secao.secao--claro "Como  y  2250  h   601  content 409
+  section section.secao.secao--vinho section.secao.secao--vinho "O que y  2851  h   536  content 344
+  section section.secao.secao--claro section.secao.secao--claro "Quem  y  3387  h   409  content 217
+  section section.secao section.secao "O que você recebe Documento que y  3796  h   521  content 329
+  section section.secao.secao--claro section.secao.secao--claro "Para  y  4371  h   812  content 620
+  section section.secao section.secao "Perguntas que a gente ouve semp y  5183  h   860  content 748
+  section section.secao.secao--vinho section.secao.secao--vinho "Vamos y  6042  h  1006  content 779
+  edge-left        section.secao a.card.card--link "Custos e ficha técnicaCusto real": starts at x 925.3; the lines are 140 and the column starts
+  edge-left        section.secao a.card.card--link "Padronização de processosProcedi": starts at x 729; the lines are 140 and the column starts
+  edge-left        section.secao.secao--vinho p "Ficha técnica mostra o que cada ": starts at x 729; the lines are 140 and the column starts
+  edge-left        section.secao.secao--vinho p "Documentação organizada e rotina": starts at x 1023.5; the lines are 140 and the column starts
+  edge-left        section.secao.secao--claro a.card.card--link "Treinamento Capacite sua: starts at x 925.3; the lines are 140 and the column starts
+  screen-short     section.hero section.hero "Consultoria para negócios de ali": 828px tall; one screen under the nav is 900px
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: 322px tall; one screen under the nav is 900px
+  screen-height    section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: 322px, 0.36 screens; a section is exactly one or two (--h)
+  sparse           section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: its content fills 40% of its screen; merge it or give it its visual (0.55 is the aim)
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: framed, 255px of section.secao section.secao "O que a gente resolve Cada frent" shows
+  screen-height    section.secao section.secao "O que a gente resolve Cada frent": 1023px, 1.14 screens; a section is exactly one or two (--h)
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Como o trabalho: 601px tall; one screen under the nav is 900px
+  screen-height    section.secao.secao--claro section.secao.secao--claro "Como o trabalho: 601px, 0.67 screens; a section is exactly one or two (--h)
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Como o trabalho: framed, 47px of section.secao.secao--vinho section.secao.secao--vinho "O que muda na sua rotina Menos r" shows
+  screen-short     section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: 536px tall; one screen under the nav is 900px
+  screen-height    section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: 536px, 0.60 screens; a section is exactly one or two (--h)
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: framed, 46px of section.secao.secao--claro section.secao.secao--claro "Quem vai te atender Bárbara Pont" shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: 409px tall; one screen under the nav is 900px
+  screen-height    section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: 409px, 0.45 screens; a section is exactly one or two (--h)
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: framed, 63px of section.secao section.secao "O que você recebe Documento que " shows
+  screen-short     section.secao section.secao "O que você recebe Documento que ": 521px tall; one screen under the nav is 900px
+  screen-height    section.secao section.secao "O que você recebe Documento que ": 521px, 0.58 screens; a section is exactly one or two (--h)
+  neighbour        section.secao section.secao "O que você recebe Documento que ": framed, 106px of section.secao.secao--claro section.secao.secao--claro "Para ler antes de contratar qual" shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Para ler antes : 812px tall; one screen under the nav is 900px
+  screen-height    section.secao.secao--claro section.secao.secao--claro "Para ler antes : 812px, 0.90 screens; a section is exactly one or two (--h)
+  screen-short     section.secao section.secao "Perguntas que a gente ouve sempr": 860px tall; one screen under the nav is 900px
+  screen-height    section.secao section.secao "Perguntas que a gente ouve sempr": 860px, 0.96 screens; a section is exactly one or two (--h)
+  neighbour-ground section.secao section.secao "Perguntas que a gente ouve sempr": framed, 40px of section.secao.secao--vinho section.secao.secao--vinho "Vamos começar pelo diagnóstico. "'s ground shows
+  screen-height    section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: 1006px, 1.12 screens; a section is exactly one or two (--h)
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": starts at y 77, not under the nav
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": ends at y 905, past the fold (900): 0.92 screens tall
+
+1024x768  lines x 20 and 1004, nav 0px, one screen 768px
+  hero 689 tall; h1 58px/1.14, 4 lines, 519x264 at 20,173; lead -; buttons 2 x 53; visual -
+  section section.hero section.hero "Consultoria para negócios de ali" y    77  h   689  content 587
+  section section.secao.secao--claro section.secao.secao--claro "Traba y   766  h   326  content 183
+  section section.secao section.secao "O que a gente resolve Cada fren y  1092  h  1015  content 841
+  section section.secao.secao--claro section.secao.secao--claro "Como  y  2106  h   599  content 456
+  section section.secao.secao--vinho section.secao.secao--vinho "O que y  2705  h   510  content 367
+  section section.secao.secao--claro section.secao.secao--claro "Quem  y  3216  h   360  content 217
+  section section.secao section.secao "O que você recebe Documento que y  3576  h   472  content 329
+  section section.secao.secao--claro section.secao.secao--claro "Para  y  4103  h   724  content 580
+  section section.secao section.secao "Perguntas que a gente ouve semp y  4826  h   811  content 748
+  section section.secao.secao--vinho section.secao.secao--vinho "Vamos y  5637  h   951  content 776
+  edge-left        section.secao a.card.card--link "Custos e ficha técnicaCusto real": starts at x 688; the lines are 20 and the column starts
+  edge-left        section.secao a.card.card--link "Padronização de processosProcedi": starts at x 521; the lines are 20 and the column starts
+  edge-left        section.secao.secao--vinho p "Ficha técnica mostra o que cada ": starts at x 521; the lines are 20 and the column starts
+  edge-left        section.secao.secao--vinho p "Documentação organizada e rotina": starts at x 771.5; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro a.card.card--link "Treinamento Capacite sua: starts at x 688; the lines are 20 and the column starts
+  screen-short     section.hero section.hero "Consultoria para negócios de ali": 689px tall; one screen under the nav is 768px
+  neighbour-ground section.hero section.hero "Consultoria para negócios de ali": framed, 2px of section.secao.secao--claro section.secao.secao--claro "Trabalhamos com diferentes tipos"'s ground shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: 326px tall; one screen under the nav is 768px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: framed, 214px of section.secao section.secao "O que a gente resolve Cada frent" shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Como o trabalho: 599px tall; one screen under the nav is 768px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Como o trabalho: framed, 46px of section.secao.secao--vinho section.secao.secao--vinho "O que muda na sua rotina Menos r" shows
+  screen-short     section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: 510px tall; one screen under the nav is 768px
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: framed, 46px of section.secao.secao--claro section.secao.secao--claro "Quem vai te atender Bárbara Pont" shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: 360px tall; one screen under the nav is 768px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: framed, 63px of section.secao section.secao "O que você recebe Documento que " shows
+  screen-short     section.secao section.secao "O que você recebe Documento que ": 472px tall; one screen under the nav is 768px
+  neighbour        section.secao section.secao "O que você recebe Documento que ": framed, 47px of section.secao.secao--claro section.secao.secao--claro "Para ler antes de contratar qual" shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Para ler antes : 724px tall; one screen under the nav is 768px
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: framed, 9px of section.secao section.secao "Perguntas que a gente ouve sempr" shows
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": starts at y 77, not under the nav
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": ends at y 766, above the fold (768)
+
+820x1180  lines x 20 and 800, nav 0px, one screen 1180px
+  hero 1078 tall; h1 49.2px/1.14, 2 lines, 780x112 at 20,152; lead -; buttons 2 x 53; visual -
+  section section.hero section.hero "Consultoria para negócios de ali" y    69  h  1078  content 1001
+  section section.secao.secao--claro section.secao.secao--claro "Traba y  1147  h   297  content 183
+  section section.secao section.secao "O que a gente resolve Cada fren y  1444  h  1187  content 1047
+  section section.secao.secao--claro section.secao.secao--claro "Como  y  2631  h   664  content 549
+  section section.secao.secao--vinho section.secao.secao--vinho "O que y  3294  h   586  content 471
+  section section.secao.secao--claro section.secao.secao--claro "Quem  y  3880  h   323  content 209
+  section section.secao section.secao "O que você recebe Documento que y  4203  h   471  content 356
+  section section.secao.secao--claro section.secao.secao--claro "Para  y  4729  h  1228  content 1113
+  section section.secao section.secao "Perguntas que a gente ouve semp y  5957  h   774  content 740
+  section section.secao.secao--vinho section.secao.secao--vinho "Vamos y  6731  h  1100  content 959
+  edge-left        section.secao a.card.card--link "RotulagemTabela nutricional, lis": starts at x 419; the lines are 20 and the column starts
+  edge-left        section.secao a.card.card--link "Treinamento de equipeCapacitação": starts at x 419; the lines are 20 and the column starts
+  edge-left        section.secao.secao--vinho p "Gente treinada erra menos e perg": starts at x 419; the lines are 20 and the column starts
+  edge-left        section.secao.secao--vinho p "Documentação organizada e rotina": starts at x 419; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro a.card.card--link "Eventos Garanta a segura: starts at x 419; the lines are 20 and the column starts
+  screen-short     section.hero section.hero "Consultoria para negócios de ali": 1078px tall; one screen under the nav is 1180px
+  neighbour-ground section.hero section.hero "Consultoria para negócios de ali": framed, 33px of section.secao.secao--claro section.secao.secao--claro "Trabalhamos com diferentes tipos"'s ground shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: 297px tall; one screen under the nav is 1180px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: framed, 250px of section.secao section.secao "O que a gente resolve Cada frent" shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Como o trabalho: 664px tall; one screen under the nav is 1180px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Como o trabalho: framed, 99px of section.secao.secao--vinho section.secao.secao--vinho "O que muda na sua rotina Menos r" shows
+  screen-short     section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: 586px tall; one screen under the nav is 1180px
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: framed, 37px of section.secao.secao--claro section.secao.secao--claro "Quem vai te atender Bárbara Pont" shows
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: framed, 56px of section.secao section.secao "O que você recebe Documento que " shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: 323px tall; one screen under the nav is 1180px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: framed, 56px of section.secao section.secao "O que você recebe Documento que " shows
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: framed, 162px of section.secao.secao--claro section.secao.secao--claro "Para ler antes de contratar qual" shows
+  screen-short     section.secao section.secao "O que você recebe Documento que ": 471px tall; one screen under the nav is 1180px
+  neighbour        section.secao section.secao "O que você recebe Documento que ": framed, 474px of section.secao.secao--claro section.secao.secao--claro "Para ler antes de contratar qual" shows
+  screen-short     section.secao section.secao "Perguntas que a gente ouve sempr": 774px tall; one screen under the nav is 1180px
+  neighbour        section.secao section.secao "Perguntas que a gente ouve sempr": framed, 56px of section.secao.secao--vinho section.secao.secao--vinho "Vamos começar pelo diagnóstico. " shows
+  screen-short     section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: 1100px tall; one screen under the nav is 1180px
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: framed, 23px of section.secao section.secao "Perguntas que a gente ouve sempr" shows
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: framed, 80px of the footer shows
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": starts at y 69, not under the nav
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": ends at y 1147, above the fold (1180)
+
+768x1024  lines x 20 and 748, nav 0px, one screen 1024px
+  hero 1027 tall; h1 46.08px/1.14, 2 lines, 728x105 at 20,149; lead -; buttons 2 x 53; visual -
+  section section.hero section.hero "Consultoria para negócios de ali" y    69  h  1027  content 955
+  section section.secao.secao--claro section.secao.secao--claro "Traba y  1096  h   295  content 183
+  section section.secao section.secao "O que a gente resolve Cada fren y  1391  h  1228  content 1092
+  section section.secao.secao--claro section.secao.secao--claro "Como  y  2619  h   658  content 546
+  section section.secao.secao--vinho section.secao.secao--vinho "O que y  3278  h   581  content 469
+  section section.secao.secao--claro section.secao.secao--claro "Quem  y  3858  h   318  content 206
+  section section.secao section.secao "O que você recebe Documento que y  4177  h   466  content 354
+  section section.secao.secao--claro section.secao.secao--claro "Para  y  4697  h  1184  content 1072
+  section section.secao section.secao "Perguntas que a gente ouve semp y  5881  h   769  content 738
+  section section.secao.secao--vinho section.secao.secao--vinho "Vamos y  6650  h  1091  content 954
+  edge-left        section.secao a.card.card--link "RotulagemTabela nutricional, lis": starts at x 393; the lines are 20 and the column starts
+  edge-left        section.secao a.card.card--link "Treinamento de equipeCapacitação": starts at x 393; the lines are 20 and the column starts
+  edge-left        section.secao.secao--vinho p "Gente treinada erra menos e perg": starts at x 393; the lines are 20 and the column starts
+  edge-left        section.secao.secao--vinho p "Documentação organizada e rotina": starts at x 393; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro a.card.card--link "Eventos Garanta a segura: starts at x 393; the lines are 20 and the column starts
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: 295px tall; one screen under the nav is 1024px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: framed, 274px of section.secao section.secao "O que a gente resolve Cada frent" shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Como o trabalho: 658px tall; one screen under the nav is 1024px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Como o trabalho: framed, 47px of section.secao.secao--vinho section.secao.secao--vinho "O que muda na sua rotina Menos r" shows
+  screen-short     section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: 581px tall; one screen under the nav is 1024px
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: framed, 37px of section.secao.secao--claro section.secao.secao--claro "Quem vai te atender Bárbara Pont" shows
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "O que muda na s: framed, 35px of section.secao section.secao "O que você recebe Documento que " shows
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: 318px tall; one screen under the nav is 1024px
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: framed, 56px of section.secao section.secao "O que você recebe Documento que " shows
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: framed, 35px of section.secao.secao--claro section.secao.secao--claro "Para ler antes de contratar qual" shows
+  screen-short     section.secao section.secao "O que você recebe Documento que ": 466px tall; one screen under the nav is 1024px
+  neighbour        section.secao section.secao "O que você recebe Documento que ": framed, 339px of section.secao.secao--claro section.secao.secao--claro "Para ler antes de contratar qual" shows
+  screen-short     section.secao section.secao "Perguntas que a gente ouve sempr": 769px tall; one screen under the nav is 1024px
+  neighbour        section.secao section.secao "Perguntas que a gente ouve sempr": framed, 56px of section.secao.secao--vinho section.secao.secao--vinho "Vamos começar pelo diagnóstico. " shows
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: framed, 25px of section.secao section.secao "Perguntas que a gente ouve sempr" shows
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": starts at y 69, not under the nav
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": ends at y 1096, past the fold (1024): 1.00 screens tall
+
+390x844  lines x 20 and 370, nav 0px, one screen 844px
+  hero 874 tall; h1 34px/1.14, 3 lines, 350x116 at 20,147; lead -; buttons 2 x 53; visual -
+  section section.hero section.hero "Consultoria para negócios de ali" y    69  h   874  content 804
+  section section.secao.secao--claro section.secao.secao--claro "Traba y   943  h   423  content 311
+  section section.secao section.secao "O que a gente resolve Cada fren y  1366  h  2095  content 1959
+  section section.secao.secao--claro section.secao.secao--claro "Como  y  3462  h  1103  content 991
+  section section.secao.secao--vinho section.secao.secao--vinho "O que y  4565  h   873  content 761
+  section section.secao.secao--claro section.secao.secao--claro "Quem  y  5437  h   360  content 248
+  section section.secao section.secao "O que você recebe Documento que y  5797  h   637  content 525
+  section section.secao.secao--claro section.secao.secao--claro "Para  y  6489  h  1675  content 1563
+  section section.secao section.secao "Perguntas que a gente ouve semp y  8164  h  1023  content 1074
+  section section.secao.secao--vinho section.secao.secao--vinho "Vamos y  9187  h  1391  content 1180
+  edge-left        section.secao.secao--claro h3 "Diagnóstico": starts at x 46; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro p "Visitamos sua operação em horári": starts at x 46; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro h3 "Plano de ação": starts at x 46; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro p "Montamos o plano com prazos real": starts at x 46; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro h3 "Implantação": starts at x 46; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro p "Colocamos em prática junto com s": starts at x 46; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro h3 "Acompanhamento": starts at x 46; the lines are 20 and the column starts
+  edge-left        section.secao.secao--claro p "Voltamos para conferir se o padr": starts at x 46; the lines are 20 and the column starts
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: 423px tall; one screen under the nav is 844px
+  screen-height    section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: 423px, 0.50 screens; a section is exactly one or two (--h), or on a phone at least one that its content fills
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Trabalhamos com: framed, 203px of section.secao section.secao "O que a gente resolve Cada frent" shows
+  screen-height    section.secao section.secao "O que a gente resolve Cada frent": 2095px, 2.48 screens; a section is exactly one or two (--h), or on a phone at least one that its content fills
+  screen-short     section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: 360px tall; one screen under the nav is 844px
+  screen-height    section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: 360px, 0.43 screens; a section is exactly one or two (--h), or on a phone at least one that its content fills
+  neighbour        section.secao.secao--claro section.secao.secao--claro "Quem vai te ate: framed, 84px of section.secao section.secao "O que você recebe Documento que " shows
+  screen-short     section.secao section.secao "O que você recebe Documento que ": 637px tall; one screen under the nav is 844px
+  screen-height    section.secao section.secao "O que você recebe Documento que ": 637px, 0.76 screens; a section is exactly one or two (--h), or on a phone at least one that its content fills
+  neighbour        section.secao section.secao "O que você recebe Documento que ": framed, 59px of section.secao.secao--claro section.secao.secao--claro "Para ler antes de contratar qual" shows
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: framed, 106px of section.secao section.secao "Perguntas que a gente ouve sempr" shows
+  neighbour        section.secao.secao--vinho section.secao.secao--vinho "Vamos começar p: framed, 297px of the footer shows
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": starts at y 69, not under the nav
+  hero-fold        section.hero section.hero "Consultoria para negócios de ali": ends at y 943, past the fold (844): 1.04 screens tall

@@ -12,7 +12,7 @@ E = _html.escape
 # =========================================================================
 def como_funciona():
     prazo = CONTATO.get("prazo_resposta")
-    resposta_1 = ("Em {}.".format(prazo) if prazo
+    resposta_1 = ("{}{}.".format(prazo[0].upper(), prazo[1:]) if prazo
                   else "A gente responde pessoalmente — não há atendimento automático nem central de chamadas.")
 
     faq = [
@@ -87,7 +87,7 @@ def como_funciona():
             {"tipo": "numerada", "h2": "O que acontece depois que você entra em contato",
              "sub": "O primeiro contato não compromete você a nada. Veja o caminho inteiro antes de mandar a mensagem.",
              "itens": [
-                 {"titulo": "A gente responde", "texto": resposta_1},
+                 {"titulo": "Eu respondo", "texto": resposta_1},
                  {"titulo": "Conversa rápida",
                   "texto": "De 15 a 20 minutos, para entender que tipo de operação você tem, o que está pegando e se faz sentido marcar uma visita."},
                  {"titulo": "Visita de diagnóstico",
@@ -290,12 +290,16 @@ def contato():
                         "das 9h às 18h."),
         "trilha": [("Início", "/"), ("Contato", None)],
         "secoes": [
-            {"tipo": "html", "html": canais},
+            {"tipo": "hero_simples", "h1": "Fale com a Bárbara.",
+             "apoio": "Conte em duas linhas como está a sua operação. Respondo com o próximo passo.",
+             "sem_botoes": True},
+            {"tipo": "contato", "h2": "Conte como está a sua operação",
+             "texto": "Sem compromisso e sem proposta genérica.", "sufixo": "-contato"},
             {"tipo": "numerada", "h2": "O que acontece depois", "fundo": " secao--claro",
              "itens": [
-                 {"titulo": "A gente responde",
+                 {"titulo": "Eu respondo",
                   "texto": "Pessoalmente. Não há atendimento automático nem central de chamadas." if not prazo
-                           else "Em {}. Pessoalmente, sem atendimento automático.".format(E(prazo))},
+                           else "{}{}. Pessoalmente, sem atendimento automático.".format(E(prazo[0].upper()), E(prazo[1:]))},
                  {"titulo": "Conversa rápida",
                   "texto": "De 15 a 20 minutos, para entender o tipo de operação, o que está pegando e se faz sentido marcar uma visita."},
                  {"titulo": "Visita de diagnóstico",

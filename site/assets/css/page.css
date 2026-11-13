@@ -1,0 +1,25 @@
+/* Ajustes de página sobre o sistema do kit (assets/kit). Só o que o kit não tem. */
+
+/* logotipo da marca no cabeçalho e no rodapé */
+.nav__logo img { display: block; height: 36px; width: auto; }
+.footer .nav__logo img { height: 44px; }
+.nav__actions .btn { white-space: nowrap; }
+
+/* faixa de segmentos dentro da seção que a recebe */
+.pills-bloco { margin-top: var(--s-7); display: grid; gap: var(--s-3); }
+.pills { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+/* texto corrido, listas e notas */
+.measure { max-width: 62ch; }
+.nota { margin-top: var(--s-6); color: var(--muted); max-width: 70ch; }
+.ground-inverse .nota { color: var(--inv-muted, inherit); }
+.mais { margin-top: var(--s-6); }
+.rows > li > p { margin: 0; }
+
+/* formulário */
+.consent { grid-column: 1 / -1; font-size: var(--t-small); }
+.consent label { display: flex; gap: var(--s-3); align-items: flex-start; font-weight: 400; }
+.consent input { width: 20px; height: 20px; flex: 0 0 auto; margin-top: 2px; accent-color: var(--accent); }
+
+/* número do passo dentro do cabeçalho de seção */
+.section-head .step-num { display: block; margin-bottom: var(--s-3); }
