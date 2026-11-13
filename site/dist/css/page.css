@@ -38,3 +38,7 @@ footer.closing { height: auto !important; min-height: 0 !important; padding-bloc
 main > section.g2 > .wrap, footer.closing.g2 > .wrap { display: block; }
 main > section.g2 > .wrap > * + * { margin-top: var(--s-7); }
 main > section.statement { padding-block: var(--s-10); }
+
+/* e-mail longo no rodapé e nos contatos não pode alargar a página no celular */
+.footer li, .footer a, .rows a, .rows p { overflow-wrap: anywhere; }
+.footer__col { min-width: 0; }
