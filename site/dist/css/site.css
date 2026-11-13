@@ -128,7 +128,7 @@ h4{font-size:20px}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--champagne);z-index:101}
 .topo__in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:var(--header-h)}
 .marca{display:flex;align-items:center;flex:0 0 auto}
-.marca img{height:38px;width:auto}
+.marca img{height:48px;width:auto}
 .nav{display:flex;align-items:center;gap:4px}
 .nav__item{position:relative}
 .nav__link{
@@ -199,15 +199,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero__fig img,.figura-vazia{border-radius:var(--radius-card);border:1px solid var(--linha);width:100%}
 .hero__fig>img,.hero__fig>.figura-vazia{position:relative;z-index:1}
 .hero__fig .folha{position:absolute;left:-34px;bottom:-22px;width:150px;z-index:0;opacity:.85}
+.hero__fig .folha path{fill:var(--rose)}
 
-/* moldura de imagem e marcador de foto pendente */
+/* moldura de imagem: enquanto não há foto real, painel de marca (sem texto de "foto pendente") */
 .figura-vazia{
-  aspect-ratio:3/4;background:radial-gradient(120% 90% at 70% 15%,#EFE2D5 0%,#DCC7B6 55%,#C7AC98 100%);
-  display:flex;align-items:flex-end;justify-content:center;overflow:hidden;
+  position:relative;aspect-ratio:3/4;overflow:hidden;
+  background:radial-gradient(120% 90% at 75% 10%,#8B1E3F 0%,#6E0F2A 55%,#4F0A1E 100%);
+}
+.figura-vazia::after{
+  content:"";position:absolute;inset:0;background:url(../img/icone.svg) center/46% no-repeat;opacity:.9;
 }
 .figura-vazia--larga{aspect-ratio:3/2}
+.figura-vazia--larga::after{background-size:26%}
 .figura-vazia--retrato{aspect-ratio:4/5}
-.figura-vazia span{font-size:13px;color:#5B4136;background:rgba(245,237,228,.9);border-radius:999px;padding:7px 15px;margin-bottom:18px;text-align:center;max-width:88%}
 
 /* --- faixa de segmentos ------------------------------------------------- */
 .pills{display:flex;flex-wrap:wrap;gap:10px}
@@ -237,6 +241,8 @@ a.pill:hover{border-color:var(--taupe);background:var(--claro)}
   display:flex;flex-direction:column;
 }
 .secao--claro .card{background:var(--champagne)}
+a.card,a.faixa-destaque,a.artigo-card{text-decoration:none}
+.card--link:hover h3,.card--link:hover h4{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .card--link:hover{border-color:var(--taupe);box-shadow:0 6px 20px rgba(110,15,42,.08);transform:translateY(-2px)}
 .card h3,.card h4{color:var(--vinho);margin-bottom:9px}
 .card h4{font-size:19px}
@@ -311,6 +317,7 @@ a.pill:hover{border-color:var(--taupe);background:var(--claro)}
 .secao--vinho .numerada p{color:#E8D5C8}
 
 /* --- quem te atende ----------------------------------------------------- */
+.pessoa--sem-foto{grid-template-columns:1fr !important;max-width:760px}
 .pessoa{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(26px,4vw,52px);align-items:center}
 .pessoa h2{margin-bottom:6px}
 .pessoa__cargo{font-size:16px;color:var(--tinta-suave);margin-bottom:18px}

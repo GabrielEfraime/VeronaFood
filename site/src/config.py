@@ -46,9 +46,9 @@ CONTATO = {
     "horario_schema": "Mo-Fr 09:00-18:00",
 
     # ⚠️ PENDENTE — não existe no site atual
-    "email": None,          # ex.: "contato@veronafood.com.br"
-    "cnpj": None,           # ex.: "00.000.000/0001-00"
-    "prazo_resposta": None, # ex.: "em até 1 dia útil" — só preencher se for sempre cumprido
+    "email": "consultoriadealimentos.vfood@gmail.com",
+    "cnpj": "40.864.832/0001-70",
+    "prazo_resposta": "em até 1 dia útil",  # confirmado pela responsável em 12/11/2026
 }
 
 REDES = {
@@ -62,10 +62,10 @@ REDES = {
 # ✅ nome e cargo constam no site atual. O resto vem da entrevista.
 EQUIPE = [
     {
-        "nome": "Bárbara Camargo Pontes",
+        "nome": "Bárbara Helena de Camargo Pontes",
         "cargo": "Consultora em Alimentos",
         "foto": None,            # ⚠️ ex.: "img/barbara.jpg"
-        "credenciais": [],       # ⚠️ ex.: ["Nutricionista", "CRN-3 00000", "10 anos de atuação"]
+        "credenciais": ["Nutricionista", "Gastrônoma", "10 anos de atuação"],  # ⚠️ falta o número do CRN
         "bio": None,             # ⚠️ 3 a 4 linhas em primeira pessoa
     },
 ]
@@ -75,7 +75,7 @@ COMERCIAL = {
     # ⚠️ PENDENTE — define o texto do botão principal em todo o site
     # Valores aceitos: "gratuito", "abatido", "cobrado", None
     "diagnostico": None,
-    "regiao_atendimento": None,  # ⚠️ ex.: "São Paulo capital e Grande São Paulo"
+    "regiao_atendimento": "São Paulo",
     "atendimento_remoto": None,  # ⚠️ True / False
 }
 

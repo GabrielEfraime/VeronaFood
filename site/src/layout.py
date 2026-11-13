@@ -125,7 +125,7 @@ def c_hero(s):
     fig = s.get("figura", "foto real de consultoria em cozinha")
     img = ('<img src="/{}" alt="{}" width="900" height="1200">'.format(s["imagem"], E(s.get("alt", "")))
            if s.get("imagem") else
-           '<div class="figura-vazia" role="img" aria-label="{}"><span>{}</span></div>'.format(E(fig), E(fig)))
+           '<div class="figura-vazia" aria-hidden="true" data-foto="{}"></div>'.format(E(fig)))
     fine = ('<p class="hero__fine">{}</p>'.format(s["fine"])) if s.get("fine") else ""
     return """
 <section class="hero">
@@ -245,7 +245,7 @@ def c_etapas_detalhe(s):
         blocos.append("""
     <div class="etapa-longa">
       <div class="etapa-longa__fig">
-        <div class="figura-vazia figura-vazia--larga" role="img" aria-label="{fig}"><span>{fig}</span></div>
+        <div class="figura-vazia figura-vazia--larga" aria-hidden="true" data-foto="{fig}"></div>
       </div>
       <div>
         <div class="etapa__n">{n:02d}</div>
@@ -341,16 +341,15 @@ def c_pessoa(s):
     p = EQUIPE[0]
     foto = ('<img src="/{}" alt="{}" width="700" height="875">'.format(p["foto"], E(p["nome"]))
             if p.get("foto") else
-            '<div class="figura-vazia figura-vazia--retrato" role="img" aria-label="retrato da responsável técnica">'
-            '<span>retrato da responsável técnica</span></div>')
+            '')
     pills = ("".join('<span class="pill pill--credencial">{}</span>'.format(E(c)) for c in p["credenciais"]))
     pills = '<div class="pills">{}</div>'.format(pills) if pills else ""
     bio = '<p class="texto">{}</p>'.format(p["bio"]) if p.get("bio") else ""
     return """
 <section class="secao secao--claro">
   <div class="container">
-    <div class="pessoa">
-      <div>{foto}</div>
+    <div class="pessoa{semfoto}">
+      {foto}
       <div>
         <p class="chapeu">{chapeu}</p>
         <h2>{nome}</h2>
@@ -361,7 +360,8 @@ def c_pessoa(s):
       </div>
     </div>
   </div>
-</section>""".format(foto=foto, chapeu=E(s.get("chapeu", "Quem vai te atender")),
+</section>""".format(foto=('<div>{}</div>'.format(foto) if foto else ''), semfoto=('' if foto else ' pessoa--sem-foto'),
+                     chapeu=E(s.get("chapeu", "Quem vai te atender")),
                      nome=E(p["nome"]), cargo=E(p["cargo"]), pills=pills, bio=bio)
 
 
@@ -391,7 +391,7 @@ def c_provas(s):
 def c_artigos(s):
     itens = "".join("""
       <a class="card card--link artigo-card" href="{href}">
-        <div class="figura-vazia figura-vazia--larga card__img" role="img" aria-label="{fig}" style="margin:0"><span>{fig}</span></div>
+        <div class="figura-vazia figura-vazia--larga card__img" aria-hidden="true" data-foto="{fig}" style="margin:0"></div>
         <div class="artigo-card__corpo">
           <p class="cat">{cat}</p>
           <h3>{t}</h3>
