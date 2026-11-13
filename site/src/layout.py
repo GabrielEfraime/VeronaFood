@@ -204,8 +204,21 @@ def lista_rows(itens):
     return '<ul class="rows">{}</ul>'.format("".join(lis))
 
 
-def secao_rows(sid, h2, sub, itens, fundo="", extra=""):
-    """Lista em linhas; com duas telas, a lista se parte ao meio (.g2)."""
+def foto(im, classe="frame frame--photo span-6 start-7"):
+    """Fotografia provisória (stand-in), com texto alternativo próprio."""
+    return ('<div class="{}" style="aspect-ratio: {} / {}"><img class="frame__img" src="/img/{}" alt="{}" '
+            'width="{}" height="{}" loading="lazy" data-source="stand-in"></div>'
+            .format(classe, im.get("w", 960), im.get("h", 640), im["arquivo"], E(im["alt"]),
+                    im.get("w", 960), im.get("h", 640)))
+
+
+def secao_rows(sid, h2, sub, itens, fundo="", extra="", imagem=None):
+    """Lista em linhas; com duas telas, a lista se parte ao meio (.g2).
+    Com imagem, texto à esquerda e a fotografia na coluna direita."""
+    if imagem:
+        esq = '<div class="span-6">{}{}{}</div>'.format(titulo_h2(sid, h2, sub), lista_rows(itens), extra)
+        return secao(sid, h2, None, ['<div class="grid grid--top">{}{}</div>'.format(esq, foto(imagem))],
+                     fundo=fundo, raw_head="")
     if altura(sid) >= 2 and len(itens) >= 4:
         k = (len(itens) + 1) // 2
         grupos = [lista_rows(itens[:k]), lista_rows(itens[k:]) + extra]
@@ -246,21 +259,27 @@ def c_hero(s):
     if s.get("fatos"):
         fatos = '<dl class="hero__facts">{}</dl>'.format("".join(
             '<div><dt>{}</dt><dd>{}</dd></div>'.format(E(k), E(v)) for k, v in s["fatos"]))
-    botoes = ('<div class="btn-row">{}</div>'.format(btn_primario(s.get("btn"), s.get("href_primario")))
-              if s.get("sem_zap") else acoes(s.get("zap"), s.get("href_primario"), s.get("btn")))
+    botoes = acoes(s.get("zap"), s.get("href_primario"), s.get("btn"))
     if s.get("sem_botoes"):
         botoes = ""
+    im = s.get("imagem")
+    foto_html = ""
+    if im:
+        foto_html = ('<div class="hero-foto frame frame--photo"><img class="frame__img" src="/img/{}" alt="{}" '
+                     'width="{}" height="{}" fetchpriority="high" data-source="stand-in"></div>'
+                     .format(im["arquivo"], E(im["alt"]), im.get("w", 960), im.get("h", 720)))
+    centro = " hero--centro" if (im or s.get("centro")) else ""
     return """
-<section class="hero hero--statement" data-enter aria-labelledby="hero-h">
+<section class="hero hero--statement{centro}" data-enter aria-labelledby="hero-h">
   <div class="wrap"><div class="hero-text hero__in">
-    <div>
+    <div class="hero-copy">
       <h1 id="hero-h">{h1}</h1>
       <p class="hero__lead">{apoio}</p>
       {botoes}
     </div>
-    {fatos}
+    {foto}{fatos}
   </div></div>
-</section>""".format(h1=E(s["h1"]), apoio=s["apoio"], botoes=botoes, fatos=fatos)
+</section>""".format(centro=centro, h1=E(s["h1"]), apoio=s["apoio"], botoes=botoes, foto=foto_html, fatos=fatos)
 
 
 def c_hero_simples(s):
@@ -282,7 +301,7 @@ def c_cards(s):
     if d:
         itens.append({"titulo": d["titulo"], "texto": d["texto"], "href": d["href"]})
     sid = sid_novo(s["h2"])
-    return secao_rows(sid, s["h2"], s.get("sub"), itens, fundo=_inv(s))
+    return secao_rows(sid, s["h2"], s.get("sub"), itens, fundo=_inv(s), imagem=s.get("imagem"))
 
 
 def c_etapas(s):
@@ -291,7 +310,7 @@ def c_etapas(s):
             if s.get("link") else "")
     itens = [{"titulo": "{}. {}".format(i + 1, e["titulo"]), "texto": e["texto"]}
              for i, e in enumerate(s["itens"])]
-    return secao_rows(sid, s["h2"], s.get("sub"), itens, fundo=_inv(s), extra=link)
+    return secao_rows(sid, s["h2"], s.get("sub"), itens, fundo=_inv(s), extra=link, imagem=s.get("imagem"))
 
 
 def c_etapas_detalhe(s):
@@ -371,7 +390,7 @@ def c_provas(s):
                                             E(", ".join(x for x in (d.get("cargo"), d.get("estabelecimento")) if x)))
             for d in DEPOIMENTOS)
         return secao(sid, s["h2_depoimentos"], None, ['<div class="grid">{}</div>'.format(qs)])
-    return secao_rows(sid, s["h2_entregaveis"], s.get("sub"), s["entregaveis"], fundo=_inv(s))
+    return secao_rows(sid, s["h2_entregaveis"], s.get("sub"), s["entregaveis"], fundo=_inv(s), imagem=s.get("imagem"))
 
 
 def c_artigos(s):
@@ -580,7 +599,7 @@ def rodape():
           <li>{horario}</li></ul></div>
       </div>
       <div class="footer__legal">
-        <span>&copy; {ano} {nome}{cnpj} &nbsp; <a href="/politica-de-privacidade/">Privacidade</a> &nbsp; <a href="/termos-de-uso/">Termos de uso</a></span>
+        <span>&copy; {ano} {nome}{cnpj} &nbsp; <a href="/politica-de-privacidade/">Privacidade</a> &nbsp; <a href="/termos-de-uso/">Termos de uso</a> &nbsp; <a href="/creditos/">Créditos das fotografias</a></span>
       </div>
     </div>
   </div>

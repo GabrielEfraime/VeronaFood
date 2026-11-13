@@ -93,20 +93,18 @@ def pagina():
         "secoes": [
             {"tipo": "hero",
              "h1": "Sua cozinha funcionando como está no papel.",
-             "apoio": ("Sou nutricionista e gastrônoma. Ajudo quem trabalha com comida a organizar segurança "
-                       "dos alimentos, custos, processos e treinamento da equipe, a partir da operação como ela é."),
-             "fatos": [("Atendimento", regiao),
-                       ("Horário", "Seg a sex, 9h às 18h"),
-                       ("Resposta", prazo[0].upper() + prazo[1:] if prazo else "Por WhatsApp ou telefone"),
-                       ("Formação", "Nutricionista e gastrônoma")]},
-
-            {"tipo": "pills", "intro": "Atendo:", "itens": PILLS_SEGMENTOS,
-             "link": ("Ver os segmentos", "/segmentos/")},
+             "apoio": ("Sou nutricionista e gastrônoma. Ajudo quem trabalha com comida em {} a organizar "
+                       "segurança dos alimentos, custos, processos e treinamento da equipe, "
+                       "a partir da operação como ela é.".format(regiao)),
+             "imagem": {"arquivo": "photo-f95845027-960.jpg", "w": 960, "h": 720,
+                        "alt": "Dois cozinheiros diante da bancada de saída de uma cozinha de restaurante"}},
 
             {"tipo": "cards",
              "h2": "Frentes de trabalho",
              "sub": "Cada frente funciona sozinha ou junto com as outras. O diagnóstico mostra por onde começar.",
              "itens": CARDS_SOLUCOES,
+             "imagem": {"arquivo": "photo-f186238282-960.jpg", "w": 960, "h": 640,
+                        "alt": "Mãos cortando pimentão vermelho sobre uma tábua de madeira"},
              "destaque": {"titulo": "Consultoria completa",
                           "href": "/solucoes/consultoria-completa/",
                           "texto": "Para quando o negócio precisa de tudo: diagnóstico, plano, implantação e acompanhamento contínuo."}},
@@ -116,9 +114,14 @@ def pagina():
                        "Eu escrevo junto com <strong>quem executa</strong>, em uma página, "
                        "na linguagem de quem usa.")},
 
+            {"tipo": "pills", "intro": "Atendo:", "itens": PILLS_SEGMENTOS,
+             "link": ("Ver os segmentos", "/segmentos/")},
+
             {"tipo": "etapas",
              "h2": "Quatro etapas de trabalho",
              "itens": ETAPAS,
+             "imagem": {"arquivo": "photo-f88264665-960.jpg", "w": 960, "h": 720,
+                        "alt": "Mesa de buffet de café da manhã com frutas e pães em um hotel"},
              "link": ("Ver o processo em detalhe", "/como-funciona/")},
 
             {"tipo": "beneficios",
@@ -140,7 +143,9 @@ def pagina():
              "h2_entregaveis": "O que você recebe",
              "h2_depoimentos": "O que dizem os clientes",
              "sub": "Tudo em arquivo editável, para a sua equipe atualizar depois.",
-             "entregaveis": ENTREGAVEIS},
+             "entregaveis": ENTREGAVEIS,
+             "imagem": {"arquivo": "photo-f45988851-960.jpg", "w": 960, "h": 540,
+                        "alt": "Tábuas de corte com legumes picados e pimentão em cubos"}},
 
             {"tipo": "artigos",
              "h2": "Conteúdos para ler antes de contratar",

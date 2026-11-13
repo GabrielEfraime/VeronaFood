@@ -23,3 +23,11 @@
 
 /* número do passo dentro do cabeçalho de seção */
 .section-head .step-num { display: block; margin-bottom: var(--s-3); }
+
+/* herói centralizado, com fotografia larga sob o texto */
+.hero--centro .hero-text { align-items: center; text-align: center; }
+.hero--centro .hero-copy { display: flex; flex-direction: column; align-items: center; }
+.hero--centro .hero__lead { margin-inline: auto; max-width: 62ch; }
+.hero--centro .btn-row { justify-content: center; }
+.hero-foto { width: 100%; margin-top: var(--s-6); aspect-ratio: auto; height: clamp(200px, 38svh, 340px); }
+.hero-foto .frame__img { width: 100%; height: 100%; object-fit: cover; object-position: center 68%; }

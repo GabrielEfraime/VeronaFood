@@ -404,5 +404,36 @@ def termos():
     }
 
 
+FOTOS = [
+    ("Cozinha de restaurante com dois cozinheiros", "MarkBuckawicki", "CC0",
+     "https://creativecommons.org/publicdomain/zero/1.0/",
+     "https://commons.wikimedia.org/wiki/File:Restaurant_Kitchen_expo_station.jpg"),
+    ("Mãos cortando pimentão vermelho", "Shixart1985", "CC BY 2.0",
+     "https://creativecommons.org/licenses/by/2.0/",
+     "https://commons.wikimedia.org/wiki/File:Chef_prepares_fresh_ingredients_by_chopping_red_vegetables.jpg"),
+    ("Tábuas de corte com legumes", "Robert Loescher", "CC BY-SA 4.0",
+     "https://creativecommons.org/licenses/by-sa/4.0",
+     "https://commons.wikimedia.org/wiki/File:Chopped_Veggies_on_Cutting_Board.jpg"),
+    ("Buffet de café da manhã em hotel", "Kim", "CC BY-SA 2.0",
+     "https://creativecommons.org/licenses/by-sa/2.0",
+     "https://commons.wikimedia.org/wiki/File:Breakfast_buffet_Marriott_Hotel_Lima_05.jpg"),
+]
+
+
+def creditos():
+    itens = "".join(
+        '<h2>{}</h2><p>Autor: {}. Licença <a href="{}">{}</a>. <a href="{}">Arquivo original</a>.</p>'
+        .format(E(t), E(a), l, E(lic), o) for t, a, lic, l, o in FOTOS)
+    corpo = ('<h1>Créditos das fotografias</h1><p class="texto">Fotografias provisórias de bancos livres '
+             '(Wikimedia Commons), usadas até a Verona Food ter as suas.</p>' + itens)
+    return {
+        "url": "/creditos/",
+        "title": "Créditos das fotografias — VeronaFood",
+        "description": "Autores e licenças das fotografias usadas no site da VeronaFood.",
+        "trilha": [("Início", "/"), ("Créditos das fotografias", None)],
+        "secoes": [{"tipo": "prosa", "html": corpo}],
+    }
+
+
 def paginas():
-    return [como_funciona(), sobre(), conteudos(), contato(), privacidade(), termos()]
+    return [como_funciona(), sobre(), conteudos(), contato(), privacidade(), termos(), creditos()]
