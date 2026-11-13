@@ -42,3 +42,8 @@ main > section.statement { padding-block: var(--s-10); }
 /* e-mail longo no rodapé e nos contatos não pode alargar a página no celular */
 .footer li, .footer a, .rows a, .rows p { overflow-wrap: anywhere; }
 .footer__col { min-width: 0; }
+
+/* alvos de toque de 44px no celular */
+.rows a.rows__name { display: inline-flex; align-items: center; min-height: 44px; }
+.consent label { min-height: 44px; align-items: center; }
+@media (max-width: 639px) { .hero-foto { height: clamp(150px, 24svh, 220px); } }

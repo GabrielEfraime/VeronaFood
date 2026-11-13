@@ -204,11 +204,19 @@ def lista_rows(itens):
     return '<ul class="rows">{}</ul>'.format("".join(lis))
 
 
+def srcset(arq, tam):
+    base = SITE.get("base_path", "").rstrip("/")
+    pequena = arq.replace("-960.jpg", "-500.jpg")
+    return ('srcset="{b}/img/{p} 500w, {b}/img/{g} 960w" sizes="{t}"'
+            .format(b=base, p=pequena, g=arq, t=tam))
+
+
 def foto(im, classe="frame frame--photo span-6 start-7"):
     """Fotografia provisória (stand-in), com texto alternativo próprio."""
-    return ('<div class="{}" style="aspect-ratio: {} / {}"><img class="frame__img" src="/img/{}" alt="{}" '
+    return ('<div class="{}" style="aspect-ratio: {} / {}"><img class="frame__img" src="/img/{}" {} alt="{}" '
             'width="{}" height="{}" loading="lazy" data-source="stand-in"></div>'
-            .format(classe, im.get("w", 960), im.get("h", 640), im["arquivo"], E(im["alt"]),
+            .format(classe, im.get("w", 960), im.get("h", 640), im["arquivo"],
+                    srcset(im["arquivo"], "(max-width: 1023px) 100vw, 50vw"), E(im["alt"]),
                     im.get("w", 960), im.get("h", 640)))
 
 
@@ -289,9 +297,10 @@ def c_hero(s):
     im = s.get("imagem")
     foto_html = ""
     if im:
-        foto_html = ('<div class="hero-foto frame frame--photo"><img class="frame__img" src="/img/{}" alt="{}" '
+        foto_html = ('<div class="hero-foto frame frame--photo"><img class="frame__img" src="/img/{}" {} alt="{}" '
                      'width="{}" height="{}" fetchpriority="high" data-source="stand-in"></div>'
-                     .format(im["arquivo"], E(im["alt"]), im.get("w", 960), im.get("h", 720)))
+                     .format(im["arquivo"], srcset(im["arquivo"], "(max-width: 639px) 100vw, 1280px"),
+                             E(im["alt"]), im.get("w", 960), im.get("h", 720)))
     centro = " hero--centro" if (im or s.get("centro")) else ""
     return """
 <section class="hero hero--statement{centro}" data-enter aria-labelledby="hero-h">
@@ -505,7 +514,7 @@ def formulario(id_sufixo="", compacto=False):
     s = id_sufixo
     resposta = ('<p class="t-small muted">Respondo {}.</p>'.format(E(prazo)) if prazo else "")
     return """
-<form class="form" action="mailto:{email}" method="post" enctype="text/plain"{endpoint} data-sent="{enviado}" novalidate>
+<form class="form" action="mailto:{email}" method="post" enctype="text/plain"{endpoint} data-sent="{enviado}" data-fix="Corrija {{n}} campo(s) antes de enviar." data-sending="Enviando" data-failed="Não consegui enviar agora. Tente de novo ou chame no WhatsApp." novalidate>
   <div class="field"><label for="nome{s}">Nome</label>
     <input id="nome{s}" name="nome" type="text" autocomplete="name" required aria-describedby="e-nome{s}">
     <p class="field__error" id="e-nome{s}" hidden>Escreva o seu nome.</p></div>

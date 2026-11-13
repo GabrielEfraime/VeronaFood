@@ -1,0 +1,54 @@
+
+perf dist/index.html @ 1440px
+  PASS  host CPU load (before/after)               13/14 %        
+  PASS  total transfer                             1073.8 KiB     html 28.1K  css 59.4K  js 288.1K  font 46.3K  img 631.6K  other 20.4K
+  PASS  requests                                   35             29 by load
+  PASS  images bytes                               631.6 KiB      5 files
+  PASS  largest image                              188 KiB        img/photo-f88264665-960.jpg
+  PASS  JS parsed                                  372.5 KiB      8 files, 288.1K gz
+  PASS  CSS                                        59.4 KiB       8 files
+  PASS  font families                              1              Schibsted Grotesk
+  PASS  font files                                 1              46.3K
+  PASS  font bytes                                 46.3 KiB       
+  PASS  images without width+height                0              
+  WARN  below-fold images not lazy                 2              logo.svg, logo.svg
+  WARN  oversized images (natural > 2.2x shown)    2              logo.svg 700px for 120; logo.svg 700px for 147
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        272 ms         runs 3, 176..296
+  PASS  LCP (CPU, relative)                        292 ms         runs 3, 200..316, img.frame__img
+  PASS  layout shift                               0.012          runs 3, 0.012..0.012; at load 0.012
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                9.1 screens    DOM 481 nodes
+
+perf dist/index.html @ 390px
+  PASS  host CPU load (before/after)               13/14 %        
+  PASS  total transfer                             662.5 KiB      html 28.1K  css 59.4K  js 288.1K  font 46.3K  img 220.3K  other 20.4K
+  PASS  requests                                   37             28 by load
+  PASS  images bytes                               220.3 KiB      5 files
+  PASS  largest image                              63.2 KiB       img/photo-f88264665-500.jpg
+  PASS  JS parsed                                  372.5 KiB      8 files, 288.1K gz
+  PASS  CSS                                        59.4 KiB       8 files
+  PASS  font families                              1              Schibsted Grotesk
+  PASS  font files                                 1              46.3K
+  PASS  font bytes                                 46.3 KiB       
+  PASS  images without width+height                0              
+  WARN  below-fold images not lazy                 2              logo.svg, logo.svg
+  WARN  oversized images (natural > 2.2x shown)    2              logo.svg 700px for 120; logo.svg 700px for 147
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        180 ms         runs 3, 176..212
+  PASS  LCP (CPU, relative)                        196 ms         runs 3, 196..228, img.frame__img
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                13.2 screens   DOM 481 nodes
+
+SUMMARY dist/index.html: 0 FAIL, 4 WARN  -> WARN

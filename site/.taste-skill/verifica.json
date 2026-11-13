@@ -1,0 +1,439 @@
+{
+ "/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 8,
+    "screen-short": 5,
+    "neighbour": 4,
+    "hero-lines": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "neighbour": 6,
+    "screen-short": 3,
+    "screen-height": 3,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/como-funciona/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 7,
+    "screen-height": 8,
+    "neighbour": 8,
+    "hero-lines": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 3,
+    "neighbour-ground": 1,
+    "neighbour": 2,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/contato/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 2
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "neighbour": 2,
+    "screen-short": 1,
+    "screen-height": 1
+   }
+  }
+ },
+ "/conteudos/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 3,
+    "screen-height": 3,
+    "neighbour-ground": 1,
+    "neighbour": 2
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "neighbour": 1
+   }
+  }
+ },
+ "/creditos/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 3,
+    "sparse": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 3,
+    "sparse": 1
+   }
+  }
+ },
+ "/politica-de-privacidade/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 3,
+    "screen-height": 3,
+    "neighbour": 3
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 3,
+    "screen-height": 3,
+    "neighbour": 2
+   }
+  }
+ },
+ "/segmentos/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 2,
+    "screen-short": 1,
+    "neighbour": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "neighbour": 1,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/segmentos/cozinhas-industriais/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 5,
+    "screen-short": 4,
+    "neighbour": 4
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour-ground": 1,
+    "neighbour": 1,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/segmentos/eventos/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 5,
+    "screen-short": 4,
+    "neighbour": 3
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour-ground": 1,
+    "neighbour": 1,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/segmentos/hoteis-e-buffets/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 5,
+    "screen-short": 4,
+    "neighbour": 3,
+    "hero-lines": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "neighbour": 3,
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour-ground": 1,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/segmentos/mercados-e-varejo/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 5,
+    "screen-short": 4,
+    "neighbour": 4
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour-ground": 1,
+    "neighbour": 1,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/segmentos/padarias-e-confeitarias/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 5,
+    "screen-short": 4,
+    "neighbour": 4,
+    "hero-lines": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour-ground": 1,
+    "neighbour": 1,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/segmentos/restaurantes-e-bares/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-height": 5,
+    "screen-short": 4,
+    "neighbour": 4
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour-ground": 1,
+    "neighbour": 1,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/sobre/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 5,
+    "screen-height": 5,
+    "neighbour": 5,
+    "neighbour-ground": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 3,
+    "screen-height": 3,
+    "neighbour": 4,
+    "sparse": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/solucoes/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 3,
+    "screen-height": 3,
+    "neighbour": 3,
+    "hero-lines": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour": 2,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/solucoes/consultoria-completa/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 5,
+    "screen-height": 6,
+    "neighbour": 4
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 2,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/solucoes/custos-e-ficha-tecnica/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 5,
+    "screen-height": 6,
+    "neighbour": 5
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/solucoes/padronizacao-de-processos/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 5,
+    "screen-height": 6,
+    "neighbour": 5
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 2,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/solucoes/rotulagem/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 4,
+    "screen-height": 6,
+    "neighbour": 3
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour": 2,
+    "hero-fold": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/solucoes/seguranca-dos-alimentos/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 5,
+    "screen-height": 6,
+    "neighbour": 5
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour": 1,
+    "hero-maxchars": 1
+   }
+  }
+ },
+ "/solucoes/treinamentos/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 5,
+    "screen-height": 6,
+    "neighbour": 5,
+    "hero-lines": 1
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 1
+   }
+  }
+ },
+ "/termos-de-uso/": {
+  "1440x900": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 2,
+    "screen-height": 2,
+    "neighbour": 2
+   }
+  },
+  "390x844": {
+   "overflowX": false,
+   "regras": {
+    "screen-short": 1,
+    "screen-height": 1,
+    "neighbour": 1
+   }
+  }
+ }
+}

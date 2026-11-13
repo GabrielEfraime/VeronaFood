@@ -92,10 +92,10 @@ def pagina():
                         "restaurantes, padarias, hotéis, cozinhas industriais, buffets, eventos e mercados."),
         "secoes": [
             {"tipo": "hero",
-             "h1": "Sua cozinha funcionando como está no papel.",
-             "apoio": ("Sou nutricionista e gastrônoma. Ajudo quem trabalha com comida em {} a organizar "
-                       "segurança dos alimentos, custos, processos e treinamento da equipe, "
-                       "a partir da operação como ela é.".format(regiao)),
+             "h1": "Consultoria de alimentos em São Paulo",
+             "apoio": ("Sua cozinha funcionando como está no papel. Sou nutricionista e gastrônoma e ajudo "
+                       "quem trabalha com comida a organizar segurança dos alimentos, custos, processos "
+                       "e treinamento da equipe."),
              "imagem": {"arquivo": "photo-f95845027-960.jpg", "w": 960, "h": 720,
                         "alt": "Dois cozinheiros diante da bancada de saída de uma cozinha de restaurante"}},
 
