@@ -1,12 +1,12 @@
 {
- "url": "http://127.0.0.1:5300/segmentos/hoteis-e-buffets/index.html",
+ "url": "http://127.0.0.1:5300/como-funciona/index.html",
  "views": {
   "desktop": {
    "width": 1440,
    "height": 900,
    "navH": 72,
-   "scrollHeight": 7200,
-   "screens": 8,
+   "scrollHeight": 7294,
+   "screens": 8.1,
    "sections": [
     {
      "n": 1,
@@ -27,100 +27,150 @@
     {
      "n": 2,
      "tag": "section",
-     "id": "o-que-costumo-encontrar-1",
-     "cls": "section g2",
+     "id": "diagnostico-1",
+     "cls": "section",
      "top": 900,
-     "h": 1800,
-     "hScreens": 2,
-     "offGrid": 0,
+     "h": 585,
+     "hScreens": 0.65,
+     "offGrid": 585,
      "tiles": [
       {
        "file": "desktop-sec-02-a.jpg",
        "scrollY": 900
-      },
-      {
-       "file": "desktop-sec-02-b.jpg",
-       "scrollY": 1800
       }
      ]
     },
     {
      "n": 3,
      "tag": "section",
-     "id": "por-onde-o-trabalho-costuma-come-2",
+     "id": "plano-de-acao-2",
      "cls": "section",
-     "top": 2700,
-     "h": 900,
-     "hScreens": 1,
-     "offGrid": 0,
+     "top": 1485,
+     "h": 585,
+     "hScreens": 0.65,
+     "offGrid": 585,
      "tiles": [
       {
        "file": "desktop-sec-03-a.jpg",
-       "scrollY": 2700
+       "scrollY": 1485
       }
      ]
     },
     {
      "n": 4,
      "tag": "section",
-     "id": "o-que-pede-atencao-especifica-aq-3",
-     "cls": "section ground-inverse",
-     "top": 3600,
-     "h": 900,
-     "hScreens": 1,
-     "offGrid": 0,
+     "id": "implantacao-3",
+     "cls": "section",
+     "top": 2070,
+     "h": 560,
+     "hScreens": 0.62,
+     "offGrid": 560,
      "tiles": [
       {
        "file": "desktop-sec-04-a.jpg",
-       "scrollY": 3600
+       "scrollY": 2070
       }
      ]
     },
     {
      "n": 5,
      "tag": "section",
-     "id": "perguntas-de-quem-atende-neste-s-4",
+     "id": "acompanhamento-4",
      "cls": "section",
-     "top": 4500,
-     "h": 900,
-     "hScreens": 1,
-     "offGrid": 0,
+     "top": 2630,
+     "h": 530,
+     "hScreens": 0.59,
+     "offGrid": 530,
      "tiles": [
       {
        "file": "desktop-sec-05-a.jpg",
-       "scrollY": 4500
+       "scrollY": 2630
       }
      ]
     },
     {
      "n": 6,
      "tag": "section",
-     "id": "contato",
-     "cls": "section",
-     "top": 5400,
-     "h": 900,
-     "hScreens": 1,
-     "offGrid": 0,
+     "id": "o-que-acontece-depois-que-voce-e-5",
+     "cls": "section ground-inverse",
+     "top": 3160,
+     "h": 736,
+     "hScreens": 0.82,
+     "offGrid": 736,
      "tiles": [
       {
        "file": "desktop-sec-06-a.jpg",
-       "scrollY": 5400
+       "scrollY": 3160
       }
      ]
     },
     {
      "n": 7,
-     "tag": "footer",
-     "id": "contact",
-     "cls": "footer closing",
-     "top": 6300,
-     "h": 900,
-     "hScreens": 1,
-     "offGrid": 0,
+     "tag": "section",
+     "id": "como-funciona-o-investimento-6",
+     "cls": "section",
+     "top": 3896,
+     "h": 541,
+     "hScreens": 0.6,
+     "offGrid": 541,
      "tiles": [
       {
        "file": "desktop-sec-07-a.jpg",
-       "scrollY": 6300
+       "scrollY": 3896
+      }
+     ]
+    },
+    {
+     "n": 8,
+     "tag": "section",
+     "id": "perguntas-frequentes-7",
+     "cls": "section",
+     "top": 4436,
+     "h": 1358,
+     "hScreens": 1.51,
+     "offGrid": 458,
+     "tiles": [
+      {
+       "file": "desktop-sec-08-a.jpg",
+       "scrollY": 4436
+      },
+      {
+       "file": "desktop-sec-08-b.jpg",
+       "scrollY": 4894
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "tag": "section",
+     "id": "contato",
+     "cls": "section",
+     "top": 5794,
+     "h": 806,
+     "hScreens": 0.9,
+     "offGrid": 806,
+     "tiles": [
+      {
+       "file": "desktop-sec-09-a.jpg",
+       "scrollY": 5794
+      }
+     ]
+    },
+    {
+     "n": 10,
+     "tag": "footer",
+     "id": "contact",
+     "cls": "footer closing",
+     "top": 6600,
+     "h": 694,
+     "hScreens": 0.77,
+     "offGrid": 694,
+     "tiles": [
+      {
+       "file": "desktop-sec-10-a.jpg",
+       "scrollY": 6394,
+       "cutTop": 206,
+       "height": 694
       }
      ]
     }
@@ -128,5 +178,5 @@
    "consoleErrors": []
   }
  },
- "at": "2026-11-13T04:11:15.239Z"
+ "at": "2026-11-13T04:17:59.236Z"
 }

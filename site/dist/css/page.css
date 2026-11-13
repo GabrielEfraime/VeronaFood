@@ -31,3 +31,10 @@
 .hero--centro .btn-row { justify-content: center; }
 .hero-foto { width: 100%; margin-top: var(--s-6); aspect-ratio: auto; height: clamp(200px, 38svh, 340px); }
 .hero-foto .frame__img { width: 100%; height: 100%; object-fit: cover; object-position: center 68%; }
+
+/* seções com a altura do próprio conteúdo: sem telas inteiras vazias */
+main > section:not(.hero),
+footer.closing { height: auto !important; min-height: 0 !important; padding-block: var(--s-9) var(--s-8); }
+main > section.g2 > .wrap, footer.closing.g2 > .wrap { display: block; }
+main > section.g2 > .wrap > * + * { margin-top: var(--s-7); }
+main > section.statement { padding-block: var(--s-10); }

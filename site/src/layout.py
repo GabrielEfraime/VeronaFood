@@ -49,7 +49,7 @@ def sid_novo(h2):
 
 def altura(sid):
     """1 ou 2 telas, medidas pelo medir_alturas.py. Padrão: 1."""
-    return ALTURAS.get(PAGINA_ATUAL["url"] + "#" + sid, 1)
+    return 1   # seções com a altura do conteúdo: não há divisão em telas (ver page.css)
 
 
 # =========================================================================
